@@ -32,7 +32,7 @@ Feature: Press Release
     Then the press released is saved
     And the title of the press release is displayed
 
-  @failing @401 @wip
+  @failing @401
   Scenario: Enter 61 character title and save press release
     Given I am logged in as a super user
     And I navigate to the create press release page
