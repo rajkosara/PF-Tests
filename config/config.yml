@@ -1,0 +1,11 @@
+defaults: &execution_defaults
+  default_config: local
+local:
+  <<: *execution_defaults
+  #capybara settings
+  default_wait_time: 20
+  #urls
+  british_council_site_root: http://frdev.local.solas.britishcouncil.net:8080
+  #user details
+  admin_username: 'Solas Superadmin'
+  admin_password: 'admin'
