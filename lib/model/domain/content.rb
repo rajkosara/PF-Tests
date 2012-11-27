@@ -20,13 +20,13 @@ class Model::Domain::Content
       @language = "English"
       @publish_date = ""
       @tag = "Adults"
+      @url_alias = "Made up url path #{String.random(4)}"
       @summary = "Press release Summary #{String.random(4)} #{String.random(4)}"
       @body = "Press release body #{String.random(8)} \n \n More body #{String.random(8)}"
       @notes_to_editor = "Press release notes to editor #{String.random(10)}"
       @about_the_british_council = "Press release about the british council #{String.random(8)}"
       @image_path = "#{File.expand_path(File.join(Dir.pwd, 'test_data/press_release_img.png'))}"
       @document_path = "#{File.expand_path(File.join(Dir.pwd, 'test_data/test.pdf'))}"
-      @url_alias = ""
     end
   end
 end

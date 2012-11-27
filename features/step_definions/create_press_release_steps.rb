@@ -38,3 +38,7 @@ end
 When /^I enter select a tag for the press release$/ do
   @british_council.create_press_release.tag.set @press_release.tag
 end
+
+When /^I enter a path name for a press release$/ do
+  @british_council.create_press_release.path_name.set @press_release.url_alias
+end

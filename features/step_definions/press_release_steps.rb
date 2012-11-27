@@ -17,3 +17,8 @@ end
 Then /^the tag is displayed on the press release$/ do
   @british_council.press_release.tag.text.should include @press_release.tag
 end
+
+Then /^the path name is displayed on the press release$/ do
+  @british_council.press_release.breadcrumb.text.should include @press_release.url_alias
+  @british_council.press_release.current_url.should include @press_release.url_alias.downcase
+end

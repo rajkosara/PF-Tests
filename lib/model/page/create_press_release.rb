@@ -9,6 +9,7 @@ class Model::Page::CreatePressRelease < SitePrism::Page
   element :save, '#edit-submit'
   element :error_message, "#console"
   element :tag, "#edit-field-auto-tags-und"
+  element :path_name, "#edit-field-path-name-und-0-value"
 
   elements :category_checkbox, ".term-reference-tree-level .form-item .form-checkbox"
 
