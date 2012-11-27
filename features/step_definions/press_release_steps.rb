@@ -22,3 +22,7 @@ Then /^the path name is displayed on the press release$/ do
   @british_council.press_release.breadcrumb.text.should include @press_release.url_alias
   @british_council.press_release.current_url.should include @press_release.url_alias.downcase
 end
+
+Then /^the published date is displayed on the press release$/ do
+  @british_council.press_release.publish_date.text.should include @press_release.publish_date_day && @press_release.publish_date_month && @press_release.publish_date_year
+end

@@ -3,4 +3,5 @@ class Model::Page::PressRelease < SitePrism::Page
   element :status_message, ".messages"
   element :breadcrumb, ".bc-breadcrumb"
   element :tag, ".field-name-field-auto-tags"
+  element :publish_date, ".date-display-single"
 end

@@ -61,7 +61,7 @@ Feature: Press Release
     And the tag is displayed on the press release
 
   #this test may be wrong and may need deleting
-  @failing 
+  @failing
   Scenario: Press release path name is displayed correctly
     Given I am logged in as a super user
     And I navigate to the create press release page
@@ -70,3 +70,13 @@ Feature: Press Release
     And I save the press release
     Then the press released is saved
     And the path name is displayed on the press release
+
+  @complete
+  Scenario: Press release published date is displayed correctly
+    Given I am logged in as a super user
+    And I navigate to the create press release page
+    When I enter a title for the press release
+    And I enter a published date for the press release
+    And I save the press release
+    Then the press released is saved
+    And the published date is displayed on the press release

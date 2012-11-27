@@ -10,6 +10,9 @@ class Model::Page::CreatePressRelease < SitePrism::Page
   element :error_message, "#console"
   element :tag, "#edit-field-auto-tags-und"
   element :path_name, "#edit-field-path-name-und-0-value"
+  element :publish_date_month, ".date-month"
+  element :publish_date_day, "#edit-field-press-release-date-und-0-value-day"
+  element :publish_date_year, ".date-year"
 
   elements :category_checkbox, ".term-reference-tree-level .form-item .form-checkbox"
 
@@ -20,4 +23,10 @@ class Model::Page::CreatePressRelease < SitePrism::Page
       t.value.include? "219"
     end
   end
+
+#  def publish_date day, month, year
+#    publsih_date_day.set day
+#    publish_date_month.set month
+#    publish_date_year.set year
+#  end
 end

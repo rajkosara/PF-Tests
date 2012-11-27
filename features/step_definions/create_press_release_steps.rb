@@ -42,3 +42,9 @@ end
 When /^I enter a path name for a press release$/ do
   @british_council.create_press_release.path_name.set @press_release.url_alias
 end
+
+When /^I enter a published date for the press release$/ do
+  @british_council.create_press_release.publish_date_day.select @press_release.publish_date_day
+  @british_council.create_press_release.publish_date_month.select @press_release.publish_date_month
+  @british_council.create_press_release.publish_date_year.select @press_release.publish_date_year
+end
