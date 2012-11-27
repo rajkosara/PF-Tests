@@ -21,10 +21,14 @@ ActiveSupport::Dependencies.autoload_paths << File.expand_path(File.join(Dir.pwd
 
 #setup config for browser
 Capybara.configure do |config|
-  config.default_driver = :selenium
+  config.default_driver = :selenium_chrome
   config.run_server = false
   config.default_selector = :css
   config.default_wait_time = 3
+end
+
+Capybara.register_driver :selenium_chrome do |app|
+  Capybara::Selenium::Driver.new(app, :browser => :chrome)
 end
 
 World(Capybara)

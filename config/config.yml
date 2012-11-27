@@ -3,7 +3,7 @@ defaults: &execution_defaults
 local:
   <<: *execution_defaults
   #capybara settings
-  default_wait_time: 20
+  default_wait_time: 5
   #urls
   british_council_site_root: http://frdev.local.solas.britishcouncil.net:8080
   #user details
