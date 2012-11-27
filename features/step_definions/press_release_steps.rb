@@ -24,5 +24,5 @@ Then /^the path name is displayed on the press release$/ do
 end
 
 Then /^the published date is displayed on the press release$/ do
-  @british_council.press_release.publish_date.text.should include @press_release.publish_date_day && @press_release.publish_date_month && @press_release.publish_date_year
+  @british_council.press_release.publish_date.text.should include @press_release.publish_date[0] && @press_release.publish_date[1] && @press_release.publish_date[2]
 end

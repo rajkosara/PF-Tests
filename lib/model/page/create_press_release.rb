@@ -16,17 +16,16 @@ class Model::Page::CreatePressRelease < SitePrism::Page
 
   elements :category_checkbox, ".term-reference-tree-level .form-item .form-checkbox"
 
-  #section :published_date, Model::Section::PublishedDate, '#field-press-release-date-add-more-wrapper' example of a section
-
   def exams_category_checkbox
     category_checkbox.find do |t|
       t.value.include? "219"
     end
   end
 
-#  def publish_date day, month, year
-#    publsih_date_day.set day
-#    publish_date_month.set month
-#    publish_date_year.set year
-#  end
+  #this takes the array that is the publish_date in the content.rb
+  def publish_date date
+    publish_date_day.select date[0]
+    publish_date_month.select date[1]
+    publish_date_year.select date[2]
+  end
 end

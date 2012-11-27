@@ -44,7 +44,5 @@ When /^I enter a path name for a press release$/ do
 end
 
 When /^I enter a published date for the press release$/ do
-  @british_council.create_press_release.publish_date_day.select @press_release.publish_date_day
-  @british_council.create_press_release.publish_date_month.select @press_release.publish_date_month
-  @british_council.create_press_release.publish_date_year.select @press_release.publish_date_year
+    @british_council.create_press_release.publish_date @press_release.publish_date
 end

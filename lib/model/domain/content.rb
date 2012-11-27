@@ -5,6 +5,7 @@ class Model::Domain::Content
   attr_accessor :publish_date_day
   attr_accessor :publish_date_month
   attr_accessor :publish_date_year
+  attr_accessor :publish_date
   attr_accessor :summary
   attr_accessor :body
   attr_accessor :notes_to_editor
@@ -23,6 +24,7 @@ class Model::Domain::Content
       @publish_date_day ="#{1.day.ago.day}"
       @publish_date_month = "#{Time.now.strftime("%b")}"
       @publish_date_year = "#{1.day.ago.year}"
+      @publish_date = [@publish_date_day, @publish_date_month, @publish_date_year]
       @tag = "Adults"
       @url_alias = "Made up url path #{String.random(4)}"
       @summary = "Press release Summary #{String.random(4)} #{String.random(4)}"
