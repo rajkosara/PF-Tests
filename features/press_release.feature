@@ -80,3 +80,24 @@ Feature: Press Release
     And I save the press release
     Then the press released is saved
     And the published date is displayed on the press release
+
+  #parked for now, due to using iframes
+  @failing
+  Scenario: Press release body is displayed correctly
+    Given I am logged in as a super user
+    And I navigate to the create press release page
+    When I enter a title for the press release
+    And I enter the body text for the press release
+    And I save the press release
+    Then the press released is saved
+    And the body text is displayed on the press release
+
+  @complete
+  Scenario: Press release notes to editor is displayed correctly
+    Given I am logged in as a super user
+    And I navigate to the create press release page
+    When I enter a title for the press release
+    And I enter the notes to editor text for the press release
+    And I save the press release
+    Then the press released is saved
+    And the notes to editor is displayed on the press release

@@ -3,9 +3,6 @@ class Model::Page::CreatePressRelease < SitePrism::Page
   set_url_matcher /\/node\/add\/press\-release/
   
   element :title, '#edit-title'
-  element :press_release_body, '.mceIframeContainer'
-  element :notes_to_editor, '#edit-field-notes-to-editors'
-  element :about_the_british_council, '#edit-field-about-british-council'
   element :save, '#edit-submit'
   element :error_message, "#console"
   element :tag, "#edit-field-auto-tags-und"
@@ -13,8 +10,12 @@ class Model::Page::CreatePressRelease < SitePrism::Page
   element :publish_date_month, ".date-month"
   element :publish_date_day, "#edit-field-press-release-date-und-0-value-day"
   element :publish_date_year, ".date-year"
+  element :notes_to_editor, "#edit-field-notes-to-editors-und-0-value"
 
   elements :category_checkbox, ".term-reference-tree-level .form-item .form-checkbox"
+
+
+  iframe :text_area,Model::Page::TextArea ,"iframe#edit-body-und-0-value_ifr"
 
   def exams_category_checkbox
     category_checkbox.find do |t|

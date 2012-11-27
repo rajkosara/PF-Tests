@@ -26,3 +26,7 @@ end
 Then /^the published date is displayed on the press release$/ do
   @british_council.press_release.publish_date.text.should include @press_release.publish_date[0] && @press_release.publish_date[1] && @press_release.publish_date[2]
 end
+
+Then /^the notes to editor is displayed on the press release$/ do
+  @british_council.press_release.notes_to_editor.text.should include @press_release.notes_to_editor
+end

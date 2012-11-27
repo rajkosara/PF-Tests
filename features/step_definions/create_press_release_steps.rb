@@ -44,5 +44,21 @@ When /^I enter a path name for a press release$/ do
 end
 
 When /^I enter a published date for the press release$/ do
-    @british_council.create_press_release.publish_date @press_release.publish_date
+  @british_council.create_press_release.publish_date @press_release.publish_date
+end
+
+
+#spent hours trying to get this to work. Will park and come back to it in a day or two
+
+#When /^I enter the body text for the press release$/ do
+#  @british_council.create_press_release.should have_text_area
+#  @british_council.create_press_release.wait_for_text_area
+#  @british_council.create_press_release.text_area do |area|
+#    puts area
+#    #puts area.set @press_release.body
+#  end
+#end
+
+When /^I enter the notes to editor text for the press release$/ do
+  @british_council.create_press_release.notes_to_editor.set @press_release.notes_to_editor
 end
