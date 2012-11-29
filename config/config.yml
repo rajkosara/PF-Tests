@@ -6,6 +6,8 @@ local:
   default_wait_time: 5
   #urls
   british_council_site_root: http://frdev.local.solas.britishcouncil.net:8080
+  thumbnail_image_location: /sites/default/files/styles/thumbnail/public
+  image_location: /sites/default/files
   #user details
   admin_username: 'Solas Superadmin'
   admin_password: 'admin'

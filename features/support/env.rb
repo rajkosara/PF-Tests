@@ -24,7 +24,7 @@ Capybara.configure do |config|
   config.default_driver = :selenium_chrome
   config.run_server = false
   config.default_selector = :css
-  config.default_wait_time = 3
+  config.default_wait_time = 10
 end
 
 Capybara.register_driver :selenium_chrome do |app|

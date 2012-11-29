@@ -30,3 +30,11 @@ end
 Then /^the notes to editor is displayed on the press release$/ do
   @british_council.press_release.notes_to_editor.text.should include @press_release.notes_to_editor
 end
+
+Then /^the about the british council is displayed on the press release$/ do
+  @british_council.press_release.about_the_british_council.text.should == "About the British Council: \n#{@press_release.about_the_british_council}"
+end
+
+Then /^the image is displayed on the press release$/ do
+  @image.to_s.should == @british_council.press_release.uploaded_image_name
+end

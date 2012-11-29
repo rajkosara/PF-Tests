@@ -101,3 +101,24 @@ Feature: Press Release
     And I save the press release
     Then the press released is saved
     And the notes to editor is displayed on the press release
+
+  @complete
+  Scenario: Press release about the british council is displayed correctly
+    Given I am logged in as a super user
+    And I navigate to the create press release page
+    When I enter a title for the press release
+    And I enter the about the british council for the press release
+    And I save the press release
+    Then the press released is saved
+    And the about the british council is displayed on the press release
+
+  @complete
+  Scenario: Press release image is displayed correctly
+    Given I am logged in as a super user
+    And I navigate to the create press release page
+    When I enter a title for the press release
+    And I enter the image path for the press release
+    And I upload the image to the press release
+    And I save the press release
+    Then the press released is saved
+    And the image is displayed on the press release
