@@ -36,5 +36,19 @@ Then /^the about the british council is displayed on the press release$/ do
 end
 
 Then /^the image is displayed on the press release$/ do
-  @image.to_s.should == @british_council.press_release.uploaded_image_name
+  @british_council.press_release.uploaded_image_name.should include @image.to_s
+end
+
+Then /^the documment is displayed on the press release$/ do
+  @british_council.press_release.uploaded_document.text.should include @press_release.document_name
+end
+
+Then /^the body text is displayed on the press release$/ do
+  @british_council.press_release.body.text.should include @press_release.body
+end
+
+Then /^the default fields are displayed on the press release$/ do
+  step "the press released is saved"
+  step "the title of the press release is displayed"
+  step "the body text is displayed on the press release"
 end

@@ -2,7 +2,7 @@ class Model::Page::CreatePressRelease < SitePrism::Page
   set_url "#{Helpers::Config['british_council_site_root']}/en/node/add/press-release"
   set_url_matcher /\/node\/add\/press\-release/
   
-  element :title, '#edit-title'
+  element :title, '#edit-title-field-en-0-value'
   element :save, '#edit-submit'
   element :error_message, "#console"
   element :tag, "#edit-field-auto-tags-und"
@@ -13,15 +13,20 @@ class Model::Page::CreatePressRelease < SitePrism::Page
   element :notes_to_editor, "#edit-field-notes-to-editors-und-0-value"
   element :about_the_british_council, "#edit-field-about-british-council-und-0-value"
   element :image_path, "#edit-field-image-und-0-upload"
-  element :upload_button, "#edit-field-image-und-0-upload-button"
+  element :image_upload_button, "#edit-field-image-und-0-upload-button"
   element :image_preview, ".image-preview img"
   element :uploading_image, ".throbber"
+  element :document_path, "#edit-field-file-upload-und-0-upload"
+  element :document_upload_button, "#edit-field-file-upload-und-0-upload-button"
+  element :document, ".file"
+
+  element :text_area, "iframe#edit-body-und-0-value_ifr"
 
   elements :category_checkbox, ".term-reference-tree-level .form-item .form-checkbox"
 
-
+  
   #iframe :text_area,Model::Page::TextArea ,"iframe#edit-body-und-0-value_ifr"
-  element :text_area, "#tinymce"
+  #element :text_area, "#tinymce"
 
   def exams_category_checkbox
     category_checkbox.find do |t|
@@ -37,6 +42,6 @@ class Model::Page::CreatePressRelease < SitePrism::Page
   end
 
   def image_preview_name
-    image_preview[:src].gsub("#{Helpers::Config['british_council_site_root']}#{Helpers::Config['thumbnail_image_location']}/", "")
+    image_preview[:src].gsub("#{Helpers::Path.thumbnail_image_location}", "")
   end
 end

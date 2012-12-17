@@ -9,7 +9,7 @@ Then /^the create press release page is displayed$/ do
 end
 
 When /^I enter a title for the press release$/ do
-  @british_council.create_press_release.title.set " #{@press_release.title}"
+  @british_council.create_press_release.title.set "#{@press_release.title}"
 end
 
 When /^I save the press release$/ do
@@ -28,6 +28,7 @@ end
 When /^I submit a press release with a (\d+) character title$/ do |length|
   @press_release.title = "#{String.random(length.to_i)}"
   @british_council.create_press_release.title.set "#{@press_release.title}"
+  step "I enter the body text for the press release"
   step "I save the press release"
 end
 
@@ -47,16 +48,9 @@ When /^I enter a published date for the press release$/ do
   @british_council.create_press_release.publish_date @press_release.publish_date
 end
 
-
-#spent hours trying to get this to work. Will park and come back to it in a day or two
-
 When /^I enter the body text for the press release$/ do
-  #  @british_council.create_press_release.should have_text_area
-  #  @british_council.create_press_release.wait_for_text_area
-  #  @british_council.create_press_release.text_area do |area|
-  #    puts area
-  #    #puts area.set @press_release.body
-  #  end
+  @british_council.create_press_release.should have_text_area
+  @british_council.create_press_release.text_area.native.send_key @press_release.body
 end
 
 When /^I enter the notes to editor text for the press release$/ do
@@ -72,9 +66,44 @@ When /^I enter the image path for the press release$/ do
 end
 
 When /^I upload the image to the press release$/ do
-  @british_council.create_press_release.upload_button.click
-  #Timeout.timeout(30) {sleep(0.1) until @british_council.create_press_release.uploading_image.visible?}
-  #Timeout.timeout(30) {sleep(0.1) while @british_council.create_press_release.uploading_image.visible?}
+  @british_council.create_press_release.image_upload_button.click
   Timeout.timeout(30) {sleep(0.1) until @british_council.create_press_release.image_preview.visible?}
   @image = @british_council.create_press_release.image_preview_name
+end
+
+When /^I enter the documment path for the press release$/ do
+  @british_council.create_press_release.document_path.set @press_release.document_path
+end
+
+When /^I upload the documment to the press release$/ do
+  @british_council.create_press_release.document_upload_button.click
+  Timeout.timeout(30) {sleep(0.1) until @british_council.create_press_release.document.visible?}
+end
+
+When /^I submit a press release with default fields filled in$/ do
+  step "I enter a title for the press release"
+  step "I enter the body text for the press release"
+  step "I save the press release"
+end
+
+When /^I submit a press release with (?:an|a|the) (published date|notes to editor|about the british council|uploaded image|uploaded documment)$/ do |field_to_enter|
+  step "I enter a title for the press release"
+  step "I enter the body text for the press release"
+  
+  case field_to_enter
+  when "a published date"
+    step "I enter a published date for the press release"
+  when "notes to editor"
+    step "I enter the notes to editor text for the press release"
+  when "about the british council"
+    step "I enter the about the british council for the press release"
+  when "uploaded image"
+    step "I enter the image path for the press release"
+    step "I upload the image to the press release"
+  when "uploaded documment"
+    step "I enter the documment path for the press release"
+    step "I upload the documment to the press release"
+    else raise "Haven't mapped the '#{field_to_enter}' field"
+  end
+  step "I save the press release"
 end

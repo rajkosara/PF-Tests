@@ -1,3 +1,3 @@
 class Model::Page::TextArea < SitePrism::Page
-  element :body, ""
+  element :body, "#tinymce"
 end
