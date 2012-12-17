@@ -91,7 +91,7 @@ When /^I submit a press release with (?:an|a|the) (published date|notes to edito
   step "I enter the body text for the press release"
   
   case field_to_enter
-  when "a published date"
+  when "published date"
     step "I enter a published date for the press release"
   when "notes to editor"
     step "I enter the notes to editor text for the press release"

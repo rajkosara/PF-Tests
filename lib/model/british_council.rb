@@ -14,4 +14,8 @@ class Model::BritishCouncil
   def press_release
     Model::Page::PressRelease.new
   end
+
+  def home
+    Model::Page::Home.new
+  end
 end
