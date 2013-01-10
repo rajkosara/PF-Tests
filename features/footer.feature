@@ -29,6 +29,9 @@ Feature: Footer
     And the contact partnerships link is displayed in the partner with is menu
     And the our track record link is displayed in the partner with is menu
 
-  @wip
+  @complete
   Scenario: Correct links are displayed on the teach english menu
     Given I navigate to the home page
+    Then the courses for teachers of english is displayed in the teach english menu
+    And the online teaching resources link is displayed in the teach english menu
+    And the teaching in the uk link is displayed in the teach english menu

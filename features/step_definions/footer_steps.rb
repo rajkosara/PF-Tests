@@ -49,3 +49,18 @@ Then /^the our track record link is displayed in the partner with is menu$/ do
   @british_council.home.footer.partner_with_us.should have_our_track_record
   @british_council.home.footer.partner_with_us.our_track_record[:href].should include "/en/about/patnerships-track-record"
 end
+
+Then /^the courses for teachers of english is displayed in the teach english menu$/ do
+  @british_council.home.footer.teach_english.should have_courses_for_english_teachers
+  @british_council.home.footer.teach_english.courses_for_english_teachers[:href].should include "/en/teach/training"
+end
+
+Then /^the online teaching resources link is displayed in the teach english menu$/ do
+  @british_council.home.footer.teach_english.should have_online_teaching_resources
+  @british_council.home.footer.teach_english.online_teaching_resources[:href].should include "/en/teach/resources"
+end
+
+Then /^the teaching in the uk link is displayed in the teach english menu$/ do
+  @british_council.home.footer.teach_english.should have_teaching_in_the_uk
+  @british_council.home.footer.teach_english.teaching_in_the_uk[:href].should include "/en/teach/uk"
+end
