@@ -36,3 +36,12 @@ Feature: Header
     Given I navigate to the home page
     Then the header contains our work in arts, education and society link
 
+Scenario: Hearder displayes a link to change language to french
+Scenario: Hearder displayes a link to change language to english
+Scenario: Hearder displayes a link to our teaching centres
+Scenario: Hearder displayes a link to blog
+Scenario: Hearder displayes a link to sign up for our newsletter
+Scenario: Hearder displayes a link to contact us
+Scenario: Hearder displayes a link to search
+Scenario: Hearder displayes a link to teach english
+Scenario: Hearder displayes a link to ielts
