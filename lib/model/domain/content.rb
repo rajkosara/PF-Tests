@@ -37,6 +37,11 @@ class Model::Domain::Content
       @image_path = "#{File.expand_path(File.join(Dir.pwd, "test_data/#{@image_name}"))}"
       @document_name = "test_doc.pdf"
       @document_path = "#{File.expand_path(File.join(Dir.pwd, "test_data/#{@document_name}"))}"
+
+    when :blog
+      @title = "Blog Title #{Time.current.strftime("%T")} #{String.random(4)}"
+      @summary = "Blog Summary #{String.random(4)} #{String.random(4)}"
+      @body = "Blog body #{String.random(8)} \n More body #{String.random(8)}"
     end
   end
 end

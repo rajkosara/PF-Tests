@@ -9,5 +9,5 @@ local:
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
-  admin_username: 'Solas Superadmin'
+  admin_username: 'david.chambers'
   admin_password: 'admin'

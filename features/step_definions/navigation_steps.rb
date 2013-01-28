@@ -9,11 +9,14 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
   when 'create press release' 
     @british_council.create_press_release.load
     step "I create a press release object"
+  when 'create blog'
+    @british_council.create_blog.load
+    step "I create a blog post object"
   else raise "Haven't mapped the '#{page_name}' page"
   end
 end
 
-#Given /^I am using a mobile device$/ do
-#  config.default_driver = :selenium_chrome
-#  Helpers::Browser.resize_window
-#end
+Given /^I am using a mobile device$/ do
+  config.current_driver = :selenium_chrome
+  Helpers::Browser.resize_window
+end

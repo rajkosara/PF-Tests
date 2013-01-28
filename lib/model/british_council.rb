@@ -11,8 +11,16 @@ class Model::BritishCouncil
     Model::Page::CreatePressRelease.new
   end
 
+  def create_blog
+    Model::Page::CreateBlog.new
+  end
+
   def press_release
     Model::Page::PressRelease.new
+  end
+
+  def blog
+    Model::Page::Blog.new
   end
 
   def home
