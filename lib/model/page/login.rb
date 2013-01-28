@@ -1,5 +1,5 @@
 class Model::Page::Login < SitePrism::Page
-  set_url "#{Helpers::Config['british_council_site_root']}/user"
+  set_url "#{Helpers::Config['korea_site_root']}/user"
   set_url_matcher /user/
 
   element :username, '#edit-name'

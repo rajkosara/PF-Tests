@@ -1,5 +1,5 @@
 class Model::Page::CreatePressRelease < SitePrism::Page
-  set_url "#{Helpers::Config['british_council_site_root']}/en/node/add/press-release"
+  set_url "#{Helpers::Config['korea_site_root']}/en/node/add/press-release"
   set_url_matcher /\/node\/add\/press\-release/
   
   element :title, '#edit-title-field-en-0-value'

@@ -51,7 +51,7 @@ Feature: add image to the media library
     And I navigate to the create press release page
     When I add an image to the media library with all input fields filled in
     Then the image is saved in the media library
-    the image title is saved in the media library
+    And image title is saved in the media library
 
   @not_started
   Scenario: Add image without a title

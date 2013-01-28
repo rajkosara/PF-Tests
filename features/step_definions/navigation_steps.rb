@@ -12,3 +12,8 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
   else raise "Haven't mapped the '#{page_name}' page"
   end
 end
+
+#Given /^I am using a mobile device$/ do
+#  config.default_driver = :selenium_chrome
+#  Helpers::Browser.resize_window
+#end
