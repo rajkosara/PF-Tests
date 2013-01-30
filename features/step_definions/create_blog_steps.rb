@@ -23,3 +23,7 @@ end
 When /^I enter a title of "(.*?)" for the blog page$/ do |title|
   @british_council.create_blog.title.set title
 end
+
+When /^I enter a title containing some punctuation marks$/ do
+  @british_council.create_blog.title.set 'Title with punctuation marks " _ : | {} & @ /'
+end

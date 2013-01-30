@@ -2,7 +2,7 @@
 Feature: Blog
 
   @complete @solas_232 @core
-  Scenario: stop words are removed from filname
+  Scenario: Stop words are removed from filname
     Given I navigate to the login page
     And I am logged in as a super user
     When I navigate to the create blog page
@@ -10,3 +10,11 @@ Feature: Blog
     And I save the blog page
     Then the filename of the blog post will not include the stop words
 
+  @complete @solas_232 @core
+  Scenario: Punctuation marks are removed from filname
+    Given I navigate to the login page
+    And I am logged in as a super user
+    When I navigate to the create blog page
+    And I enter a title containing some punctuation marks
+    And I save the blog page
+    Then the filename of the blog post will not include the punctuation marks
