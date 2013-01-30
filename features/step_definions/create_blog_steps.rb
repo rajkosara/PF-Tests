@@ -19,3 +19,7 @@ end
 When /^I save the blog page$/ do
   @british_council.create_blog.save_button.click
 end
+
+When /^I enter a title of "(.*?)" for the blog page$/ do |title|
+  @british_council.create_blog.title.set title
+end

@@ -19,14 +19,9 @@ class Model::Page::CreatePressRelease < SitePrism::Page
   element :document_path, "#edit-field-file-upload-und-0-upload"
   element :document_upload_button, "#edit-field-file-upload-und-0-upload-button"
   element :document, ".file"
-
   element :text_area, "iframe#edit-body-und-0-value_ifr"
 
   elements :category_checkbox, ".term-reference-tree-level .form-item .form-checkbox"
-
-  
-  #iframe :text_area,Model::Page::TextArea ,"iframe#edit-body-und-0-value_ifr"
-  #element :text_area, "#tinymce"
 
   def exams_category_checkbox
     category_checkbox.find do |t|

@@ -1,11 +1,22 @@
 defaults: &execution_defaults
-  default_config: local
-local:
+  default_config: local_env_kr
+local_env_kr:
   <<: *execution_defaults
   #capybara settings
   default_wait_time: 5
   #urls
   korea_site_root: http://kr.local.solas.britishcouncil.net:8080
+  thumbnail_image_location: /sites/default/files/styles/thumbnail/public
+  image_location: /sites/default/files
+  #user details
+  admin_username: 'david.chambers'
+  admin_password: 'admin'
+test_env_kr:
+  <<: *execution_defaults
+  #capybara settings
+  default_wait_time: 8
+  #urls
+  korea_site_root: http://kr.test.solas.britishcouncil.net
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
