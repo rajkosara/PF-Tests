@@ -16,6 +16,8 @@ class Model::Domain::Content
   attr_accessor :document_path
   attr_accessor :url_alias
   attr_accessor :tag
+  attr_accessor :question
+  attr_accessor :answer
 
   def set_content_type content_type
     case content_type
@@ -42,6 +44,11 @@ class Model::Domain::Content
       @title = "Blog Title #{Time.current.strftime("%T")} #{String.random(4)}"
       @summary = "Blog Summary #{String.random(4)} #{String.random(4)}"
       @body = "Blog body #{String.random(8)} \n More body #{String.random(8)}"
+
+    when :faq
+      @question = "FAQ question? #{Time.current.strftime("%T")} #{String.random(4)}"
+      @answer = "FAQ answer \n More answers #{Time.current.strftime("%T")} #{String.random(4)}"
+      @category = "Arts"
     end
   end
 end

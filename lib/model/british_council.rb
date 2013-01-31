@@ -15,6 +15,10 @@ class Model::BritishCouncil
     Model::Page::CreateBlog.new
   end
 
+  def create_faq
+    Model::Page::CreateFaq.new
+  end
+
   def press_release
     Model::Page::PressRelease.new
   end
@@ -23,6 +27,10 @@ class Model::BritishCouncil
     Model::Page::Blog.new
   end
 
+  def faq
+    Model::Page::Faq.new
+  end
+  
   def home
     Model::Page::Home.new
   end

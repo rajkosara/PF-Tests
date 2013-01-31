@@ -11,6 +11,12 @@ local_env_kr:
   #user details
   admin_username: 'david.chambers'
   admin_password: 'admin'
+  author_username: 'david.chambers.author'
+  author_password: 'author'
+  manager_username: 'david.chambers.manager'
+  manager_password: 'manager'
+  producer_username: 'david.chambers.producer'
+  producer_password: 'producer'
 test_env_kr:
   <<: *execution_defaults
   #capybara settings

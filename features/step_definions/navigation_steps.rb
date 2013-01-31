@@ -12,11 +12,14 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
   when 'create blog'
     @british_council.create_blog.load
     step "I create a blog post object"
+  when 'create faq'
+    @british_council.create_faq.load
+    step "I create a faq object"
   else raise "Haven't mapped the '#{page_name}' page"
   end
 end
 
 Given /^I am using a mobile device$/ do
-  config.current_driver = :selenium_chrome
+  config.current_driver = :iphone_chrome
   Helpers::Browser.resize_window
 end
