@@ -60,3 +60,7 @@ end
 Then /^a "(.*?)" error message is displayed on the create faq page$/ do |error_message|
   @british_council.create_faq.error_message.text.should include error_message
 end
+
+Then /^a zero characters remaining error message is displayed on the create faq page$/ do
+  @british_council.create_faq.counter_message.text.should include "Content limited to 60 characters, remaining: 0"
+end
