@@ -6,11 +6,9 @@ class Model::Page::CreateGeneralInfo < SitePrism::Page
   element :summary, "#edit-body-und-0-summary"
   element :body, "iframe#edit-body-und-0-value_ifr"
   element :internal_link, "#edit-field-generic-internal-link-und"
+  element :error_message, "#console .error"
   element :save_button, '#edit-submit'
+  element :counter_message, "#edit-title-field-en-0-value-counter"
   
   sections :external_link, Model::Section::ExternalLink,".link-field-subrow"
-
-  def thing other
-    self.native.send_key other
-  end
 end

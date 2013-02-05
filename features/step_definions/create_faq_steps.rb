@@ -21,7 +21,8 @@ When /^I enter a category for the faq page$/ do
 end
 
 When /^I enter a question with 70 characters for the faq page$/ do
-  @british_council.create_faq.question.set String.random(70)
+  @title = String.random(70)
+  @british_council.create_faq.question.set @title
 end
 
 When /^I submit a faq page$/ do
@@ -63,4 +64,5 @@ end
 
 Then /^a zero characters remaining error message is displayed on the create faq page$/ do
   @british_council.create_faq.counter_message.text.should include "Content limited to 60 characters, remaining: 0"
+  @british_council.create_faq.question.text.should_not == @title
 end

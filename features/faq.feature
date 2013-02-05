@@ -17,28 +17,28 @@ Feature: Faq
 
   @complete @solas_157 @core
   Scenario: Error message displayed when question field not filled in
-    Given I am logged in as an admin user
+    Given I am logged in as an author user
     When I navigate to the create faq page
     And I submit a faq page without a question
     Then a "Question field is required" error message is displayed on the create faq page
 
   @complete @solas_157 @core
   Scenario: Error message displayed when category field not filled in
-    Given I am logged in as an admin user
+    Given I am logged in as an author user
     When I navigate to the create faq page
     And I submit a faq page without a category
     Then a "Category field is required" error message is displayed on the create faq page
 
   @complete @solas_157 @core
   Scenario: Error message displayed when answer field not filled in
-    Given I am logged in as an admin user
+    Given I am logged in as an author user
     When I navigate to the create faq page
     And I submit a faq page without an answer
     Then a "Answer field is required" error message is displayed on the create faq page
 
   @complete @solas_157 @core
   Scenario: Max length of question is enforced
-    Given I am logged in as an admin user
+    Given I am logged in as an author user
     When I navigate to the create faq page
     And I enter an answer for the faq page
     And I enter a category for the faq page
