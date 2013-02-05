@@ -32,6 +32,12 @@ When /^I enter a body for the general info page$/ do
   @british_council.create_general_info.body.native.send_key @general_info.body
 end
 
+When /^I enter an external link for the general info page$/ do
+  @british_council.create_general_info.external_link.first.title.set @general_info.external_link_title
+  @british_council.create_general_info.external_link.first.link.set @general_info.external_link_link
+end
+
+
 When /^I submit a general info page without a title$/ do
   step "the create general info page is displayed"
   step "I enter a summary for the general info page"
@@ -43,6 +49,15 @@ When /^I submit a general info page without a body$/ do
   step "the create general info page is displayed"
   step "I enter a title for the general info page"
   step "I enter a summary for the general info page"
+  step "I save the general info page"
+end
+
+When /^I submit a general info page with an external link$/ do
+  step "the create general info page is displayed"
+  step "I enter a title for the general info page"
+  step "I enter a summary for the general info page"
+  step "I enter a body for the general info page"
+  step "I enter an external link for the general info page"
   step "I save the general info page"
 end
 

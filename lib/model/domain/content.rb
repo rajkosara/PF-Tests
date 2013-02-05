@@ -19,7 +19,8 @@ class Model::Domain::Content
   attr_accessor :question
   attr_accessor :answer
   attr_accessor :internal_link
-  attr_accessor :external_link
+  attr_accessor :external_link_title
+  attr_accessor :external_link_link
 
 
   def set_content_type content_type
@@ -59,7 +60,7 @@ class Model::Domain::Content
       @body = "General info Body #{Time.current.strftime("%T")} #{String.random(4)}"
       @internal_link = ""
       @external_link_title = "General info external link title #{Time.current.strftime("%T")} #{String.random(4)}"
-      @external_link_url = "https://www.google.co.uk"
+      @external_link_link = "https://www.google.co.uk"
     end
   end
 end

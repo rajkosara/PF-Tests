@@ -43,3 +43,10 @@ Feature: General info
     And I enter a body for the general info page
     And I enter a title with 70 characters for the general info page
     Then a zero characters remaining error message is displayed on the create general info page
+
+  @complete @solas_121 @core
+  Scenario: Submit general info with external link
+    Given I am logged in as an author user
+    When I navigate to the create general info page
+    And I submit a general info page with an external link
+    Then the external link is displayed on the general info page
