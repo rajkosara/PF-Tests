@@ -36,4 +36,5 @@ Capybara.register_driver :iphone_chrome do |app|
   Capybara::Selenium::Driver.new(app, :browser => :chrome, :profile => profile1, :switches=>['--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5'] )
 end
 
+
 World(Capybara)

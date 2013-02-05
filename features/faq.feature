@@ -35,3 +35,13 @@ Feature: Faq
     When I navigate to the create faq page
     And I submit a faq page without an answer
     Then a "Answer field is required" error message is displayed on the create faq page
+
+  @failing @solas_157 @core
+  Scenario: Max length of question is enforced
+    Given I am logged in as an admin user
+    When I navigate to the create faq page
+    And I enter an answer for the faq page
+    And I enter a category for the faq page
+    And I enter a question with 70 characters for the faq page
+    And I save the faq page
+    Then a "Answer field is required" error message is displayed on the create faq page

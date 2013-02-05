@@ -20,6 +20,10 @@ When /^I enter a category for the faq page$/ do
   @british_council.create_faq.category.select @faq.category
 end
 
+When /^I enter a question with 70 characters for the faq page$/ do
+  @british_council.create_faq.question.set String.random(70)
+end
+
 When /^I submit a faq page$/ do
   step "the create faq page is displayed"
   step "I enter a question for the faq page"

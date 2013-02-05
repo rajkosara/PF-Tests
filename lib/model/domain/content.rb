@@ -18,6 +18,9 @@ class Model::Domain::Content
   attr_accessor :tag
   attr_accessor :question
   attr_accessor :answer
+  attr_accessor :internal_link
+  attr_accessor :external_link
+
 
   def set_content_type content_type
     case content_type
@@ -49,6 +52,14 @@ class Model::Domain::Content
       @question = "FAQ question? #{Time.current.strftime("%T")} #{String.random(4)}"
       @answer = "FAQ answer \n More answers #{Time.current.strftime("%T")} #{String.random(4)}"
       @category = "Arts"
+
+    when :general_info
+      @title = "General Info Title #{Time.current.strftime("%T")} #{String.random(4)}"
+      @summary = "General Indo Summary #{Time.current.strftime("%T")} #{String.random(4)}"
+      @body = "General info Body #{Time.current.strftime("%T")} #{String.random(4)}"
+      @internal_link = ""
+      @external_link_title = "General info external link title #{Time.current.strftime("%T")} #{String.random(4)}"
+      @external_link_url = "https://www.google.co.uk"
     end
   end
 end

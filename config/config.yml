@@ -5,7 +5,7 @@ local_env_kr:
   #capybara settings
   default_wait_time: 5
   #urls
-  korea_site_root: http://kr.local.solas.britishcouncil.net:8080
+  korea_site_root: http://kr.local.solas.britishcouncil.net:8080/en
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
