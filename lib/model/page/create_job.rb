@@ -15,6 +15,8 @@ class Model::Page::CreateJob < SitePrism::Page
   element :how_to_apply, "#edit-field-job-how-to-apply-und-0-value"
   element :role_overview, "#edit-field-job-detailed-body-und-0-value"
   element :internal_link, "#edit-field-generic-internal-link-und-0-target-id"
+  element :error_message, "#console .error"
+  element :counter_message, "#edit-title-field-en-0-value-counter"
   
   element :save_button, '#edit-submit'
 
