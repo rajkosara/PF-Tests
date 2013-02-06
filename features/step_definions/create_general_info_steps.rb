@@ -61,6 +61,19 @@ When /^I submit a general info page with an external link$/ do
   step "I save the general info page"
 end
 
+When /^I submit a general info page with an internal link$/ do
+  step "the create general info page is displayed"
+  step "I enter a title for the general info page"
+  step "I enter a summary for the general info page"
+  step "I enter a body for the general info page"
+  step "I enter an internal link for the general info page"
+  step "I save the general info page"
+end
+
+When /^I enter an internal link for the general info page$/ do
+  @british_council.create_general_info.internal_link.set @general_info_title
+end
+
 Then /^a "(.*?)" error message is displayed on the create general info page$/ do |error_message|
   @british_council.create_general_info.error_message.text.should include error_message
 end
@@ -73,4 +86,10 @@ end
 Then /^a zero characters remaining error message is displayed on the create general info page$/ do
   @british_council.create_general_info.counter_message.text.should include "Content limited to 60 characters, remaining: 0"
   @british_council.create_general_info.title.text.should_not == @title
+end
+
+Given /^I create a general info page$/ do
+  step "I navigate to the create general info page"
+  step "I submit a general info page"
+  @general_info_title = @general_info.title
 end

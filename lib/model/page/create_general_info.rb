@@ -5,7 +5,8 @@ class Model::Page::CreateGeneralInfo < SitePrism::Page
   element :title, "#edit-title-field-en-0-value"
   element :summary, "#edit-body-und-0-summary"
   element :body, "iframe#edit-body-und-0-value_ifr"
-  element :internal_link, "#edit-field-generic-internal-link-und"
+  element :internal_link, "#edit-field-generic-internal-link-und-0-target-id"
+  element :internal_link_dropdown, ".reference-autocomplete"
   element :error_message, "#console .error"
   element :save_button, '#edit-submit'
   element :counter_message, "#edit-title-field-en-0-value-counter"

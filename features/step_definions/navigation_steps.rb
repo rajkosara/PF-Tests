@@ -15,11 +15,12 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
   when 'create faq'
     @british_council.create_faq.load
     step "I create a faq object"
-
   when 'create general info'
     @british_council.create_general_info.load
     step "I create a general info object"
-
+  when 'create job'
+    @british_council.create_job.load
+    step "I create a job object"
   else raise "Haven't mapped the '#{page_name}' page"
   end
 end

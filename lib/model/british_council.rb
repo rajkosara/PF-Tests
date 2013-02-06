@@ -23,6 +23,10 @@ class Model::BritishCouncil
     Model::Page::CreateGeneralInfo.new
   end
 
+  def create_job
+    Model::Page::CreateJob.new
+  end
+
   def press_release
     Model::Page::PressRelease.new
   end
@@ -37,6 +41,10 @@ class Model::BritishCouncil
 
   def general_info
     Model::Page::GeneralInfo.new
+  end
+
+  def job
+    Model::Page::Job.new
   end
   
   def home

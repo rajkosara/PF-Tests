@@ -6,3 +6,7 @@ Then /^the external link is displayed on the general info page$/ do
   @british_council.general_info.external_link.text.should == @general_info.external_link_title
   @british_council.general_info.external_link[:href].should == "#{@general_info.external_link_link}/"
 end
+
+Then /^the internal link is displayed on the general info page$/ do
+  @british_council.general_info.internal_link.text.should == @general_info_title
+end
