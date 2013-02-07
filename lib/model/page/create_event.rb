@@ -12,6 +12,8 @@ class Model::Page::CreateEvent < SitePrism::Page
   element :geolocation, "#edit-field-generic-geolocation-map-und-0-address-field"
   element :get_location_button, "#geolocation-address-geocode-32-0"
   element :save_button, '#edit-submit'
+  element :error_message, "#console .error"
+  element :counter_message, "#edit-title-field-en-0-value-counter"
 
   sections :external_link, Model::Section::ExternalLink,".link-field-subrow"
 

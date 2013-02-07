@@ -13,13 +13,66 @@ end
 
 When /^I submit a event page$/ do
   step "the create event page is displayed"
+  Step "I enter a title for the event page"
+  step "I enter a summary for the event page"
+  step "I enter a description for the event page"
+  step "I enter a city for the event page"
+  #step "I enter a start date for the event page"
+  #step "I enter a end date for the event page"
+  step "I enter a external link for the event page"
+  step "I save the event page"
+end
+
+When /^I submit a event page without a title$/ do
+  step "the create event page is displayed"
+  step "I enter a description for the event page"
+  step "I enter a city for the event page"
+  step "I save the event page"
+end
+
+When /^I submit a event page without a description$/ do
+  step "the create event page is displayed"
+  step "I enter a title for the event page"
+  step "I enter a city for the event page"
+  step "I save the event page"
+end
+
+When /^I submit a event page without a city$/ do
+  step "the create event page is displayed"
+  step "I enter a title for the event page"
+  step "I enter a description for the event page"
+  step "I save the event page"
+end
+
+When /^I enter a title for the event page$/ do
   @british_council.create_event.title.set @event.title
+end
+
+When /^I enter a summary for the event page$/ do
   @british_council.create_event.summary.set @event.summary
+end
+
+When /^I enter a description for the event page$/ do
   @british_council.create_event.event_description.native.send_keys @event.event_description
+end
+
+When /^I enter a city for the event page$/ do
   @british_council.create_event.city.set @event.city
-  #@british_council.create_event.start_date.set @event.start_date
-  #@british_council.create_event.end_date.set @event.end_date
+end
+
+When /^I enter a start date for the event page$/ do
+  @british_council.create_event.start_date.set @event.start_date
+end
+
+When /^I enter a end date for the event page$/ do
+  @british_council.create_event.end_date.set @event.end_date
+end
+
+When /^I enter a external link for the event page$/ do
   @british_council.create_event.external_link.first.title.set @event.external_link_title
   @british_council.create_event.external_link.first.link.set @event.external_link_link
-  step "I save the event page"
+end
+
+Then /^a "(.*?)" error message is displayed on the create event page$/ do |error_message|
+  @british_council.create_event.error_message.text.should include error_message
 end
