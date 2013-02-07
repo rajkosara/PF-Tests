@@ -33,6 +33,12 @@ class Model::Domain::Content
   attr_accessor :internal_ref
   attr_accessor :how_to_apply
   attr_accessor :role_overview
+  attr_accessor :event_description
+  attr_accessor :city
+  attr_accessor :start_date
+  attr_accessor :end_date
+  attr_accessor :geolocation
+
 
 
   def set_content_type content_type
@@ -91,6 +97,18 @@ class Model::Domain::Content
       @internal_link =  ""
       @external_link_title = "General info external link title #{Time.current.strftime("%T")} #{String.random(4)}"
       @external_link_link = "https://www.google.co.uk"
+
+    when :event
+      @title = "Event Title #{Time.current.strftime("%T")} #{String.random(4)}"
+      @summary = "Event Summary #{Time.current.strftime("%T")} #{String.random(4)}"
+      @event_description = "Event Event Description \n #{Time.current.strftime("%T")} #{String.random(4)}"
+      @city = "London"
+      @start_date = 1.days.from_now.strftime("%d/%m/%Y")
+      @end_date  =  10.days.from_now.strftime("%d/%m/%Y")
+      @internal_link = ""
+      @external_link_title = "General info external link title #{Time.current.strftime("%T")} #{String.random(4)}"
+      @external_link_link = "https://www.google.co.uk"
+      @geolocation = "Spring Gardens, London, UK"
     end
   end
 end

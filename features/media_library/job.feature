@@ -2,7 +2,7 @@
 Feature: Job
 
   @complete @solas_158 @core
-  Scenario Outline: Create a general info page
+  Scenario Outline: Create a job page
     Given I am logged in as an <user_type> user
     When I navigate to the create job page
     And I submit a job page

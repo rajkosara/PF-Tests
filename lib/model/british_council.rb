@@ -27,6 +27,10 @@ class Model::BritishCouncil
     Model::Page::CreateJob.new
   end
 
+  def create_event
+    Model::Page::CreateEvent.new
+  end
+
   def press_release
     Model::Page::PressRelease.new
   end
@@ -45,6 +49,10 @@ class Model::BritishCouncil
 
   def job
     Model::Page::Job.new
+  end
+
+  def event
+    Model::Page::Event.new
   end
   
   def home
