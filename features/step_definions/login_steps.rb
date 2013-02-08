@@ -43,3 +43,15 @@ end
 Then /^the admin user is logged out$/ do
   @british_council.login.should_not have_drupal_admin_header
 end
+
+When /^I enter the invalid user username$/ do
+  @british_council.login.username.set "invalid_user"
+end
+
+When /^I enter the invalid user password$/ do
+  @british_council.login.password.set "invalid_user"
+end
+
+Then /^the unrecognized username or password error message is displayed$/ do
+  @british_council.login.error_message.text.should include "Sorry, unrecognized username or password"
+end

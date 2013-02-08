@@ -2,7 +2,7 @@
 Feature: Login
 
   @complete @solas_204 @core
-  Scenario Outline: User logs in
+  Scenario Outline: User logs in successfully
     Given I navigate to the login page
     When I enter the <user_type> user username
     And I enter the <user_type> user password
@@ -16,6 +16,22 @@ Feature: Login
       | author    |
       | manager   |
       | producer  |
+
+  @complete @solas_204 @core
+  Scenario: User logs in unsuccessfully
+    Given I navigate to the login page
+    When I enter the invalid user username
+    And I enter the invalid user password
+    And I click on login
+    Then the unrecognized username or password error message is displayed
+
+  @complete @solas_204 @core
+  Scenario: User logs in with invalid password unsuccessfully
+    Given I navigate to the login page
+    When I enter the admin user username
+    And I enter the invalid user password
+    And I click on login
+    Then the unrecognized username or password error message is displayed
 
   @complete @solas_205 @core
   Scenario: User logs out
