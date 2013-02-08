@@ -1,11 +1,18 @@
 @login
 Feature: Login
 
-  @complete
-  Scenario: User logs in as a super user
+  @complete @solas_204 @core
+  Scenario Outline: User logs in
     Given I navigate to the login page
-    When I enter he super user username
-    And I enter the super user password
+    When I enter the <user_type> user username
+    And I enter the <user_type> user password
     And I click on login
     Then the admin header is displayed at the top of the page
-    And the admin page should be displayed
+    And the admin header displays the <user_type> username
+
+    Examples:
+      | user_type |
+      | admin     |
+      | author    |
+      | manager   |
+      | producer  |
