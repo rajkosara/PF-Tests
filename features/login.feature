@@ -16,3 +16,9 @@ Feature: Login
       | author    |
       | manager   |
       | producer  |
+
+  @complete @solas_205 @core
+  Scenario: User logs out
+    Given I am logged in as an admin user
+    When I log out
+    Then the admin user is logged out

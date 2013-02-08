@@ -35,3 +35,11 @@ end
 Given /^the login page is no longer displayed$/ do
   @british_council.should_not have_login
 end
+
+When /^I log out$/ do
+  @british_council.login.drupal_admin_header.log_out.click
+end
+
+Then /^the admin user is logged out$/ do
+  @british_council.login.should_not have_drupal_admin_header
+end
