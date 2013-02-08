@@ -35,3 +35,12 @@ Feature: Event
     When I navigate to the create event page
     And I submit a event page without a city
     Then a "City field is required" error message is displayed on the create event page
+
+  @complete @solas_144 @core
+  Scenario: Max length of title is enforced
+    Given I am logged in as a producer user
+    And I navigate to the create event page
+    When I enter a title with 70 characters for the event page
+    And I enter a description for the event page
+    And I enter a city for the event page
+    Then a zero characters remaining error message is displayed on the create event page

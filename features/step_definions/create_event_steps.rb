@@ -76,3 +76,13 @@ end
 Then /^a "(.*?)" error message is displayed on the create event page$/ do |error_message|
   @british_council.create_event.error_message.text.should include error_message
 end
+
+When /^I enter a title with 70 characters for the event page$/ do
+  @title = String.random(70)
+  @british_council.create_event.title.set @title
+end
+
+Then /^a zero characters remaining error message is displayed on the create event page$/ do
+  @british_council.create_event.counter_message.text.should include "Content limited to 60 characters, remaining: 0"
+  @british_council.create_event.title.text.should_not == @title
+end
