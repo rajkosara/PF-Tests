@@ -28,3 +28,8 @@ Given /^I create a press release object$/ do
   @press_release = Model::Domain::Content.new
   @press_release.set_content_type :press_release
 end
+
+When /^I create a landing page object$/ do
+  @landing_page = Model::Domain::Content.new
+  @landing_page.set_content_type :landing_page
+end

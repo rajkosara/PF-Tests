@@ -24,6 +24,9 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
   when 'create event'
     @british_council.create_event.load
     step "I create a event object"
+  when 'create landing page'
+    @british_council.create_landing_page.load
+    step "I create a landing page object"
   else raise "Haven't mapped the '#{page_name}' page"
   end
 end

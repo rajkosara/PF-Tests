@@ -56,9 +56,3 @@ end
 Then /^the unrecognized username or password error message is displayed$/ do
   @british_council.login.error_message.text.should include "Sorry, unrecognized username or password"
 end
-
-Given /^I run a test$/ do
-  @user = Helpers::UserManager.get_admin_user
-  puts @user.username
-  puts @user.password
-end

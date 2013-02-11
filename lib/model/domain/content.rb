@@ -109,6 +109,11 @@ class Model::Domain::Content
       @external_link_title = "General info external link title #{Time.current.strftime("%T")} #{String.random(4)}"
       @external_link_link = "https://www.google.co.uk"
       @geolocation = "Spring Gardens, London, UK"
+
+    when :landing_page
+      @title = "Landing Page Title #{Time.current.strftime("%T")} #{String.random(4)}"
+      @summary = "Landing Page Summary #{Time.current.strftime("%T")} #{String.random(4)}"
+      @body = "Landing Page Description \n #{Time.current.strftime("%T")} #{String.random(4)}"
     end
   end
 end

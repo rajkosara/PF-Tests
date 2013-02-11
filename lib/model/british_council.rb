@@ -31,6 +31,10 @@ class Model::BritishCouncil
     Model::Page::CreateEvent.new
   end
 
+  def create_landing_page
+    Model::Page::CreateLandingPage.new
+  end
+
   def press_release
     Model::Page::PressRelease.new
   end
@@ -53,6 +57,10 @@ class Model::BritishCouncil
 
   def event
     Model::Page::Event.new
+  end
+
+  def landing_page
+    Model::Page::LandingPage.new
   end
   
   def home
