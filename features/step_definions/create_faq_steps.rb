@@ -1,9 +1,3 @@
-#this step should only be used as part of other steps and not in scenarios
-Given /^I create a faq object$/ do
-  @faq = Model::Domain::Content.new
-  @faq.set_content_type :faq
-end
-
 Then /^the create faq page is displayed$/ do
   @british_council.create_faq.should be_displayed
 end

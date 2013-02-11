@@ -1,9 +1,4 @@
 #encoding: utf-8
-When /^I create a job object$/ do
-  @job = Model::Domain::Content.new
-  @job.set_content_type :job
-end
-
 Then /^the create job page is displayed$/ do
   @british_council.create_job.should be_displayed
 end

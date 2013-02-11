@@ -1,9 +1,3 @@
-#this step should only be used as part of other steps and not in scenarios
-When /^I create a general info object$/ do
-  @general_info = Model::Domain::Content.new
-  @general_info.set_content_type :general_info
-end
-
 Then /^the create general info page is displayed$/ do
   @british_council.create_general_info.should be_displayed
 end

@@ -1,8 +1,3 @@
-When /^I create a event object$/ do
-  @event = Model::Domain::Content.new
-  @event.set_content_type :event
-end
-
 Then /^the create event page is displayed$/ do
   @british_council.create_event.should be_displayed
 end

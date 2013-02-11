@@ -1,9 +1,10 @@
 When /^I enter the (admin|author|manager|producer) user username$/ do |user_type|
-  @british_council.login.username.set Helpers::Config["#{user_type}_username"]
+  step "I am a #{user_type} user"
+  @british_council.login.username.set @user.username
 end
 
 When /^I enter the (admin|author|manager|producer) user password$/ do |user_type|
-  @british_council.login.password.set Helpers::Config["#{user_type}_password"]
+  @british_council.login.password.set @user.password
 end
 
 When /^I click on login$/ do
@@ -54,4 +55,10 @@ end
 
 Then /^the unrecognized username or password error message is displayed$/ do
   @british_council.login.error_message.text.should include "Sorry, unrecognized username or password"
+end
+
+Given /^I run a test$/ do
+  @user = Helpers::UserManager.get_admin_user
+  puts @user.username
+  puts @user.password
 end

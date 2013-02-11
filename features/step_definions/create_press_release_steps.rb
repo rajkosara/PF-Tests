@@ -1,9 +1,3 @@
-#this step should only be used as part of other steps and not in scenarios
-Given /^I create a press release object$/ do
-  @press_release = Model::Domain::Content.new
-  @press_release.set_content_type :press_release
-end
-
 Then /^the create press release page is displayed$/ do
   @british_council.create_press_release.should be_displayed
 end
