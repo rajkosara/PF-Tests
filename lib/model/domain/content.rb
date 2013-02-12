@@ -38,6 +38,7 @@ class Model::Domain::Content
   attr_accessor :start_date
   attr_accessor :end_date
   attr_accessor :geolocation
+  attr_accessor :menu_title
 
 
 
@@ -114,6 +115,7 @@ class Model::Domain::Content
       @title = "Landing Page Title #{Time.current.strftime("%T")} #{String.random(4)}"
       @summary = "Landing Page Summary #{Time.current.strftime("%T")} #{String.random(4)}"
       @body = "Landing Page Description \n #{Time.current.strftime("%T")} #{String.random(4)}"
+      @menu_title = "Landing Page Menus #{Time.current.strftime("%T")} #{String.random(4)}"
     end
   end
 end

@@ -12,6 +12,8 @@ require 'tzinfo'
 
 require './ext/string'
 require './ext/time'
+require './ext/capybara'
+
 
 #Set the timezone to be London time
 Time.zone = 'Europe/London'
