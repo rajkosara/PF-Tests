@@ -2,6 +2,11 @@ Then /^the create general info page is displayed$/ do
   @british_council.create_general_info.should be_displayed
 end
 
+Then /^the create general info page is not displayed$/ do
+  Timeout.timeout(30) { sleep(0.1) while @british_council.create_general_info.displayed?}
+  @british_council.create_general_info.should_not be_displayed
+end
+
 When /^I save the general info page$/ do
   @british_council.create_general_info.save_button.click
 end
@@ -86,4 +91,16 @@ Given /^I create a general info page$/ do
   step "I navigate to the create general info page"
   step "I submit a general info page"
   @general_info_title = @general_info.title
+end
+
+When /^I enter a title containing some punctuation marks for a general info page$/ do
+  @british_council.create_general_info.title.set 'Title with punctuation marks " _ : | {} & @ /'
+end
+
+When /^I enter a title of "(.*?)" for the general info page$/ do |title|
+  @british_council.create_general_info.title.set title
+end
+
+When /^I enter a title containing some punctuation marks$/ do
+  @british_council.create_general_info.title.set 'Title with punctuation marks " _ : | {} & @ /'
 end

@@ -58,3 +58,20 @@ Feature: General info
     When I navigate to the create general info page
     And I submit a general info page with an internal link
     Then the internal link is displayed on the general info page
+
+  @complete @solas_232 @core
+  Scenario: Stop words are removed from filname
+    Given I am logged in as an admin user
+    When I navigate to the create general info page
+    And I enter a title of "My Title should be a an as but is off on onto the" for the general info page
+    And I save the general info page
+    Then the filename of the general info will not include the stop words
+
+  @complete @solas_232 @core
+  Scenario: Punctuation marks are removed from filname
+    Given I am logged in as an admin user
+    When I navigate to the create general info page
+    And I enter a title containing some punctuation marks for a general info page
+    And I enter a body for the general info page
+    And I save the general info page
+    Then the filename of the general info page will not include the punctuation marks

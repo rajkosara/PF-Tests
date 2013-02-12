@@ -10,3 +10,13 @@ end
 Then /^the internal link is displayed on the general info page$/ do
   @british_council.general_info.internal_link.text.should == @general_info_title
 end
+
+Then /^the filename of the general info page will not include the stop words$/ do
+  @british_council.general_info.filename.should_not include("a" && "an" && "as" && "but" && "is" && "off" && "on" && "onto" && "the")
+end
+
+Then /^the filename of the general info page will not include the punctuation marks$/ do
+  step "the create general info page is not displayed"
+  @british_council.general_info.filename.should_not include('"' && '_' && ':' && '|' && '{' && '}' && '&' && '@' && '/')
+end
+
