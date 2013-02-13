@@ -7,14 +7,6 @@ class Model::BritishCouncil
     Model::Page::Administration.new
   end
 
-  def create_press_release
-    Model::Page::CreatePressRelease.new
-  end
-
-  def create_blog
-    Model::Page::CreateBlog.new
-  end
-
   def create_faq
     Model::Page::CreateFaq.new
   end
@@ -33,14 +25,6 @@ class Model::BritishCouncil
 
   def create_landing_page
     Model::Page::CreateLandingPage.new
-  end
-
-  def press_release
-    Model::Page::PressRelease.new
-  end
-
-  def blog
-    Model::Page::Blog.new
   end
 
   def faq
