@@ -20,3 +20,10 @@ Then /^the filename of the general info page will not include the punctuation ma
   @british_council.general_info.filename.should_not include('"' && '_' && ':' && '|' && '{' && '}' && '&' && '@' && '/')
 end
 
+Then /^the description meta tag is displayed on the general info page$/ do
+  @british_council.general_info.description_meta_tag[:content].should == @general_info.summary
+end
+
+Then /^the title meta tag is displayed on the general info page$/ do
+  @british_council.general_info.title_meta_tag.text.should include @general_info.title
+end
