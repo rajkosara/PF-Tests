@@ -60,3 +60,8 @@ Then /^a zero characters remaining error message is displayed on the create faq 
   @british_council.create_faq.counter_message.text.should include "Content limited to 60 characters, remaining: 0"
   @british_council.create_faq.question.text.should_not == @title
 end
+
+Given /^I create a faq page$/ do
+  step "I navigate to the create faq page"
+  step "I submit a faq page"
+end

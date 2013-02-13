@@ -44,3 +44,12 @@ Feature: Faq
     And I enter a category for the faq page
     And I enter a question with 70 characters for the faq page
     Then a zero characters remaining error message is displayed on the create faq page
+
+  @complete @solas_418 @core
+  Scenario: Override link answer field
+    Given I am logged in as an admin user
+    And I navigate to the edit faq settings page
+    When I edit the faq display label on the edit faq settings page
+    And I save the edit faq settings page
+    And I create a faq page
+    Then the faq display label is displayed correctly

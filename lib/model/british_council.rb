@@ -62,6 +62,10 @@ class Model::BritishCouncil
   def landing_page
     Model::Page::LandingPage.new
   end
+
+  def edit_faq_settings
+    Model::Page::EditFaqSetting.new
+  end
   
   def home
     Model::Page::Home.new
