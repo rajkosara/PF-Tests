@@ -34,6 +34,8 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
 end
 
 Given /^I am using a mobile device$/ do
-  config.current_driver = :iphone_chrome
+  #the below has been commented out due to the fact that it opens up a second browser for some reason. I will look to fix later
+  #Capybara.current_driver = :iphone_chrome
+  #Capybara.use_default_driver
   Helpers::Browser.resize_window
 end

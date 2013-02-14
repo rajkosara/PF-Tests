@@ -59,20 +59,17 @@ Given /^I create a published landing page$/ do
 end
 
 Given /^I enter a menu link for a landing page$/ do
-  #I need to create a section for all the stuff that in in the tabs at the bottom of the screen
   @british_council.create_landing_page.meta_config.menu_tab.click
   @british_council.create_landing_page.meta_config.menu_settings.enable_menu.click
   @british_council.create_landing_page.meta_config.menu_settings.title.set @landing_page.menu_title
   @org_landing_page_menu_title = @landing_page.menu_title
-  
 end
 
 Given /^I publish the landing page$/ do
-  #create a section for the publish options tab
   @british_council.create_landing_page.meta_config.publish_tab.click
   @british_council.create_landing_page.meta_config.publish_status.click
 end
 
 Then /^the created landing pages menu is displayed in the menu list$/ do
-  @british_council.create_landing_page.meta_config.menu_settings.parent_menu_options_text.should include @org_landing_page_menu_title
+  @british_council.create_landing_page.meta_config.menu_settings.parent_menu_options_text.should include @org_landing_page_menu_title[0...27]
 end

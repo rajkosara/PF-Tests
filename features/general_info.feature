@@ -65,7 +65,7 @@ Feature: General info
     When I navigate to the create general info page
     And I enter a title of "My Title should be a an as but is off on onto the" for the general info page
     And I save the general info page
-    Then the filename of the general info will not include the stop words
+    Then the filename of the general info page will not include the stop words
 
   @complete @solas_232 @core
   Scenario: Punctuation marks are removed from filname

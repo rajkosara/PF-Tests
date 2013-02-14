@@ -2,6 +2,8 @@ defaults: &execution_defaults
   default_config: local_env_kr
 local_env_kr:
   <<: *execution_defaults
+  # site name
+  country_site: Korea
   #capybara settings
   default_wait_time: 5
   #urls
@@ -19,6 +21,8 @@ local_env_kr:
   producer_password: 'producer'
 test_env_kr:
   <<: *execution_defaults
+  # site name
+  country_site: Korea
   #capybara settings
   default_wait_time: 8
   #urls
