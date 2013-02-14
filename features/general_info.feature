@@ -75,3 +75,11 @@ Feature: General info
     And I enter a body for the general info page
     And I save the general info page
     Then the filename of the general info page will not include the punctuation marks
+
+  @wip @solas_416 @core
+  Scenario: Title and body are displayed on general info page
+    Given I am logged in as an author user
+    When I navigate to the create general info page
+    And I submit a general info page
+    Then the body is displayed on the general info page
+    And the title is displayed on the general info page

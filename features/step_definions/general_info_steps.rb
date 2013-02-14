@@ -27,3 +27,11 @@ end
 Then /^the title meta tag is displayed on the general info page$/ do
   @british_council.general_info.title_meta_tag.text.should include @general_info.title
 end
+
+Then /^the body is displayed on the general info page$/ do
+  @british_council.general_info.body.text.should include @general_info.body
+end
+
+Then /^the title is displayed on the general info page$/ do
+  @british_council.general_info.title.text.should include @general_info.title
+end

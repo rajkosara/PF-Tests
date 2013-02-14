@@ -1,4 +1,6 @@
 class Model::Page::GeneralInfo < SitePrism::Page
+  element :title, "#bc-page-title"
+  element :body, ".bc-body-content"
   element :status, ".status"
   element :description_meta_tag, "meta[name='description'][content]"
   element :title_meta_tag, "title"
