@@ -4,11 +4,12 @@ end
 
 When /^I save the event page$/ do
   @british_council.create_event.save_button.click
+  wait_for_ajax
 end
 
 When /^I submit a event page$/ do
   step "the create event page is displayed"
-  Step "I enter a title for the event page"
+  step "I enter a title for the event page"
   step "I enter a summary for the event page"
   step "I enter a description for the event page"
   step "I enter a city for the event page"
@@ -69,7 +70,13 @@ When /^I enter a external link for the event page$/ do
 end
 
 Then /^a "(.*?)" error message is displayed on the create event page$/ do |error_message|
+  #this isnt pretty, but for some reason it makes the test work
+  wait_for_ajax
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_event.displayed?}
   @british_council.create_event.error_message.text.should include error_message
+  wait_for_ajax
+  step "the create event page is displayed"
+  #sleep 3
 end
 
 When /^I enter a title with 70 characters for the event page$/ do

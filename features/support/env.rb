@@ -30,12 +30,31 @@ Capybara.configure do |config|
 end
 
 Capybara.register_driver :selenium_chrome do |app|
+  profile = Selenium::WebDriver::Chrome::Profile.new
+  profile["browser.cache.disk.enable"] = false
+  profile["browser.cache.memory.enable"] = false
+  profile["browser.cache.offline.enable"] = false
+  profile["network.http.use-cache"] = false
+  profile["extensions.update.enabled"] = false
+  profile["privacy.clearOnShutdown.cookies"] = true
+  profile["privacy.clearOnShutdown.cache"] = true
+  profile["app.update.enabled"] = false
+  profile["app.update.auto"] = false
   Capybara::Selenium::Driver.new(app, :browser => :chrome)
 end
 
 Capybara.register_driver :iphone_chrome do |app|
-  profile1 = Selenium::WebDriver::Chrome::Profile.new
-  Capybara::Selenium::Driver.new(app, :browser => :chrome, :profile => profile1, :switches=>['--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5'] )
+  profile = Selenium::WebDriver::Chrome::Profile.new
+  profile["browser.cache.disk.enable"] = false
+  profile["browser.cache.memory.enable"] = false
+  profile["browser.cache.offline.enable"] = false
+  profile["network.http.use-cache"] = false
+  profile["extensions.update.enabled"] = false
+  profile["privacy.clearOnShutdown.cookies"] = true
+  profile["privacy.clearOnShutdown.cache"] = true
+  profile["app.update.enabled"] = false
+  profile["app.update.auto"] = false
+  Capybara::Selenium::Driver.new(app, :browser => :chrome, :profile => profile, :switches=>['--user-agent=Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9 (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5'] )
 end
 
 module StuffWeWantAvailable

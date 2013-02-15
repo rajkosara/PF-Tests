@@ -1,5 +1,4 @@
 Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
-  #creates the instance variable that is the site
   @british_council = Model::BritishCouncil.new
   case page_name
   when 'login'
