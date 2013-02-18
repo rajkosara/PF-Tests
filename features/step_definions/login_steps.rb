@@ -33,6 +33,11 @@ Given /^I am logged in as (?:an|a|the) (admin|author|manager|producer) user$/ do
   step "I click on login"
 end
 
+Given /^I log out and log back in as (?:an|a|the) (admin|author|manager|producer) user$/ do |user_type|
+  step "I log out"
+  step "I am logged in as an #{user_type} user"
+end
+
 Given /^the login page is no longer displayed$/ do
   @british_council.should_not have_login
 end

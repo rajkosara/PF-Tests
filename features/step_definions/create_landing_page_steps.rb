@@ -56,6 +56,8 @@ Given /^I create a published landing page$/ do
   step "I enter a menu link for a landing page"
   step "I publish the landing page"
   step "I submit a landing page"
+  step "the landing page is created"
+  @org_title = @landing_page.title
 end
 
 Given /^I enter a menu link for a landing page$/ do
@@ -66,10 +68,53 @@ Given /^I enter a menu link for a landing page$/ do
 end
 
 Given /^I publish the landing page$/ do
-  @british_council.create_landing_page.meta_config.publish_settings.publish_tab.click
+  @british_council.create_landing_page.meta_config.publish_tab.click
   @british_council.create_landing_page.meta_config.publish_settings.publish_status.click
 end
 
 Then /^the created landing pages menu is displayed in the menu list$/ do
   @british_council.create_landing_page.meta_config.menu_settings.parent_menu_options_text.should include @org_landing_page_menu_title[0...27]
+end
+
+Then /^wait for edit landing page to be displayed$/ do
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.current_url.include? "/edit"}
+  @british_council.create_landing_page.current_url.should include "/edit"
+end
+
+When /^I edit the published landing page fields$/ do
+  @british_council.create_landing_page.body.native.send_keys "edited"
+  step "I save the landing page"
+end
+
+When /^I enter a child page into the child listing page management$/ do
+  #i dont like this, i will at making it better when a time comes
+  @british_council.create_landing_page.list_management.set @org_title
+  @british_council.create_landing_page.list_management.native.send_keys :arrow_down
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_dropdown.visible?}
+  @british_council.create_landing_page.list_management.native.send_keys :arrow_down
+  @british_council.create_landing_page.list_management.native.send_keys :enter
+  Timeout.timeout(30) { sleep(0.1) while @british_council.create_landing_page.list_management.text == @org_title}
+  wait_for_ajax
+  step "I save the landing page"
+end
+
+When /^I enter the general info page and landing page as children$/ do
+  #enter general info page
+  @british_council.create_landing_page.list_management.set @general_info_title
+  @british_council.create_landing_page.list_management.native.send_keys :arrow_down
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_dropdown.visible?}
+  @british_council.create_landing_page.list_management.native.send_keys :arrow_down
+  @british_council.create_landing_page.list_management.native.send_keys :enter
+  Timeout.timeout(30) { sleep(0.1) while @british_council.create_landing_page.list_management.text == @general_info_title}
+  #add another children item
+  @british_council.create_landing_page.add_another_item.click
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_management_second.visible?}
+  #enter landing page
+  @british_council.create_landing_page.list_management_second.set @landing_page.title
+  @british_council.create_landing_page.list_management_second.native.send_keys :arrow_down
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_dropdown.visible?}
+  @british_council.create_landing_page.list_management_second.native.send_keys :arrow_down
+  @british_council.create_landing_page.list_management_second.native.send_keys :enter
+  Timeout.timeout(30) { sleep(0.1) while @british_council.create_landing_page.list_management_second.text == @landing_page.title}
+  wait_for_ajax
 end

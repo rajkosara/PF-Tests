@@ -71,6 +71,18 @@ end
 
 When /^I enter an internal link for the general info page$/ do
   @british_council.create_general_info.internal_link.set @general_info_title
+  #this code should work....
+  #sleep 3
+  #@british_council.create_general_info.internal_link.native.send_keys :enter
+  #sleep 3
+  #@british_council.create_general_info.internal_link.native.send_keys :arrow_down
+  #sleep 4
+  #Timeout.timeout(30) { sleep(0.1) until @british_council.create_general_info.internal_link_dropdown.visible?}
+  #@british_council.create_general_info.internal_link.native.send_keys :arrow_down
+  #sleep 3
+  #@british_council.create_general_info.internal_link.native.send_keys :enter
+  #sleep 4
+  #Timeout.timeout(30) { sleep(0.1) while   @british_council.create_general_info.internal_link.text == @org_title}
 end
 
 Then /^a "(.*?)" error message is displayed on the create general info page$/ do |error_message|

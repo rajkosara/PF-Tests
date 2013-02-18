@@ -28,6 +28,11 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
     step "I create a landing page object"
   when 'edit faq settings'
     @british_council.edit_faq_settings.load
+  when 'add image'
+    @british_council.add_image.load
+    step "I create a image object"
+  when "created published landing"
+    visit @created_landing_url
   else raise "Haven't mapped the '#{page_name}' page"
   end
 end

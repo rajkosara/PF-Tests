@@ -18,3 +18,8 @@ end
 When /^I create a landing page object$/ do
   @landing_page = Model::Domain::LandingPage.new
 end
+
+When /^I create a image object$/ do
+  @image = Model::Domain::Media.new
+  @image.set_content_type :image
+end

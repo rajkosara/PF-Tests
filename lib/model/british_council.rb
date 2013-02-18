@@ -27,6 +27,10 @@ class Model::BritishCouncil
     Model::Page::CreateLandingPage.new
   end
 
+  def add_image
+    Model::Page::AddImage.new
+  end
+
   def faq
     Model::Page::Faq.new
   end

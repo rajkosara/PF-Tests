@@ -5,4 +5,5 @@ class Model::Domain::Content
   attr_accessor :language
   attr_accessor :body
   attr_accessor :menu_link
+  attr_accessor :menu_title
 end

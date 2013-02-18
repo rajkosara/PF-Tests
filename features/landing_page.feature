@@ -40,3 +40,47 @@ Feature: Landing page
     And I create a published landing page
     When I navigate to the create landing page page
     Then the created landing pages menu is displayed in the menu list
+
+  @complete @solas_345 @core
+  Scenario Outline: Editing a landing page body field
+    Given I am logged in as an admin user
+    And I create a published landing page
+    And I log out and log back in as an <user_type> user
+    When I navigate to the created published landing page
+    And I choose to the edit landing page
+    And I edit the published landing page fields
+    Then the landing page is displayed with the edited values
+
+    Examples:
+      | user_type |
+      | manager   |
+      | producer  |
+      | admin     |
+
+  @complete @solas_345 @core
+  Scenario: Editing a landing page body field for an author
+    Given I am logged in as an admin user
+    And I create a published landing page
+    And I log out and log back in as an author user
+    When I navigate to the created published landing page
+    Then the edit button is not displayed
+
+  @complete @solas_403 @core
+  Scenario: Add a page to a landing page
+    Given I am logged in as an admin user
+    And I create a published landing page
+    When I navigate to the created published landing page
+    And I choose to the edit landing page
+    And I enter a child page into the child listing page management
+    Then the page is displayed on the listing page
+
+  @complete @solas_403 @core
+  Scenario: Add and order pages on a landing page
+    Given I am logged in as an admin user
+    And I create a published landing page
+    And I create a general info page
+    When I navigate to the created published landing page
+    And I choose to the edit landing page
+    And I enter the general info page and landing page as children
+    And I save the landing page
+    Then the general info page and landing page are displayed in the correct order

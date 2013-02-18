@@ -1,8 +1,13 @@
 @add_image
 Feature: add image to the media library
-  As an author
-  I want to add image(s)
-  So that these image(s) are available for our country site users.
+
+  @not_started @solas_259 @core
+  Scenario: Add image to media library
+    Given I am logged in as an admin user
+    And I navigate to the add image page
+    When I add an image to the media library
+    Then the image is added to the media library
+
 
   @not_started
   Scenario Outline: Add valid image during page creation
