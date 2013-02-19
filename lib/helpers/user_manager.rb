@@ -31,6 +31,7 @@ class Helpers::UserManager
     user = Model::Domain::User.new
     user.username = user.set_username default_username
     user.password = user.set_password default_password
+    user.email = user.set_email default_email
     user
   end
 
@@ -42,5 +43,9 @@ class Helpers::UserManager
 
   def self.default_password
     "Password_01"
+  end
+
+  def self.default_email
+    "#{String.random(8)}@example.com"
   end
 end

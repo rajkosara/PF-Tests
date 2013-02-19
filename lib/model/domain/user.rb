@@ -1,10 +1,12 @@
 class Model::Domain::User
   attr_accessor :username
   attr_accessor :password
+  attr_accessor :email
 
   def initialize
     @username = ""
     @password = ""
+    @email = ""
     self
   end
 

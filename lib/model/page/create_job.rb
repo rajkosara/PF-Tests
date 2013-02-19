@@ -19,5 +19,7 @@ class Model::Page::CreateJob < SitePrism::Page
   element :counter_message, "#edit-title-field-en-0-value-counter"
   element :save_button, '#edit-submit'
 
+  section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
+    
   sections :external_link, Model::Section::ExternalLink,".link-field-subrow"
 end

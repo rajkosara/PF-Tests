@@ -31,6 +31,10 @@ class Model::BritishCouncil
     Model::Page::AddImage.new
   end
 
+  def add_user
+    Model::Page::AddUser.new
+  end
+
   def faq
     Model::Page::Faq.new
   end
@@ -49,6 +53,10 @@ class Model::BritishCouncil
 
   def landing_page
     Model::Page::LandingPage.new
+  end
+
+  def user
+    Model::Page::User.new
   end
 
   def edit_faq_settings

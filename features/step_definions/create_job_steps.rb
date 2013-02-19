@@ -103,3 +103,24 @@ Then /^a zero characters remaining error message is displayed on the create job 
   @british_council.create_job.counter_message.text.should include "Content limited to 60 characters, remaining: 0"
   @british_council.create_job.job_title.text.should_not == @title
 end
+
+Then /^I publish a job page$/ do
+  @british_council.create_job.meta_config.publish_tab.click
+  @british_council.create_job.meta_config.publish_settings.publish_status.click
+end
+
+When /^I submit a published job page$/ do
+  step "the create job page is displayed"
+  step "I enter a job title for the job page"
+  step "I enter a summary for the job page"
+  step "I enter a job aim for the job page"
+  step "I enter a location for the job page"
+  step "I enter a salary for the job page"
+  step "I enter a duration for the job page"
+  step "I enter a annual leave for the job page"
+  step "I enter a internal ref for the job page"
+  step "I enter a how to apply for the job page"
+  step "I enter a role overview for the job page"
+  step "I publish a job page"
+  step "I save the job page"
+end

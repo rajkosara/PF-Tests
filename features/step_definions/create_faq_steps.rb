@@ -65,3 +65,17 @@ Given /^I create a faq page$/ do
   step "I navigate to the create faq page"
   step "I submit a faq page"
 end
+
+Then /^I publish a faq page$/ do
+  @british_council.create_faq.meta_config.publish_tab.click
+  @british_council.create_faq.meta_config.publish_settings.publish_status.click
+end
+
+When /^I submit a published faq page$/ do
+  step "the create faq page is displayed"
+  step "I enter a question for the faq page"
+  step "I enter an answer for the faq page"
+  step "I enter a category for the faq page"
+  step "I publish a faq page"
+  step "I save the faq page"
+end

@@ -10,3 +10,7 @@ Given /^I am a (admin|author|manager|producer) user$/ do |user_type|
     @user = Helpers::UserManager.get_producer_user
   end
 end
+
+When /^I create a new user$/ do
+  @new_user = Helpers::UserManager.create_user
+end

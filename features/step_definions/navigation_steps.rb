@@ -31,8 +31,11 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
   when 'add image'
     @british_council.add_image.load
     step "I create a image object"
-  when "created published landing"
+  when 'created published landing'
     visit @created_landing_url
+  when 'add user'
+    @british_council.add_user.load
+    step "I create a new user"
   else raise "Haven't mapped the '#{page_name}' page"
   end
 end

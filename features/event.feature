@@ -15,6 +15,20 @@ Feature: Event
       | manager   |
       | producer  |
 
+  @complete @solas_144 @core @failing
+  Scenario Outline: Create a published  event page
+    Given I am logged in as an <user_type> user
+    When I navigate to the create event page
+    And I submit a published event page
+    Then the event page is created
+
+    Examples:
+      | user_type |
+      | admin     |
+      | author    |
+      | manager   |
+      | producer  |
+
   @complete @solas_144 @core
   Scenario: Error message displayed when title field is not filled in
     Given I am logged in as an author user

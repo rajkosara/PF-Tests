@@ -16,6 +16,20 @@ Feature: Faq
       | producer  |
 
   @complete @solas_157 @core
+  Scenario Outline: Create a published faq page
+    Given I am logged in as an <user_type> user
+    When I navigate to the create faq page
+    And I submit a published faq page
+    Then the faq page is created
+
+    Examples:
+      | user_type |
+      | admin     |
+      | author    |
+      | manager   |
+      | producer  |
+
+  @complete @solas_157 @core
   Scenario: Error message displayed when question field not filled in
     Given I am logged in as an author user
     When I navigate to the create faq page

@@ -88,3 +88,22 @@ Then /^a zero characters remaining error message is displayed on the create even
   @british_council.create_event.counter_message.text.should include "Content limited to 60 characters, remaining: 0"
   @british_council.create_event.title.text.should_not == @title
 end
+
+
+Then /^I publish a event page$/ do
+  @british_council.create_event.meta_config.publish_tab.click
+  @british_council.create_event.meta_config.publish_settings.publish_status.click
+end
+
+When /^I submit a published event page$/ do
+  step "the create event page is displayed"
+  step "I enter a title for the event page"
+  step "I enter a summary for the event page"
+  step "I enter a description for the event page"
+  step "I enter a city for the event page"
+  #step "I enter a start date for the event page"
+  #step "I enter a end date for the event page"
+  step "I enter a external link for the event page"
+  step "I publish a event page"
+  step "I save the event page"
+end
