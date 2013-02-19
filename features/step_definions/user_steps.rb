@@ -15,7 +15,6 @@ When /^I submit a new (admin|author|manager|producer) user$/ do |role|
   @british_council.add_user.email.set @new_user.email
   @british_council.add_user.password.set @new_user.password
   @british_council.add_user.confirm_password.set @new_user.password
-
   case role
   when "admin"
     step "I select the Site Administrator checkbox"
@@ -34,7 +33,7 @@ Then /^I save the users details$/ do
   @british_council.add_user.create_new_user_button.click
 end
 
-Then /^the user have been successfully created$/ do
+Then /^the user has been successfully created$/ do
   @british_council.add_user.status_message.text.should include "Created a new user account for #{@new_user.username}."
 end
 
@@ -53,4 +52,36 @@ end
 Then /^the users details are successfully edited$/ do
   @british_council.add_user.status_message.text.should include "The changes have been saved."
   @british_council.add_user.username.value.should include @new_username
+end
+
+When /^I submit a new author user with an invalid password$/ do
+  step "the add user page is displayed"
+  @simple_password = "password"
+  @british_council.add_user.username.set @new_user.username
+  @british_council.add_user.email.set @new_user.email
+  @british_council.add_user.password.set @simple_password
+  @british_council.add_user.confirm_password.set @simple_password
+  step "I save the users details"
+end
+
+Then /^the user has not been successfully created$/ do
+  @british_council.add_user.status_message.text.should include "Error message"
+  @british_council.add_user.status_message.text.should include "Password must have 1 integers"
+end
+
+Then /^the user and user role is displayed in the list$/ do
+  @british_council.user_list.should be_displayed
+  @i = @british_council.user_list.user_record.find do |user_row|
+     user_row.username.text.to_s.include? @new_user.username
+  end
+  @i.username.text == @new_user.username
+  @i.roles.text == "Content Manager"
+end
+
+Then /^the user can not view add user page$/ do
+  @british_council.add_user.unahorized_message.text.should include "You are not authorized to access this page."
+end
+
+Then /^the user can not view user list page$/ do
+  @british_council.user_list.unahorized_message.text.should include "You are not authorized to access this page."
 end

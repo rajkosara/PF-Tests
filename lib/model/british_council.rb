@@ -59,6 +59,10 @@ class Model::BritishCouncil
     Model::Page::User.new
   end
 
+  def user_list
+    Model::Page::UserList.new
+  end
+
   def edit_faq_settings
     Model::Page::EditFaqSetting.new
   end

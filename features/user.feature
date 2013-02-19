@@ -6,7 +6,7 @@ Feature: user
     Given I am logged in as an admin user
     And I navigate to the add user page
     When I submit a new <user_type> user
-    Then the user have been successfully created
+    Then the user has been successfully created
 
     Examples:
       | user_type |
@@ -24,3 +24,42 @@ Feature: user
     When I select to edit the user
     And I edit the users details
     Then the users details are successfully edited
+
+  @complete @solas_207 @core
+  Scenario Outline: User should not be able to view add userpage
+    Given I am logged in as an <user_type> user
+    When I navigate to the add user page
+    Then the user can not view add user page
+
+    Examples:
+      | user_type |
+      | author    |
+      | manager   |
+      | producer  |
+
+  @complete @solas_207 @core @failing
+  Scenario: Create a user with an invalid password
+    Given I am logged in as an admin user
+    And I navigate to the add user page
+    When I submit a new author user with an invalid password
+    Then the user has not been successfully created
+
+  @compete @solas_206 @core
+  Scenario: Find a user
+    Given I am logged in as an admin user
+    And I navigate to the add user page
+    When I submit a new manager user
+    And I navigate to the user list page
+    Then the user and user role is displayed in the list
+
+  @complete @solas_206 @core
+  Scenario Outline: User should not be able to view userlist page
+    Given I am logged in as an <user_type> user
+    When I navigate to the user list page
+    Then the user can not view user list page
+
+    Examples:
+      | user_type |
+      | author    |
+      | manager   |
+      | producer  |
