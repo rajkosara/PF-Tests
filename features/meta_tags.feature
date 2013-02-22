@@ -16,3 +16,4 @@ Feature: Meta tags
     When I navigate to the create general info page
     And I submit a general info page
     Then the title meta tag is displayed on the general info page
+

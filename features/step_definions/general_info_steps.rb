@@ -35,3 +35,7 @@ end
 Then /^the title is displayed on the general info page$/ do
   @british_council.general_info.title.text.should include @general_info.title
 end
+
+Then /^the filename displays the custom url filename on the general info page$/ do
+  @british_council.general_info.filename.should == @general_info.alternate_filename.gsub(" ", "-").downcase
+end

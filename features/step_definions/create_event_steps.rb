@@ -107,3 +107,15 @@ When /^I submit a published event page$/ do
   step "I publish a event page"
   step "I save the event page"
 end
+
+When /^I open the url path settings on the create event page$/ do
+  @british_council.create_faq.meta_config.url_path_setting.click
+end
+
+Then /^the generate automatic URL alias is checked by default on the create event page$/ do
+  @british_council.create_faq.meta_config.url_path_settings.generate_auto_url_checkbox.should be_checked
+end
+
+Then /^the filename field is disabled by default on the create event page$/ do
+  @british_council.create_faq.meta_config.url_path_settings.filename[:disabled] == true
+end

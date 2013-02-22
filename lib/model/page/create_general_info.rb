@@ -10,6 +10,8 @@ class Model::Page::CreateGeneralInfo < SitePrism::Page
   element :error_message, "#console .error"
   element :save_button, '#edit-submit'
   element :counter_message, "#edit-title-field-en-0-value-counter"
+
+  section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
   
   sections :external_link, Model::Section::ExternalLink,".link-field-subrow"
 end

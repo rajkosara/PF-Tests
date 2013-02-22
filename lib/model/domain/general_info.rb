@@ -10,6 +10,7 @@ class Model::Domain::GeneralInfo < Model::Domain::Content
     @internal_link = ""
     @external_link_title = "General info external link title #{Time.current.strftime("%T")} #{String.random(4)}"
     @external_link_link = "https://www.google.co.uk"
+    @alternate_filename = "General info alternate filename #{String.random(6)}"
   end
 end
 

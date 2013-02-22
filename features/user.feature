@@ -20,7 +20,7 @@ Feature: user
     Given I am logged in as an admin user
     And I navigate to the add user page
     And I submit a new author user
-    And the user have been successfully created
+    And the user has been successfully created
     When I select to edit the user
     And I edit the users details
     Then the users details are successfully edited
@@ -63,3 +63,14 @@ Feature: user
       | author    |
       | manager   |
       | producer  |
+
+
+  @complete @solas_208 @core
+  Scenario: Bloack a user
+    Given I am logged in as an admin user
+    And I navigate to the add user page
+    And I submit a new author user
+    And the user has been successfully created
+    When I select to edit the user
+    And I block the created user
+    Then the users has been successfully blocked

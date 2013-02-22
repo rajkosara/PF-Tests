@@ -118,3 +118,15 @@ When /^I enter the general info page and landing page as children$/ do
   Timeout.timeout(30) { sleep(0.1) while @british_council.create_landing_page.list_management_second.text == @landing_page.title}
   wait_for_ajax
 end
+
+When /^I open the url path settings on the create landing page page$/ do
+  @british_council.create_landing_page.meta_config.url_path_setting.click
+end
+
+Then /^the generate automatic URL alias is checked by default on the create landing page page$/ do
+  @british_council.create_landing_page.meta_config.url_path_settings.generate_auto_url_checkbox.should be_checked
+end
+
+Then /^the filename field is disabled by default on the create landing page page$/ do
+  @british_council.create_landing_page.meta_config.url_path_settings.filename[:disabled] == true
+end

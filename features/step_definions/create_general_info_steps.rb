@@ -19,6 +19,14 @@ When /^I submit a general info page$/ do
   step "I save the general info page"
 end
 
+When /^I submit a general info page a custom url filename$/ do
+    step "I enter a title for the general info page"
+    step "I enter a body for the general info page"
+    step "I open the url path settings on the create general info page"
+    step "I enter a custom url filename for a create general info page"
+    step "I save the general info page"
+end
+
 When /^I enter a title for the general info page$/ do
   @british_council.create_general_info.title.set @general_info.title
 end
@@ -115,4 +123,22 @@ end
 
 When /^I enter a title containing some punctuation marks$/ do
   @british_council.create_general_info.title.set 'Title with punctuation marks " _ : | {} & @ /'
+end
+
+When /^I open the url path settings on the create general info page$/ do
+  @british_council.create_general_info.meta_config.url_path_setting.click
+end
+
+Then /^the generate automatic URL alias is checked by default on the create general info page$/ do
+  @british_council.create_general_info.meta_config.url_path_settings.generate_auto_url_checkbox.should be_checked
+end
+
+Then /^the filename field is disabled by default on the create general info page$/ do
+  @british_council.create_general_info.meta_config.url_path_settings.filename[:disabled] == true
+end
+
+When /^I enter a custom url filename for a create general info page$/ do
+  @british_council.create_general_info.meta_config.url_path_settings.generate_auto_url_label.click
+  @british_council.create_general_info.meta_config.url_path_settings.generate_auto_url_checkbox.should_not be_checked
+  @british_council.create_general_info.meta_config.url_path_settings.filename.set @general_info.alternate_filename
 end

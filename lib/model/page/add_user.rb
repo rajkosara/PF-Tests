@@ -11,6 +11,7 @@ class Model::Page::AddUser < SitePrism::Page
   element :error_message, ".messages .element-invisible"
   element :user_link, ".messages em.placeholder"
   element :unahorized_message, "#block-system-main"
-
+  
+  elements :user_status, "#edit-status .form-type-radio label"
   elements :roles, "#edit-roles .form-type-checkbox label"
 end
