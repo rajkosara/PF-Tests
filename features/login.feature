@@ -1,7 +1,7 @@
 @login
 Feature: Login
 
-  @complete @solas_204 @core @smoke @wip
+  @complete @solas_204 @core @smoke
   Scenario Outline: User logs in successfully
     Given I navigate to the login page
     When I enter the <user_type> user username

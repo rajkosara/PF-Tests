@@ -5,7 +5,7 @@ class Model::Page::Login < SitePrism::Page
   element :username, '#edit-name'
   element :password, '#edit-pass'
   element :login_button, '#edit-submit'
-  element :error_message, ".messages"
+  element :error_message, "#bc-messages"
 
   section :drupal_admin_header, Model::Section::DrupalAdminHeader, '#admin-menu-wrapper'
 end
