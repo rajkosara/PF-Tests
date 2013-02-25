@@ -7,9 +7,9 @@ Before('@firefox') do
 end
 
 Before do
-  sleep 1
+  sleep 1.5
 end
 
 After do
-  sleep 1
+  sleep 1.5
 end

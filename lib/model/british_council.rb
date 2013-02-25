@@ -70,6 +70,10 @@ class Model::BritishCouncil
   def edit_faq_settings
     Model::Page::EditFaqSetting.new
   end
+
+  def course
+    Model::Page::Course.new
+  end
   
   def home
     Model::Page::Home.new
