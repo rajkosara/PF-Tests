@@ -7,10 +7,10 @@ custom: -f pretty <%= ENV["TAGS"] %>
 specific: -f pretty --tags <%= ENV['TAGS'] %>
 purchase_journey: -f pretty --tags @purchase_journey
 jenkins_complete: -f pretty -t @complete -t ~@not_implemented -t ~@problematic -t ~@nightly -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
-jenkins_complete_passing: -q -f pretty -t @complete -t ~@search -t ~@not_implemented -t ~@problematic -t ~@nightly -t ~@failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+jenkins_complete_passing: -q -f pretty -t @complete -t ~@search -t ~@not_implemented -t ~@problematic -t ~@nightly -t ~@failing -f junit -o <%= ENV['JUNIT_OUTPUT_COMPLETE_NO_FAILING'] %>
 jenkins_complete_search: -q -f pretty -t @complete -t @search -t ~@nightly -t ~@failing -t ~@not_implemented -t ~@problematic -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
 jenkins_complete_failing: -q -f pretty -t @complete -t ~@not_implemented -t ~@problematic -t ~@nightly -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
-jenkins_smoke: -q -f pretty -t @smoke -t -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
-jenkins_caching: -f pretty -t @caching -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+jenkins_smoke: -q -f pretty -t @smoke -f junit -o <%= ENV['JUNIT_OUTPUT_SMOKE'] %>
+jenkins_caching: -f pretty -t @caching -f JUnit -o <%= ENV['JUNIT_OUTPUT'] %>
 smoke: -f pretty --tags @smoke
 feature: -f pretty -t @complete -t ~@failing  -t <%= ENV['TAG'] %>
