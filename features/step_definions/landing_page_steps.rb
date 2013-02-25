@@ -27,7 +27,7 @@ end
 
 Then /^the page is displayed on the listing page$/ do
   Timeout.timeout(30) { sleep(0.1) until @british_council.landing_page.title.visible?}
-  @british_council.landing_page.child_pages.text.should include @org_title
+  @british_council.landing_page.first_child.text.should include @org_title
 end
 
 Then /^the general info page and landing page are displayed in the correct order$/ do

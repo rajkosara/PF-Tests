@@ -4,6 +4,7 @@ class Model::Page::LandingPage < SitePrism::Page
   element :title, "#bc-page-title"
   element :summary, "meta[name='description'][content]"
   element :body, ".bc-body-content"
+  
   elements :child_pages, ".bc-box a[href]"
 
   def first_child

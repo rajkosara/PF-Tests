@@ -15,7 +15,7 @@ Feature: Faq
       | manager   |
       | producer  |
 
-  @complete @solas_157 @core
+  @complete @failing @solas_157 @core
   Scenario Outline: Create a published faq page
     Given I am logged in as an <user_type> user
     When I navigate to the create faq page
