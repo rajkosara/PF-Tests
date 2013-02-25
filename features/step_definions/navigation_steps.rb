@@ -33,6 +33,9 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
     step "I create a image object"
   when 'created published landing'
     visit @created_landing_url
+  when 'create course'
+    @british_council.create_course.load
+    step "I create a course object"
   when 'add user'
     @british_council.add_user.load
     step "I create a new user"

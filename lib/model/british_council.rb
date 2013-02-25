@@ -11,6 +11,10 @@ class Model::BritishCouncil
     Model::Page::CreateFaq.new
   end
 
+  def create_course
+    Model::Page::CreateCourse.new
+  end
+
   def create_general_info
     Model::Page::CreateGeneralInfo.new
   end
