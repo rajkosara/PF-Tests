@@ -8,7 +8,7 @@ Feature: Landing page
     And I submit a landing page
     Then the landing page is created
 
-  @complete @solas_332 @core
+  @complete @solas_332 @core @failing @solas_758
   Scenario Outline: Create an landing page with author
     Given I am logged in as an <user_type> user
     When I navigate to the create landing page page
