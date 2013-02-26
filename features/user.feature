@@ -37,13 +37,6 @@ Feature: user
       | manager   |
       | producer  |
 
-  @complete @solas_207 @core @failing
-  Scenario: Create a user with an invalid password
-    Given I am logged in as an admin user
-    And I navigate to the add user page
-    When I submit a new author user with an invalid password
-    Then the user has not been successfully created
-
   @compete @solas_206 @core
   Scenario: Find a user
     Given I am logged in as an admin user

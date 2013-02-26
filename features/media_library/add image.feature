@@ -1,13 +1,19 @@
 @add_image
 Feature: add image to the media library
 
-  @not_started @solas_259 @core
-  Scenario: Add image to media library
-    Given I am logged in as an admin user
+  @complete @solas_259 @core
+  Scenario Outline: Add image to media library
+    Given I am logged in as an <user_type> user
     And I navigate to the add image page
     When I add an image to the media library
     Then the image is added to the media library
 
+    Examples:
+      | user_type |
+      | admin     |
+      | author    |
+      | manager   |
+      | producer  |
 
   @not_started
   Scenario Outline: Add valid image during page creation

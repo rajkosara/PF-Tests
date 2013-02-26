@@ -74,6 +74,10 @@ class Model::BritishCouncil
   def course
     Model::Page::Course.new
   end
+
+  def image
+    Model::Page::Image.new
+  end
   
   def home
     Model::Page::Home.new
