@@ -18,5 +18,6 @@ class Model::Domain::Course < Model::Domain::Content
     @calendar_pricing_body = "Course Calender and Pricing Body #{Time.current.strftime("%T")} #{String.random(4)}"
     @menu_title = "Course menu link #{String.random(4)}"
     @alternate_filename = "General info alternate filename #{String.random(6)}"
+    @levels = "Basic"
   end
 end

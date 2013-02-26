@@ -146,3 +146,21 @@ When /^I publish a course$/ do
   @british_council.create_course.meta_config.publish_tab.click
   @british_council.create_course.meta_config.publish_settings.publish_status.click
 end
+
+When /^I submit a course page with levels$/ do
+  step "the create course page is displayed"
+  step "I enter a course summary on the create course page"
+  step "I enter a about course body on the create course page"
+  step "I enter a course title on the create course page"
+  step "I click on the second tab on the create course page"
+  step "I enter a title for the second tab on the create course page"
+  step "I enter a body for the second tab on the create course page"
+  step "I click on the third tab on the create course page"
+  step "I enter a title for the third tab on the create course page"
+  step "I enter a body for the third tab on the create course page"
+  step "I click on the calendar and pricing tab on the create course page"
+  step "I enter a body for the calendar and pricing tab on the create course page"
+  @british_council.create_course.levels_tab.click
+  @british_council.create_course.levels_textbox.set @course.levels
+  step "I click save on the create course page on the create course page"
+end

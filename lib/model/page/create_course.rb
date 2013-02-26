@@ -22,6 +22,10 @@ class Model::Page::CreateCourse < SitePrism::Page
   element :calendar_pricing_tab, ".horizontal-tab-button-3 a[href]"
   element :calendar_pricing_body, "iframe#edit-field-course-cal-pricing-body-und-0-value_ifr"
 
+  #levels
+  element :levels_tab, ".horizontal-tab-button-4 a[href]"
+  element :levels_textbox, "#edit-field-generic-location-und-0-value"
+
   element :error_message, "#console .error"
   element :save_button, '#edit-submit'
   element :counter_message, "#edit-title-field-en-0-value-counter"

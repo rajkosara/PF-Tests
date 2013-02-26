@@ -26,3 +26,8 @@ end
 Then /^the landing page is the course pages parent$/ do
   @british_council.course.current_url.should include "#{@landing_page.title.downcase.gsub(" ","-").gsub(":","")}/#{@course.title.downcase.gsub(" ","-").gsub(":","")}"
 end
+
+Then /^the levels tab is displayed on the course page$/ do
+  @british_council.course.should have_levels_tab
+  @british_council.course.levels_tab.text.should include "Levels"
+end
