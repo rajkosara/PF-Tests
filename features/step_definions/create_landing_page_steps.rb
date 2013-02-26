@@ -130,3 +130,7 @@ end
 Then /^the filename field is disabled by default on the create landing page page$/ do
   @british_council.create_landing_page.meta_config.url_path_settings.filename[:disabled] == true
 end
+
+When /^I select to display the landing page with a two column layout without images$/ do
+  @british_council.create_landing_page.two_column_checkbox.click
+end

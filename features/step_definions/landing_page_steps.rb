@@ -35,3 +35,8 @@ Then /^the general info page and landing page are displayed in the correct order
   @british_council.landing_page.first_child.text.should include @general_info_title
   @british_council.landing_page.second_child.text.should include @landing_page.title
 end
+
+Then /^two columns are displayed on the landing page$/ do
+  @british_council.landing_page.two_column.text.should include @general_info_title
+  @british_council.landing_page.two_column.text.should include @landing_page.title
+end

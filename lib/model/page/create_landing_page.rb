@@ -13,6 +13,7 @@ class Model::Page::CreateLandingPage < SitePrism::Page
   element :list_management_second, "#edit-field-child-listing-page-managem-und-1-target-id"
   element :list_dropdown, ".reference-autocomplete"
   element :add_another_item, "input[name='field_child_listing_page_managem_add_more']"
+  element :two_column_checkbox, "label[for*='edit-field-course-list-view-mode-und-landing-col-two-no-img']"
 
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
 end

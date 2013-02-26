@@ -84,3 +84,15 @@ Feature: Landing page
     And I enter the general info page and landing page as children
     And I save the landing page
     Then the general info page and landing page are displayed in the correct order
+
+  @complete @solas_693 @core
+  Scenario: Create landing page with two columns
+    Given I am logged in as an admin user
+    And I create a published landing page
+    And I create a general info page
+    When I navigate to the created published landing page
+    And I choose to the edit landing page
+    And I enter the general info page and landing page as children
+    And I select to display the landing page with a two column layout without images
+    And I save the landing page
+    Then two columns are displayed on the landing page

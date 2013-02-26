@@ -21,6 +21,7 @@ end
 When /^I submit a course page without a course title$/ do
   step "the create course page is displayed"
   step "I enter a about course body on the create course page"
+  @british_council.create_course.title.set ""
   step "I enter a course summary on the create course page"
   step "I click on the second tab on the create course page"
   step "I enter a title for the second tab on the create course page"
