@@ -15,46 +15,33 @@ Feature: add image to the media library
       | manager   |
       | producer  |
 
-  @not_started
-  Scenario Outline: Add valid image during page creation
-    Given I am logged in as an author
-    And I navigate to the create press release page
-    When I add a <type> image to the media library
-    Then the image is saved in the media library
+  @complete @solas_259 @core
+  Scenario Outline: Add different types of image
+    Given I am logged in as an <user_type> user
+    And I navigate to the add image page
+    When I add an <image_type> image to the media library
+    Then the image is added to the media library
 
     Examples:
-      | type |
-      | jpg  |
-      | jpeg |
-      | png  |
+      | image_type | user_type |
+      | png        | admin     |
+      | jpg        | author    |
+      | jpeg       | manager   |
 
-  @not_started
-  Scenario Outline: Add invalid image during page creation
-    Given I am logged in as an author
-    And I navigate to the create press release page
-    When I add a <type> image to the media library
-    Then the image is not saved in the media library
-    And an invalid image type error message is displayed
+  @complete @solas_259 @core
+  Scenario: Add invalid image type
+    Given I am logged in as an author user
+    And I navigate to the add image page
+    When I add an gif image to the media library
+    Then an image type error is displayed on the add image page
 
-    Examples:
-      | type |
-      | tiff |
-      | gif  |
-
-  @not_started
-  Scenario: Add image with vaild size (<1mb)
-    Given I am logged in as an author
-    And I navigate to the create press release page
-    When I add a 1mb image to the media library
-    Then the image is saved in the media library
-
-  @not_started
+  @complete @solas_259 @core
   Scenario: Add image with invalid size (>1mb)
-    Given I am logged in as an author
-    And I navigate to the create press release page
-    When I add a less then 1mb image to the media library
-    Then the image is not saved in the media library
-    And an invalid image type error message is displayed
+    Given I am logged in as an author user
+    And I navigate to the add image page
+    When I add an invaild sized image to the media library
+    Then an image size error is displayed on the add image page
+
 
   @not_started
   Scenario: Add image with a title

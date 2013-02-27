@@ -6,6 +6,7 @@ class Model::Page::AddImage < SitePrism::Page
   element :image_upload_button, "#edit-field-image-und-0-upload-button"
   element :copyright_info, "#edit-field-copyright-and-source-right-und-0-value"
   element :throbber, ".throbber"
+  element :image_error, ".error"
 
   section :media_fields, Model::Section::MediaSection, ".content"
 end

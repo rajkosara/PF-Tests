@@ -1,13 +1,73 @@
 When /^I add an image to the media library$/ do
-  @british_council.add_image.media_fields.title.set @image.title
-  @british_council.add_image.media_fields.description.set @image.description
-  @british_council.add_image.image_path.set @image.path
-  @british_council.add_image.image_upload_button.click
+  step "I enter a title on the add image page"
+  step "I enter a description on the add image page"
+  step "I enter a image path on the add image page"
+  step "I click the image upload button on the add image page"
   wait_for_ajax
-  @british_council.add_image.copyright_info.set @image.copyright_info
-  @british_council.add_image.media_fields.save_button.click
+  step "I enter copyright info on the add image page"
+  step "I click the save button on the add image page"
 end
 
 Then /^the image is added to the media library$/ do
   @british_council.image.status.text.should include "Media image #{@image.title} has been created."
+end
+
+When /^I add an (png|jpg|jpeg) image to the media library$/ do |image_format|
+  step "I enter a title on the add image page"
+  step "I enter a description on the add image page"
+
+  case image_format
+  when "png"
+    step "I enter a image path on the add image page"
+  when "jpg"
+    @british_council.add_image.image_path.set @image.jpg_path
+  when "jpeg"
+    @british_council.add_image.image_path.set @image.jpeg_path
+  end
+  step "I click the image upload button on the add image page"
+  wait_for_ajax
+  step "I enter copyright info on the add image page"
+  step "I click the save button on the add image page"
+end
+
+Then /^I enter a title on the add image page$/ do
+  @british_council.add_image.media_fields.title.set @image.title
+end
+
+Then /^I enter a description on the add image page$/ do
+  @british_council.add_image.media_fields.description.set @image.description
+end
+
+Then /^I enter a image path on the add image page$/ do
+  @british_council.add_image.image_path.set @image.path
+end
+
+Then /^I click the image upload button on the add image page$/ do
+  @british_council.add_image.image_upload_button.click
+end
+
+Then /^I enter copyright info on the add image page$/ do
+  @british_council.add_image.copyright_info.set @image.copyright_info
+end
+
+Then /^I click the save button on the add image page$/ do
+  @british_council.add_image.media_fields.save_button.click
+end
+
+Then /^an image type error is displayed on the add image page$/ do
+  @british_council.add_image.image_error.text.should include "The selected file #{@image.gif} cannot be uploaded"
+end
+
+Then /^I add an gif image to the media library$/ do
+  @british_council.add_image.image_path.set @image.gif_path
+end
+
+When /^I add an invaild sized image to the media library$/ do
+  @british_council.add_image.image_path.set @image.large_path
+  wait_for_ajax
+  step "I click the image upload button on the add image page"
+end
+
+Then /^an image size error is displayed on the add image page$/ do
+  @british_council.add_image.image_error.text.should include "exceeding the maximum file size of 1 MB"
 end
