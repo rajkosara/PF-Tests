@@ -2,6 +2,7 @@ class Model::Domain::Event < Model::Domain::Content
   attr_accessor :event_description
   attr_accessor :city
   attr_accessor :start_date
+  attr_accessor :end_date
   attr_accessor :internal_link
   attr_accessor :external_link_title
   attr_accessor :external_link_link

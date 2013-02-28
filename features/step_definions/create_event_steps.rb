@@ -13,8 +13,8 @@ When /^I submit a event page$/ do
   step "I enter a summary for the event page"
   step "I enter a description for the event page"
   step "I enter a city for the event page"
-  #step "I enter a start date for the event page"
-  #step "I enter a end date for the event page"
+  step "I enter a start date for the event page"
+  step "I enter a end date for the event page"
   step "I enter a external link for the event page"
   step "I save the event page"
 end

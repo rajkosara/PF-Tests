@@ -7,13 +7,17 @@ Before('@firefox') do
 end
 
 Before do
-  if ENV['JUNIT_OUTPUT'] != nil
+  puts ENV['JUNIT_OUTPUT']
+  case ENV['JUNIT_OUTPUT']
+  when ENV['JUNIT_OUTPUT'] != nil
     sleep 1.5
   end
 end
 
 After do
-  if ENV['JUNIT_OUTPUT'] != nil
-    sleep 2
+  puts ENV['JUNIT_OUTPUT']
+  case ENV['JUNIT_OUTPUT']
+  when ENV['JUNIT_OUTPUT'] != nil
+    sleep 1.5
   end
 end
