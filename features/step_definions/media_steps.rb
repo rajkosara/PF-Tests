@@ -71,3 +71,16 @@ end
 Then /^an image size error is displayed on the add image page$/ do
   @british_council.add_image.image_error.text.should include "exceeding the maximum file size of 1 MB"
 end
+
+When /^I add an image to the media library without a tile$/ do
+  step "I enter a description on the add image page"
+  step "I enter a image path on the add image page"
+  step "I click the image upload button on the add image page"
+  wait_for_ajax
+  step "I enter copyright info on the add image page"
+  step "I click the save button on the add image page"
+end
+
+Then /^a "(.*?)" error message is displayed on the add image page$/ do |error_message|
+  @british_council.add_image.image_error.text.should include error_message
+end
