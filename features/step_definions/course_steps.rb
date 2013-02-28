@@ -1,5 +1,6 @@
 Then /^the course page is created$/ do
   @british_council.course.status.text.should include "Course #{@course.title} has been created."
+  @created_course_url = @british_council.course.current_url
 end
 
 When /^I select to edit the course page$/ do
@@ -30,4 +31,8 @@ end
 Then /^the levels tab is displayed on the course page$/ do
   @british_council.course.should have_levels_tab
   @british_council.course.levels_tab.text.should include "Levels"
+end
+
+Then /^the course title is displayed on the course page$/ do
+  @british_council.course.title.text.should == @course.title
 end

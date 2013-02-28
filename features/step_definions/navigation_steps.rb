@@ -33,6 +33,8 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
     step "I create a image object"
   when 'created published landing'
     visit @created_landing_url
+  when 'created course'
+    visit @created_course_url
   when 'create course'
     @british_council.create_course.load
     step "I create a course object"
@@ -50,4 +52,8 @@ Given /^I am using a mobile device$/ do
   #Capybara.current_driver = :iphone_chrome
   #Capybara.use_default_driver
   Helpers::Browser.resize_window
+end
+
+When /^I navigate to the created course page with the custom landing page url$/ do
+  visit "#{Helpers::Config['korea_site_root']}/#{@landing_page.alternate_filename.downcase.gsub(" ","-").gsub(":","")}/#{@course.title.downcase.gsub(" ","-").gsub(":","")}"
 end

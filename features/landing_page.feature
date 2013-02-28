@@ -74,7 +74,7 @@ Feature: Landing page
     And I enter a child page into the child listing page management
     Then the page is displayed on the listing page
 
-  @complete @solas_403 @core
+  @complete @solas_403 @core @failing
   Scenario: Add and order pages on a landing page
     Given I am logged in as an admin user
     And I create a published landing page

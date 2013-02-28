@@ -6,13 +6,26 @@ class Model::Page::LandingPage < SitePrism::Page
   element :body, ".bc-body-content"
   element :two_column, ".bc-boxes-2-ltr .bc-boxes-2"
   
-  elements :child_pages, ".bc-box a[href]"
+  elements :child_pages_title, ".bc-box a[href] h2"
+  elements :child_pages_summary, ".bc-box a[href] p"
 
-  def first_child
-    child_pages.first
+  def first_child_title
+    child_pages_title.first
   end
 
-  def second_child
-    child_pages[1]
+  def second_child_title
+    child_pages_title[1]
+  end
+
+  def first_child_summary
+    child_pages_summary.first
+  end
+
+  def second_child_summary
+    child_pages_summary[1]
+  end
+
+  def filename
+    current_url.gsub("#{Helpers::Config['korea_site_root']}/", "")
   end
 end

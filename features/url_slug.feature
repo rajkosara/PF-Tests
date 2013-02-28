@@ -20,15 +20,16 @@ Feature: URL slug
   Scenario: Enter a custom url filename
     Given I am logged in as an author user
     When I navigate to the create general info page
-    And I submit a general info page a custom url filename
+    And I submit a general info page with a custom url filename
     Then the title meta tag is displayed on the general info page
     And the filename displays the custom url filename on the general info page
 
-  @solas_133 @core
-  Scenario: Custom url is changed correctly when landing page file name is changed
+  @complete @solas_133 @core
+  Scenario: Add a course to a landing page and then change the landing page url
     Given I am logged in as an admin user
     And I create a published landing page
-    When I navigate to the created published landing page
-    And I choose to the edit landing page
-    And I enter a child page into the child listing page management
-    Then the page is displayed on the listing page
+    When I create a course page and place it under the landing page
+    And I edit the landing pages url filename
+    And the filename displays the custom url filename on the landing page
+    And I navigate to the created course page with the custom landing page url
+    Then the course title is displayed on the course page

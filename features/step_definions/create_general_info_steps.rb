@@ -19,12 +19,12 @@ When /^I submit a general info page$/ do
   step "I save the general info page"
 end
 
-When /^I submit a general info page a custom url filename$/ do
-    step "I enter a title for the general info page"
-    step "I enter a body for the general info page"
-    step "I open the url path settings on the create general info page"
-    step "I enter a custom url filename for a create general info page"
-    step "I save the general info page"
+When /^I submit a general info page with a custom url filename$/ do
+  step "I enter a title for the general info page"
+  step "I enter a body for the general info page"
+  step "I open the url path settings on the create general info page"
+  step "I enter a custom url filename for a create general info page"
+  step "I save the general info page"
 end
 
 When /^I enter a title for the general info page$/ do
