@@ -1,7 +1,7 @@
 @add_image
 Feature: add image to the media library
 
-  @complete @solas_259 @core
+  @complete @solas_259 @core @wip
   Scenario Outline: Add image to media library
     Given I am logged in as an <user_type> user
     And I navigate to the add image page

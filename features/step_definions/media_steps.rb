@@ -5,7 +5,12 @@ When /^I add an image to the media library$/ do
   step "I click the image upload button on the add image page"
   wait_for_ajax
   step "I enter copyright info on the add image page"
+  step "I enter a expiration date on the add image page"
   step "I click the save button on the add image page"
+end
+
+Then /^I enter a expiration date on the add image page$/ do
+  @british_council.add_image.media_fields.expiration_date.set @image.expiration_date
 end
 
 Then /^the image is added to the media library$/ do
