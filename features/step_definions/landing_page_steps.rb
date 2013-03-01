@@ -12,6 +12,11 @@ Given /^I choose to the edit landing page$/ do
   step "wait for edit landing page to be displayed"
 end
 
+Given /^I choose to the translate a landing page$/ do
+  @british_council.landing_page.translate_button.click
+  step "wait for translate page to be displayed"
+end
+
 Given /^I save the landing page url$/ do
   @created_landing_url = @british_council.landing_page.current_url
 end
@@ -44,4 +49,18 @@ end
 
 Then /^the filename displays the custom url filename on the landing page$/ do
   @british_council.landing_page.filename.should == @landing_page.alternate_filename.gsub(" ", "-").downcase
+end
+
+Then /^the translated menu link is displayed on the main menu$/ do
+  @translated_menu = @british_council.landing_page.header.main_menu.menu_item.select do |menu_title|
+    menu_title.text.include? "#{@landing_page.menu_title} Translated"
+  end
+  @translated_menu.size == 1
+end
+
+Then /^the translated menu link is not displayed on the main menu$/ do
+  @translated_menu = @british_council.landing_page.header.main_menu.menu_item.select do |menu_title|
+    menu_title.text.include? "#{@landing_page.menu_title} Translated"
+  end
+  @translated_menu.size == 0
 end

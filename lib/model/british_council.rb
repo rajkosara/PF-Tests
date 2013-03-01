@@ -82,4 +82,8 @@ class Model::BritishCouncil
   def home
     Model::Page::Home.new
   end
+
+  def translate
+    Model::Page::Translate.new
+  end
 end

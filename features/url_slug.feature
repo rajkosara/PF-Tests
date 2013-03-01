@@ -14,7 +14,7 @@ Feature: URL slug
       | admin     | general info |
       | author    | faq          |
       | manager   | event        |
-      | producer  | landing page |
+      | producer  | course       |
 
   @complete @solas_133 @core
   Scenario: Enter a custom url filename

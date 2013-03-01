@@ -9,7 +9,7 @@ Feature: Landing page
     Then the landing page is created
 
   @complete @solas_332 @core @failing @solas_758
-  Scenario Outline: Create an landing page with author
+  Scenario Outline: Create an landing page with non admin
     Given I am logged in as an <user_type> user
     When I navigate to the create landing page page
     Then the not authorized to access this page error is displayed
@@ -43,7 +43,7 @@ Feature: Landing page
 
   @complete @solas_345 @core
   Scenario Outline: Editing a landing page body field
-    Given I am logged in as an admin user
+    Given I am logged in as an author user
     And I create a published landing page
     And I log out and log back in as an <user_type> user
     When I navigate to the created published landing page
@@ -59,7 +59,7 @@ Feature: Landing page
 
   @complete @solas_345 @core
   Scenario: Editing a landing page body field for an author
-    Given I am logged in as an admin user
+    Given I am logged in as an author user
     And I create a published landing page
     And I log out and log back in as an author user
     When I navigate to the created published landing page
@@ -96,3 +96,22 @@ Feature: Landing page
     And I select to display the landing page with a two column layout without images
     And I save the landing page
     Then two columns are displayed on the landing page
+
+  @complete @solas_620 @core
+  Scenario: Translate main menu item appears in the menu
+    Given I am logged in as an admin user
+    And I create a published landing page
+    And I choose to the translate a landing page
+    When I click add translation on the translate page
+    And I translate the landing page
+    Then the translated menu link is displayed on the main menu
+
+  @complete @solas_620 @core
+  Scenario: Translate main menu item doesnt appears in the menu wrong menu
+    Given I am logged in as an admin user
+    And I create a published landing page
+    And I choose to the translate a landing page
+    When I click add translation on the translate page
+    And I translate the landing page
+    And I navigate to the home page
+    Then the translated menu link is not displayed on the main menu

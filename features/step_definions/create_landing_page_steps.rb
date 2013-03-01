@@ -81,6 +81,12 @@ Then /^wait for edit landing page to be displayed$/ do
   @british_council.create_landing_page.current_url.should include "/edit"
 end
 
+Then /^wait for translate landing page to be displayed$/ do
+  Timeout.timeout(30) { sleep(0.1) until @british_council.translate.current_url.include? "/translate"}
+  @british_council.translate.current_url.should include "/translate"
+end
+
+
 When /^I edit the published landing page fields$/ do
   @british_council.create_landing_page.body.native.send_keys "edited"
   step "I save the landing page"
@@ -146,5 +152,13 @@ When /^I edit the landing pages url filename$/ do
   step "I navigate to the created published landing page"
   step "I choose to the edit landing page"
   step "I enter a custom url filename for a create landing page page"
+  step "I save the landing page"
+end
+
+Given /^I translate the landing page$/ do
+  step "I publish the landing page"
+  @british_council.create_landing_page.meta_config.menu_tab.click
+  @british_council.create_landing_page.meta_config.menu_settings.enable_menu.click
+  @british_council.create_landing_page.meta_config.menu_settings.title.set "#{@landing_page.menu_title} Translated"
   step "I save the landing page"
 end

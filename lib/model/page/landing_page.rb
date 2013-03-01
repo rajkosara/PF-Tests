@@ -1,6 +1,7 @@
 class Model::Page::LandingPage < SitePrism::Page
   element :status, ".status"
   element :edit_button, ".tabs a[href*='edit']"
+  element :translate_button, ".tabs a[href*='translate']"
   element :title, "#bc-page-title"
   element :summary, "meta[name='description'][content]"
   element :body, ".bc-body-content"
@@ -8,6 +9,8 @@ class Model::Page::LandingPage < SitePrism::Page
   
   elements :child_pages_title, ".bc-box a[href] h2"
   elements :child_pages_summary, ".bc-box a[href] p"
+
+  section :header, Model::Section::Header, "#bc-header-wrapper"
 
   def first_child_title
     child_pages_title.first
