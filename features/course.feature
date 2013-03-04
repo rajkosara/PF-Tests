@@ -72,4 +72,4 @@ Feature: Course
     When I navigate to the create course page
     And I submit a course page
     And I am using a mobile device
-    Then the course details are displayed correctly
+    Then the course details are displayed correctly on mobile

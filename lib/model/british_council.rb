@@ -86,4 +86,8 @@ class Model::BritishCouncil
   def translate
     Model::Page::Translate.new
   end
+
+  def mobile_course
+    Model::Page::MobileCourse.new
+  end
 end
