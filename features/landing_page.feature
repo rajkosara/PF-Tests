@@ -43,7 +43,7 @@ Feature: Landing page
 
   @complete @solas_345 @core
   Scenario Outline: Editing a landing page body field
-    Given I am logged in as an author user
+    Given I am logged in as an admin user
     And I create a published landing page
     And I log out and log back in as an <user_type> user
     When I navigate to the created published landing page
@@ -59,7 +59,7 @@ Feature: Landing page
 
   @complete @solas_345 @core
   Scenario: Editing a landing page body field for an author
-    Given I am logged in as an author user
+    Given I am logged in as an admin user
     And I create a published landing page
     And I log out and log back in as an author user
     When I navigate to the created published landing page
