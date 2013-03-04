@@ -57,14 +57,6 @@ Feature: Landing page
       | producer  |
       | admin     |
 
-  @complete @solas_345 @core
-  Scenario: Editing a landing page body field for an author
-    Given I am logged in as an admin user
-    And I create a published landing page
-    And I log out and log back in as an author user
-    When I navigate to the created published landing page
-    Then the edit button is not displayed
-
   @complete @solas_403 @core
   Scenario: Add a page to a landing page
     Given I am logged in as an admin user
@@ -74,7 +66,7 @@ Feature: Landing page
     And I enter a child page into the child listing page management
     Then the page is displayed on the listing page
 
-  @complete @solas_403 @core @failing
+  @complete @solas_403 @core
   Scenario: Add and order pages on a landing page
     Given I am logged in as an admin user
     And I create a published landing page
