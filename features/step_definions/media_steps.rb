@@ -10,6 +10,7 @@ When /^I add an image to the media library$/ do
 end
 
 Then /^I enter a expiration date on the add image page$/ do
+  @british_council.add_image.media_fields.expiration_tab.click
   @british_council.add_image.media_fields.expiration_date.set @image.expiration_date
 end
 
