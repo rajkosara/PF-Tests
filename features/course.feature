@@ -65,3 +65,11 @@ Feature: Course
     And I submit a course page with levels
     Then the course page is created
     And the levels tab is displayed on the course page
+
+  @complete @solas_571 @core @mobile
+  Scenario: Course details are displayed correctly on mobile
+    Given I am logged in as an author user
+    When I navigate to the create course page
+    And I submit a course page
+    And I am using a mobile device
+    Then the course details are displayed correctly
