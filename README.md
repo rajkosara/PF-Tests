@@ -9,18 +9,21 @@ How to install the Automated tests for Mac mountain Lion
 6. cd to features
 7. open login.feature
 8. Now run rake cuke:specific TAGS=@login
+9. If all of these test pass, you are good to go
 
 
 -------------------------------------------------
 How to install the Automated tests for Windows
 
-1. Follow the first 7 steps in here http://www.richardlawrence.info/2011/08/20/getting-started-with-ruby-cucumber-and-capybara-on-windows/) 
-3. Go to the root of the test code on your machine and accept .rvmvc (if asked)
-4. Run gem install bundler at the tests root folder
-5. Go to Config/config.yml and change korea_site_root to your site root. Also, change the admin user name and passowrd to match yours.
+1. Follow the first 7 steps in here http://railsinstaller.org/
+2. Go to the root of the test code on your machine and accept .rvmvc (if asked)
+3. Run gem install bundler at the tests root folder
+4. Download chromedriver here http://code.google.com/p/chromedriver/downloads/list and place it in a place that your PATH can see (usr/bin or in the ruby bin)
+5. Go to Config/config.yml and change korea_site_root to your site root.
 6. cd to features
 7. open login.feature
 8. Now run rake cuke:specific TAGS=@login
+9. If all of these test pass, you are good to go
 
 
 
