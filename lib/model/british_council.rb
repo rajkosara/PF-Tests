@@ -31,6 +31,10 @@ class Model::BritishCouncil
     Model::Page::CreateLandingPage.new
   end
 
+  def create_teaching_centre
+    Model::Page::CreateTeachingCentre.new
+  end
+
   def add_image
     Model::Page::AddImage.new
   end
@@ -85,6 +89,10 @@ class Model::BritishCouncil
 
   def translate
     Model::Page::Translate.new
+  end
+
+  def teaching_centre
+    Model::Page::TeachingCentre.new
   end
 
   def mobile_course

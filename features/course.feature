@@ -66,7 +66,7 @@ Feature: Course
     Then the course page is created
     And the levels tab is displayed on the course page
 
-  @complete @solas_571 @core @mobile
+  @complete @solas_571 @core @mobile @wip
   Scenario: Course details are displayed correctly on mobile
     Given I am logged in as an author user
     When I navigate to the create course page

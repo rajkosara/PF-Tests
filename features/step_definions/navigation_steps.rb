@@ -38,6 +38,9 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
   when 'create course'
     @british_council.create_course.load
     step "I create a course object"
+  when 'create teaching centre'
+    @british_council.create_teaching_centre.load
+    step 'create a teaching centre object'
   when 'add user'
     @british_council.add_user.load
     step "I create a new user"
