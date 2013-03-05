@@ -8,7 +8,7 @@ class Model::Page::CreateGeneralInfo < SitePrism::Page
   element :internal_link, "#edit-field-generic-internal-link-und-0-target-id"
   element :internal_link_dropdown, ".reference-autocomplete"
   element :error_message, "#console .error"
-  element :save_button, '#edit-submit'
+  element :save_button, "[value*='Save']"
   element :counter_message, "#edit-title-field-en-0-value-counter"
 
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
