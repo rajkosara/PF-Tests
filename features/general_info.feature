@@ -51,7 +51,7 @@ Feature: General info
     And I submit a general info page with an external link
     Then the external link is displayed on the general info page
 
-  @failing @solas_121 @core
+  @complete @failing @solas_121 @core
   Scenario: Submit general info with internal link
     Given I am logged in as an author user
     And I create a general info page

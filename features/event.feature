@@ -24,10 +24,16 @@ Feature: Event
 
     Examples:
       | user_type |
-      | admin     |
       | author    |
       | manager   |
       | producer  |
+
+  @complete @solas_144 @core
+  Scenario: Create a published  event page as an admin
+    Given I am logged in as an admin user
+    When I navigate to the create event page
+    And I submit a published event page
+    Then the event page is created
 
   @complete @solas_144 @core
   Scenario: Error message displayed when title field is not filled in

@@ -21,3 +21,12 @@ Feature: teaching Centre
     When I navigate to the create teaching centre page
     And I submit a teaching centre page without a title
     Then a "Title field is required" error message is displayed on the create teaching centre page
+
+
+  @solas_368 @core
+  Scenario: Create a teaching centre page and the page is displayed correctly
+    Given I am logged in as an producer user
+    When I navigate to the create teaching centre page
+    And I submit a teaching centre page
+    Then the teaching centre page is created
+    And the teaching centre page details are displayed correctly
