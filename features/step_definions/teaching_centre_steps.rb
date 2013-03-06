@@ -3,5 +3,5 @@ Then /^the teaching centre page is created$/ do
 end
 
 Then(/^the teaching centre page details are displayed correctly$/) do
-  pending # express the regexp above with the code you wish you had
+  step "the teaching centre page is created"
 end

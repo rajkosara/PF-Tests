@@ -30,3 +30,5 @@ Feature: teaching Centre
     And I submit a teaching centre page
     Then the teaching centre page is created
     And the teaching centre page details are displayed correctly
+
+
