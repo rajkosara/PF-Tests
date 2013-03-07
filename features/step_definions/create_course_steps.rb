@@ -14,6 +14,7 @@ When /^I submit a course page$/ do
   step "I enter a title for the third tab on the create course page"
   step "I enter a body for the third tab on the create course page"
   step "I click on the calendar and pricing tab on the create course page"
+  step "I enter a course timetable title on the create course page"
   step "I enter a body for the calendar and pricing tab on the create course page"
   step "I click save on the create course page on the create course page"
 end
@@ -31,6 +32,7 @@ When /^I submit a course page without a course title$/ do
   step "I enter a body for the third tab on the create course page"
   step "I click on the calendar and pricing tab on the create course page"
   step "I enter a body for the calendar and pricing tab on the create course page"
+  step "I enter a course timetable title on the create course page"
   step "I click save on the create course page on the create course page"
 end
 
@@ -46,6 +48,7 @@ When /^I submit a course page without a course body$/ do
   step "I enter a body for the third tab on the create course page"
   step "I click on the calendar and pricing tab on the create course page"
   step "I enter a body for the calendar and pricing tab on the create course page"
+  step "I enter a course timetable title on the create course page"
   step "I click save on the create course page on the create course page"
 end
 
@@ -61,11 +64,16 @@ When /^I submit a course page without a calendar and pricing body$/ do
   step "I enter a title for the third tab on the create course page"
   step "I enter a body for the third tab on the create course page"
   step "I click on the calendar and pricing tab on the create course page"
+  step "I enter a course timetable title on the create course page"
   step "I click save on the create course page on the create course page"
 end
 
 When /^I enter a course summary on the create course page$/ do
   @british_council.create_course.summary.set @course.summary
+end
+
+When /^I enter a course timetable title on the create course page$/ do
+  @british_council.create_course.timetable_title.set @course.timetable_title
 end
 
 When /^I enter a course title on the create course page$/ do
@@ -134,6 +142,7 @@ When /^I create a course page and place it under the landing page$/ do
   step "I enter a about course body on the create course page"
   step "I enter a course title on the create course page"
   step "I click on the calendar and pricing tab on the create course page"
+  step "I enter a course timetable title on the create course page"
   step "I enter a body for the calendar and pricing tab on the create course page"
   @british_council.create_course.meta_config.menu_tab.click
   @british_council.create_course.meta_config.menu_settings.enable_menu.click
@@ -161,6 +170,7 @@ When /^I submit a course page with levels$/ do
   step "I enter a title for the third tab on the create course page"
   step "I enter a body for the third tab on the create course page"
   step "I click on the calendar and pricing tab on the create course page"
+  step "I enter a course timetable title on the create course page"
   step "I enter a body for the calendar and pricing tab on the create course page"
   @british_council.create_course.levels_tab.click
   @british_council.create_course.levels_title.set @course.levels_title

@@ -1,4 +1,4 @@
-Before('~@mobile') do
+Before do
   Helpers::Browser.full_size_window
 end
 

@@ -2,6 +2,11 @@ When /^the create teaching centre page is displayed$/ do
   @british_council.create_teaching_centre.should be_displayed
 end
 
+When /^I create a teaching centre page$/ do
+  step "I navigate to the create teaching centre page"
+  step "I submit a teaching centre page"
+end
+
 When /^I submit a teaching centre page$/ do
   step "the create teaching centre page is displayed"
   step "I enter a title into the teahing create teaching centre page"
@@ -49,4 +54,16 @@ end
 
 Then(/^a "(.*?)" error message is displayed on the create teaching centre page$/) do |error_messge|
   @british_council.create_teaching_centre.error_message.text.should include error_messge
+end
+
+When(/^I translate the teaching centre page$/) do
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_teaching_centre.current_url.include? "translation"}
+  @british_council.create_teaching_centre.address_one.set "#{@teaching_centre.address_one} TRANSLATED"
+  @british_council.create_teaching_centre.address_two.set "#{@teaching_centre.address_two} TRANSLATED"
+  step "I save a teaching centre"
+end
+
+When(/^I edit the teaching centre page$/) do
+  @british_council.create_teaching_centre.title.set "#{@teaching_centre.title} EDITED"
+  step "I save a teaching centre"
 end

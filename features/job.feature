@@ -24,7 +24,6 @@ Feature: Job
 
     Examples:
       | user_type |
-      | admin     |
       | author    |
       | manager   |
       | producer  |

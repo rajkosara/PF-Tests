@@ -98,4 +98,8 @@ class Model::BritishCouncil
   def mobile_course
     Model::Page::MobileCourse.new
   end
+
+  def mobile_teaching_centre
+    Model::Page::MobileTeachingCentre.new
+  end
 end

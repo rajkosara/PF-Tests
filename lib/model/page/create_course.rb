@@ -20,6 +20,7 @@ class Model::Page::CreateCourse < SitePrism::Page
 
   #calendat and pricing tab
   element :calendar_pricing_tab, ".horizontal-tab-button-3 a[href]"
+  element :timetable_title, "#edit-field-course-timetable-title-und-0-value"
   element :calendar_pricing_body, "iframe#edit-field-course-cal-pricing-body-und-0-value_ifr"
 
   #levels

@@ -89,7 +89,7 @@ Feature: Landing page
     And I save the landing page
     Then two columns are displayed on the landing page
 
-  @complete @solas_620 @core
+  @complete @solas_620 @core @translate
   Scenario: Translate main menu item appears in the menu
     Given I am logged in as an admin user
     And I create a published landing page
@@ -98,7 +98,7 @@ Feature: Landing page
     And I translate the landing page
     Then the translated menu link is displayed on the main menu
 
-  @complete @solas_620 @core
+  @complete @solas_620 @core @translate
   Scenario: Translate main menu item doesnt appears in the menu wrong menu
     Given I am logged in as an admin user
     And I create a published landing page

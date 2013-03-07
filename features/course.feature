@@ -34,7 +34,7 @@ Feature: Course
     Given I am logged in as an producer user
     When I navigate to the create course page
     And I submit a course page without a calendar and pricing body
-    Then a "Body field is required" error message is displayed on the create course page
+    Then a "Timetable introduction field is required" error message is displayed on the create course page
 
   @complete @solas_593 @core
   Scenario: Edit a course page

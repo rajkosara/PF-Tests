@@ -12,4 +12,6 @@ class Model::Page::TeachingCentre < SitePrism::Page
   element :contact_and_location_body, "#bc-tabs--3 .bc-tab-content"
   element :facilities_tab, "[data-hash*='4']"
   element :facilities_body, "#bc-tabs--4 .bc-tab-content p"
+  element :translate_button, ".tabs a[href*='translate']"
+  element :edit_button, ".tabs a[href*='edit']"
 end

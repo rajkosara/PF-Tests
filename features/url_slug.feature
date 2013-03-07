@@ -24,7 +24,7 @@ Feature: URL slug
     Then the title meta tag is displayed on the general info page
     And the filename displays the custom url filename on the general info page
 
-  @complete @solas_133 @core @failing
+  @complete @solas_133 @core
   Scenario: Add a course to a landing page and then change the landing page url
     Given I am logged in as an admin user
     And I create a published landing page

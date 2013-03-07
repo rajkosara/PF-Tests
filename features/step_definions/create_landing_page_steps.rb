@@ -82,8 +82,8 @@ Then /^wait for edit landing page to be displayed$/ do
 end
 
 Then /^wait for translate landing page to be displayed$/ do
-  Timeout.timeout(30) { sleep(0.1) until @british_council.translate.current_url.include? "/translate"}
-  @british_council.translate.current_url.should include "/translate"
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.current_url.include? "/translate"}
+  @british_council.create_landing_page.current_url.should include "/translate"
 end
 
 
