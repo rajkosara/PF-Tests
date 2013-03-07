@@ -37,6 +37,7 @@ When /^I enter an about body into the teahing create teaching centre page$/ do
 end
 
 When /^I enter an contact and location body into the teahing create teaching centre page$/ do
+  @british_council.create_teaching_centre.fax_number.set @teaching_centre.fax_number
   @british_council.create_teaching_centre.contact_and_location_tab.click
   @british_council.create_teaching_centre.contact_and_location_body.native.send_keys @teaching_centre.contact_location_body
 end

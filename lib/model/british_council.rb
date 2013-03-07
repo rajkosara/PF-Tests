@@ -95,6 +95,10 @@ class Model::BritishCouncil
     Model::Page::TeachingCentre.new
   end
 
+  def site_info
+    Model::Page::SiteInfo.new
+  end
+
   def mobile_course
     Model::Page::MobileCourse.new
   end

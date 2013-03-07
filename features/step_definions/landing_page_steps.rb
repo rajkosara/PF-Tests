@@ -64,3 +64,10 @@ Then /^the translated menu link is not displayed on the main menu$/ do
   end
   @translated_menu.size == 0
 end
+
+Then /^the teaching centre page and landing page are displayed in the correct order$/ do
+  Timeout.timeout(30) { sleep(0.1) until @british_council.landing_page.title.visible?}
+  @british_council.landing_page.first_child_title.text.should == @teaching_centre.title
+  @british_council.landing_page.second_child_title.text.should == @landing_page.title
+  @british_council.landing_page.second_child_summary.text.should == @landing_page.summary
+end

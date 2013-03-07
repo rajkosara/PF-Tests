@@ -42,7 +42,7 @@ Feature: teaching Centre
   @complete @solas_368 @core @translate
   Scenario: Translate teaching centre
     Given I am logged in as an admin user
-    And  I create a teaching centre page
+    And I create a teaching centre page
     When I choose to the translate a teaching centre page
     When I click add translation on the translate page
     And I translate the teaching centre page
@@ -51,7 +51,26 @@ Feature: teaching Centre
   @complete @solas_368 @core
   Scenario: Edit teaching centre
     Given I am logged in as an admin user
-    And  I create a teaching centre page
+    And I create a teaching centre page
     When I choose to the edit a teaching centre page
     And I edit the teaching centre page
     Then the edited teaching centre page is displayed
+
+  @complete @solas_550 @core
+  Scenario: Contact and location information tables displayed
+    Given I am logged in as an author user
+    When I navigate to the create teaching centre page
+    And I submit a teaching centre page
+    Then the teaching centre page is created
+    And the opening hours are displayed on the teaching centre page
+
+  @complete @solas_810 @core
+  Scenario: Add and order pages on a landing page
+    Given I am logged in as an admin user
+    And I create a published landing page
+    And I create a teaching centre page
+    When I navigate to the created published landing page
+    And I choose to the edit landing page
+    And I enter the teching centre page and landing page as children
+    And I save the landing page
+    Then the teaching centre page and landing page are displayed in the correct order

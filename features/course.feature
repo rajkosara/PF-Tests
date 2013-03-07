@@ -2,7 +2,7 @@
 Feature: Course
 
   @complete @solas_593 @core
-  Scenario Outline: Create a general info page
+  Scenario Outline: Create a course page
     Given I am logged in as an <user_type> user
     When I navigate to the create course page
     And I submit a course page

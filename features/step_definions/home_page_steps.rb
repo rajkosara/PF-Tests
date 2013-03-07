@@ -21,3 +21,7 @@ end
 Then /^the header doesnt displays the language switcher$/ do
   @british_council.home.header.language_switcher.should_not be_visible
 end
+
+Then(/^the legal info is displayed on the home page footer$/) do
+  @british_council.home.footer.legal_text.text.should include @legal_text
+end

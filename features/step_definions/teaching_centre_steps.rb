@@ -42,7 +42,7 @@ end
 
 
 Then(/^the translated teaching centre page is displayed$/) do
- @british_council.mobile_teaching_centre.address.text.should include("#{@teaching_centre.address_one} TRANSLATED","#{@teaching_centre.address_two} TRANSLATED")
+  @british_council.mobile_teaching_centre.address.text.should include("#{@teaching_centre.address_one} TRANSLATED","#{@teaching_centre.address_two} TRANSLATED")
 end
 
 When(/^I choose to the edit a teaching centre page$/) do
@@ -51,4 +51,13 @@ end
 
 Then(/^the edited teaching centre page is displayed$/) do
   @british_council.mobile_teaching_centre.title.text.should == "#{@teaching_centre.title} EDITED"
+end
+
+Then(/^the opening hours are displayed on the teaching centre page$/) do
+  @british_council.teaching_centre.contact_and_location_tab.click
+  @british_council.teaching_centre.contact_and_location_body.telephone_enquiries.should be_visible
+  @british_council.teaching_centre.contact_and_location_body.telephone_enquiries.text.should include("REGULAR OPENING HOURS", "10:00-17:00")
+  @british_council.teaching_centre.contact_and_location_body.visitor_opening_hours.should be_visible
+  @british_council.teaching_centre.contact_and_location_body.visitor_opening_hours.text.should include("Non-teaching weeks".upcase, "08:30-20:30")
+  @british_council.teaching_centre.contact_and_location_body.text.should include("22 Jan (Sun) - 24 Jan (Tue) Lunar New Year","Telephone enquiries opening hours","Visitor opening hours")
 end

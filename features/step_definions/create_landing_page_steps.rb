@@ -104,14 +104,20 @@ When /^I enter a child page into the child listing page management$/ do
   step "I save the landing page"
 end
 
-When /^I enter the general info page and landing page as children$/ do
-  #enter general info page
-  @british_council.create_landing_page.list_management.set @general_info_title
+When(/^I enter the (teching centre|general info) page and landing page as children$/) do |page|
+  case page
+  when 'teching centre'
+    @page = @teaching_centre.title
+  when 'general info'
+    @page = @general_info.title
+  end
+  #enter page
+  @british_council.create_landing_page.list_management.set @page
   @british_council.create_landing_page.list_management.native.send_keys :arrow_down
   Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_dropdown.visible?}
   @british_council.create_landing_page.list_management.native.send_keys :arrow_down
   @british_council.create_landing_page.list_management.native.send_keys :enter
-  Timeout.timeout(30) { sleep(0.1) while @british_council.create_landing_page.list_management.text == @general_info_title}
+  Timeout.timeout(30) { sleep(0.1) while @british_council.create_landing_page.list_management.text == @page}
   #add another children item
   @british_council.create_landing_page.add_another_item.click
   Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_management_second.visible?}

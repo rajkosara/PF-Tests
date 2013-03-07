@@ -46,6 +46,8 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
     step "I create a new user"
   when 'user list'
     @british_council.user_list.load
+  when 'site information'
+    @british_council.site_info.load
   else raise "Haven't mapped the '#{page_name}' page"
   end
 end
