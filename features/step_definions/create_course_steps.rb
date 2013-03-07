@@ -109,6 +109,7 @@ When /^I enter a body for the calendar and pricing tab on the create course page
 end
 
 When /^I click save on the create course page on the create course page$/ do
+  scroll_to_end_of_page
   @british_council.create_course.save_button.click
 end
 
@@ -134,6 +135,7 @@ When /^I create a course page and place it under the landing page$/ do
   step "I enter a course title on the create course page"
   step "I click on the calendar and pricing tab on the create course page"
   step "I enter a body for the calendar and pricing tab on the create course page"
+  @british_council.create_course.meta_config.menu_tab.click
   @british_council.create_course.meta_config.menu_settings.enable_menu.click
   @british_council.create_course.meta_config.menu_settings.title.set @course.menu_title
   @british_council.create_course.meta_config.menu_settings.parent_menu.select @org_landing_page_menu_title[0...27]
@@ -161,6 +163,7 @@ When /^I submit a course page with levels$/ do
   step "I click on the calendar and pricing tab on the create course page"
   step "I enter a body for the calendar and pricing tab on the create course page"
   @british_council.create_course.levels_tab.click
-  @british_council.create_course.levels_textbox.set @course.levels
+  @british_council.create_course.levels_title.set @course.levels_title
+  @british_council.create_course.levels_description.native.send_keys @course.levels_description
   step "I click save on the create course page on the create course page"
 end

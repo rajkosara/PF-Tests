@@ -28,3 +28,21 @@ How to install the Automated tests for Windows
 
 
 If you want more help running or understanding the test please feel free to ask David Chambers (david.chambers@britishcouncil.org)
+
+Some useful commands
+-----------------------------------------
+
+
+rake -T
+
+This will list all the available rake tasks
+------
+
+rake cuke:list_tags
+
+This will list all the tags that are used
+------
+rake cuke:TAGS="[tag]"
+
+This will run all the tests that have been given a particular tag. e.g rake cuke:specific TAGS=@login or rake cuke:specific TAGS=@general_info
+

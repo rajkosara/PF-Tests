@@ -65,6 +65,14 @@ module StuffWeWantAvailable
   def wait_for_ajax
     wait_until { page.evaluate_script("jQuery.active") == 0 }
   end
+
+  def scroll_to_end_of_page
+    page.execute_script "window.scrollBy(0,10000)"
+  end
+
+  def scroll_to_start_of_page
+    page.execute_script "window.scrollBy(0,0)"
+  end
 end
 
 

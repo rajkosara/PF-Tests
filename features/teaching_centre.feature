@@ -23,7 +23,7 @@ Feature: teaching Centre
     Then a "Title field is required" error message is displayed on the create teaching centre page
 
 
-  @solas_368 @core
+  @complete @solas_368 @core
   Scenario: Create a teaching centre page and the page is displayed correctly
     Given I am logged in as an producer user
     When I navigate to the create teaching centre page

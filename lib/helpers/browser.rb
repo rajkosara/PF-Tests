@@ -4,7 +4,7 @@ class Helpers::Browser
   end
 
   def self.full_size_window
-    Capybara.current_session.driver.browser.manage.window.maximize
+    Capybara.current_session.driver.browser.manage.window.resize_to(1300, 900)
   end
 end
 

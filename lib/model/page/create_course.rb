@@ -24,10 +24,11 @@ class Model::Page::CreateCourse < SitePrism::Page
 
   #levels
   element :levels_tab, ".horizontal-tab-button-4 a[href]"
-  element :levels_textbox, "#edit-field-generic-location-und-0-value"
+  element :levels_title, "#edit-field-course-levels-und-0-first"
+  element :levels_description, "iframe#edit-field-course-levels-und-0-second-value_ifr"
 
   element :error_message, "#console .error"
-  element :save_button, '#edit-submit'
+  element :save_button, "input#edit-submit"
   element :counter_message, "#edit-title-field-en-0-value-counter"
 
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"

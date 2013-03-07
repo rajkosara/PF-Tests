@@ -1,7 +1,7 @@
 @url_slug
 Feature: URL slug
 
-  @complete @solas_133 @core @wip
+  @complete @solas_133 @core
   Scenario Outline: The generate automatic URL alias is checked by default and the filename field is disabled by default
     Given I am logged in as an <user_type> user
     When I navigate to the create <content_type> page
