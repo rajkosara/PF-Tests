@@ -9,6 +9,12 @@ When /^I add an image to the media library$/ do
   step "I click the save button on the add image page"
 end
 
+Then /^I create a image in the media library$/ do
+  step "I navigate to the add image page"
+  step "I add an image to the media library"
+  step "the image is added to the media library"
+end
+
 Then /^I enter a expiration date on the add image page$/ do
   @british_council.add_image.media_fields.expiration_tab.click
   @british_council.add_image.media_fields.expiration_date.set @image.expiration_date

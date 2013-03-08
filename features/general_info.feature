@@ -92,3 +92,11 @@ Feature: General info
     And I am using a mobile device
     Then the body is displayed on the general info page
     And the title is displayed on the general info page
+
+  @complete @solas_715 @core
+  Scenario: Add an image to a general info page
+    Given I am logged in as an author user
+    And I create a image in the media library
+    When I navigate to the create general info page
+    And I submit a general info page with an image
+    Then the image is displayed on the general info page

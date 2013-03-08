@@ -4,6 +4,7 @@ class Model::Page::GeneralInfo < SitePrism::Page
   element :status, ".status"
   element :description_meta_tag, "meta[name='description'][content]"
   element :title_meta_tag, "title"
+  element :image, ".bc-full-width-img"
 
   elements :links, ".bc-lk-list-16 a"
 

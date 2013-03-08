@@ -14,6 +14,7 @@ How to install the Automated tests for Mac mountain Lion
 
 -------------------------------------------------
 How to install the Automated tests for Windows
+============
 
 1. Follow the first 7 steps in here http://railsinstaller.org/
 2. Go to the root of the test code on your machine and accept .rvmvc (if asked)
@@ -32,13 +33,16 @@ If you want more help running or understanding the test please feel free to ask 
 Some useful commands
 -----------------------------------------
 
-
+```bash
 rake -T
+```
 
 This will list all the available rake tasks
 ------
 
+```bash
 rake cuke:list_tags
+```
 
 This will list all the tags that are used
 ------

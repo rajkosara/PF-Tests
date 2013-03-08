@@ -3,6 +3,7 @@ Then /^the create landing page page is displayed$/ do
 end
 
 When /^I save the landing page$/ do
+  scroll_to_end_of_page
   @british_council.create_landing_page.save_button.click
 end
 

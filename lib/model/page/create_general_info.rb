@@ -10,8 +10,10 @@ class Model::Page::CreateGeneralInfo < SitePrism::Page
   element :error_message, "#console .error"
   element :save_button, "[value*='Save']"
   element :counter_message, "#edit-title-field-en-0-value-counter"
+  element :image_tab, "#node_general_info_form_group_image .fieldset-title"
 
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
+  section :image_library, Model::Section::AddImageSection, "#node_general_info_form_group_image"
   
   sections :external_link, Model::Section::ExternalLink,".link-field-subrow"
 end
