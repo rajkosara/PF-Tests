@@ -7,6 +7,7 @@ class Model::Domain::Media
   attr_accessor :expiration_date
   attr_accessor :expiration_reason
   attr_accessor :image_name
+  attr_accessor :document_name
   attr_accessor :jpg
   attr_accessor :jpeg
   attr_accessor :gif
@@ -36,6 +37,11 @@ class Model::Domain::Media
       @copyright_info = "Image Copyright info #{Time.current.strftime("%T")} #{String.random(4)}"
       @expiration_date = 10.days.from_now.strftime("%d/%m/%Y")
       @expiration_reason = "Image reason"
+      
+    when :document
+      @title = "Document Title #{Time.current.strftime("%T")} #{String.random(4)}"
+      @description = "Document description #{Time.current.strftime("%T")} #{String.random(4)}"
+      @path = "#{File.expand_path(File.join(Dir.pwd, "test_data/#{@document_name}"))}"
     end
   end
 end

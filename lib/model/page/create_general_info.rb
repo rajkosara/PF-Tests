@@ -14,6 +14,7 @@ class Model::Page::CreateGeneralInfo < SitePrism::Page
 
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
   section :image_library, Model::Section::AddImageSection, "#node_general_info_form_group_image"
+  section :document_library, Model::Section::AddDocumentSection, ""
   
   sections :external_link, Model::Section::ExternalLink,".link-field-subrow"
 end

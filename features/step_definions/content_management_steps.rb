@@ -31,3 +31,8 @@ When /^I create a image object$/ do
   @image = Model::Domain::Media.new
   @image.set_content_type :image
 end
+
+Given(/^I create a document object$/) do
+  @document = Model::Domain::Media.new
+  @document.set_content_type :document
+end

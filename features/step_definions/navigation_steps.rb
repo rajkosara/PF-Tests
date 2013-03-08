@@ -31,6 +31,9 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
   when 'add image'
     @british_council.add_image.load
     step "I create a image object"
+  when 'add document'
+    @british_council.add_document.load
+    step 'I create a document object'
   when 'created published landing'
     visit @created_landing_url
   when 'created course'

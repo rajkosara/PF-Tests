@@ -39,6 +39,11 @@ class Model::BritishCouncil
     Model::Page::AddImage.new
   end
 
+  def add_document
+    Model::Page::AddDocument.new
+  end
+
+
   def add_user
     Model::Page::AddUser.new
   end
