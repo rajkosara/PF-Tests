@@ -87,6 +87,10 @@ class Model::BritishCouncil
   def image
     Model::Page::Image.new
   end
+
+   def document
+    Model::Page::Document.new
+  end
   
   def home
     Model::Page::Home.new

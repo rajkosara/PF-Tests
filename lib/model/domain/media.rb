@@ -41,7 +41,10 @@ class Model::Domain::Media
     when :document
       @title = "Document Title #{Time.current.strftime("%T")} #{String.random(4)}"
       @description = "Document description #{Time.current.strftime("%T")} #{String.random(4)}"
+      @document_name = "test_doc.pdf"
       @path = "#{File.expand_path(File.join(Dir.pwd, "test_data/#{@document_name}"))}"
+      @expiration_date = 10.days.from_now.strftime("%d/%m/%Y")
+      @expiration_reason = "Document reason"
     end
   end
 end
