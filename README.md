@@ -17,7 +17,7 @@ bundle install
 ```
 
 
-5. Run the following at where you have checkouted the test code
+5.Run the following at where you have checkouted the test code
 
 ```bash
 brew install chromedriver

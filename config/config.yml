@@ -11,14 +11,14 @@ local_env_kr:
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
-  admin_username: 'david.chambers'
-  admin_password: 'admin'
-  author_username: 'david.chambers.author'
-  author_password: 'author'
-  manager_username: 'david.chambers.manager'
-  manager_password: 'manager'
-  producer_username: 'david.chambers.producer'
-  producer_password: 'producer'
+  admin_username: 'test.admin'
+  admin_password: 'password'
+  author_username: 'test.author'
+  author_password: 'password'
+  manager_username: 'test.manager'
+  manager_password: 'password'
+  producer_username: 'test.producer'
+  producer_password: 'password'
 test_env_kr:
   <<: *execution_defaults
   # site name
