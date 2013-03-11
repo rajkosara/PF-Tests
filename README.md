@@ -10,7 +10,7 @@ gem install bundler
 ```
 
 
-4. Run the following at where you have checkouted the test code
+4.Run the following at where you have checkouted the test code
 
 ```bash
 bundle install
