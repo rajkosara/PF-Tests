@@ -9,7 +9,6 @@ How to install the Automated tests for Mac mountain Lion
 gem install bundler
 ```
 
- at the tests root folder
 
 4. Run the following at where you have checkouted the test code
 
@@ -18,17 +17,17 @@ bundle install
 ```
 
 
-4. Run the following at where you have checkouted the test code
+5. Run the following at where you have checkouted the test code
 
 ```bash
 brew install chromedriver
 ```
 
-5. Go to Config/config.yml and change korea_site_root to your site root. Also, change the admin user name and passowrd to match yours.
-6. cd to features
-7. open login.feature
-8. Now run rake cuke:specific TAGS=@login
-9. If all of these test pass, you are good to go
+6. Go to Config/config.yml and change korea_site_root to your site root. Also, change the admin user name and passowrd to match yours.
+7. cd to features
+8. open login.feature
+9. Now run rake cuke:specific TAGS=@login
+10. If all of these test pass, you are good to go
 
 
 -------------------------------------------------
