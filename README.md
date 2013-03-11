@@ -23,11 +23,10 @@ bundle install
 brew install chromedriver
 ```
 
-6. Go to Config/config.yml and change korea_site_root to your site root. Also, change the admin user name and passowrd to match yours.
-7. cd to features
-8. open login.feature
-9. Now run rake cuke:specific TAGS=@login
-10. If all of these test pass, you are good to go
+6. cd to features
+7. open login.feature
+8. Now run rake cuke:specific TAGS=@login
+9. If all of these test pass, you are good to go
 
 
 -------------------------------------------------
@@ -51,11 +50,10 @@ bundle install
 
 
 4. Download chromedriver here http://code.google.com/p/chromedriver/downloads/list and place it in a place that your PATH can see (usr/bin or in the ruby bin)
-5. Go to Config/config.yml and change korea_site_root to your site root.
-6. cd to features
-7. open login.feature
-8. Now run rake cuke:specific TAGS=@login
-9. If all of these test pass, you are good to go
+5. cd to features
+6. open login.feature
+7. Now run rake cuke:specific TAGS=@login
+8. If all of these test pass, you are good to go
 
 
 
