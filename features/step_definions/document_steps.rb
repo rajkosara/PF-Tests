@@ -50,8 +50,37 @@ When(/^I add an (pdf|doc|docx|ppt|xls) document to the media library$/) do |doc_
     @british_council.add_document.document_upload_button.click
   when 'xls'
     @british_council.add_document.document_path.set @document.xls_path
-  @british_council.add_document.document_upload_button.click
+    @british_council.add_document.document_upload_button.click
   end
   step "I enter an expiration date for a document"
   step "I save a document"
+end
+
+When(/^I add an gif document to the media library$/) do
+  @british_council.add_document.document_path.set @document.gif_path
+end
+
+Then(/^an document type error is displayed on the add document page$/) do
+  @british_council.add_document.document_error.text.should include "The selected file #{@document.gif} cannot be uploaded"
+end
+
+When(/^I add an invaild sized document to the media library$/) do
+  @british_council.add_document.document_path.set @document.large_path
+  @british_council.add_document.document_upload_button.click
+  wait_for_ajax
+end
+
+Then(/^an document size error is displayed on the add document page$/) do
+  @british_council.add_document.document_error.text.should include "The file #{@document.large} could not be saved, because it exceeds 2 MB"
+end
+
+When(/^I add an document to the media library without a tile$/) do
+  step "I enter a description for a document"
+  step "I enter a path for a document and click the upload"
+  step "I enter an expiration date for a document"
+  step "I save a document"
+end
+
+Then(/^a "(.*?)" error message is displayed on the add document page$/) do |error_message|
+  @british_council.add_document.document_error.text.should include error_message
 end

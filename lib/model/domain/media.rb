@@ -54,11 +54,15 @@ class Model::Domain::Media
       @docx = "doc_docx.docx"
       @xls = "doc_xls.xls"
       @ppt = "doc_ppt.ppt"
+      @gif = "image_gif.gif"
+      @large = "doc_large.pdf"
+      @large_path = "#{File.expand_path(File.join(Dir.pwd, "test_data/#{@large}"))}"
       @doc_path = "#{File.expand_path(File.join(Dir.pwd, "test_data/#{@doc}"))}"
       @docx_path = "#{File.expand_path(File.join(Dir.pwd, "test_data/#{@docx}"))}"
       @xls_path = "#{File.expand_path(File.join(Dir.pwd, "test_data/#{@xls}"))}"
       @ppt_path = "#{File.expand_path(File.join(Dir.pwd, "test_data/#{@ppt}"))}"
       @path = "#{File.expand_path(File.join(Dir.pwd, "test_data/#{@document_name}"))}"
+      @gif_path = "#{File.expand_path(File.join(Dir.pwd, "test_data/#{@gif}"))}"
       @expiration_date = 10.days.from_now.strftime("%d/%m/%Y")
       @expiration_reason = "Document reason"
     end

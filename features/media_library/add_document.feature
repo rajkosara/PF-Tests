@@ -28,3 +28,24 @@ Feature: Add document to the media library
       | doc      |
       | docx     |
       | xls      |
+
+  @complete @solas_252 @core
+  Scenario: Add invalid document type
+    Given I am logged in as an author user
+    And I navigate to the add document page
+    When I add an gif document to the media library
+    Then an document type error is displayed on the add document page
+
+  @complete @solas_252 @core
+  Scenario: Add invalid document size
+    Given I am logged in as an author user
+    And I navigate to the add document page
+    When I add an invaild sized document to the media library
+    Then an document size error is displayed on the add document page
+
+  @complete @solas_252 @core
+  Scenario: Add document without a title
+    Given I am logged in as an author user
+    And I navigate to the add document page
+    When I add an document to the media library without a tile
+    Then a "Title field is required" error message is displayed on the add document page
