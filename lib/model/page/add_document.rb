@@ -6,6 +6,7 @@ class Model::Page::AddDocument < SitePrism::Page
   element :document_upload_button, "#edit-field-document-und-0-upload-button"
   element :throbber, ".throbber"
   element :document_error, ".error"
+  element :translate_button, ".tabs a[href*='translate']"
 
   section :media_fields, Model::Section::MediaSection, ".content"
 end

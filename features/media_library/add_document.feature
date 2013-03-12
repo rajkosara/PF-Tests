@@ -49,3 +49,12 @@ Feature: Add document to the media library
     And I navigate to the add document page
     When I add an document to the media library without a tile
     Then a "Title field is required" error message is displayed on the add document page
+
+  @complete @solas_250 @core
+  Scenario: Add a document to media library
+    Given I am logged in as an manager user
+    And I navigate to the add document page
+    When I add an document to the media library
+    And the document is added to the media library
+    And I choose to translate the document
+    Then the document is translated

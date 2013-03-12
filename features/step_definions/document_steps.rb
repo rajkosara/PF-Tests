@@ -85,12 +85,19 @@ Then(/^a "(.*?)" error message is displayed on the add document page$/) do |erro
   @british_council.add_document.document_error.text.should include error_message
 end
 
-Then /^I create a image in the media library$/ do
-
-end
-
 Given(/^I create a document in the media library$/) do
   step "I navigate to the add document page"
   step "I add an document to the media library"
   step "the document is added to the media library"
+end
+
+When(/^I choose to translate the document$/) do
+  @british_council.add_document.translate_button.click
+  step "wait for translate page to be displayed"
+  step "I click add translation on the translate page"
+  @british_council.add_document.media_fields.title.set "#{@document.title} Tranlated"
+end
+
+Then(/^the document is translated$/) do
+  @british_council.add_document.media_fields.title.set "#{@document.title} Tranlated"
 end
