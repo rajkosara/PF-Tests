@@ -75,9 +75,28 @@ Feature: teaching Centre
     And I save the landing page
     Then the teaching centre page and landing page are displayed in the correct order
 
-  @solas_685 @core
+  @complete @solas_685 @core
   Scenario: Calendar is displayed correctly on the teaching centre page
     Given I am logged in as an author user
     When I navigate to the create teaching centre page
     And I submit a teaching centre page
     Then the teaching centre page is created
+    And the course timetable and terms times are displayed
+
+  @complete @solas_735 @core
+  Scenario: Add image to about tab on teaching centre
+    Given I am logged in as an producer user
+    And I create a image in the media library
+    When I navigate to the create teaching centre page
+    And I submit a teaching centre page with image on the about tab
+    Then the teaching centre page is created
+    And the image is displayed on the about tab on the teaching centre page
+
+  @complete @solas_735 @core
+  Scenario: Add image to contact and location tab on teaching centre
+    Given I am logged in as an producer user
+    And I create a image in the media library
+    When I navigate to the create teaching centre page
+    And I submit a teaching centre page with image on the contact and location tab
+    Then the teaching centre page is created
+    And the image is displayed on the contact and location tab on the teaching centre page

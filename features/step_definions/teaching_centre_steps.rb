@@ -61,3 +61,18 @@ Then(/^the opening hours are displayed on the teaching centre page$/) do
   @british_council.teaching_centre.contact_and_location_body.visitor_opening_hours.text.should include("Non-teaching weeks".upcase, "08:30-20:30")
   @british_council.teaching_centre.contact_and_location_body.text.should include("22 Jan (Sun) - 24 Jan (Tue) Lunar New Year","Telephone enquiries opening hours","Visitor opening hours")
 end
+
+Then(/^the course timetable and terms times are displayed$/) do
+  @british_council.teaching_centre.calendar_tab.click
+  @british_council.teaching_centre.calendar_body.text.should include("Course timetable")
+  @british_council.teaching_centre.calendar_body.text.should include("Course dates".upcase, "Price".upcase, "Term dates")
+end
+
+Then(/^the image is displayed on the about tab on the teaching centre page$/) do
+  @british_council.teaching_centre.should have_image
+end
+
+Then(/^the image is displayed on the contact and location tab on the teaching centre page$/) do
+  @british_council.teaching_centre.contact_and_location_tab.click
+  @british_council.teaching_centre.should have_contact_location_image
+end

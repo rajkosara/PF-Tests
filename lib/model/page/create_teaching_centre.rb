@@ -23,6 +23,10 @@ class Model::Page::CreateTeachingCentre < SitePrism::Page
   element :save_button, "[value='Save']"
   element :counter_message, "#edit-title-field-en-0-value-counter"
   element :address_tab, "#node_teaching_centre_form_group_address a"
+  element :about_image_tab, "#node_teaching_centre_form_group_image a.fieldset-title"
+  element :contact_location_image_tab, "#node_teaching_centre_form_group_image_two a.fieldset-title"
 
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
+  
+  sections :image_library, Model::Section::AddImageSection, "[id*='node_teaching_centre_form_group_image']"
 end

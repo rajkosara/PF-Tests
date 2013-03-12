@@ -10,14 +10,7 @@ end
 When /^I submit a teaching centre page$/ do
   step "the create teaching centre page is displayed"
   step "I enter a title into the teahing create teaching centre page"
-  @british_council.create_teaching_centre.address_tab.click
-  @british_council.create_teaching_centre.address_one.set @teaching_centre.address_one
-  @british_council.create_teaching_centre.address_two.set @teaching_centre.address_two
-  @british_council.create_teaching_centre.post_code.set @teaching_centre.post_code
-  @british_council.create_teaching_centre.city.set @teaching_centre.city
-  @british_council.create_teaching_centre.state.set @teaching_centre.state
-  @british_council.create_teaching_centre.telephone_number.set @teaching_centre.telephone_number
-  @british_council.create_teaching_centre.fax_number.set @teaching_centre.fax_number
+  step "I enter the full address on a teaching centre"
   @british_council.create_teaching_centre.summary.set @teaching_centre.summary
   step "I enter an about body into the teahing create teaching centre page"
   @british_council.create_teaching_centre.email_address.set @teaching_centre.email_address
@@ -69,4 +62,59 @@ end
 When(/^I edit the teaching centre page$/) do
   @british_council.create_teaching_centre.title.set "#{@teaching_centre.title} EDITED"
   step "I save a teaching centre"
+end
+
+When(/^I submit a teaching centre page with image on the about tab$/) do
+  step "the create teaching centre page is displayed"
+  step "I enter a title into the teahing create teaching centre page"
+  step "I enter the full address on a teaching centre"
+  @british_council.create_teaching_centre.summary.set @teaching_centre.summary
+  step "I add an image to the about tab"
+  wait_for_ajax
+  step "I enter an about body into the teahing create teaching centre page"
+  @british_council.create_teaching_centre.email_address.set @teaching_centre.email_address
+  @british_council.create_teaching_centre.calendar_tab.click
+  @british_council.create_teaching_centre.calendar_body.native.send_keys @teaching_centre.calendar_body
+  step "I enter an contact and location body into the teahing create teaching centre page"
+  @british_council.create_teaching_centre.facilities_tab.click
+  @british_council.create_teaching_centre.facilities_body.native.send_keys @teaching_centre.facilities_body
+  step "I save a teaching centre"
+end
+
+When(/^I submit a teaching centre page with image on the contact and location tab$/) do
+  step "the create teaching centre page is displayed"
+  step "I enter a title into the teahing create teaching centre page"
+  step "I enter the full address on a teaching centre"
+  @british_council.create_teaching_centre.summary.set @teaching_centre.summary
+  wait_for_ajax
+  step "I enter an about body into the teahing create teaching centre page"
+  @british_council.create_teaching_centre.email_address.set @teaching_centre.email_address
+  @british_council.create_teaching_centre.calendar_tab.click
+  @british_council.create_teaching_centre.calendar_body.native.send_keys @teaching_centre.calendar_body
+  step "I add an image to the content and location tab"
+  @british_council.create_teaching_centre.facilities_tab.click
+  @british_council.create_teaching_centre.facilities_body.native.send_keys @teaching_centre.facilities_body
+  step "I save a teaching centre"
+end
+
+When(/^I enter the full address on a teaching centre$/) do
+  @british_council.create_teaching_centre.address_tab.click
+  @british_council.create_teaching_centre.address_one.set @teaching_centre.address_one
+  @british_council.create_teaching_centre.address_two.set @teaching_centre.address_two
+  @british_council.create_teaching_centre.post_code.set @teaching_centre.post_code
+  @british_council.create_teaching_centre.city.set @teaching_centre.city
+  @british_council.create_teaching_centre.state.set @teaching_centre.state
+  @british_council.create_teaching_centre.telephone_number.set @teaching_centre.telephone_number
+  @british_council.create_teaching_centre.fax_number.set @teaching_centre.fax_number
+end
+
+When(/^I add an image to the content and location tab$/) do
+  step "I enter an contact and location body into the teahing create teaching centre page"
+  @british_council.create_teaching_centre.contact_location_image_tab.click
+  @british_council.create_teaching_centre.image_library.last.select_checkboxes.first.click
+end
+
+When(/^I add an image to the about tab$/) do
+  @british_council.create_teaching_centre.about_image_tab.first.click
+  @british_council.create_teaching_centre.image_library.first.select_checkboxes.first.click
 end
