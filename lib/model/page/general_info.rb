@@ -7,6 +7,8 @@ class Model::Page::GeneralInfo < SitePrism::Page
   element :image, ".bc-full-width-img"
   element :document_name, ".bc-file a"
   element :edit_button, ".tabs a[href*='edit']"
+  element :show_hide_title, ".bc-show-hide-title"
+  element :show_hide_body, ".bc-show-hide-content"
 
   elements :links, ".bc-lk-list-16 a"
 

@@ -126,3 +126,18 @@ Feature: General info
     And I choose to edit the general info page
     And I remove the document from the general info page
     Then the document is not displayed on the general info page
+
+  @complete @solas_666 @core
+  Scenario: Create a general info page
+    Given I am logged in as an producer user
+    When I navigate to the create general info page
+    And I submit a general info page with a show hide
+    Then the show hide is displayed on the general info page
+
+  @complete @solas_666 @core @mobile
+  Scenario: Create a general info page on mobile
+    Given I am logged in as an producer user
+    When I navigate to the create general info page
+    And I submit a general info page with a show hide
+    And I am using a mobile device
+    Then the show hide is displayed on the general info page

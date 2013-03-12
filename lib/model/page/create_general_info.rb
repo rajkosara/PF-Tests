@@ -12,6 +12,9 @@ class Model::Page::CreateGeneralInfo < SitePrism::Page
   element :counter_message, "#edit-title-field-en-0-value-counter"
   element :image_tab, "#node_general_info_form_group_image .fieldset-title"
   element :document_tab, "#node_general_info_form_group_document .fieldset-title"
+  element :show_hide_tab, "#node_general_info_form_group_show_hide a"
+  element :show_hide_title, "#edit-field-general-info-show-hide-und-0-first"
+  element :show_hide_body, "#edit-field-general-info-show-hide-und-0-second"
 
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
   section :image_library, Model::Section::AddImageSection, "#node_general_info_form_group_image"

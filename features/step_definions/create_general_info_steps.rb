@@ -185,3 +185,14 @@ When(/^I remove the document from the general info page$/) do
   wait_for_ajax
   step "I save the general info page"
 end
+
+When(/^I submit a general info page with a show hide$/) do
+  step "the create general info page is displayed"
+  step "I enter a title for the general info page"
+  step "I enter a summary for the general info page"
+  step "I enter a body for the general info page"
+  @british_council.create_general_info.show_hide_tab.click
+  @british_council.create_general_info.show_hide_title.set @general_info.show_hide_title
+  @british_council.create_general_info.show_hide_body.set @general_info.show_hide_body
+  step "I save the general info page"
+end

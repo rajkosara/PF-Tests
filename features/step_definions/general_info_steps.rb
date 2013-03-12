@@ -55,3 +55,8 @@ end
 Then(/^the document is not displayed on the general info page$/) do
   @british_council.general_info.should_not have_document_name
 end
+
+Then(/^the show hide is displayed on the general info page$/) do
+  @british_council.general_info.show_hide_title.text.should == @general_info.show_hide_title
+  @british_council.general_info.show_hide_body.text.should == @general_info.show_hide_body
+end
