@@ -110,9 +110,19 @@ Feature: General info
     Then the document is displayed on the general info page
 
   @complete @solas_251 @core
-  Scenario: Add an document to a general info page
+  Scenario: Search for a document on a general info page
     Given I am logged in as an author user
     And I create a document in the media library
     When I navigate to the create general info page
     And search for my created document on the general info page
     Then the created document is displayed on the general info page
+
+  @complete @solas_249 @core
+  Scenario: Remove a document from a general info page
+    Given I am logged in as an author user
+    And I create a document in the media library
+    When I navigate to the create general info page
+    And I submit a general info page with an document
+    And I choose to edit the general info page
+    And I remove the document from the general info page
+    Then the document is not displayed on the general info page

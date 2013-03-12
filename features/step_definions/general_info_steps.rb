@@ -47,3 +47,11 @@ end
 Then(/^the document is displayed on the general info page$/) do
   @british_council.general_info.document_name.text.should == @document.document_name
 end
+
+When(/^I choose to edit the general info page$/) do
+  @british_council.general_info.edit_button.click
+end
+
+Then(/^the document is not displayed on the general info page$/) do
+  @british_council.general_info.should_not have_document_name
+end

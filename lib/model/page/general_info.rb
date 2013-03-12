@@ -6,6 +6,7 @@ class Model::Page::GeneralInfo < SitePrism::Page
   element :title_meta_tag, "title"
   element :image, ".bc-full-width-img"
   element :document_name, ".bc-file a"
+  element :edit_button, ".tabs a[href*='edit']"
 
   elements :links, ".bc-lk-list-16 a"
 
