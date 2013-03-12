@@ -74,3 +74,10 @@ Feature: teaching Centre
     And I enter the teching centre page and landing page as children
     And I save the landing page
     Then the teaching centre page and landing page are displayed in the correct order
+
+  @solas_685 @core
+  Scenario: Calendar is displayed correctly on the teaching centre page
+    Given I am logged in as an author user
+    When I navigate to the create teaching centre page
+    And I submit a teaching centre page
+    Then the teaching centre page is created

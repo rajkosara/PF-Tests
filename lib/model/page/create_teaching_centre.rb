@@ -20,8 +20,9 @@ class Model::Page::CreateTeachingCentre < SitePrism::Page
   element :facilities_tab, "li.horizontal-tab-button-3"
   element :facilities_body, "iframe#edit-field-teaching-centre-tab4-body-und-0-value_ifr"
   element :error_message, "#console .error"
-  element :save_button, '#edit-submit'
+  element :save_button, "[value='Save']"
   element :counter_message, "#edit-title-field-en-0-value-counter"
+  element :address_tab, "#node_teaching_centre_form_group_address a"
 
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
 end

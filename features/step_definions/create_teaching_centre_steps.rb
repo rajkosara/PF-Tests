@@ -10,6 +10,7 @@ end
 When /^I submit a teaching centre page$/ do
   step "the create teaching centre page is displayed"
   step "I enter a title into the teahing create teaching centre page"
+  @british_council.create_teaching_centre.address_tab.click
   @british_council.create_teaching_centre.address_one.set @teaching_centre.address_one
   @british_council.create_teaching_centre.address_two.set @teaching_centre.address_two
   @british_council.create_teaching_centre.post_code.set @teaching_centre.post_code
@@ -59,6 +60,7 @@ end
 
 When(/^I translate the teaching centre page$/) do
   Timeout.timeout(30) { sleep(0.1) until @british_council.create_teaching_centre.current_url.include? "translation"}
+  @british_council.create_teaching_centre.address_tab.click
   @british_council.create_teaching_centre.address_one.set "#{@teaching_centre.address_one} TRANSLATED"
   @british_council.create_teaching_centre.address_two.set "#{@teaching_centre.address_two} TRANSLATED"
   step "I save a teaching centre"
