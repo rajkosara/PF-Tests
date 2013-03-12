@@ -32,7 +32,7 @@ end
 When(/^I submit a general info page with an document$/) do
   step "the create general info page is displayed"
   step "I enter a title for the general info page"
-  @british_council.create_general_info.document_tab.click
+  step "I open the document tab on the general info"
   @british_council.create_general_info.document_library.select_checkboxes.first.click
   step "I enter a summary for the general info page"
   step "I enter a body for the general info page"
@@ -45,6 +45,10 @@ When /^I submit a general info page with a custom url filename$/ do
   step "I open the url path settings on the create general info page"
   step "I enter a custom url filename for a create general info page"
   step "I save the general info page"
+end
+
+When /^I open the document tab on the general info$/ do
+  @british_council.create_general_info.document_tab.click
 end
 
 When /^I enter a title for the general info page$/ do
@@ -157,4 +161,16 @@ When /^I enter a custom url filename for a create general info page$/ do
   @british_council.create_general_info.meta_config.url_path_settings.generate_auto_url_label.click
   @british_council.create_general_info.meta_config.url_path_settings.generate_auto_url_checkbox.should_not be_checked
   @british_council.create_general_info.meta_config.url_path_settings.filename.set @general_info.alternate_filename
+end
+
+When(/^search for my created document on the general info page$/) do
+  step "I open the document tab on the general info"
+  @british_council.create_general_info.document_library.internal_name.set @document.title
+  @british_council.create_general_info.document_library.apply_button.click
+  wait_for_ajax
+end
+
+Then(/^the created document is displayed on the general info page$/) do
+  @british_council.create_general_info.document_library.select_checkboxes.size == 1
+  @british_council.create_general_info.document_library.table_internal_name.pop.text.should == @document.title
 end
