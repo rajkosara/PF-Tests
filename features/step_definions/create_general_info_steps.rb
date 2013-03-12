@@ -29,6 +29,16 @@ When(/^I submit a general info page with an image$/) do
   step "I save the general info page"
 end
 
+When(/^I submit a general info page with an document$/) do
+  step "the create general info page is displayed"
+  step "I enter a title for the general info page"
+  @british_council.create_general_info.document_tab.click
+  @british_council.create_general_info.document_library.select_checkboxes.first.click
+  step "I enter a summary for the general info page"
+  step "I enter a body for the general info page"
+  step "I save the general info page"
+end
+
 When /^I submit a general info page with a custom url filename$/ do
   step "I enter a title for the general info page"
   step "I enter a body for the general info page"

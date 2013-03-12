@@ -43,3 +43,7 @@ end
 Then(/^the image is displayed on the general info page$/) do
   @british_council.general_info.image.should be_visible
 end
+
+Then(/^the document is displayed on the general info page$/) do
+  @british_council.general_info.document_name.text.should == @document.document_name
+end

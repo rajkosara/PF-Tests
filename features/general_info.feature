@@ -100,3 +100,11 @@ Feature: General info
     When I navigate to the create general info page
     And I submit a general info page with an image
     Then the image is displayed on the general info page
+
+  @complete @solas_773 @core
+  Scenario: Add an document to a general info page
+    Given I am logged in as an author user
+    And I create a document in the media library
+    When I navigate to the create general info page
+    And I submit a general info page with an document
+    Then the document is displayed on the general info page
