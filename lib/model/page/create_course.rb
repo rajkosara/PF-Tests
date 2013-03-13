@@ -19,9 +19,9 @@ class Model::Page::CreateCourse < SitePrism::Page
   element :tab_three_body, "iframe#edit-field-course-tab-three-body-und-0-value_ifr"
 
   #calendat and pricing tab
-  element :calendar_pricing_tab, ".horizontal-tab-button-3 a[href]"
+  element :timetable_tab, ".horizontal-tab-button-3 a[href]"
   element :timetable_title, "#edit-field-course-timetable-title-und-0-value"
-  element :calendar_pricing_body, "iframe#edit-field-course-cal-pricing-body-und-0-value_ifr"
+  element :timetable_intro, "iframe#edit-field-course-cal-pricing-body-und-0-value_ifr"
 
   #levels
   element :levels_tab, ".horizontal-tab-button-4 a[href]"
@@ -29,7 +29,7 @@ class Model::Page::CreateCourse < SitePrism::Page
   element :levels_description, "iframe#edit-field-course-levels-und-0-second-value_ifr"
 
   element :error_message, "#console .error"
-  element :save_button, "input#edit-submit"
+  element :save_button, "input[value*='Save']"
   element :counter_message, "#edit-title-field-en-0-value-counter"
 
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"

@@ -128,7 +128,7 @@ Feature: General info
     Then the document is not displayed on the general info page
 
   @complete @solas_666 @core
-  Scenario: Create a general info page
+  Scenario: Create a general info page with a show hide
     Given I am logged in as an producer user
     When I navigate to the create general info page
     And I submit a general info page with a show hide

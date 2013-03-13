@@ -59,7 +59,7 @@ Feature: user
 
 
   @complete @solas_208 @core
-  Scenario: Bloack a user
+  Scenario: Block a user
     Given I am logged in as an admin user
     And I navigate to the add user page
     And I submit a new author user

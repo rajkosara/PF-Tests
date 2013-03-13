@@ -109,11 +109,11 @@ When /^I enter a body for the third tab on the create course page$/ do
 end
 
 When /^I click on the calendar and pricing tab on the create course page$/ do
-  @british_council.create_course.calendar_pricing_tab.click
+  @british_council.create_course.timetable_tab.click
 end
 
 When /^I enter a body for the calendar and pricing tab on the create course page$/ do
-  @british_council.create_course.calendar_pricing_body.native.send_keys @course.calendar_pricing_body
+  @british_council.create_course.timetable_intro.native.send_keys @course.timetable_intro
 end
 
 When /^I click save on the create course page on the create course page$/ do

@@ -75,7 +75,7 @@ rake cuke:list_tags
 
 This will list all the tags that are used
 ------
-rake cuke:TAGS="[tag]"
+rake cuke:specific TAGS="[tag]"
 
 This will run all the tests that have been given a particular tag. e.g rake cuke:specific TAGS=@login or rake cuke:specific TAGS=@general_info
 

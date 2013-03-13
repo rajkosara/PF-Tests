@@ -8,6 +8,7 @@ class Model::Domain::Course < Model::Domain::Content
   attr_accessor :levels_description
   attr_accessor :levels_title
   attr_accessor :timetable_title
+  attr_accessor :timetable_intro
 
   def initialize
     @title = "Course Title #{Time.current.strftime("%T")} #{String.random(4)}"
@@ -17,7 +18,7 @@ class Model::Domain::Course < Model::Domain::Content
     @tab_two_body = "Course Tab Two Body #{Time.current.strftime("%T")} #{String.random(4)}"
     @tab_three_title = "Course Tab Three Title #{String.random(4)}"
     @tab_three_body = "Course Tab Three Body #{Time.current.strftime("%T")} #{String.random(4)}"
-    @calendar_pricing_body = "Course Calender and Pricing Body #{Time.current.strftime("%T")} #{String.random(4)}"
+    @timetable_intro = "Course timetable intro Body #{Time.current.strftime("%T")} #{String.random(4)}"
     @timetable_title = "Course timetable title #{Time.current.strftime("%T")} #{String.random(4)}"
     @menu_title = "Course menu link #{String.random(4)}"
     @alternate_filename = "Course alternate filename #{String.random(6)}"
