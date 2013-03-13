@@ -12,9 +12,9 @@ Then(/^the teaching centre page details are displayed correctly$/) do
   @british_council.teaching_centre.body.text.should == @teaching_centre.body
   @british_council.teaching_centre.calendar_tab.text.should == "Calendar"
   @british_council.teaching_centre.calendar_tab.click
-  @british_council.teaching_centre.calendar_body.text.should == @teaching_centre.calendar_body
+  @british_council.teaching_centre.calendar_body.text.should include @teaching_centre.calendar_body
   @british_council.teaching_centre.facilities_tab.click
-  @british_council.teaching_centre.facilities_body.text.should == @teaching_centre.facilities_body
+  @british_council.teaching_centre.facilities_body.text.should include @teaching_centre.facilities_body
 end
 
 Then(/^the teaching centre page details are displayed correctly on mobile$/) do

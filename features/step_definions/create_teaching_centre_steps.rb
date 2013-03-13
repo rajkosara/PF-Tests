@@ -115,6 +115,6 @@ When(/^I add an image to the content and location tab$/) do
 end
 
 When(/^I add an image to the about tab$/) do
-  @british_council.create_teaching_centre.about_image_tab.first.click
+  @british_council.create_teaching_centre.about_image_tab.click
   @british_council.create_teaching_centre.image_library.first.select_checkboxes.first.click
 end
