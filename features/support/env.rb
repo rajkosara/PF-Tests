@@ -14,12 +14,12 @@ require './ext/string'
 require './ext/time'
 require './ext/capybara'
 
-
 #Set the timezone to be London time
 Time.zone = 'Europe/London'
 
 #loads everything in the lib folder
 ActiveSupport::Dependencies.autoload_paths << File.expand_path(File.join(Dir.pwd, 'lib'))
+
 
 #setup config for browser
 Capybara.configure do |config|

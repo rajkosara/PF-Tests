@@ -22,7 +22,7 @@ end
 When(/^I submit a general info page with an image$/) do
   step "the create general info page is displayed"
   step "I enter a title for the general info page"
-  @british_council.create_general_info.image_tab.image_tab.click
+  @british_council.create_general_info.image_tab.click
   wait_for_ajax
   @british_council.create_general_info.image_library.select_checkboxes.first.click
   wait_for_ajax
