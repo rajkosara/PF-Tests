@@ -5,7 +5,7 @@ class Model::Page::CreateFaq< SitePrism::Page
   element :question, '#edit-title-field-en-0-value'
   element :answer, 'iframe#edit-field-faq-answer-und-0-value_ifr'
   element :category, '#edit-field-faq-category-und'
-  element :save_button, '#edit-submit'
+  element :save_button, "input[value*='Save']"
   element :error_message, "#console .error"
   element :counter_message, "#edit-title-field-en-0-value-counter"
 

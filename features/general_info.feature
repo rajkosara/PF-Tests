@@ -1,4 +1,4 @@
-@general_info @wip
+@general_info
 Feature: General info
 
   @complete @solas_121 @core
@@ -135,7 +135,7 @@ Feature: General info
     Then the show hide is displayed on the general info page
 
   @complete @solas_666 @core @mobile
-  Scenario: Create a general info page on mobile
+  Scenario: Create a general info page  with show hide on mobile
     Given I am logged in as an producer user
     When I navigate to the create general info page
     And I submit a general info page with a show hide

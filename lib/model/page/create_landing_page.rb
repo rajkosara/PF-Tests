@@ -5,7 +5,7 @@ class Model::Page::CreateLandingPage < SitePrism::Page
   element :title, "#edit-title-field-en-0-value"
   element :summary, "#edit-body-und-0-summary"
   element :body, "iframe#edit-body-und-0-value_ifr"
-  element :save_button, '#edit-submit'
+  element :save_button, "input[value*='Save']"
   element :authorized_message, "#block-system-main"
   element :error_message, "#console .error"
   element :counter_message, "#edit-title-field-en-0-value-counter"

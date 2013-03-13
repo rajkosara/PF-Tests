@@ -167,6 +167,7 @@ end
 
 When(/^search for my created document on the general info page$/) do
   step "I open the document tab on the general info"
+  wait_for_ajax
   @british_council.create_general_info.document_library.internal_name.set @document.title
   wait_for_ajax
   @british_council.create_general_info.document_library.apply_button.click

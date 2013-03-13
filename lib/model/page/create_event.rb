@@ -11,7 +11,7 @@ class Model::Page::CreateEvent < SitePrism::Page
   element :internal_ref, "#edit-field-job-internal-ref-code-und-0-value"
   element :geolocation, "#edit-field-generic-geolocation-map-und-0-address-field"
   element :get_location_button, "#geolocation-address-geocode-32-0"
-  element :save_button, '#edit-submit'
+  element :save_button, "input[value*='Save']"
   element :error_message, "#console .error"
   element :counter_message, "#edit-title-field-en-0-value-counter"
   

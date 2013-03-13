@@ -17,7 +17,7 @@ class Model::Page::CreateJob < SitePrism::Page
   element :internal_link, "#edit-field-generic-internal-link-und-0-target-id"
   element :error_message, "#console .error"
   element :counter_message, "#edit-title-field-en-0-value-counter"
-  element :save_button, '#edit-submit'
+  element :save_button, "input[value*='Save']"
 
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
     
