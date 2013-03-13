@@ -1,4 +1,4 @@
-@general_info
+@general_info @wip
 Feature: General info
 
   @complete @solas_121 @core

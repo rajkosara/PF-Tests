@@ -22,8 +22,10 @@ end
 When(/^I submit a general info page with an image$/) do
   step "the create general info page is displayed"
   step "I enter a title for the general info page"
-  @british_council.create_general_info.image_tab.click
+  @british_council.create_general_info.image_tab.
+  wait_for_ajax
   @british_council.create_general_info.image_library.select_checkboxes.first.click
+  wait_for_ajax
   step "I enter a summary for the general info page"
   step "I enter a body for the general info page"
   step "I save the general info page"
@@ -166,6 +168,7 @@ end
 When(/^search for my created document on the general info page$/) do
   step "I open the document tab on the general info"
   @british_council.create_general_info.document_library.internal_name.set @document.title
+  wait_for_ajax
   @british_council.create_general_info.document_library.apply_button.click
   wait_for_ajax
 end
@@ -177,10 +180,12 @@ end
 
 When(/^I select the first document in the list on the general info page$/) do
   @british_council.create_general_info.document_library.select_checkboxes.first.click
+  wait_for_ajax
 end
 
 When(/^I remove the document from the general info page$/) do
   step "I open the document tab on the general info"
+  wait_for_ajax
   @british_council.create_general_info.document_library.remove_document.click
   wait_for_ajax
   step "I save the general info page"
