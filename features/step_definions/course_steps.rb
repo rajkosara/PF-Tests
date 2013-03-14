@@ -20,8 +20,9 @@ Then /^the course details are displayed correctly$/ do
   @british_council.course.tab_three_title.click
   @british_council.course.tab_three_title.text.should include @course.tab_three_title
   @british_council.course.tab_three_body.text.should include @course.tab_three_body
-  @british_council.course.calendar_and_pricing.click
-  @british_council.course.calendar_pricing_tab_body.text.should include @course.calendar_pricing_body
+  @british_council.course.timetable_tab.click
+  @british_council.course.timetable_tab.text.should == @course.timetable_title
+  @british_council.course.timetable_tab_body.text.should include @course.timetable_intro
 end
 
 Then /^the landing page is the course pages parent$/ do
@@ -46,6 +47,6 @@ Then /^the course details are displayed correctly on mobile$/ do
   @british_council.mobile_course.tab_three_title.click
   @british_council.mobile_course.tab_three_title.text.should include @course.tab_three_title
   @british_council.mobile_course.tab_three_body.text.should include @course.tab_three_body
-  @british_council.mobile_course.calendar_and_pricing.click
-  @british_council.mobile_course.calendar_pricing_tab_body.text.should include @course.calendar_pricing_body
+  @british_council.mobile_course.timetable_title.click
+  @british_council.mobile_course.timetable_tab_body.text.should include @course.timetable_intro
 end

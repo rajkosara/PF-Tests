@@ -19,7 +19,7 @@ class Model::Domain::Course < Model::Domain::Content
     @tab_three_title = "Course Tab Three Title #{String.random(4)}"
     @tab_three_body = "Course Tab Three Body #{Time.current.strftime("%T")} #{String.random(4)}"
     @timetable_intro = "Course timetable intro Body #{Time.current.strftime("%T")} #{String.random(4)}"
-    @timetable_title = "Course timetable title #{Time.current.strftime("%T")} #{String.random(4)}"
+    @timetable_title = "Course timetable title #{String.random(4)}"
     @menu_title = "Course menu link #{String.random(4)}"
     @alternate_filename = "Course alternate filename #{String.random(6)}"
     @levels_title = "Course levels title #{String.random(6)}"
