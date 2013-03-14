@@ -18,7 +18,7 @@ Given /^I choose to the translate a landing page$/ do
 end
 
 Given /^I save the landing page url$/ do
-  @created_landing_url = @british_council.landing_page.current_url
+  @landing_page.url = @british_council.landing_page.current_url
 end
 
 Then /^the landing page is displayed with the edited values$/ do

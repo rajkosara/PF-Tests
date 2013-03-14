@@ -37,4 +37,5 @@ class Model::Page::CreateCourse < SitePrism::Page
 
   section :add_cta, Model::Section::AddCta, "#node_course_form_group_cta"
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
+  section :internal_link_search, Model::Section::InternalLinkSearch, "div#linkit-modal"
 end

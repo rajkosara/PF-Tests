@@ -51,7 +51,7 @@ Then /^the course details are displayed correctly on mobile$/ do
   @british_council.mobile_course.timetable_tab_body.text.should include @course.timetable_intro
 end
 
-Then(/^the CTA is displayed correctly on the course page$/) do
+Then(/^the CTA without an image and with an external link is displayed correctly on the course page$/) do
   @british_council.course.about_cta.text.should == @course.cta.title
   @british_council.course.about_strapline.text.should == @course.cta.strapline.upcase
 
@@ -75,4 +75,57 @@ Then(/^the CTA is displayed correctly on the course page$/) do
   @british_council.course.timetable_tab.click
   @british_council.course.cta_box[2].title_link.text == @course.cta.title
   @british_council.course.cta_box[2].strapline.text == @course.cta.strapline.upcase
+end
+
+Then(/^the CTA with an image and with an internal link is displayed correctly on the course page$/) do
+    @british_council.course.about_cta.text.should == @course.cta.title
+  @british_council.course.about_strapline.text.should == @course.cta.strapline.upcase
+
+  @british_council.course.cta_box.last.title_link.text == @course.cta.title
+  @british_council.course.cta_box.last.text.should include @course.cta.header.upcase
+  @british_council.course.cta_box.last.supporting_text.text == @course.cta.supporting_text
+
+  @number_of_ctas = @british_council.course.cta_box.collect do |thing|
+    thing.title_link[:href] == @landing_page.url
+  end
+  @number_of_ctas.size == 4
+
+  @british_council.course.tab_two_title.click
+  @british_council.course.cta_box.first.title_link.text == @course.cta.title
+  @british_council.course.cta_box.first.strapline.text == @course.cta.strapline.upcase
+
+  @british_council.course.tab_three_title.click
+  @british_council.course.cta_box[1].title_link.text == @course.cta.title
+  @british_council.course.cta_box[1].strapline.text == @course.cta.strapline.upcase
+
+  @british_council.course.timetable_tab.click
+  @british_council.course.cta_box[2].title_link.text == @course.cta.title
+  @british_council.course.cta_box[2].strapline.text == @course.cta.strapline.upcase
+  @british_council.course.should have_cta_image
+end
+
+Then(/^the CTA without an image and with an external link is displayed correctly on the course page on mobile$/) do
+    @british_council.mobile_course.about_cta.text.should == @course.cta.title
+  @british_council.mobile_course.about_strapline.text.should == @course.cta.strapline.upcase
+
+  @british_council.mobile_course.cta_box.last.title_link.text == @course.cta.title
+  @british_council.mobile_course.cta_box.last.text.should include @course.cta.header.upcase
+  @british_council.mobile_course.cta_box.last.supporting_text.text == @course.cta.supporting_text
+
+  @number_of_ctas = @british_council.mobile_course.cta_box.collect do |thing|
+    thing.title_link[:href] == @course.cta.url
+  end
+  @number_of_ctas.size == 4
+
+  @british_council.mobile_course.tab_two_title.click
+  @british_council.mobile_course.cta_box.first.title_link.text == @course.cta.title
+  @british_council.mobile_course.cta_box.first.strapline.text == @course.cta.strapline.upcase
+
+  @british_council.mobile_course.tab_three_title.click
+  @british_council.mobile_course.cta_box[1].title_link.text == @course.cta.title
+  @british_council.mobile_course.cta_box[1].strapline.text == @course.cta.strapline.upcase
+
+  @british_council.mobile_course.timetable_title.click
+  @british_council.mobile_course.cta_box[2].title_link.text == @course.cta.title
+  @british_council.mobile_course.cta_box[2].strapline.text == @course.cta.strapline.upcase
 end

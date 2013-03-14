@@ -12,6 +12,7 @@ class Model::Page::Course < SitePrism::Page
   element :levels_tab, '[data-hash="#bc-tabs-bc-course-5"] a'
   element :about_strapline, ".bc-card figcaption"
   element :about_cta, ".bc-cta"
+  element :cta_image, ".bc-full-width-img"
 
   sections :cta_box, Model::Section::CtaBox, ".bc-hlight-box"
 end
