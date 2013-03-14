@@ -115,19 +115,24 @@ When(/^I enter the (teching centre|general info) page and landing page as childr
   #enter page
   @british_council.create_landing_page.list_management.set @page
   @british_council.create_landing_page.list_management.native.send_keys :arrow_down
+  wait_for_ajax
   Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_dropdown.visible?}
   @british_council.create_landing_page.list_management.native.send_keys :arrow_down
   @british_council.create_landing_page.list_management.native.send_keys :enter
+  wait_for_ajax
   Timeout.timeout(30) { sleep(0.1) while @british_council.create_landing_page.list_management.text == @page}
   #add another children item
   @british_council.create_landing_page.add_another_item.click
+  wait_for_ajax
   Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_management_second.visible?}
   #enter landing page
   @british_council.create_landing_page.list_management_second.set @landing_page.title
   @british_council.create_landing_page.list_management_second.native.send_keys :arrow_down
+  wait_for_ajax
   Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_dropdown.visible?}
   @british_council.create_landing_page.list_management_second.native.send_keys :arrow_down
   @british_council.create_landing_page.list_management_second.native.send_keys :enter
+  wait_for_ajax
   Timeout.timeout(30) { sleep(0.1) while @british_council.create_landing_page.list_management_second.text == @landing_page.title}
   wait_for_ajax
 end

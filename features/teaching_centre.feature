@@ -65,7 +65,7 @@ Feature: teaching Centre
     And the opening hours are displayed on the teaching centre page
 
   @complete @solas_810 @core
-  Scenario: Add and order pages on a landing page
+  Scenario: Add and order teaching centre page on a landing page
     Given I am logged in as an admin user
     And I create a published landing page
     And I create a teaching centre page

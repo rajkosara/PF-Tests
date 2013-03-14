@@ -6,8 +6,9 @@ class Model::Page::LandingPage < SitePrism::Page
   element :summary, "meta[name='description'][content]"
   element :body, ".bc-body-content"
   element :two_column, ".bc-boxes-2-ltr .bc-boxes-2"
+  element :child_summary, ".bc-listing p"
   
-  elements :child_pages_title, ".bc-box a[href] h2"
+  elements :child_pages_title, ".bc-listing h2"
   elements :child_pages_summary, ".bc-box a[href] p"
 
   section :header, Model::Section::Header, "#bc-header-wrapper"

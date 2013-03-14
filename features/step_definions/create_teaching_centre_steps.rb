@@ -10,8 +10,8 @@ end
 When /^I submit a teaching centre page$/ do
   step "the create teaching centre page is displayed"
   step "I enter a title into the teahing create teaching centre page"
-  step "I enter the full address on a teaching centre"
   @british_council.create_teaching_centre.summary.set @teaching_centre.summary
+  step "I enter the full address on a teaching centre"
   step "I enter an about body into the teahing create teaching centre page"
   @british_council.create_teaching_centre.email_address.set @teaching_centre.email_address
   @british_council.create_teaching_centre.calendar_tab.click
@@ -31,14 +31,14 @@ When /^I enter an about body into the teahing create teaching centre page$/ do
 end
 
 When /^I enter an contact and location body into the teahing create teaching centre page$/ do
-  @british_council.create_teaching_centre.fax_number.set @teaching_centre.fax_number
+  @british_council.create_teaching_centre.email_address.set @teaching_centre.email_address
   @british_council.create_teaching_centre.contact_and_location_tab.click
   @british_council.create_teaching_centre.contact_and_location_body.native.send_keys @teaching_centre.contact_location_body
 end
 
 When /^I submit a teaching centre page without a title$/ do
   step "I enter an about body into the teahing create teaching centre page"
-  @british_council.create_teaching_centre.email_address.set @teaching_centre.email_address
+  @british_council.create_teaching_centre.title.set ""
   step "I enter an contact and location body into the teahing create teaching centre page"
   step "I save a teaching centre"
 end
@@ -116,5 +116,7 @@ end
 
 When(/^I add an image to the about tab$/) do
   @british_council.create_teaching_centre.about_image_tab.click
+  wait_for_ajax
   @british_council.create_teaching_centre.image_library.first.select_checkboxes.first.click
+  wait_for_ajax
 end
