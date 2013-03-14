@@ -87,7 +87,7 @@ class Model::BritishCouncil
     Model::Page::Image.new
   end
 
-   def document
+  def document
     Model::Page::Document.new
   end
   

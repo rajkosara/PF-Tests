@@ -20,7 +20,8 @@ When /^I create a landing page object$/ do
 end
 
 When /^I create a course object$/ do
-  @course = Model::Domain::Course.new
+  #@course = Model::Domain::Course.new
+  @course ||= Model::Domain::Course.new
 end
 
 When /^create a teaching centre object$/ do

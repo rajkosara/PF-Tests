@@ -73,3 +73,13 @@ Feature: Course
     And I submit a course page
     And I am using a mobile device
     Then the course details are displayed correctly on mobile
+
+  @comlete @solas_848 @core
+  Scenario: CTA without image and with an external link is displayed correctly
+    Given I am logged in as an admin user
+    When I navigate to the create course page
+    And I submit a course page with a cta without an image and with an external link
+    Then the course page is created
+    And the CTA is displayed correctly on the course page
+
+  Scenario: CTA with an image and with an internal link is displayed correctly

@@ -24,5 +24,11 @@ class Model::Domain::Course < Model::Domain::Content
     @alternate_filename = "Course alternate filename #{String.random(6)}"
     @levels_title = "Course levels title #{String.random(6)}"
     @levels_description = "Course levels description #{String.random(6)}"
+    
+    
+    def cta
+       @course ||= Model::Domain::Cta.new
+       #this stops a new cta being created each time the course is called
+    end
   end
 end

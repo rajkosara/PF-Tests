@@ -28,9 +28,13 @@ class Model::Page::CreateCourse < SitePrism::Page
   element :levels_title, "#edit-field-course-levels-und-0-first"
   element :levels_description, "iframe#edit-field-course-levels-und-0-second-value_ifr"
 
+  #cta_tab
+  element :add_cta_tab, "#node_course_form_group_cta a.fieldset-title"
+
   element :error_message, "#console .error"
   element :save_button, "input[value*='Save']"
   element :counter_message, "#edit-title-field-en-0-value-counter"
 
+  section :add_cta, Model::Section::AddCta, "#node_course_form_group_cta"
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
 end

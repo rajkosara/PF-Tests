@@ -10,4 +10,8 @@ class Model::Page::Course < SitePrism::Page
   element :timetable_tab, '[data-hash="#bc-tabs-bc-course-4"] a'
   element :timetable_tab_body, "#bc-tabs-bc-course-4 .bc-tab-content"
   element :levels_tab, '[data-hash="#bc-tabs-bc-course-5"] a'
+  element :about_strapline, ".bc-card figcaption"
+  element :about_cta, ".bc-cta"
+
+  sections :cta_box, Model::Section::CtaBox, ".bc-hlight-box"
 end
