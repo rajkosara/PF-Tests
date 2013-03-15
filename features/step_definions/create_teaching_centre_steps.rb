@@ -79,7 +79,9 @@ When(/^I submit a teaching centre page with image on the about tab$/) do
   @british_council.create_teaching_centre.email_address.set @teaching_centre.email_address
   @british_council.create_teaching_centre.calendar_tab.click
   @british_council.create_teaching_centre.calendar_body.native.send_keys @teaching_centre.calendar_body
-  step "I enter an contact and location body into the teahing create teaching centre page"
+  @british_council.create_teaching_centre.email_address.set @teaching_centre.email_address
+  @british_council.create_teaching_centre.contact_and_location_tab.click
+  @british_council.create_teaching_centre.contact_and_location_body.native.send_keys @teaching_centre.contact_location_body
   @british_council.create_teaching_centre.facilities_tab.click
   @british_council.create_teaching_centre.facilities_body.native.send_keys @teaching_centre.facilities_body
   step "I save a teaching centre"
@@ -113,7 +115,10 @@ When(/^I enter the full address on a teaching centre$/) do
 end
 
 When(/^I add an image to the content and location tab$/) do
-  step "I enter an contact and location body into the teahing create teaching centre page"
+  #step "I enter an contact and location body into the teahing create teaching centre page"
+  @british_council.create_teaching_centre.email_address.set @teaching_centre.email_address
+  @british_council.create_teaching_centre.contact_and_location_tab.click
+  @british_council.create_teaching_centre.contact_and_location_body.native.send_keys @teaching_centre.contact_location_body
   @british_council.create_teaching_centre.contact_location_image_tab.click
   @british_council.create_teaching_centre.image_library.last.select_checkboxes.first.click
 end
