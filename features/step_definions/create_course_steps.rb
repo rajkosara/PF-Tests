@@ -173,8 +173,8 @@ When /^I submit a course page with levels$/ do
   step "I enter a course timetable title on the create course page"
   step "I enter a body for the calendar and pricing tab on the create course page"
   @british_council.create_course.levels_tab.click
-  @british_council.create_course.levels_title.first.set @course.levels_title
-  @british_council.create_course.levels_description.first.native.send_keys @course.levels_description
+  @british_council.create_course.add_level.first.levels_title.first.set @course.levels_title
+  @british_council.create_course.add_level.first.levels_description.first.native.send_keys @course.levels_description
   step "I click save on the create course page on the create course page"
 end
 
@@ -254,5 +254,25 @@ When(/^I submit a course page with a cta with an image and with an internal link
   @british_council.create_course.add_cta.strapline.set @course.cta.strapline
   @british_council.create_course.add_cta.header.set @course.cta.header
   @british_council.create_course.add_cta.supporting_text.native.send_keys @course.cta.supporting_text
+  step "I click save on the create course page on the create course page"
+end
+
+When(/^I submit a course page with a timetable$/) do
+  step "the create course page is displayed"
+  step "I enter a course summary on the create course page"
+  step "I enter a about course body on the create course page"
+  step "I enter a course title on the create course page"
+  step "I click on the second tab on the create course page"
+  step "I enter a title for the second tab on the create course page"
+  step "I enter a body for the second tab on the create course page"
+  step "I click on the third tab on the create course page"
+  step "I enter a title for the third tab on the create course page"
+  step "I enter a body for the third tab on the create course page"
+  step "I click on the calendar and pricing tab on the create course page"
+  step "I enter a course timetable title on the create course page"
+  step "I enter a body for the calendar and pricing tab on the create course page"
+  @british_council.create_course.timetable_one_tab.click
+  @british_council.create_course.timetable_heading.set @course.timetable_heading
+  @british_council.create_course.teaching_centre_name.set @course.teaching_centre_name
   step "I click save on the create course page on the create course page"
 end

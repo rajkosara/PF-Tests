@@ -26,6 +26,9 @@ class Model::Page::CreateCourse < SitePrism::Page
   #levels
   element :levels_tab, ".horizontal-tab-button-4 a[href]"
   element :add_level_button, "input[id*=edit-field-course-levels-und-add]"
+  element :timetable_one_tab, "#node_course_form_group_timetable_group_one a.fieldset-title"
+  element :timetable_heading, "#edit-field-course-timetables-heading1-und-0-value"
+  element :teaching_centre_name, "#edit-field-course-timetable-group-one-und-0-first"
   sections :add_level, Model::Section::AddLevel, "table[id*=field-course-levels-values] .draggable"
 
   #cta_tab

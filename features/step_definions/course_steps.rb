@@ -139,3 +139,9 @@ Then(/^the CTA without an image and with an external link is displayed correctly
   @british_council.mobile_course.cta_box[2].title_link.text == @course.cta.title
   @british_council.mobile_course.cta_box[2].strapline.text == @course.cta.strapline.upcase
 end
+
+Then(/^the timetable is displayed on the course page$/) do
+  @british_council.course.timetable_tab.click
+  @british_council.course.course_timetable_heading.text.should == @course.timetable_heading
+  @british_council.course.course_timetable.text.should include(@course.teaching_centre_name, "HEADER ONE", "Row one item three")
+end

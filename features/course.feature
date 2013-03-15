@@ -108,3 +108,11 @@ Feature: Course
     Then the course page is created
     And I am using a mobile device
     And the CTA without an image and with an external link is displayed correctly on the course page on mobile
+
+  @complete @solas_674 @core
+  Scenario: Create a course page with a timetable
+    Given I am logged in as an author user
+    When I navigate to the create course page
+    And I submit a course page with a timetable
+    Then the course page is created
+    And the timetable is displayed on the course page
