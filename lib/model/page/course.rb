@@ -14,5 +14,7 @@ class Model::Page::Course < SitePrism::Page
   element :about_cta, ".bc-cta"
   element :cta_image, ".bc-full-width-img"
 
+  section :level, Model::Section::Level, "#bc-tabs-bc-course-5 .bc-tab-content .bc-show-hide"
+
   sections :cta_box, Model::Section::CtaBox, ".bc-hlight-box"
 end

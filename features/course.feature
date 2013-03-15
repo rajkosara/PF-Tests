@@ -58,13 +58,21 @@ Feature: Course
     When I create a course page and place it under the landing page
     Then the landing page is the course pages parent
 
-  @complete @solas_571 @core
+  @complete @solas_571 @solas_550 @core
   Scenario: Levels tab displayed correctly
     Given I am logged in as an author user
     When I navigate to the create course page
     And I submit a course page with levels
     Then the course page is created
     And the levels tab is displayed on the course page
+
+  @complete @solas_571 @solas_550 @core
+  Scenario: Levels tab displayed correctly with two levels
+    Given I am logged in as an author user
+    When I navigate to the create course page
+    And I submit a course page with two levels
+    Then the course page is created
+    And the two level are displayed on the course page
 
   @complete @solas_571 @core @mobile
   Scenario: Course details are displayed correctly on mobile

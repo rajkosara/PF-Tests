@@ -34,6 +34,16 @@ Then /^the levels tab is displayed on the course page$/ do
   @british_council.course.levels_tab.text.should include "Levels"
 end
 
+Then(/^the two level are displayed on the course page$/) do
+  step "the levels tab is displayed on the course page"
+  @british_council.course.levels_tab.click
+  @british_council.course.level.title.first.text.should == @course.levels_title
+  @british_council.course.level.description.first.text.should == @course.levels_description
+  @british_council.course.level.title.last.click
+  @british_council.course.level.title.last.text.should == "#{@course.levels_title} second one"
+  @british_council.course.level.description.last.text.should == "#{@course.levels_description} second one"
+end
+
 Then /^the course title is displayed on the course page$/ do
   @british_council.course.title.text.should == @course.title
 end
@@ -78,7 +88,7 @@ Then(/^the CTA without an image and with an external link is displayed correctly
 end
 
 Then(/^the CTA with an image and with an internal link is displayed correctly on the course page$/) do
-    @british_council.course.about_cta.text.should == @course.cta.title
+  @british_council.course.about_cta.text.should == @course.cta.title
   @british_council.course.about_strapline.text.should == @course.cta.strapline.upcase
 
   @british_council.course.cta_box.last.title_link.text == @course.cta.title
@@ -105,7 +115,7 @@ Then(/^the CTA with an image and with an internal link is displayed correctly on
 end
 
 Then(/^the CTA without an image and with an external link is displayed correctly on the course page on mobile$/) do
-    @british_council.mobile_course.about_cta.text.should == @course.cta.title
+  @british_council.mobile_course.about_cta.text.should == @course.cta.title
   @british_council.mobile_course.about_strapline.text.should == @course.cta.strapline.upcase
 
   @british_council.mobile_course.cta_box.last.title_link.text == @course.cta.title
