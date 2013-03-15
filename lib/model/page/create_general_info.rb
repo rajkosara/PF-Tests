@@ -15,10 +15,12 @@ class Model::Page::CreateGeneralInfo < SitePrism::Page
   element :show_hide_tab, "#node_general_info_form_group_show_hide a"
   element :show_hide_title, "#edit-field-general-info-show-hide-und-0-first"
   element :show_hide_body, "#edit-field-general-info-show-hide-und-0-second"
+  element :add_cta_tab, "#node_general_info_form_group_cta a.fieldset-title"
 
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
   section :image_library, Model::Section::AddImageSection, "#node_general_info_form_group_image"
   section :document_library, Model::Section::AddDocumentSection, "#node_general_info_form_group_document"
+  section :add_cta, Model::Section::AddCta, "#node_general_info_form_group_cta"
   
   sections :external_link, Model::Section::ExternalLink,".link-field-subrow"
 end

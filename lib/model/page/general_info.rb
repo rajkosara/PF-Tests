@@ -12,6 +12,8 @@ class Model::Page::GeneralInfo < SitePrism::Page
 
   elements :links, ".bc-lk-list-16 a"
 
+  sections :cta_box, Model::Section::CtaBox, ".bc-hlight-box"
+
   def filename
     current_url.gsub("#{Helpers::Config['korea_site_root']}/", "")
   end

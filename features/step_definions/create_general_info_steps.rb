@@ -202,3 +202,16 @@ When(/^I submit a general info page with a show hide$/) do
   @british_council.create_general_info.show_hide_body.set @general_info.show_hide_body
   step "I save the general info page"
 end
+
+
+When(/^I submit a general info page with a cta with an external link$/) do
+  step "the create general info page is displayed"
+  step "I enter a title for the general info page"
+  step "I enter a summary for the general info page"
+  step "I enter a body for the general info page"
+  @british_council.create_general_info.add_cta_tab.click
+  @british_council.create_general_info.add_cta.title.set @general_info.cta.title
+  @british_council.create_general_info.add_cta.url.set @general_info.cta.url
+  @british_council.create_general_info.add_cta.strapline.set @general_info.cta.strapline
+  step "I save the general info page"
+end

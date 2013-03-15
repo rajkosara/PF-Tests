@@ -141,3 +141,30 @@ Feature: General info
     And I submit a general info page with a show hide
     And I am using a mobile device
     Then the show hide is displayed on the general info page
+
+  @complete @solas_660 @core
+  Scenario: CTA with an external link is displayed correctly
+    Given I am logged in as an admin user
+    When I navigate to the create general info page
+    And I submit a general info page with a cta with an external link
+    Then the general info page is created
+    And the CTA with an external link is displayed correctly on the general info page
+
+  @solas_660 @core
+  Scenario: CTA with an internal link is displayed correctly
+    Given I am logged in as an admin user
+    And I create a image in the media library
+    And I create a published landing page
+    When I navigate to the create course page
+    And I submit a course page with a cta with an image and with an internal link
+    Then the course page is created
+    And the CTA with an image and with an internal link is displayed correctly on the course page
+
+  @solas_660 @core @mobile
+  Scenario: CTA with an external link is displayed correctly
+    Given I am logged in as an admin user
+    When I navigate to the create course page
+    And I submit a course page with a cta without an image and with an external link
+    Then the course page is created
+    And I am using a mobile device
+    And the CTA without an image and with an external link is displayed correctly on the course page on mobile
