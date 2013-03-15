@@ -57,26 +57,6 @@ Feature: Landing page
       | producer  |
       | admin     |
 
-  @complete @solas_403 @core
-  Scenario: Add a page to a landing page
-    Given I am logged in as an admin user
-    And I create a published landing page
-    When I navigate to the created published landing page
-    And I choose to the edit landing page
-    And I enter a child page into the child listing page management
-    Then the page is displayed on the listing page
-
-  @complete @solas_403 @core
-  Scenario: Add and order pages on a landing page
-    Given I am logged in as an admin user
-    And I create a published landing page
-    And I create a general info page
-    When I navigate to the created published landing page
-    And I choose to the edit landing page
-    And I enter the general info page and landing page as children
-    And I save the landing page
-    Then the general info page and landing page are displayed in the correct order
-
   @complete @solas_693 @core
   Scenario: Create landing page with two columns
     Given I am logged in as an admin user
@@ -88,6 +68,17 @@ Feature: Landing page
     And I select to display the landing page with a two column layout without images
     And I save the landing page
     Then two columns are displayed on the landing page
+
+  @complete @solas_403 @core
+  Scenario: Add and order pages on a landing page
+    Given I am logged in as an admin user
+    And I create a published landing page
+    And I create a general info page
+    When I navigate to the created published landing page
+    And I choose to the edit landing page
+    And I enter the general info page and landing page as children
+    And I save the landing page
+    Then the general info page and landing page are displayed in the correct order
 
   @complete @solas_620 @core @translate
   Scenario: Translate main menu item appears in the menu
@@ -107,3 +98,12 @@ Feature: Landing page
     And I translate the landing page
     And I navigate to the home page
     Then the translated menu link is not displayed on the main menu
+
+  @complete @solas_403 @core
+  Scenario: Add a page to a landing page
+    Given I am logged in as an admin user
+    And I create a published landing page
+    When I navigate to the created published landing page
+    And I choose to the edit landing page
+    And I enter a child page into the child listing page management
+    Then the page is displayed on the listing page

@@ -67,11 +67,11 @@ Then /^I click the save button on the add image page$/ do
 end
 
 Then /^an image type error is displayed on the add image page$/ do
-  @british_council.add_image.image_error.text.should include "The selected file #{@image.gif} cannot be uploaded"
+  @british_council.add_image.image_error.text.should include "The selected file #{@image.tif} cannot be uploaded"
 end
 
-Then /^I add an gif image to the media library$/ do
-  @british_council.add_image.image_path.set @image.gif_path
+Then /^I add an tif image to the media library$/ do
+  @british_council.add_image.image_path.set @image.tif_path
 end
 
 When /^I add an invaild sized image to the media library$/ do

@@ -22,6 +22,17 @@ Feature: teaching Centre
     And I submit a teaching centre page without a title
     Then a "Title field is required" error message is displayed on the create teaching centre page
 
+  @complete @solas_810 @core
+  Scenario: Add and order teaching centre page on a landing page
+    Given I am logged in as an admin user
+    And I create a published landing page
+    And I create a teaching centre page
+    When I navigate to the created published landing page
+    And I choose to the edit landing page
+    And I enter the teching centre page and landing page as children
+    And I save the landing page
+    Then the teaching centre page and landing page are displayed in the correct order
+
   @complete @solas_368 @core
   Scenario: Create a teaching centre page and the page is displayed correctly
     Given I am logged in as an producer user
@@ -63,17 +74,6 @@ Feature: teaching Centre
     And I submit a teaching centre page
     Then the teaching centre page is created
     And the opening hours are displayed on the teaching centre page
-
-  @complete @solas_810 @core
-  Scenario: Add and order teaching centre page on a landing page
-    Given I am logged in as an admin user
-    And I create a published landing page
-    And I create a teaching centre page
-    When I navigate to the created published landing page
-    And I choose to the edit landing page
-    And I enter the teching centre page and landing page as children
-    And I save the landing page
-    Then the teaching centre page and landing page are displayed in the correct order
 
   @complete @solas_685 @core
   Scenario: Calendar is displayed correctly on the teaching centre page

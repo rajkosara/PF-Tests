@@ -32,7 +32,7 @@ Feature: add image to the media library
   Scenario: Add invalid image type
     Given I am logged in as an author user
     And I navigate to the add image page
-    When I add an gif image to the media library
+    When I add an tif image to the media library
     Then an image type error is displayed on the add image page
 
   @complete @solas_259 @core
