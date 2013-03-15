@@ -15,6 +15,7 @@ class Model::Page::Course < SitePrism::Page
   element :about_strapline, ".bc-card figcaption"
   element :about_cta, ".bc-cta"
   element :cta_image, ".bc-full-width-img"
+  element :breadcrumbs, "#bc-breadcrumb"
 
   section :level, Model::Section::Level, "#bc-tabs-bc-course-5 .bc-tab-content .bc-show-hide"
 

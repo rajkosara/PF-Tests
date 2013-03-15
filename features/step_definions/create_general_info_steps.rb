@@ -227,3 +227,24 @@ When(/^I submit a general info page with a cta with an internal link$/) do
   @british_council.create_general_info.add_cta.strapline.set @general_info.cta.strapline
   step "I save the general info page"
 end
+
+When(/^I create a general info page a place it under the course page$/) do
+  step "I navigate to the create general info page"
+  step "the create general info page is displayed"
+  step "I enter a title for the general info page"
+  step "I enter a summary for the general info page"
+  step "I enter a body for the general info page"
+  sleep 5
+  @british_council.create_general_info.meta_config.menu_tab.click
+  @british_council.create_general_info.meta_config.menu_settings.enable_menu.click
+  @british_council.create_general_info.meta_config.menu_settings.title.set @general_info.menu_title
+  @british_council.create_general_info.meta_config.menu_settings.parent_menu.select @course.menu_title[0...27]
+  step "I publish a general info"
+  step "I save the general info page"
+  step "the general info page is created"
+end
+
+When /^I publish a general info$/ do
+  @british_council.create_general_info.meta_config.publish_tab.click
+  @british_council.create_general_info.meta_config.publish_settings.publish_status.click
+end

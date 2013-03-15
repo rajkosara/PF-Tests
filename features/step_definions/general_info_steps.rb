@@ -67,11 +67,11 @@ Then(/^the CTA with an external link is displayed correctly on the general info 
   end
   @number_of_ctas.size == 2
 
-  @british_council.course.cta_box.first.title_link.text == @general_info.cta.title
-  @british_council.course.cta_box.first.strapline.text == @general_info.cta.strapline.upcase
+  @british_council.general_info.cta_box.first.title_link.text == @general_info.cta.title
+  @british_council.general_info.cta_box.first.strapline.text == @general_info.cta.strapline.upcase
 
-  @british_council.course.cta_box.last.title_link.text == @general_info.cta.title
-  @british_council.course.cta_box.last.strapline.text == @general_info.cta.strapline.upcase
+  @british_council.general_info.cta_box.last.title_link.text == @general_info.cta.title
+  @british_council.general_info.cta_box.last.strapline.text == @general_info.cta.strapline.upcase
 end
 
 
@@ -81,9 +81,13 @@ Then(/^the CTA with an internal link is displayed correctly on the general info 
   end
   @number_of_ctas.size == 2
 
-  @british_council.course.cta_box.first.title_link.text == @general_info.cta.title
-  @british_council.course.cta_box.first.strapline.text == @general_info.cta.strapline.upcase
+  @british_council.general_info.cta_box.first.title_link.text == @general_info.cta.title
+  @british_council.general_info.cta_box.first.strapline.text == @general_info.cta.strapline.upcase
 
-  @british_council.course.cta_box.last.title_link.text == @general_info.cta.title
-  @british_council.course.cta_box.last.strapline.text == @general_info.cta.strapline.upcase
+  @british_council.general_info.cta_box.last.title_link.text == @general_info.cta.title
+  @british_council.general_info.cta_box.last.strapline.text == @general_info.cta.strapline.upcase
+end
+
+Then(/^the landing page and the course page are in the breadcrumbs on the general info page$/) do
+  @british_council.general_info.breadcrumbs.text.should include("Home", @landing_page.menu_title, @course.menu_title)
 end

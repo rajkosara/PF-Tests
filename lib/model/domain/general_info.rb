@@ -15,6 +15,7 @@ class Model::Domain::GeneralInfo < Model::Domain::Content
     @alternate_filename = "General info alternate filename #{String.random(6)}"
     @show_hide_title = "General info show hide title #{Time.current.strftime("%T")} #{String.random(4)}"
     @show_hide_body = "General info show hide body #{Time.current.strftime("%T")} #{String.random(4)}"
+    @menu_title = "General info menu #{String.random(4)}"
 
     def cta
       @general_info ||= Model::Domain::Cta.new

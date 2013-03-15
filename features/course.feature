@@ -116,3 +116,19 @@ Feature: Course
     And I submit a course page with a timetable
     Then the course page is created
     And the timetable is displayed on the course page
+
+  @complete @solas_762 @core
+  Scenario: Breadcrumbs appear correctly for a course and a landing page
+    Given I am logged in as an admin user
+    And I create a published landing page
+    When I create a course page and place it under the landing page
+    Then the landing page is the course pages parent
+    And the landing page is in the breadcrumbs on the course page
+
+  @complete @solas_762 @core
+  Scenario: Breadcrumbs appear correctly for 3 deep
+    Given I am logged in as an admin user
+    And I create a published landing page
+    When I create a course page and place it under the landing page
+    And I create a general info page a place it under the course page
+    Then the landing page and the course page are in the breadcrumbs on the general info page

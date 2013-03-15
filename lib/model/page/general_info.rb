@@ -9,6 +9,7 @@ class Model::Page::GeneralInfo < SitePrism::Page
   element :edit_button, ".tabs a[href*='edit']"
   element :show_hide_title, ".bc-show-hide-title"
   element :show_hide_body, ".bc-show-hide-content"
+  element :breadcrumbs, "#bc-breadcrumb"
 
   elements :links, ".bc-lk-list-16 a"
 

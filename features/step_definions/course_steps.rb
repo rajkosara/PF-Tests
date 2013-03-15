@@ -145,3 +145,7 @@ Then(/^the timetable is displayed on the course page$/) do
   @british_council.course.course_timetable_heading.text.should == @course.timetable_heading
   @british_council.course.course_timetable.text.should include(@course.teaching_centre_name, "HEADER ONE", "Row one item three")
 end
+
+Then(/^the landing page is in the breadcrumbs on the course page$/) do
+  @british_council.course.breadcrumbs.text.should include("Home", @landing_page.menu_title)
+end
