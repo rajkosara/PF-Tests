@@ -173,8 +173,8 @@ When /^I submit a course page with levels$/ do
   step "I enter a course timetable title on the create course page"
   step "I enter a body for the calendar and pricing tab on the create course page"
   @british_council.create_course.levels_tab.click
-  @british_council.create_course.add_level.first.levels_title.first.set @course.levels_title
-  @british_council.create_course.add_level.first.levels_description.first.native.send_keys @course.levels_description
+  @british_council.create_course.add_level.first.levels_title.set @course.levels_title
+  @british_council.create_course.add_level.first.levels_description.native.send_keys @course.levels_description
   step "I click save on the create course page on the create course page"
 end
 
