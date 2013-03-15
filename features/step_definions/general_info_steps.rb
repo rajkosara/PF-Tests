@@ -73,3 +73,17 @@ Then(/^the CTA with an external link is displayed correctly on the general info 
   @british_council.course.cta_box.last.title_link.text == @general_info.cta.title
   @british_council.course.cta_box.last.strapline.text == @general_info.cta.strapline.upcase
 end
+
+
+Then(/^the CTA with an internal link is displayed correctly on the general info page$/) do
+  @number_of_ctas = @british_council.general_info.cta_box.collect do |thing|
+    thing.title_link[:href] == @landing_page.url
+  end
+  @number_of_ctas.size == 2
+
+  @british_council.course.cta_box.first.title_link.text == @general_info.cta.title
+  @british_council.course.cta_box.first.strapline.text == @general_info.cta.strapline.upcase
+
+  @british_council.course.cta_box.last.title_link.text == @general_info.cta.title
+  @british_council.course.cta_box.last.strapline.text == @general_info.cta.strapline.upcase
+end

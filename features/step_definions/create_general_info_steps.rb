@@ -215,3 +215,15 @@ When(/^I submit a general info page with a cta with an external link$/) do
   @british_council.create_general_info.add_cta.strapline.set @general_info.cta.strapline
   step "I save the general info page"
 end
+
+When(/^I submit a general info page with a cta with an internal link$/) do
+  step "the create general info page is displayed"
+  step "I enter a title for the general info page"
+  step "I enter a summary for the general info page"
+  step "I enter a body for the general info page"
+  @british_council.create_general_info.add_cta_tab.click
+  @british_council.create_general_info.add_cta.title.set @general_info.cta.title
+  @british_council.create_general_info.add_cta.url.set @landing_page.internal_url
+  @british_council.create_general_info.add_cta.strapline.set @general_info.cta.strapline
+  step "I save the general info page"
+end
