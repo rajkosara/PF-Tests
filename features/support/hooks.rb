@@ -15,6 +15,6 @@ end
 
 After do
   if ENV['JUNIT_OUTPUT_SMOKE'] == "/Users/Test/.jenkins/jobs/Run_Smoke_Tests/workspace"
-    sleep 2.5
+    sleep 5
   end
 end
