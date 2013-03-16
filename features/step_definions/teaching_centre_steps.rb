@@ -76,3 +76,12 @@ Then(/^the image is displayed on the contact and location tab on the teaching ce
   @british_council.teaching_centre.contact_and_location_tab.click
   @british_council.teaching_centre.should have_contact_location_image
 end
+
+Then(/^the associated course is displayed on the teaching centre$/) do
+  @british_council.teaching_centre.course.listing_title.text.should == "English courses we offer at this centre that are very boring, but not as boring as other courses that other companies offer"
+  @british_council.teaching_centre.course.first_course_title.text.should == "This is for the big people"
+  @british_council.teaching_centre.course.second_course_title.text.should  == "This is for the small people and only the small people"
+  @british_council.teaching_centre.course.courses.each do |course_titles|
+    course_titles.text.should == @course.title
+  end
+end

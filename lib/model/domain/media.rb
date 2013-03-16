@@ -14,6 +14,7 @@ class Model::Domain::Media
   attr_accessor :jpg_path
   attr_accessor :jpeg_path
   attr_accessor :tif_path
+  attr_accessor :gif_path
   attr_accessor :large_path
   attr_accessor :large
   attr_accessor :doc

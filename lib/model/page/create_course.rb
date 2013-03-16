@@ -6,6 +6,7 @@ class Model::Page::CreateCourse < SitePrism::Page
   element :title, "#edit-title-field-en-0-value"
   element :summary, "#edit-body-und-0-summary"
   #about course tab
+  element :about_course_tab, ".horizontal-tab-button-0 a[href]"
   element :about_course_body, "iframe#edit-body-und-0-value_ifr"
 
   #second tab
@@ -41,4 +42,6 @@ class Model::Page::CreateCourse < SitePrism::Page
   section :add_cta, Model::Section::AddCta, "#node_course_form_group_cta"
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
   section :internal_link_search, Model::Section::InternalLinkSearch, "div#linkit-modal"
+
+  sections :teaching_centre, Model::Section::TeachingCentreSelection, "#edit-field-course-teaching-centre-ref-und .form-type-checkbox"
 end

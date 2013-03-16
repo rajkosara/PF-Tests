@@ -17,4 +17,5 @@ class Model::Page::TeachingCentre < SitePrism::Page
   element :contact_location_image, "#bc-tabs--3 .bc-full-width-img"
 
   section :contact_and_location_body, Model::Section::ContactAndLocationBody,"#bc-tabs--3 .bc-tab-content"
+  section :course, Model::Section::DisplayedCourses, ".bc-boxes-pad"
 end

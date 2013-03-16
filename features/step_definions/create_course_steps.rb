@@ -276,3 +276,33 @@ When(/^I submit a course page with a timetable$/) do
   @british_council.create_course.teaching_centre_name.set @course.teaching_centre_name
   step "I click save on the create course page on the create course page"
 end
+
+When /^I create a published course$/ do
+  step "I navigate to the create course page"
+  step "the create course page is displayed"
+  step "I enter a about course body on the create course page"
+  step "I enter a course title on the create course page"
+  step "I click on the calendar and pricing tab on the create course page"
+  step "I enter a course timetable title on the create course page"
+  step "I enter a body for the calendar and pricing tab on the create course page"
+  step "I publish a course"
+  step "I click save on the create course page on the create course page"
+end
+
+
+When(/^I submit a course page with a linked teaching centre$/) do
+  step "I navigate to the create course page"
+  step "the create course page is displayed"
+  step "I enter a about course body on the create course page"
+  step "I enter a course title on the create course page"
+  step "I click on the calendar and pricing tab on the create course page"
+  step "I enter a course timetable title on the create course page"
+  step "I enter a body for the calendar and pricing tab on the create course page"
+  scroll_to_start_of_page
+  @british_council.create_course.about_course_tab.click
+  @tc = @british_council.create_course.teaching_centre.find do |tc|
+    tc.label.text == @teaching_centre.title
+  end
+  @tc.label.click
+  step "I click save on the create course page on the create course page"
+end

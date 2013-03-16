@@ -22,7 +22,7 @@ When /^I submit a teaching centre page$/ do
   @british_council.create_teaching_centre.email_address.set @teaching_centre.email_address
   @british_council.create_teaching_centre.contact_and_location_tab.click
   @british_council.create_teaching_centre.contact_and_location_body.native.send_keys @teaching_centre.contact_location_body
-  @british_council.create_teaching_centre.save_button.click
+  step "I save a teaching centre"
 end
 
 When /^I enter a title into the teahing create teaching centre page$/ do
@@ -128,4 +128,40 @@ When(/^I add an image to the about tab$/) do
   wait_for_ajax
   @british_council.create_teaching_centre.image_library.first.select_checkboxes.first.click
   wait_for_ajax
+end
+
+When /^I publish a teaching centre$/ do
+  @british_council.create_teaching_centre.meta_config.publish_tab.click
+  @british_council.create_teaching_centre.meta_config.publish_settings.publish_status.click
+end
+
+When /^I create a published teaching centre$/ do
+  step "I navigate to the create teaching centre page"
+  step "I publish a teaching centre"
+  step "I submit a teaching centre page"
+end
+
+When(/^I submit a teaching centre page with a course associated$/) do
+  step "the create teaching centre page is displayed"
+  step "I enter a title into the teahing create teaching centre page"
+  @british_council.create_teaching_centre.summary.set @teaching_centre.summary
+  step "I enter the full address on a teaching centre"
+  step "I enter an about body into the teahing create teaching centre page"
+  @british_council.create_teaching_centre.email_address.set @teaching_centre.email_address
+  @british_council.create_teaching_centre.calendar_tab.click
+  @british_council.create_teaching_centre.calendar_body.native.send_keys @teaching_centre.calendar_body
+  @british_council.create_teaching_centre.email_address.set @teaching_centre.email_address
+  @british_council.create_teaching_centre.facilities_tab.click
+  @british_council.create_teaching_centre.facilities_body.native.send_keys @teaching_centre.facilities_body
+  @british_council.create_teaching_centre.email_address.set @teaching_centre.email_address
+  @british_council.create_teaching_centre.contact_and_location_tab.click
+  @british_council.create_teaching_centre.contact_and_location_body.native.send_keys @teaching_centre.contact_location_body
+  step "I publish a teaching centre"
+  @british_council.create_teaching_centre.course_listing_tab.click
+  @british_council.create_teaching_centre.course_listing.title.set "English courses we offer at this centre that are very boring, but not as boring as other courses that other companies offer"
+  @british_council.create_teaching_centre.course_listing.first_course_title.set "This is for the big people"
+  @british_council.create_teaching_centre.course_listing.second_course_title.set "This is for the small people and only the small people"
+  @british_council.create_teaching_centre.course_listing.courses.first.select @course.title
+  @british_council.create_teaching_centre.course_listing.courses.last.select @course.title
+  step "I save a teaching centre"
 end

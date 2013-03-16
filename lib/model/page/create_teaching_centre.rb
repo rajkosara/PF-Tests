@@ -25,8 +25,10 @@ class Model::Page::CreateTeachingCentre < SitePrism::Page
   element :address_tab, "#node_teaching_centre_form_group_address a"
   element :about_image_tab, "#node_teaching_centre_form_group_image a.fieldset-title"
   element :contact_location_image_tab, "#node_teaching_centre_form_group_image_two a.fieldset-title"
+  element :course_listing_tab, "#node_teaching_centre_form_group_courses .fieldset-title"
 
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
-  
+  section :course_listing, Model::Section::CourseListing, "#node_teaching_centre_form_group_courses"
+
   sections :image_library, Model::Section::AddImageSection, "[id*='node_teaching_centre_form_group_image']"
 end

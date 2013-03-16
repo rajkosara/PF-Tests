@@ -100,3 +100,12 @@ Feature: teaching Centre
     And I submit a teaching centre page with image on the contact and location tab
     Then the teaching centre page is created
     And the image is displayed on the contact and location tab on the teaching centre page
+
+  @complete @solas_653 @core
+  Scenario: Add course to a teaching centre
+    Given I am logged in as an admin user
+    And I create a published course
+    When I navigate to the create teaching centre page
+    And I submit a teaching centre page with a course associated
+    Then the teaching centre page is created
+    And the associated course is displayed on the teaching centre

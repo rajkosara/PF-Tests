@@ -132,3 +132,12 @@ Feature: Course
     When I create a course page and place it under the landing page
     And I create a general info page a place it under the course page
     Then the landing page and the course page are in the breadcrumbs on the general info page
+
+  @complete @solas_553 @core
+  Scenario: Create a course page with a linked teaching centre
+    Given I am logged in as an admin user
+    And I create a published teaching centre
+    When I navigate to the create course page
+    And I submit a course page with a linked teaching centre
+    And the course page is created
+    Then the linked course is displayed on the course page
