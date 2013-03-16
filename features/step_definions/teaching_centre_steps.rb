@@ -85,3 +85,17 @@ Then(/^the associated course is displayed on the teaching centre$/) do
     course_titles.text.should == @course.title
   end
 end
+
+Then(/^the book placement cta is displayed on the teaching centre$/) do
+  step "the teaching centre page is created"
+  @number_of_ctas = @british_council.teaching_centre.cta_box.collect do |thing|
+    thing.title_link[:href] == @teaching_centre.cta.url
+  end
+  @number_of_ctas.size == 2
+
+  @british_council.teaching_centre.cta_box.first.title_link.text == @teaching_centre.cta.title
+  @british_council.teaching_centre.cta_box.first.strapline.text == @teaching_centre.cta.strapline.upcase
+
+  @british_council.teaching_centre.cta_box.last.title_link.text == @teaching_centre.cta.title
+  @british_council.teaching_centre.cta_box.last.strapline.text == @teaching_centre.cta.strapline.upcase
+end

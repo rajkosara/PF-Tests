@@ -12,7 +12,7 @@ class Model::Domain::TeachingCentre < Model::Domain::Content
   attr_accessor :facilities_body
 
 
-    def initialize
+  def initialize
     @title = "Teaching Centre Title #{Time.current.strftime("%T")} #{String.random(4)}"
     @summary = "Teaching Centre Summary #{Time.current.strftime("%T")} #{String.random(4)}"
     @body = "Teaching Centre Body #{Time.current.strftime("%T")} #{String.random(4)}"
@@ -28,5 +28,10 @@ class Model::Domain::TeachingCentre < Model::Domain::Content
     @contact_location_body = "Teaching Centre contact location body #{Time.current.strftime("%T")} #{String.random(4)}"
     @facilities_body = "Teaching Centre facilities body #{Time.current.strftime("%T")} #{String.random(4)}"
     @alternate_filename = "Teaching Centre alternate filename #{String.random(6)}"
+
+    def cta
+      @teaching_centre ||= Model::Domain::Cta.new
+      #this stops a new cta being created each time the course is called
+    end
   end
 end

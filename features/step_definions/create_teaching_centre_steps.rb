@@ -165,3 +165,28 @@ When(/^I submit a teaching centre page with a course associated$/) do
   @british_council.create_teaching_centre.course_listing.courses.last.select @course.title
   step "I save a teaching centre"
 end
+
+
+When(/^I submit a teaching centre page with a book placement cta$/) do
+  step "the create teaching centre page is displayed"
+  step "I enter a title into the teahing create teaching centre page"
+  @british_council.create_teaching_centre.summary.set @teaching_centre.summary
+  step "I enter the full address on a teaching centre"
+  step "I enter an about body into the teahing create teaching centre page"
+  @british_council.create_teaching_centre.email_address.set @teaching_centre.email_address
+  @british_council.create_teaching_centre.calendar_tab.click
+  @british_council.create_teaching_centre.calendar_body.native.send_keys @teaching_centre.calendar_body
+  @british_council.create_teaching_centre.email_address.set @teaching_centre.email_address
+  @british_council.create_teaching_centre.facilities_tab.click
+  @british_council.create_teaching_centre.facilities_body.native.send_keys @teaching_centre.facilities_body
+  @british_council.create_teaching_centre.email_address.set @teaching_centre.email_address
+  @british_council.create_teaching_centre.contact_and_location_tab.click
+  @british_council.create_teaching_centre.contact_and_location_body.native.send_keys @teaching_centre.contact_location_body
+  scroll_to_start_of_page
+  @british_council.create_teaching_centre.calendar_tab.click
+  @british_council.create_teaching_centre.book_placement_tab.click
+  @british_council.create_teaching_centre.book_placement.title.set @teaching_centre.cta.title
+  @british_council.create_teaching_centre.book_placement.url.set @teaching_centre.cta.url
+  @british_council.create_teaching_centre.book_placement.strapline.set @teaching_centre.cta.strapline
+  step "I save a teaching centre"
+end

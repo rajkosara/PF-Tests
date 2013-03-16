@@ -18,4 +18,6 @@ class Model::Page::TeachingCentre < SitePrism::Page
 
   section :contact_and_location_body, Model::Section::ContactAndLocationBody,"#bc-tabs--3 .bc-tab-content"
   section :course, Model::Section::DisplayedCourses, ".bc-boxes-pad"
+
+  sections :cta_box, Model::Section::CtaBox, ".bc-hlight-box"
 end

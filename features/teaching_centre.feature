@@ -109,3 +109,11 @@ Feature: teaching Centre
     And I submit a teaching centre page with a course associated
     Then the teaching centre page is created
     And the associated course is displayed on the teaching centre
+
+  @complete @solas_842 @core
+  Scenario: Create teaching centre with book placesment cta
+    Given I am logged in as an admin user
+    When I navigate to the create teaching centre page
+    And I submit a teaching centre page with a book placement cta
+    Then the teaching centre page is created
+    And the book placement cta is displayed on the teaching centre
