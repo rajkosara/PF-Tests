@@ -23,6 +23,10 @@ class Model::BritishCouncil
     Model::Page::CreateJob.new
   end
 
+  def create_ielts
+    Model::Page::CreateIelts.new
+  end
+
   def create_event
     Model::Page::CreateEvent.new
   end
@@ -81,6 +85,10 @@ class Model::BritishCouncil
 
   def course
     Model::Page::Course.new
+  end
+
+  def ielts
+    Model::Page::Ielts.new
   end
 
   def image

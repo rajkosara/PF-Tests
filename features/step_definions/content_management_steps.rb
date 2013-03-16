@@ -37,3 +37,8 @@ Given(/^I create a document object$/) do
   @document = Model::Domain::Media.new
   @document.set_content_type :document
 end
+
+When(/^create a ielts object$/) do
+    #@course = Model::Domain::Course.new
+  @ielts ||= Model::Domain::Ielts.new
+end

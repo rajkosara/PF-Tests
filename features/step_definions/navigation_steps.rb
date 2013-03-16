@@ -51,6 +51,9 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
     @british_council.user_list.load
   when 'site information'
     @british_council.site_info.load
+  when 'create ielts'
+    @british_council.create_ielts.load
+    step 'create a ielts object'
   else raise "Haven't mapped the '#{page_name}' page"
   end
 end

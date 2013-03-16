@@ -72,7 +72,7 @@ module StuffWeWantAvailable
   end
 
   def scroll_to_start_of_page
-    page.execute_script "window.scrollBy(0,0)"
+    page.execute_script "window.scrollBy(0,-10000)"
   end
 end
 
