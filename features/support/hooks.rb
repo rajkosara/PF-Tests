@@ -9,7 +9,7 @@ end
 Before do
       Timeout.timeout(30) { sleep(0.5) while Capybara.current_url != "about:blank"}
   if ENV['JUNIT_OUTPUT_SMOKE'] == "/Users/Test/.jenkins/jobs/Run_Smoke_Tests/workspace"
-    sleep 2.5
+    sleep 3
   end
 end
 

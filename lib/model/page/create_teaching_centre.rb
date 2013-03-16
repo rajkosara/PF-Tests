@@ -27,10 +27,12 @@ class Model::Page::CreateTeachingCentre < SitePrism::Page
   element :contact_location_image_tab, "#node_teaching_centre_form_group_image_two a.fieldset-title"
   element :course_listing_tab, "#node_teaching_centre_form_group_courses .fieldset-title"
   element :book_placement_tab, "#node_teaching_centre_form_group_cta a.fieldset-title"
+  element :document_tab, "#node_teaching_centre_form_group_document .fieldset-title"
 
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
   section :course_listing, Model::Section::CourseListing, "#node_teaching_centre_form_group_courses"
   section :book_placement, Model::Section::AddCta, "#node_teaching_centre_form_group_cta"
+  section :document_library, Model::Section::AddDocumentSection, "#node_teaching_centre_form_group_document"
 
   sections :image_library, Model::Section::AddImageSection, "[id*='node_teaching_centre_form_group_image']"
 end

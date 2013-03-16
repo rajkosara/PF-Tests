@@ -99,3 +99,9 @@ Then(/^the book placement cta is displayed on the teaching centre$/) do
   @british_council.teaching_centre.cta_box.last.title_link.text == @teaching_centre.cta.title
   @british_council.teaching_centre.cta_box.last.strapline.text == @teaching_centre.cta.strapline.upcase
 end
+
+Then(/^the document is displayed on the teaching centre$/) do
+  step "the teaching centre page is created"
+  @british_council.teaching_centre.should have_document_name
+  @british_council.teaching_centre.document_name.text.should == @document.document_name
+end
