@@ -10,6 +10,7 @@ class Model::Page::LandingPage < SitePrism::Page
   
   elements :child_pages_title, ".bc-listing h2"
   elements :child_pages_summary, ".bc-box a[href] p"
+  elements :image, ".bc-box img"
 
   section :header, Model::Section::Header, "#bc-header-wrapper"
 
