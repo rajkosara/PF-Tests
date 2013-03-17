@@ -79,3 +79,13 @@ rake cuke:specific TAGS="[tag]"
 
 This will run all the tests that have been given a particular tag. e.g rake cuke:specific TAGS=@login or rake cuke:specific TAGS=@general_info
 
+
+The environment in which the test should run can be set as follows:
+
+```sh
+rake cuke:complete CONFIG=local_env_kr
+#or
+rake cuke:complete CONFIG=stage_env_kr
+#or
+rake cuke:complete CONFIG=live_env_kr
+```

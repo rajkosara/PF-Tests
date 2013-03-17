@@ -143,14 +143,14 @@ end
 
 When(/^I submit a teaching centre page with a course associated$/) do
   step "the create teaching centre page is displayed"
-  step "I fill out the details on the teaching centre"
-  step "I publish a teaching centre"
   @british_council.create_teaching_centre.course_listing_tab.click
   @british_council.create_teaching_centre.course_listing.title.set "English courses we offer at this centre that are very boring, but not as boring as other courses that other companies offer"
   @british_council.create_teaching_centre.course_listing.first_course_title.set "This is for the big people"
   @british_council.create_teaching_centre.course_listing.second_course_title.set "This is for the small people and only the small people"
   @british_council.create_teaching_centre.course_listing.courses.first.select @course.title
   @british_council.create_teaching_centre.course_listing.courses.last.select @course.title
+  step "I fill out the details on the teaching centre"
+  step "I publish a teaching centre"
   step "I save a teaching centre"
 end
 
