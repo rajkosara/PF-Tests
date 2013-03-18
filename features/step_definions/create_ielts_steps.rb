@@ -52,10 +52,18 @@ When(/^I submit a ielts page without a title$/) do
   @british_council.create_ielts.tab_four_top_body.native.send_keys @ielts.tab_four_top_body
   @british_council.create_ielts.tab_four_bottom_body.native.send_keys @ielts.tab_four_bottom_body
   @british_council.create_ielts.links_title.set @ielts.links_title
-  @british_council.create_ielts.save_button.click
+  step "I save the ielts page"
 end
 
 Then(/^a "(.*?)" error message is displayed on the create ielts page$/) do |error_message|
   @british_council.create_general_info.error_message.text.should include error_message
 end
 
+When(/^I save the ielts page$/) do
+  @british_council.create_ielts.save_button.click
+end
+
+When(/^I edit the ielts title on the create ielts page$/) do
+  @british_council.create_ielts.title.set "#{@ielts.title} EDITED"
+  step "I save the ielts page"
+end
