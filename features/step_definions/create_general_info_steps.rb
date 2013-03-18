@@ -252,5 +252,6 @@ end
 Given(/^I create a general info page with an image$/) do
   step "I navigate to the create general info page"
   step "the create general info page is displayed"
+  step "I publish a general info"
   step "I submit a general info page with an image"
 end

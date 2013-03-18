@@ -111,6 +111,7 @@ Feature: Landing page
   @complete @solas_960 @core
   Scenario: Display summary image on landing page
     Given I am logged in as an admin user
+    And I create a image in the media library
     And I create a published landing page
     And I create a general info page with an image
     When I navigate to the created published landing page
