@@ -69,8 +69,8 @@ When(/^I edit the ielts title on the create ielts page$/) do
 end
 
 When(/^I create an ielts page$/) do
-  step "When I navigate to the create ielts page"
-  step "And I submit a ielts page"
+  step "I navigate to the create ielts page"
+  step "I submit a ielts page"
 end
 
 When(/^I translate the ielts page$/) do
