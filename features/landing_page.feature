@@ -108,7 +108,7 @@ Feature: Landing page
     And I enter a child page into the child listing page management
     Then the page is displayed on the listing page
 
-  @complete @solas_960 @core @wip
+  @complete @solas_960 @core
   Scenario: Display summary image on landing page
     Given I am logged in as an admin user
     And I create a image in the media library
@@ -119,3 +119,4 @@ Feature: Landing page
     And I enter the general info page and landing page as children
     And I save the landing page
     Then the general info page is displayed with an image on the landing page
+    

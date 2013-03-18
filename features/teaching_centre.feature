@@ -118,7 +118,6 @@ Feature: teaching Centre
     Then the teaching centre page is created
     And the book placement cta is displayed on the teaching centre
 
-
   @complete @solas_961 @core
   Scenario: Create teaching centre with a document
     Given I am logged in as an admin user
