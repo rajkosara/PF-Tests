@@ -81,7 +81,7 @@ test_env_kr:
   # site name
   country_site: Korea
   #capybara settings
-  default_wait_time: 5
+  default_wait_time: 15
   #urls
   korea_site_root: http://kr.test.solas.britishcouncil.net/en
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
@@ -100,7 +100,7 @@ test_env_jp:
   # site name
   country_site: Japan
   #capybara settings
-  default_wait_time: 5
+  default_wait_time: 15
   #urls
   korea_site_root: http://jp.test.solas.britishcouncil.net/en
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
@@ -119,7 +119,7 @@ test_env_training:
   # site name
   country_site: Training
   #capybara settings
-  default_wait_time: 5
+  default_wait_time: 15
   #urls
   korea_site_root: http://training.test.solas.britishcouncil.net/en
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
@@ -145,19 +145,19 @@ stage_env_kr:
   image_location: /sites/default/files
   #user details
   admin_username: 'test.admin'
-  admin_password: 'Password_1'
+  admin_password: 'password'
   author_username: 'test.author'
-  author_password: 'Password_1'
+  author_password: 'password'
   manager_username: 'test.manager'
-  manager_password: 'Password_1'
+  manager_password: 'password'
   producer_username: 'test.producer'
-  producer_password: 'Password_1'
+  producer_password: 'password'
 stage_env_jp:
   <<: *execution_defaults
   # site name
   country_site: Japan
   #capybara settings
-  default_wait_time: 5
+  default_wait_time: 15
   #urls
   korea_site_root: http://jp.stage.solas.britishcouncil.net/en
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
@@ -176,7 +176,7 @@ stage_env_training:
   # site name
   country_site: Training
   #capybara settings
-  default_wait_time: 5
+  default_wait_time: 15
   #urls
   korea_site_root: http://training.stage.solas.britishcouncil.net/en
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
@@ -195,7 +195,7 @@ live_env_kr:
   # site name
   country_site: Korea
   #capybara settings
-  default_wait_time: 5
+  default_wait_time: 15
   #urls
   korea_site_root: http://kr.live.solas.britishcouncil.net/en
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
@@ -214,7 +214,7 @@ live_env_jp:
   # site name
   country_site: Japan
   #capybara settings
-  default_wait_time: 5
+  default_wait_time: 15
   #urls
   korea_site_root: http://jp.live.solas.britishcouncil.net/en
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
@@ -233,7 +233,7 @@ live_env_training:
   # site name
   country_site: Training
   #capybara settings
-  default_wait_time: 5
+  default_wait_time: 15
   #urls
   korea_site_root: http://training.live.solas.britishcouncil.net/en
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
