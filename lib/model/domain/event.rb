@@ -30,5 +30,9 @@ class Model::Domain::Event < Model::Domain::Content
     @country = "Jamaica"
     @address  = "This place #{String.random(4)}"
     @postcode = "e18 2qe"
+
+    def cta
+      @event ||= Model::Domain::Cta.new
+    end
   end
 end

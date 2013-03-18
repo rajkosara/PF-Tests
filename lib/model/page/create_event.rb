@@ -22,9 +22,11 @@ class Model::Page::CreateEvent < SitePrism::Page
   element :address_two, "#edit-field-event-address-und-0-premise"
   element :postcode, "#edit-field-event-address-und-0-postal-code"
   element :image_tab, "#node_event_form_group_event_image a.fieldset-title"
+  element :add_cta_tab, "#node_event_form_group_event_cta a.fieldset-title"
   
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
   section :image_library, Model::Section::AddImageSection, "#node_event_form_group_event_image"
+  section :add_cta, Model::Section::AddCta, "#node_event_form_group_event_cta"
 
 
   sections :external_link, Model::Section::ExternalLink,"#field-generic-external-link-values .link-field-subrow"
