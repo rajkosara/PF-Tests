@@ -67,3 +67,13 @@ When(/^I edit the ielts title on the create ielts page$/) do
   @british_council.create_ielts.title.set "#{@ielts.title} EDITED"
   step "I save the ielts page"
 end
+
+When(/^I create an ielts page$/) do
+  step "When I navigate to the create ielts page"
+  step "And I submit a ielts page"
+end
+
+When(/^I translate the ielts page$/) do
+  @british_council.create_ielts.title.set "#{@ielts.title} TRANSLATED"
+  step "I save the ielts page"
+end

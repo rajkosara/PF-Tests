@@ -4,5 +4,6 @@ Then /^wait for translate page to be displayed$/ do
 end
 
 Given /^I click add translation on the translate page$/ do
+  step "wait for translate page to be displayed"
   @british_council.translate.add_translation.click
 end

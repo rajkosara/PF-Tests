@@ -2,7 +2,7 @@ class Model::Page::CreateIelts < SitePrism::Page
   set_url "#{Helpers::Config['korea_site_root']}/node/add/ielts"
   set_url_matcher /\/node\/add\/ielts/
 
-  element :title, "#edit-title-field-en-0-value"
+  element :title, "input[id*='edit-title-field']"
   #tab_one
   element :tab_one_title, "#edit-field-ielts-tab-one-title-und-0-value"
   element :tab_one_summary, "#edit-body-und-0-summary"

@@ -35,3 +35,14 @@ Feature: IELTS
     And I choose to edit an ielts page
     And I edit the ielts title on the create ielts page
     And the edited ielts title is displayed on the ielts page
+
+  @complete @solas_226 @core @translate
+  Scenario: Translate a ielts page
+    Given I am logged in as an admin user
+    When I navigate to the create ielts page
+    And I submit a ielts page
+    When I choose to the translate an ielts page
+    And I click add translation on the translate page
+    And I translate the ielts page
+    Then the translated ielts page is displayed
+    
