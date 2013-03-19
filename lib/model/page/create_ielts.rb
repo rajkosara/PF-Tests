@@ -7,7 +7,7 @@ class Model::Page::CreateIelts < SitePrism::Page
   element :tab_one_title, "#edit-field-ielts-tab-one-title-und-0-value"
   element :tab_one_summary, "#edit-body-und-0-summary"
   element :tab_one_top_body, "iframe#edit-body-und-0-value_ifr"
-  element :tab_one_links_title, "iframe#edit-field-ielts-tabs1-links-title-und-0-value_ifr"
+  element :tab_one_links_title, "#edit-field-ielts-related-links-title-und-0-value"
   element :tab_one_first_related_links, "#edit-field-ielts-tab1-related-links-und-0-target-id"
   element :tab_one_bottom_body, "#edit-field-ielts-tab1-bottom-body-und-0-value_ifr"
 
@@ -32,6 +32,9 @@ class Model::Page::CreateIelts < SitePrism::Page
   element :links_title, "#edit-field-ielts-related-links-title-und-0-value"
   element :related_links, "#edit-field-generic-internal-link-und-0-target-id"
   element :save_button, "[value='Save']"
+  element :document_tab, "[id*=document] .fieldset-title"
 
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
+  section :document_library, Model::Section::AddDocumentSection, "[id*=document]"
+
 end

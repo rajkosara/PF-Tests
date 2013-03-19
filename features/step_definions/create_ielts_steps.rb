@@ -8,23 +8,18 @@ When(/^I submit a ielts page$/) do
   @british_council.create_ielts.tab_one_title.set @ielts.tab_one_title
   @british_council.create_ielts.tab_one_summary.set @ielts.tab_one_summary
   @british_council.create_ielts.tab_one_top_body.native.send_keys @ielts.tab_one_top_body
-  @british_council.create_ielts.tab_one_links_title.native.send_keys @ielts.tab_one_links_title
-  @british_council.create_ielts.tab_one_bottom_body.native.send_keys @ielts.tab_one_bottom_body
   scroll_to_start_of_page
   @british_council.create_ielts.tab_two.click
   @british_council.create_ielts.tab_two_title.set @ielts.tab_two_title
   @british_council.create_ielts.tab_two_top_body.native.send_keys @ielts.tab_two_top_body
-  @british_council.create_ielts.tab_two_bottom_body.native.send_keys @ielts.tab_two_bottom_body
   scroll_to_start_of_page
   @british_council.create_ielts.tab_three.click
   @british_council.create_ielts.tab_three_title.set @ielts.tab_three_title
   @british_council.create_ielts.tab_three_top_body.native.send_keys @ielts.tab_three_top_body
-  @british_council.create_ielts.tab_three_bottom_body.native.send_keys @ielts.tab_three_bottom_body
   scroll_to_start_of_page
   @british_council.create_ielts.tab_four.click
   @british_council.create_ielts.tab_four_title.set @ielts.tab_four_title
   @british_council.create_ielts.tab_four_top_body.native.send_keys @ielts.tab_four_top_body
-  @british_council.create_ielts.tab_four_bottom_body.native.send_keys @ielts.tab_four_bottom_body
   @british_council.create_ielts.links_title.set @ielts.links_title
   @british_council.create_ielts.save_button.click
 end
@@ -76,4 +71,13 @@ end
 When(/^I translate the ielts page$/) do
   @british_council.create_ielts.title.set "#{@ielts.title} TRANSLATED"
   step "I save the ielts page"
+end
+
+When(/^I create an ielts page with an document$/) do
+  step "I navigate to the create ielts page"
+  @british_council.create_ielts.document_tab.click
+  wait_for_ajax
+  @british_council.create_ielts.document_library.select_checkboxes.first.click
+  wait_for_ajax
+  step "I submit a ielts page"
 end

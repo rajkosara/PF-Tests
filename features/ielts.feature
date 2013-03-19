@@ -49,3 +49,10 @@ Feature: IELTS
     Given I am logged in as an admin user
     When I create an ielts page
     Then the ielts page is displayed correctly displayed
+
+  @complete @solas_923 @core
+  Scenario: Add document to an ielts page
+    Given I am logged in as an admin user
+    And I create a document in the media library
+    When I create an ielts page with an document
+    Then the document is displayed correctly
