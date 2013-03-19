@@ -7,14 +7,10 @@ Before('@firefox') do
 end
 
 Before do
-      Timeout.timeout(30) { sleep(0.5) while Capybara.current_url != "about:blank"}
-  if ENV['JUNIT_OUTPUT_SMOKE'] == "/Users/Test/.jenkins/jobs/Run_Smoke_Tests/workspace"
-    sleep 3
-  end
+  Timeout.timeout(30) { sleep(0.5) while Capybara.current_url != "about:blank"}
+  sleep 3
 end
 
 After do
-  if ENV['JUNIT_OUTPUT_SMOKE'] == "/Users/Test/.jenkins/jobs/Run_Smoke_Tests/workspace"
-    sleep 5
-  end
+  sleep 5
 end
