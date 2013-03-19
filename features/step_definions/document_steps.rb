@@ -20,6 +20,7 @@ end
 
 Then(/^I enter a path for a document and click the upload$/) do
   @british_council.add_document.document_path.set @document.path
+  wait_for_ajax
   @british_council.add_document.document_upload_button.click
   wait_for_ajax
 end

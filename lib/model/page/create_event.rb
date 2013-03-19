@@ -5,7 +5,7 @@ class Model::Page::CreateEvent < SitePrism::Page
   element :title, "#edit-title-field-en-0-value"
   element :summary, "#edit-body-und-0-summary"
   element :event_description, "iframe#edit-body-und-0-value_ifr"
-  element :city, "#edit-field-event-address-und-0-locality"
+  element :city, "[id*=edit-field-event-address-und-0-locality]"
   element :start_date, "#edit-field-event-start-date-und-0-value-datepicker-popup-0"
   element :end_date, "#edit-field-event-end-date-und-0-value-datepicker-popup-0"
   element :internal_ref, "#edit-field-job-internal-ref-code-und-0-value"
@@ -18,11 +18,13 @@ class Model::Page::CreateEvent < SitePrism::Page
   element :venue, "#edit-field-event-location-name-und-0-value"
   element :event_time, "#edit-field-event-time-und-0-value"
   element :country, "#edit-field-event-address-und-0-country"
-  element :address_one, "#edit-field-event-address-und-0-thoroughfare"
-  element :address_two, "#edit-field-event-address-und-0-premise"
-  element :postcode, "#edit-field-event-address-und-0-postal-code"
+  element :address_one, "[id*=edit-field-event-address-und-0-thoroughfare]"
+  element :address_two, "[id*=edit-field-event-address-und-0-premise]"
+  element :postcode, "[id*=edit-field-event-address-und-0-postal-code]"
   element :image_tab, "#node_event_form_group_event_image a.fieldset-title"
   element :add_cta_tab, "#node_event_form_group_event_cta a.fieldset-title"
+
+  elements :long_lat, "span.geolocation-lat-item-value"
   
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
   section :image_library, Model::Section::AddImageSection, "#node_event_form_group_event_image"
@@ -30,4 +32,13 @@ class Model::Page::CreateEvent < SitePrism::Page
 
 
   sections :external_link, Model::Section::ExternalLink,"#field-generic-external-link-values .link-field-subrow"
+
+  def latitude
+    long_lat.first
+  end
+
+  def longitude
+    long_lat.last
+  end
+
 end

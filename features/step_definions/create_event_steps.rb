@@ -48,12 +48,18 @@ When /^I enter details for address and location$/ do
   @british_council.create_event.date_and_venue_tab.click
   @british_council.create_event.venue.set @event.venue
   @british_council.create_event.event_time.set @event.event_time
-  @british_council.create_event.country.set @event.country
-  @british_council.create_event.address_one.set @event.address
-  @british_council.create_event.address_two.set @event.address
+  @british_council.create_event.country.select @event.country
+  wait_for_ajax
+  @british_council.create_event.address_one.set @event.address_one
+  @british_council.create_event.address_two.set @event.address_two
   @british_council.create_event.city.set @event.city
+  @british_council.create_event.postcode.set @event.postcode
   @british_council.create_event.geolocation.set @event.postcode
+  @old_lat = @british_council.create_event.latitude.text
+  @old_long = @british_council.create_event.longitude.text
   @british_council.create_event.get_location_button.click
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_event.latitude.text != @old_lat}
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_event.longitude.text != @old_long}
   wait_for_ajax
 end
 

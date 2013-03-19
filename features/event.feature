@@ -67,5 +67,9 @@ Feature: Event
     Then the event page is created
     And the cta is displayed correctly on the event page
 
-  @solas_144 @core
+  @complete @solas_144 @core
   Scenario: Event fields are displayed correctly
+    Given I am logged in as an admin user
+    When I navigate to the create event page
+    And I submit a event page
+    Then the event fields and displayed correctly
