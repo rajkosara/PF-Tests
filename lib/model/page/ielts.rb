@@ -18,6 +18,9 @@ class Model::Page::Ielts < SitePrism::Page
   #tab four
   element :tab_four_title, "[data-hash='#bc-tabs--4'] a"
   element :tab_four_top_body, "#bc-tabs--4 div.bc-body-content p"
-
   element :document_name, ".bc-file a"
+
+  section :cta_box, Model::Section::CtaBox, ".bc-hlight-box"
+
+  sections :cta_with_image, Model::Section::CtaWithImage, ".bc-card"
 end

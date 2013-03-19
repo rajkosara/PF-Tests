@@ -81,3 +81,19 @@ When(/^I create an ielts page with an document$/) do
   wait_for_ajax
   step "I submit a ielts page"
 end
+
+When(/^I create an ielts page with cta with an image$/) do
+  step "I navigate to the create ielts page"
+  @british_council.create_ielts.add_cta_tab.click
+  @british_council.create_ielts.add_cta.title.set @ielts.cta.title
+  @british_council.create_ielts.add_cta.url.set @ielts.cta.url
+  #do image stuff
+  @british_council.create_ielts.add_cta.image_tab.click
+  wait_for_ajax
+  @british_council.create_ielts.add_cta.image_library.first.select_checkboxes.first.click
+  wait_for_ajax
+  @british_council.create_ielts.add_cta.strapline.set @ielts.cta.strapline
+  @british_council.create_ielts.add_cta.header.set @ielts.cta.header
+  @british_council.create_ielts.add_cta.supporting_text.native.send_keys @ielts.cta.supporting_text
+  step "I submit a ielts page"
+end

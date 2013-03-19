@@ -55,4 +55,11 @@ Feature: IELTS
     Given I am logged in as an admin user
     And I create a document in the media library
     When I create an ielts page with an document
-    Then the document is displayed correctly
+    Then the document is displayed correctly on the ielts page
+
+  @complete @solas_923 @core
+  Scenario: Add ta to an ielts page
+    Given I am logged in as an admin user
+    And I create a image in the media library
+    When I create an ielts page with cta with an image
+    Then the cta is displayed correctly on the ielts page

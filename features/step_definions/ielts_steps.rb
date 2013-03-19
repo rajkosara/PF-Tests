@@ -34,7 +34,39 @@ Then(/^the ielts page is displayed correctly displayed$/) do
   @british_council.ielts.tab_four_top_body.text.should == @ielts.tab_four_top_body
 end
 
-Then(/^the document is displayed correctly$/) do
+Then(/^the document is displayed correctly on the ielts page$/) do
   @british_council.ielts.document_name.text.should == @document.document_name
   @british_council.ielts.should have_document_name
+end
+
+Then(/^the cta is displayed correctly on the ielts page$/) do
+  @british_council.ielts.cta_with_image.each do |thing|
+    thing.should have_cta_image
+  end
+
+  #first tab
+  @british_council.ielts.cta_with_image.first.cta_title.text.should == @ielts.cta.title  
+  @british_council.ielts.cta_with_image.first.strapline.text.should include @ielts.cta.strapline.upcase
+
+  #second tab
+  @british_council.ielts.tab_two_title.click
+  @british_council.ielts.cta_with_image[1].cta_title.text.should == @ielts.cta.title
+  @british_council.ielts.cta_with_image[1].strapline.text.should include @ielts.cta.strapline.upcase
+
+  #third tab
+  @british_council.ielts.tab_three_title.click
+  @british_council.ielts.cta_with_image[2].cta_title.text.should == @ielts.cta.title
+  @british_council.ielts.cta_with_image[2].strapline.text.should include @ielts.cta.strapline.upcase
+
+  #fourth tab
+  @british_council.ielts.tab_four_title.click
+  @british_council.ielts.cta_with_image[3].cta_title.text.should == @ielts.cta.title
+  @british_council.ielts.cta_with_image[3].strapline.text.should include @ielts.cta.strapline.upcase
+
+  @british_council.ielts.cta_box.title_link.text == @ielts.cta.title
+  @british_council.ielts.cta_box.text.should include @ielts.cta.header.upcase
+  @british_council.ielts.cta_box.supporting_text.text == @ielts.cta.supporting_text
+  
+  @british_council.ielts.cta_box.title_link[:href] == @ielts.cta.url
+
 end

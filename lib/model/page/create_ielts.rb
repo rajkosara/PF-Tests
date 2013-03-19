@@ -33,8 +33,9 @@ class Model::Page::CreateIelts < SitePrism::Page
   element :related_links, "#edit-field-generic-internal-link-und-0-target-id"
   element :save_button, "[value='Save']"
   element :document_tab, "[id*=document] .fieldset-title"
+  element :add_cta_tab, "#node_ielts_form_group_cta a.fieldset-title"
 
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
   section :document_library, Model::Section::AddDocumentSection, "[id*=document]"
-
+  section :add_cta, Model::Section::AddCta, "#node_ielts_form_group_cta"
 end

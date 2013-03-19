@@ -37,5 +37,9 @@ class Model::Domain::Ielts < Model::Domain::Content
     @tab_four_title = "IELTS Tab four title #{String.random(4)}"
     @tab_four_top_body = "IELTS Tab Four Top Body #{Time.current.strftime("%T")} #{String.random(4)}"
     @tab_four_bottom_body = "IELTS Tab Four bottom Body #{Time.current.strftime("%T")} #{String.random(4)}"
+
+    def cta
+      @ielts ||= Model::Domain::Cta.new
+    end
   end
 end
