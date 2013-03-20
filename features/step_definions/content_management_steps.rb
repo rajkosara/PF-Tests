@@ -30,12 +30,14 @@ end
 
 When /^I create a image object$/ do
   @image = Model::Domain::Image.new
-  #@image.set_content_type :image
 end
 
 Given(/^I create a document object$/) do
   @document = Model::Domain::Document.new
-  #@document.set_content_type :document
+end
+
+Given(/^I create a video object$/) do
+  @video = Model::Domain::Video.new
 end
 
 When(/^create a ielts object$/) do

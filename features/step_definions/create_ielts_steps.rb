@@ -29,23 +29,18 @@ When(/^I submit a ielts page without a title$/) do
   @british_council.create_ielts.tab_one_title.set @ielts.tab_one_title
   @british_council.create_ielts.tab_one_summary.set @ielts.tab_one_summary
   @british_council.create_ielts.tab_one_top_body.native.send_keys @ielts.tab_one_top_body
-  @british_council.create_ielts.tab_one_links_title.native.send_keys @ielts.tab_one_links_title
-  @british_council.create_ielts.tab_one_bottom_body.native.send_keys @ielts.tab_one_bottom_body
   scroll_to_start_of_page
   @british_council.create_ielts.tab_two.click
   @british_council.create_ielts.tab_two_title.set @ielts.tab_two_title
   @british_council.create_ielts.tab_two_top_body.native.send_keys @ielts.tab_two_top_body
-  @british_council.create_ielts.tab_two_bottom_body.native.send_keys @ielts.tab_two_bottom_body
   scroll_to_start_of_page
   @british_council.create_ielts.tab_three.click
   @british_council.create_ielts.tab_three_title.set @ielts.tab_three_title
   @british_council.create_ielts.tab_three_top_body.native.send_keys @ielts.tab_three_top_body
-  @british_council.create_ielts.tab_three_bottom_body.native.send_keys @ielts.tab_three_bottom_body
   scroll_to_start_of_page
   @british_council.create_ielts.tab_four.click
   @british_council.create_ielts.tab_four_title.set @ielts.tab_four_title
   @british_council.create_ielts.tab_four_top_body.native.send_keys @ielts.tab_four_top_body
-  @british_council.create_ielts.tab_four_bottom_body.native.send_keys @ielts.tab_four_bottom_body
   @british_council.create_ielts.links_title.set @ielts.links_title
   step "I save the ielts page"
 end

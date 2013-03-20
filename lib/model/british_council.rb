@@ -47,6 +47,10 @@ class Model::BritishCouncil
     Model::Page::AddDocument.new
   end
 
+  def add_video
+    Model::Page::AddVideo.new
+  end
+
   def add_user
     Model::Page::AddUser.new
   end
