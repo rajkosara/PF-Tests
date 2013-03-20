@@ -155,3 +155,8 @@ Then(/^the linked course is displayed on the course page$/) do
   @british_council.course.teaching_centre.text.should == @teaching_centre.title
   @british_council.course.teaching_centre[:href].should include @teaching_centre.title.downcase.gsub(" ","-").gsub(":","")
 end
+
+Then(/^the document is displayed on the course page$/) do
+  step "the course page is created"
+  @british_council.course.document_name.text.should == @document.document_name
+end

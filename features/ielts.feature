@@ -58,7 +58,7 @@ Feature: IELTS
     Then the document is displayed correctly on the ielts page
 
   @complete @solas_923 @core
-  Scenario: Add ta to an ielts page
+  Scenario: Add cta to an ielts page
     Given I am logged in as an admin user
     And I create a image in the media library
     When I create an ielts page with cta with an image

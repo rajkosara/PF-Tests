@@ -38,10 +38,12 @@ class Model::Page::CreateCourse < SitePrism::Page
   element :error_message, "#console .error"
   element :save_button, "input[value*='Save']"
   element :counter_message, "#edit-title-field-en-0-value-counter"
+  element :document_tab, "#node_course_form_group_document .fieldset-title"
 
   section :add_cta, Model::Section::AddCta, "#node_course_form_group_cta"
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
   section :internal_link_search, Model::Section::InternalLinkSearch, "div#linkit-modal"
+  section :document_library, Model::Section::AddDocumentSection, "#node_course_form_group_document"
 
   sections :teaching_centre, Model::Section::TeachingCentreSelection, "#edit-field-course-teaching-centre-ref-und .form-type-checkbox"
 end

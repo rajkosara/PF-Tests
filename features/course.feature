@@ -141,3 +141,12 @@ Feature: Course
     And I submit a course page with a linked teaching centre
     And the course page is created
     Then the linked course is displayed on the course page
+
+  @complete @solas_926 @core
+  Scenario: Create a course page with a docucment
+    Given I am logged in as an admin user
+    And I create a document in the media library
+    When I navigate to the create course page
+    And I submit a course page with document
+    And the course page is created
+    Then the document is displayed on the course page
