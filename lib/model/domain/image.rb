@@ -29,7 +29,7 @@ class Model::Domain::Image
       @tif_path = "#{File.expand_path(File.join(Dir.pwd, "test_data/#{@tif}"))}"
       @path = "#{File.expand_path(File.join(Dir.pwd, "test_data/#{@image_name}"))}"
       @copyright_info = "Image Copyright info #{Time.current.strftime("%T")} #{String.random(4)}"
-      @expiration_date = 10.days.from_now.strftime("%d/%m/%Y")
+      @expiration_date = "#{10.days.from_now.strftime("%d/%m/%Y")}"
       @expiration_reason = "Image reason"
   end
 end

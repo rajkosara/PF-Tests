@@ -36,7 +36,7 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
     step 'I create a document object'
   when 'add video'
     @british_council.add_video.load
-    step 'I create a video object'
+    step 'I create a video object'    
   when 'created published landing'
     visit @landing_page.url
   when 'created course'

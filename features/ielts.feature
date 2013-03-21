@@ -63,3 +63,11 @@ Feature: IELTS
     And I create a image in the media library
     When I create an ielts page with cta with an image
     Then the cta is displayed correctly on the ielts page
+
+  @complete @solas_592 @core @translate @korea
+  Scenario: Translate a ielts page and switch back to the english version
+    Given I am logged in as an admin user
+    And I create an ielts page with english and korea versions
+    When the korean tab of the lan switcher is selected on the ielts page
+    And I click the english tab of the lan switcher
+    Then the english version of the page is displayed

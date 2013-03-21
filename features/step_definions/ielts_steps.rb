@@ -70,3 +70,27 @@ Then(/^the cta is displayed correctly on the ielts page$/) do
   @british_council.ielts.cta_box.title_link[:href] == @ielts.cta.url
 
 end
+
+Given(/^I create an ielts page with english and korea versions$/) do
+  steps %Q{
+       Given I create a punlished ielts page
+    And I choose to the translate an ielts page
+    And I click add translation on the translate page
+    And I translate the ielts page
+    And the translated ielts page is displayed
+  }
+end
+
+When(/^the korean tab of the lan switcher is selected on the ielts page$/) do
+  step "the header displays the language switcher"
+  @british_council.ielts.header.language_switcher.korea[:class].should include "active"
+end
+
+When(/^I click the english tab of the lan switcher$/) do
+  @british_council.ielts.header.language_switcher.english.click
+end
+
+Then(/^the english version of the page is displayed$/) do
+  Timeout.timeout(30){sleep(0.1) until @british_council.ielts.title.visible?}
+  @british_council.ielts.title.text.should_not include "TRANSLATED"
+end

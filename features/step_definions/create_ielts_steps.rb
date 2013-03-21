@@ -63,8 +63,17 @@ When(/^I create an ielts page$/) do
   step "I submit a ielts page"
 end
 
+When(/^I create a punlished ielts page$/) do
+  step "I navigate to the create ielts page"
+  @british_council.create_ielts.meta_config.publish_tab.click
+  @british_council.create_ielts.meta_config.publish_settings.publish_status.click
+  step "I submit a ielts page"
+end
+
 When(/^I translate the ielts page$/) do
   @british_council.create_ielts.title.set "#{@ielts.title} TRANSLATED"
+  @british_council.create_ielts.meta_config.publish_tab.click
+  @british_council.create_ielts.meta_config.publish_settings.publish_status.click
   step "I save the ielts page"
 end
 

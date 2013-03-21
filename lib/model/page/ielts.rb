@@ -21,6 +21,8 @@ class Model::Page::Ielts < SitePrism::Page
   element :document_name, ".bc-file a"
 
   section :cta_box, Model::Section::CtaBox, ".bc-hlight-box"
+  section :header, Model::Section::Header, "#bc-header-wrapper"
+  section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
 
   sections :cta_with_image, Model::Section::CtaWithImage, ".bc-card"
 end

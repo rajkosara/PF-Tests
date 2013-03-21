@@ -99,6 +99,10 @@ class Model::BritishCouncil
     Model::Page::Image.new
   end
 
+  def video
+    Model::Page::Video.new
+  end
+
   def document
     Model::Page::Document.new
   end
@@ -125,5 +129,9 @@ class Model::BritishCouncil
 
   def mobile_teaching_centre
     Model::Page::MobileTeachingCentre.new
+  end
+
+  def delete_page
+    Model::Page::DeletePage.new
   end
 end
