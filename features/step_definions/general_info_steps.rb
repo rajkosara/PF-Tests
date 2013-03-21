@@ -37,7 +37,7 @@ Then /^the title is displayed on the general info page$/ do
 end
 
 Then /^the filename displays the custom url filename on the general info page$/ do
-  @british_council.general_info.filename.should == @general_info.alternate_filename.gsub(" ", "-").downcase
+  @british_council.general_info.filename.should == @general_info.alternate_filename.gsub(" ", "%20")
 end
 
 Then(/^the image is displayed on the general info page$/) do
