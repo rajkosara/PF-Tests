@@ -17,7 +17,7 @@ Feature: Login
       | manager   |
       | producer  |
 
-  @complete @solas_204 @core @smoke
+  @complete @solas_204 @core @smoke @wip
   Scenario: User logs in unsuccessfully
     Given I navigate to the login page
     When I enter the invalid user username

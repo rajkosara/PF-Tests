@@ -25,3 +25,10 @@ end
 Then(/^the legal info is displayed on the home page footer$/) do
   @british_council.home.footer.legal_text.text.should include @legal_text
 end
+
+Then(/^the menu link is displayed on the home page$/) do
+  @promo = @british_council.home.header.promo_links.find do |thing|
+    thing.text == @promo_title
+  end
+  @promo.text == @promo_title
+end

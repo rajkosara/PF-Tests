@@ -142,4 +142,8 @@ class Model::BritishCouncil
   def delete_page
     Model::Page::DeletePage.new
   end
+
+  def add_promo_link
+    Model::Page::AddPromoLink.new
+  end
 end
