@@ -41,6 +41,10 @@ Given(/^I create a video object$/) do
 end
 
 When(/^create a ielts object$/) do
-    #@course = Model::Domain::Course.new
+  #@course = Model::Domain::Course.new
   @ielts ||= Model::Domain::Ielts.new
+end
+
+Given(/^I create a partner object$/) do
+  @partner ||= Model::Domain::Partner.new
 end

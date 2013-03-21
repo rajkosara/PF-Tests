@@ -27,6 +27,10 @@ class Model::BritishCouncil
     Model::Page::CreateIelts.new
   end
 
+  def create_partner
+    Model::Page::CreatePartner.new
+  end
+
   def create_event
     Model::Page::CreateEvent.new
   end
@@ -117,6 +121,10 @@ class Model::BritishCouncil
 
   def teaching_centre
     Model::Page::TeachingCentre.new
+  end
+
+  def partner
+    Model::Page::Partner.new
   end
 
   def site_info

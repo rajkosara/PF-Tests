@@ -24,8 +24,11 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
     @british_council.create_event.load
     step "I create a event object"
   when 'create landing page'
-    @british_council.create_landing_page.load
     step "I create a landing page object"
+    @british_council.create_landing_page.load
+  when 'create partner'
+    @british_council.create_partner.load
+    step 'I create a partner object'
   when 'edit faq settings'
     @british_council.edit_faq_settings.load
   when 'add image'

@@ -23,9 +23,11 @@ class Model::Page::CreateEvent < SitePrism::Page
   element :postcode, "[id*=edit-field-event-address-und-0-postal-code]"
   element :image_tab, "#node_event_form_group_event_image a.fieldset-title"
   element :add_cta_tab, "#node_event_form_group_event_cta a.fieldset-title"
+  element :partner_tab, "#node_event_form_group_partners a.fieldset-title"
 
   elements :long_lat, "span.geolocation-lat-item-value"
-  
+
+  section :event_partner, Model::Section::EventPartner, "#node_event_form_group_partners"
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
   section :image_library, Model::Section::AddImageSection, "#node_event_form_group_event_image"
   section :add_cta, Model::Section::AddCta, "#node_event_form_group_event_cta"

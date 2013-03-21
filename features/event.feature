@@ -73,3 +73,11 @@ Feature: Event
     When I navigate to the create event page
     And I submit a event page
     Then the event fields and displayed correctly
+
+  @complete @solas_146 @core
+  Scenario: Add partner to event
+    Given I am logged in as an admin user
+    And I create a partner
+    When I navigate to the create event page
+    And I submit a event page with a parner
+    And the partner is displayed correctly on the event page

@@ -64,7 +64,9 @@ end
 
 module StuffWeWantAvailable
   def wait_for_ajax
+    sleep 0.3
     wait_until { page.evaluate_script("jQuery.active") == 0 }
+    sleep 0.3
   end
 
   def scroll_to_end_of_page

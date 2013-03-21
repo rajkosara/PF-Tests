@@ -24,3 +24,9 @@ Then(/^the event fields and displayed correctly$/) do
   @british_council.event.country.text.should == @event.country
   @british_council.event.should have_map
 end
+
+When(/^the partner is displayed correctly on the event page$/) do
+  step "the event page is created"
+  @british_council.event.partner_header.text.should == @partner.header
+  @british_council.event.should have_partner_image
+end
