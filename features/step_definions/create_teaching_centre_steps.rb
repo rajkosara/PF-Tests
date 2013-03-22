@@ -192,3 +192,10 @@ When(/^I fill out the details on the teaching centre$/) do
   @british_council.create_teaching_centre.contact_and_location_tab.click
   @british_council.create_teaching_centre.contact_and_location_body.native.send_keys @teaching_centre.contact_location_body
 end
+
+Given(/^I create a published teaching centre page$/) do
+  step "I navigate to the create teaching centre page"
+  @british_council.create_teaching_centre.meta_config.publish_tab.click
+  @british_council.create_teaching_centre.meta_config.publish_settings.publish_status.click
+  step "I submit a teaching centre page"
+end

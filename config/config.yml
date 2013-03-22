@@ -133,6 +133,25 @@ test_env_training:
   manager_password: 'password'
   producer_username: 'test.producer'
   producer_password: 'password'
+test_env_greece:
+  <<: *execution_defaults
+  # site name
+  country_site: Greece
+  #capybara settings
+  default_wait_time: 15
+  #urls
+  korea_site_root: http://gr.test.solas.britishcouncil.net/en
+  thumbnail_image_location: /sites/default/files/styles/thumbnail/public
+  image_location: /sites/default/files
+  #user details
+  admin_username: 'test.admin'
+  admin_password: 'password'
+  author_username: 'test.author'
+  author_password: 'password'
+  manager_username: 'test.manager'
+  manager_password: 'password'
+  producer_username: 'test.producer'
+  producer_password: 'password'
 stage_env_kr:
   <<: *execution_defaults
   # site name
@@ -172,6 +191,25 @@ stage_env_jp:
   producer_username: 'test.producer'
   producer_password: 'Password_1'
 stage_env_training:
+  <<: *execution_defaults
+  # site name
+  country_site: Training
+  #capybara settings
+  default_wait_time: 15
+  #urls
+  korea_site_root: http://training.stage.solas.britishcouncil.net/en
+  thumbnail_image_location: /sites/default/files/styles/thumbnail/public
+  image_location: /sites/default/files
+  #user details
+  admin_username: 'test.admin'
+  admin_password: 'Password_1'
+  author_username: 'test.author'
+  author_password: 'Password_1'
+  manager_username: 'test.manager'
+  manager_password: 'Password_1'
+  producer_username: 'test.producer'
+  producer_password: 'Password_1'
+stage_env_greece:
   <<: *execution_defaults
   # site name
   country_site: Training
@@ -236,6 +274,25 @@ live_env_training:
   default_wait_time: 15
   #urls
   korea_site_root: http://training.live.solas.britishcouncil.net/en
+  thumbnail_image_location: /sites/default/files/styles/thumbnail/public
+  image_location: /sites/default/files
+  #user details
+  admin_username: 'test.admin'
+  admin_password: 'Password_1'
+  author_username: 'test.author'
+  author_password: 'Password_1'
+  manager_username: 'test.manager'
+  manager_password: 'Password_1'
+  producer_username: 'test.producer'
+  producer_password: 'Password_1'
+live_env_greece:
+  <<: *execution_defaults
+  # site name
+  country_site: Greece
+  #capybara settings
+  default_wait_time: 15
+  #urls
+  korea_site_root: http://gr.live.solas.britishcouncil.net/en
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details

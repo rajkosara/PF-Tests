@@ -126,3 +126,10 @@ Feature: teaching Centre
     And I submit a teaching centre page with a document
     Then the teaching centre page is created
     And the document is displayed on the teaching centre
+
+  @complete @solas_365 @core
+  Scenario: Teaching centres listing page
+    Given I am logged in as an admin user
+    And I create a published teaching centre page
+    When I navigate to the teaching centre listings page
+    Then the teaching is displayed on the teaching centre page

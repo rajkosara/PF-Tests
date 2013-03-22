@@ -31,6 +31,10 @@ class Model::BritishCouncil
     Model::Page::CreatePartner.new
   end
 
+  def create_promotion
+    Model::Page::CreatePromotion.new
+  end
+
   def create_event
     Model::Page::CreateEvent.new
   end
@@ -67,6 +71,10 @@ class Model::BritishCouncil
     Model::Page::GeneralInfo.new
   end
 
+  def teaching_centre_listing_page
+    Model::Page::TeachingCentreListingPage.new
+  end
+
   def job
     Model::Page::Job.new
   end
@@ -93,6 +101,10 @@ class Model::BritishCouncil
 
   def course
     Model::Page::Course.new
+  end
+
+  def promotion
+    Model::Page::Promotion.new
   end
 
   def ielts

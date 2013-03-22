@@ -13,6 +13,8 @@ class Model::Page::LandingPage < SitePrism::Page
   elements :image, ".bc-box img"
 
   section :header, Model::Section::Header, "#bc-header-wrapper"
+  
+  sections :promotion, Model::Section::CtaWithImage, ".bc-card"
 
   def first_child_title
     child_pages_title.first

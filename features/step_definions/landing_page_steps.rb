@@ -75,3 +75,21 @@ end
 Then(/^the general info page is displayed with an image on the landing page$/) do
   @british_council.landing_page.image.size == 1
 end
+
+When(/^the promotion is displayed on the landing page$/) do
+  @british_council.landing_page.promotion.last.should have_promo_image
+  @british_council.landing_page.promotion.last.strapline.text.should == @promotion.title.upcase
+  @british_council.landing_page.promotion.last.cta_title.text.should == @promotion.button_text
+  @british_council.landing_page.promotion.last.cta_title[:href].should == @promotion.destination
+end
+
+When(/^the two promotions are displayed on the landing page$/) do
+  @british_council.landing_page.promotion.first.should have_promo_image
+  @british_council.landing_page.promotion.first.strapline.text.should == @promotion.title
+  @british_council.landing_page.promotion.first.cta_title.text.should == @promotion.button_text
+  @british_council.landing_page.promotion.first.cta_title[:href].should == @promotion.destination
+  @british_council.landing_page.promotion.last.should have_promo_image
+  @british_council.landing_page.promotion.last.strapline.text.should == @promotion.title
+  @british_council.landing_page.promotion.last.cta_title.text.should == @promotion.button_text
+  @british_council.landing_page.promotion.last.cta_title[:href].should == @promotion.destination
+end

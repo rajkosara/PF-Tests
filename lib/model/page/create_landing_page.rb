@@ -15,5 +15,7 @@ class Model::Page::CreateLandingPage < SitePrism::Page
   element :add_another_item, "input[name='field_child_listing_page_managem_add_more']"
   element :two_column_checkbox, "label[for*='edit-field-course-list-view-mode-und-landing-col-two-no-img']"
 
+  elements :hero_promotion, "input[id*=edit-field-landing-promotion].form-text"
+
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
 end

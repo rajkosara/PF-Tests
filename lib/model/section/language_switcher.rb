@@ -1,4 +1,4 @@
 class Model::Section::LanguageSwitcher < SitePrism::Section
-  element :english, ".en"
-  element :korea, ".ko"
+  element :english, ".last"
+  element :korea, ".first"
 end

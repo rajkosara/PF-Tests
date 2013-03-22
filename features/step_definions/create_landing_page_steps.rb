@@ -174,3 +174,40 @@ Given /^I translate the landing page$/ do
   @british_council.create_landing_page.meta_config.menu_settings.title.set "#{@landing_page.menu_title} Translated"
   step "I save the landing page"
 end
+
+When(/^I submit a landing page with a promotion$/) do
+  step "the create landing page page is displayed"
+  step "I enter a title for the landing page"
+  @british_council.create_landing_page.hero_promotion.first.set @promotion.title
+  wait_for_ajax
+  @british_council.create_landing_page.hero_promotion.first.native.send_keys :arrow_down
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_dropdown.visible?}
+  @british_council.create_landing_page.hero_promotion.first.native.send_keys :arrow_down
+  @british_council.create_landing_page.hero_promotion.first.native.send_keys :enter
+  wait_for_ajax
+  step "I enter a summary for the landing page"
+  step "I enter a body for the landing page"
+  step "I save the landing page"
+end
+
+When(/^I submit a landing page with two promotion$/) do
+  step "the create landing page page is displayed"
+  step "I enter a title for the landing page"
+  @british_council.create_landing_page.hero_promotion.first.set @promotion.title
+  wait_for_ajax
+  @british_council.create_landing_page.hero_promotion.first.native.send_keys :arrow_down
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_dropdown.visible?}
+  @british_council.create_landing_page.hero_promotion.first.native.send_keys :arrow_down
+  @british_council.create_landing_page.hero_promotion.first.native.send_keys :enter
+  wait_for_ajax
+  @british_council.create_landing_page.hero_promotion[1].set @promotion.title
+  wait_for_ajax
+  @british_council.create_landing_page.hero_promotion[1].native.send_keys :arrow_down
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_dropdown.visible?}
+  @british_council.create_landing_page.hero_promotion[1].native.send_keys :arrow_down
+  @british_council.create_landing_page.hero_promotion[1].native.send_keys :enter
+  wait_for_ajax
+  step "I enter a summary for the landing page"
+  step "I enter a body for the landing page"
+  step "I save the landing page"
+end

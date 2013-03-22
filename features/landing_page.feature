@@ -119,4 +119,21 @@ Feature: Landing page
     And I enter the general info page and landing page as children
     And I save the landing page
     Then the general info page is displayed with an image on the landing page
-    
+
+  @complete @solas_383 @core
+  Scenario: Add promotion to a landing page
+    Given I am logged in as an admin user
+    And I create a image in the media library
+    And I create a promotion
+    When I navigate to the create landing page page
+    And I submit a landing page with a promotion
+    And the promotion is displayed on the landing page
+
+  @complete @solas_383 @core
+  Scenario: Add two promotions to a landing page
+    Given I am logged in as an admin user
+    And I create a image in the media library
+    And I create a promotion
+    When I navigate to the create landing page page
+    And I submit a landing page with two promotion
+    And the two promotions are displayed on the landing page

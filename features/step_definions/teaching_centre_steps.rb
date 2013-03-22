@@ -55,9 +55,7 @@ end
 
 Then(/^the opening hours are displayed on the teaching centre page$/) do
   @british_council.teaching_centre.contact_and_location_tab.click
-  @british_council.teaching_centre.contact_and_location_body.telephone_enquiries.should be_visible
   @british_council.teaching_centre.contact_and_location_body.telephone_enquiries.text.should include("REGULAR OPENING HOURS", "10:00-17:00")
-  @british_council.teaching_centre.contact_and_location_body.visitor_opening_hours.should be_visible
   @british_council.teaching_centre.contact_and_location_body.visitor_opening_hours.text.should include("Non-teaching weeks".upcase, "08:30-20:30")
   @british_council.teaching_centre.contact_and_location_body.text.should include("22 Jan (Sun) - 24 Jan (Tue) Lunar New Year","Telephone enquiries opening hours","Visitor opening hours")
 end
@@ -104,4 +102,16 @@ Then(/^the document is displayed on the teaching centre$/) do
   step "the teaching centre page is created"
   @british_council.teaching_centre.should have_document_name
   @british_council.teaching_centre.document_name.text.should == @document.document_name
+end
+
+Then(/^the teaching is displayed on the teaching centre page$/) do
+  @british_council.teaching_centre_listing_page.should be_displayed
+  @created_teaching_centre = @british_council.teaching_centre_listing_page.teaching_centre_details.find do |thing|
+    thing.name.text == @teaching_centre.title
+  end
+  @created_teaching_centre.name.text.should == @teaching_centre.title
+  @created_teaching_centre.address.text.should include(@teaching_centre.address_one,@teaching_centre.address_two, @teaching_centre.post_code, @teaching_centre.city, @teaching_centre.state)
+  @created_teaching_centre.phone_number.text.should == @teaching_centre.telephone_number
+  @created_teaching_centre.fax_number.text == @teaching_centre.fax_number
+  @created_teaching_centre.email.text == @teaching_centre.email_address
 end
