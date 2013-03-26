@@ -44,7 +44,7 @@ Feature: IELTS
     And I translate the ielts page
     Then the translated ielts page is displayed
 
-  @complete @solas_226 @core
+  @complete @solas_226 @core @smoke
   Scenario: Fields are displayed correctly on an ielts page
     Given I am logged in as an admin user
     When I create an ielts page

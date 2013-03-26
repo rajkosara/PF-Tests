@@ -133,3 +133,11 @@ Feature: teaching Centre
     And I create a published teaching centre page
     When I navigate to the teaching centre listings page
     Then the teaching is displayed on the teaching centre page
+
+  @solas_551 @core
+  Scenario: Create teaching centre with a map
+    Given I am logged in as an author user
+    When I navigate to the create teaching centre page
+    And I submit a teaching centre page with a map
+    Then the teaching centre page is created
+    And the map is displayed on the teaching centre

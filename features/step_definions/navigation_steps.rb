@@ -67,6 +67,8 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
   when 'create promotion'
     @british_council.create_promotion.load
     step 'I create a promotion object'
+  when 'add social media link'
+    @british_council.add_social_media_link.load
   else raise "Haven't mapped the '#{page_name}' page"
   end
 end

@@ -32,3 +32,11 @@ Then(/^the menu link is displayed on the home page$/) do
   end
   @promo.text == @promo_title
 end
+
+Then(/^the social media link is displayed in the footer$/) do
+  @social_link = @british_council.home.footer.social_links.find do |thing|
+     thing.text == @media_link_name
+  end
+  @social_link.text.should == @media_link_name
+  @social_link[:href].should == @media_link_link
+end

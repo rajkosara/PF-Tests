@@ -158,4 +158,12 @@ class Model::BritishCouncil
   def add_promo_link
     Model::Page::AddPromoLink.new
   end
+
+  def add_social_media_link
+    Model::Page::AddSocialMediaLink.new
+  end
+
+  def manage_social_media_links
+    Model::Page::ManageSocialMediaLinks.new
+  end
 end

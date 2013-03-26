@@ -199,3 +199,8 @@ Given(/^I create a published teaching centre page$/) do
   @british_council.create_teaching_centre.meta_config.publish_settings.publish_status.click
   step "I submit a teaching centre page"
 end
+
+When(/^I submit a teaching centre page with a map$/) do
+  step "I navigate to the create teaching centre page"
+  pending # express the regexp above with the code you wish you had
+end
