@@ -14,7 +14,7 @@ class Model::Page::CreateGeneralInfo < SitePrism::Page
   element :document_tab, "#node_general_info_form_group_document .fieldset-title"
   element :show_hide_tab, "#node_general_info_form_group_show_hide a"
   element :show_hide_title, "#edit-field-general-info-show-hide-und-0-first"
-  element :show_hide_body, "#edit-field-general-info-show-hide-und-0-second"
+  element :show_hide_body, "iframe#edit-field-general-info-show-hide-und-0-second-value_ifr"
   element :add_cta_tab, "#node_general_info_form_group_cta a.fieldset-title"
 
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"

@@ -163,7 +163,7 @@ Feature: General info
   Scenario: CTA with an external link is displayed correctly
     Given I am logged in as an admin user
     When I navigate to the create general info page
-    And  I submit a general info page with a cta with an external link
+    And I submit a general info page with a cta with an external link
     Then the general info page is created
     And I am using a mobile device
     And the CTA with an external link is displayed correctly on the general info page

@@ -199,7 +199,7 @@ When(/^I submit a general info page with a show hide$/) do
   step "I enter a body for the general info page"
   @british_council.create_general_info.show_hide_tab.click
   @british_council.create_general_info.show_hide_title.set @general_info.show_hide_title
-  @british_council.create_general_info.show_hide_body.set @general_info.show_hide_body
+  @british_council.create_general_info.show_hide_body.native.send_keys @general_info.show_hide_body
   step "I save the general info page"
 end
 
