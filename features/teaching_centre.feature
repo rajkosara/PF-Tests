@@ -134,7 +134,8 @@ Feature: teaching Centre
     When I navigate to the teaching centre listings page
     Then the teaching is displayed on the teaching centre page
 
-  @solas_551 @core
+
+  @complete @solas_551 @core
   Scenario: Create teaching centre with a map
     Given I am logged in as an author user
     When I navigate to the create teaching centre page

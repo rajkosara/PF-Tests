@@ -115,3 +115,10 @@ Then(/^the teaching is displayed on the teaching centre page$/) do
   @created_teaching_centre.fax_number.text == @teaching_centre.fax_number
   @created_teaching_centre.email.text == @teaching_centre.email_address
 end
+
+Then(/^the map is displayed on the teaching centre$/) do
+  step "the teaching centre page is created"
+  sleep 3
+  @british_council.teaching_centre.contact_and_location_tab.click
+  @british_council.teaching_centre.should have_map
+end

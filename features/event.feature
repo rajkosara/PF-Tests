@@ -67,7 +67,7 @@ Feature: Event
     Then the event page is created
     And the cta is displayed correctly on the event page
 
-  @complete @solas_144 @core @wip
+  @complete @solas_144 @core
   Scenario: Event fields are displayed correctly
     Given I am logged in as an admin user
     When I navigate to the create event page

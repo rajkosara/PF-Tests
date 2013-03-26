@@ -64,7 +64,7 @@ end
 
 module StuffWeWantAvailable
   def wait_for_ajax
-    puts page.evaluate_script("jQuery.active")
+    #puts page.evaluate_script("jQuery.active")
     sleep 0.3
     Timeout.timeout(30) {sleep(0.1) until page.evaluate_script("jQuery.active") == 0 }
     sleep 0.3

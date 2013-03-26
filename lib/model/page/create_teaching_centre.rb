@@ -28,6 +28,8 @@ class Model::Page::CreateTeachingCentre < SitePrism::Page
   element :course_listing_tab, "#node_teaching_centre_form_group_courses .fieldset-title"
   element :book_placement_tab, "#node_teaching_centre_form_group_cta a.fieldset-title"
   element :document_tab, "#node_teaching_centre_form_group_document .fieldset-title"
+  element :geolocation, "#edit-field-generic-geolocation-map-und-0-address-field"
+  element :get_location_button, "[id*=geolocation-address-geocode]"
 
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
   section :course_listing, Model::Section::CourseListing, "#node_teaching_centre_form_group_courses"

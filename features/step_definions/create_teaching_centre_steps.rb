@@ -202,5 +202,8 @@ end
 
 When(/^I submit a teaching centre page with a map$/) do
   step "I navigate to the create teaching centre page"
-  pending # express the regexp above with the code you wish you had
+  @british_council.create_teaching_centre.geolocation.set @teaching_centre.geolocation
+  @british_council.create_teaching_centre.get_location_button.click
+  wait_for_ajax
+  step "I submit a teaching centre page"
 end

@@ -10,6 +10,7 @@ class Model::Domain::TeachingCentre < Model::Domain::Content
   attr_accessor :calendar_body
   attr_accessor :contact_location_body
   attr_accessor :facilities_body
+  attr_accessor :geolocation
 
 
   def initialize
@@ -28,6 +29,7 @@ class Model::Domain::TeachingCentre < Model::Domain::Content
     @contact_location_body = "Teaching Centre contact location body #{Time.current.strftime("%T")} #{String.random(4)}"
     @facilities_body = "Teaching Centre facilities body #{Time.current.strftime("%T")} #{String.random(4)}"
     @alternate_filename = "Teaching Centre alternate filename #{String.random(6)}"
+    @geolocation = "W5 4LP"
 
     def cta
       @teaching_centre ||= Model::Domain::Cta.new
