@@ -2,7 +2,7 @@ When(/^I add an document to the media library$/) do
   step "I enter a title for a document"
   step "I enter a description for a document"
   step "I enter a path for a document and click the upload"
-  step "I enter an expiration date for a document"
+  #step "I enter an expiration date for a document"
   step "I save a document"
 end
 

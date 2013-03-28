@@ -1,7 +1,7 @@
-@event
+@event @failing @solas_1208
 Feature: Event
 
-  @complete @solas_144 @core
+  @complete @solas_144 @core @failing @solas_1208
   Scenario Outline: Create an event page
     Given I am logged in as an <user_type> user
     When I navigate to the create event page

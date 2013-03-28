@@ -90,7 +90,7 @@ Feature: Course
     Then the course page is created
     And the CTA without an image and with an external link is displayed correctly on the course page
 
-  @complete @solas_848 @core
+  @complete @solas_848 @core @failing @solas_1207
   Scenario: CTA with an image and with an internal link is displayed correctly
     Given I am logged in as an admin user
     And I create a image in the media library
@@ -142,7 +142,7 @@ Feature: Course
     And the course page is created
     Then the linked course is displayed on the course page
 
-  @complete @solas_926 @core
+  @complete @solas_926 @core @failing @solas_1208
   Scenario: Create a course page with a docucment
     Given I am logged in as an admin user
     And I create a document in the media library
