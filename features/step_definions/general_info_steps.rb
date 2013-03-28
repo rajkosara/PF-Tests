@@ -91,3 +91,8 @@ end
 Then(/^the landing page and the course page are in the breadcrumbs on the general info page$/) do
   @british_council.general_info.breadcrumbs.text.should include("Home", @landing_page.menu_title, @course.menu_title)
 end
+
+Then(/^the course is displayed and the landing pag is not$/) do
+  @british_council.general_info.secondary_navigation_menu.parent.text.should == @course.menu_title
+  @british_council.general_info.secondary_navigation_menu.children.first.text.should == @general_info.menu_title
+end

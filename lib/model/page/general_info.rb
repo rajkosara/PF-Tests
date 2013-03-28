@@ -13,6 +13,8 @@ class Model::Page::GeneralInfo < SitePrism::Page
 
   elements :links, ".bc-lk-list-16 a"
 
+  section :secondary_navigation_menu, Model::Section::SecondaryNavigationMenu, ".bc-sub-nav"
+  
   sections :cta_box, Model::Section::CtaBox, ".bc-hlight-box"
 
   def filename

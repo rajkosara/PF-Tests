@@ -21,6 +21,7 @@ class Model::Page::Course < SitePrism::Page
   element :document_name, ".bc-file a"
 
   section :level, Model::Section::Level, "#bc-tabs-bc-course-5 .bc-tab-content .bc-show-hide"
+  section :secondary_navigation_menu, Model::Section::SecondaryNavigationMenu, ".bc-sub-nav"
 
   sections :cta_box, Model::Section::CtaBox, ".bc-hlight-box"
 end

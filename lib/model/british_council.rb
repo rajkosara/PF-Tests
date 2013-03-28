@@ -47,6 +47,10 @@ class Model::BritishCouncil
     Model::Page::CreateTeachingCentre.new
   end
 
+  def create_contact_us
+    Model::Page::CreateContactUs.new
+  end
+
   def add_image
     Model::Page::AddImage.new
   end
@@ -77,6 +81,10 @@ class Model::BritishCouncil
 
   def job
     Model::Page::Job.new
+  end
+
+  def contact_us
+    Model::Page::ContactUs.new
   end
 
   def event

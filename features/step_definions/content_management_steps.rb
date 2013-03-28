@@ -50,3 +50,7 @@ end
 Given(/^I create a promotion object$/) do
   @promotion ||= Model::Domain::Promotion.new
 end
+
+When(/^I create a contact us object$/) do
+   @contact_us ||= Model::Domain::ContactUs.new
+end

@@ -160,3 +160,22 @@ Then(/^the document is displayed on the course page$/) do
   step "the course page is created"
   @british_council.course.document_name.text.should == @document.document_name
 end
+
+Then(/^the secondary navigation menu is displayed on the course page$/) do
+  @british_council.course.should have_secondary_navigation_menu
+end
+
+Then(/^I logout and navigate back to the course page$/) do
+  step "I log out"
+  visit @created_course_url
+end
+
+Then(/^the landing page and general info page are in the secondary navigation menu$/) do
+  @british_council.course.secondary_navigation_menu.parent.text.should  == @landing_page.menu_title
+  @british_council.course.secondary_navigation_menu.children.first.text.should == @course.menu_title
+  @british_council.course.secondary_navigation_menu.children.last.text.should  == @general_info.menu_title
+end
+
+When(/^I navigate to general info page using the secondary navigation menu on the course page$/) do
+  @british_council.course.secondary_navigation_menu.children.last.click
+end

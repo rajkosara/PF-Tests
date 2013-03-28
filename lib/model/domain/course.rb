@@ -11,6 +11,7 @@ class Model::Domain::Course < Model::Domain::Content
   attr_accessor :timetable_intro
   attr_accessor :timetable_heading
   attr_accessor :teaching_centre_name
+  attr_accessor :url
 
   def initialize
     @title = "Course Title #{Time.current.strftime("%T")} #{String.random(4)}"
@@ -28,6 +29,7 @@ class Model::Domain::Course < Model::Domain::Content
     @levels_description = "Course levels description #{String.random(6)}"
     @timetable_heading = "Course timetable heading #{String.random(6)}"
     @teaching_centre_name = "Course teaching centre name #{String.random(6)}"
+    @url = ""
     
     
     def cta

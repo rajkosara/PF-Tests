@@ -150,3 +150,22 @@ Feature: Course
     And I submit a course page with document
     And the course page is created
     Then the document is displayed on the course page
+
+  @complete @solas_813 @core
+  Scenario: The secondary navigation menu is displayed
+    Given I am logged in as an admin user
+    And I create a published landing page
+    When I create a course page and place it under the landing page
+    And I create a general info page a place it under the course page
+    And I logout and navigate back to the course page
+    Then the landing page and general info page are in the secondary navigation menu
+
+  @complete @solas_813 @core
+  Scenario: The secondary navigation menu is displayed
+    Given I am logged in as an admin user
+    And I create a published landing page
+    And I create a course page and place it under the landing page
+    And I create a general info page a place it under the course page
+    And I logout and navigate back to the course page
+    When I navigate to general info page using the secondary navigation menu on the course page
+    Then the course is displayed and the landing pag is not
