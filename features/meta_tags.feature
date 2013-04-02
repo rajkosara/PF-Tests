@@ -17,3 +17,15 @@ Feature: Meta tags
     And I submit a general info page
     Then the title meta tag is displayed on the general info page
 
+  @complete @solas_1059 @core
+  Scenario Outline: Meta tags menu is displayed for all users
+    Given I am logged in as an <user_type> user
+    When I navigate to the create general info page
+    Then the meta tags menu is displayed on the general info page
+
+    Examples:
+      | user_type |
+      | admin     |
+      | author    |
+      | manager   |
+      | producer  |

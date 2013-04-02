@@ -167,3 +167,10 @@ Feature: General info
     Then the general info page is created
     And I am using a mobile device
     And the CTA with an external link is displayed correctly on the general info page
+
+  @complete @solas_1060 @core
+  Scenario: Menu settings are displayed
+    Given I am logged in as an admin user
+    When I navigate to the create general info page
+    Then the menu settings are displayed on the general info page
+    And I can choose main menu and footer in the menu section on the creat general info page

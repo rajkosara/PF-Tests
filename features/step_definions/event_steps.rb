@@ -21,7 +21,6 @@ Then(/^the event fields and displayed correctly$/) do
   @british_council.event.address_two.text.should == @event.address_two
   @british_council.event.city.text.should == @event.city
   @british_council.event.postcode.text.should == @event.postcode
-  @british_council.event.country.text.should == @event.country
   @british_council.event.should have_map
 end
 

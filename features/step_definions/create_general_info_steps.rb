@@ -235,7 +235,6 @@ When(/^I create a general info page a place it under the course page$/) do
   step "I enter a title for the general info page"
   step "I enter a summary for the general info page"
   step "I enter a body for the general info page"
-  sleep 5
   @british_council.create_general_info.meta_config.menu_tab.click
   @british_council.create_general_info.meta_config.menu_settings.enable_menu.click
   @british_council.create_general_info.meta_config.menu_settings.title.set @general_info.menu_title
@@ -256,4 +255,23 @@ Given(/^I create a general info page with an image$/) do
   step "I publish a general info"
   step "I submit a general info page with an image"
   step "the general info page is created"
+end
+
+Then(/^the menu settings are displayed on the general info page$/) do
+  @british_council.create_general_info.meta_config.menu_tab.click
+  @british_council.create_general_info.meta_config.menu_settings.enable_menu.click
+  @british_council.create_general_info.meta_config.menu_settings.title.should be_visible
+end
+
+Then(/^I can choose main menu and footer in the menu section on the creat general info page$/) do
+  @british_council.create_general_info.meta_config.menu_settings.parent_menu.text.should include "<Main menu>"
+  @british_council.create_general_info.meta_config.menu_settings.parent_menu.text.should include "<Main menu footer>"
+end
+
+Then(/^the meta tags menu is displayed on the general info page$/) do
+  @meta = @british_council.create_general_info.meta_config.tabs.find do |thing|
+    thing.text.include? "Meta tags"
+  end
+  @meta.click
+  @british_council.create_general_info.meta_config.meta_tags.should have_title
 end
