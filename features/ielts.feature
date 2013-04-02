@@ -35,7 +35,7 @@ Feature: IELTS
     And I edit the ielts title on the create ielts page
     And the edited ielts title is displayed on the ielts page
 
-  @complete @solas_226 @core @translate
+  @complete @solas_226 @core @translate @problematic
   Scenario: Translate a ielts page
     Given I am logged in as an admin user
     And I create an ielts page
@@ -57,7 +57,7 @@ Feature: IELTS
     When I create an ielts page with an document
     Then the document is displayed correctly on the ielts page
 
-  @complete @solas_923 @core
+  @complete @solas_923 @core @failing @solas_1207
   Scenario: Add cta to an ielts page
     Given I am logged in as an admin user
     And I create a image in the media library

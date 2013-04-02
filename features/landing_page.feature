@@ -34,7 +34,7 @@ Feature: Landing page
     When I enter a title with 70 characters for the landing page
     Then a zero characters remaining error message is displayed on the create landing page
 
-  @complete @solas_322 @core
+  @complete @solas_322 @core @problematic
   Scenario: Adding a landing page to a menu
     Given I am logged in as an admin user
     And I create a published landing page
@@ -69,7 +69,7 @@ Feature: Landing page
     And I save the landing page
     Then two columns are displayed on the landing page
 
-  @complete @solas_403 @core
+  @complete @solas_403 @core @problematic
   Scenario: Add and order pages on a landing page
     Given I am logged in as an admin user
     And I create a published landing page
@@ -80,7 +80,7 @@ Feature: Landing page
     And I save the landing page
     Then the general info page and landing page are displayed in the correct order
 
-  @complete @solas_620 @core @translate
+  @complete @solas_620 @core @translate @problematic
   Scenario: Translate main menu item appears in the menu
     Given I am logged in as an admin user
     And I create a published landing page

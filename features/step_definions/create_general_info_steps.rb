@@ -8,6 +8,7 @@ Then /^the create general info page is not displayed$/ do
 end
 
 When /^I save the general info page$/ do
+  scroll_to_end_of_page
   @british_council.create_general_info.save_button.click
 end
 

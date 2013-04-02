@@ -22,7 +22,7 @@ Feature: teaching Centre
     And I submit a teaching centre page without a title
     Then a "Title field is required" error message is displayed on the create teaching centre page
 
-  @complete @solas_810 @core
+  @complete @solas_810 @core @problematic
   Scenario: Add and order teaching centre page on a landing page
     Given I am logged in as an admin user
     And I create a published landing page
@@ -50,7 +50,7 @@ Feature: teaching Centre
     Then the teaching centre page is created
     And the teaching centre page details are displayed correctly on mobile
 
-  @complete @solas_368 @core @translate
+  @complete @solas_368 @core @translate @problematic
   Scenario: Translate teaching centre
     Given I am logged in as an admin user
     And I create a teaching centre page
