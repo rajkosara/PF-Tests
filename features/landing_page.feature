@@ -57,7 +57,7 @@ Feature: Landing page
       | producer  |
       | admin     |
 
-  @complete @solas_693 @core
+  @complete @solas_693 @core @smoke
   Scenario: Create landing page with two columns
     Given I am logged in as an admin user
     And I create a published landing page
@@ -137,3 +137,4 @@ Feature: Landing page
     When I navigate to the create landing page page
     And I submit a landing page with two promotion
     And the two promotions are displayed on the landing page
+

@@ -211,3 +211,20 @@ When(/^I submit a landing page with two promotion$/) do
   step "I enter a body for the landing page"
   step "I save the landing page"
 end
+
+
+Given(/^I create a landing page and I enter the event page as children$/) do
+  step "I navigate to the create landing page page"
+  step "the create landing page page is displayed"
+  step "I enter a title for the landing page"
+  step "I enter a summary for the landing page"
+  step "I enter a body for the landing page"
+  @british_council.create_landing_page.list_management.set @event.title
+  @british_council.create_landing_page.list_management.native.send_keys :arrow_down
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_dropdown.visible?}
+  @british_council.create_landing_page.list_management.native.send_keys :arrow_down
+  @british_council.create_landing_page.list_management.native.send_keys :enter
+  Timeout.timeout(30) { sleep(0.1) while @british_council.create_landing_page.list_management.text == @event.title}
+  wait_for_ajax
+  step "I save the landing page"
+end

@@ -175,9 +175,36 @@ When(/^I submit a event page with a parner$/) do
   @british_council.create_event.partner_tab.click
   @british_council.create_event.event_partner.header.set @partner.header
   @ep = @british_council.create_event.event_partner.label.find do |tc|
-     tc.text. == @partner.title
+    tc.text. == @partner.title
   end
   @ep.click
+  step "I publish a event page"
+  step "I save the event page"
+end
+
+When(/^I create a event page and place it under the landing page$/) do
+  step "I navigate to the create event page"
+  step "the create event page is displayed"
+  step "I enter a title for the event page"
+  step "I enter a summary for the event page"
+  step "I enter a description for the event page"
+  step "I enter details for address and location"
+  scroll_to_end_of_page
+  @british_council.create_event.meta_config.menu_tab.click
+  @british_council.create_event.meta_config.menu_settings.enable_menu.click
+  @british_council.create_event.meta_config.menu_settings.title.set @course.menu_title
+  @british_council.create_event.meta_config.menu_settings.parent_menu.select @org_landing_page_menu_title[0...27]
+  step "I publish a event page"
+  step "I save the event page"
+end
+
+Given(/^I create a published event page$/) do
+  step "I navigate to the create event page"
+  step "the create event page is displayed"
+  step "I enter a title for the event page"
+  step "I enter a summary for the event page"
+  step "I enter a description for the event page"
+  step "I enter details for address and location"
   step "I publish a event page"
   step "I save the event page"
 end

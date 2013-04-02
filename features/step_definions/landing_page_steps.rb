@@ -93,3 +93,8 @@ When(/^the two promotions are displayed on the landing page$/) do
   @british_council.landing_page.promotion.last.cta_title.text.should == @promotion.button_text
   @british_council.landing_page.promotion.last.cta_title[:href].should == @promotion.destination
 end
+
+Then(/^the event page is displayed on the listing page$/) do
+  Timeout.timeout(30) { sleep(0.1) until @british_council.landing_page.title.visible?}
+  @british_council.landing_page.first_child_title.text.should == @event.title
+end
