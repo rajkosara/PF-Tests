@@ -20,8 +20,8 @@ class Model::Domain::Event < Model::Domain::Content
     @summary = "Event Summary #{Time.current.strftime("%T")} #{String.random(4)}"
     @event_description = "Event Event Description \n #{Time.current.strftime("%T")} #{String.random(4)}"
     @city = "London"
-    @start_date = 1.days.from_now.strftime("%d/%m/%Y")
-    @end_date  =  10.days.from_now.strftime("%d/%m/%Y")
+    @start_date = 1.days.from_now.strftime("%Y-%m-%d")
+    @end_date  =  10.days.from_now.strftime("%Y-%m-%d")
     @internal_link = ""
     @external_link_title = "General info external link title #{Time.current.strftime("%T")} #{String.random(4)}"
     @external_link_link = "https://www.google.co.uk"

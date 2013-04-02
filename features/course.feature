@@ -161,7 +161,7 @@ Feature: Course
     Then the landing page and general info page are in the secondary navigation menu
 
   @complete @solas_813 @core
-  Scenario: The secondary navigation menu is displayed
+  Scenario: The secondary navigation menu is displayed and landing page is not displayed
     Given I am logged in as an admin user
     And I create a published landing page
     And I create a course page and place it under the landing page

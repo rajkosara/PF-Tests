@@ -220,6 +220,7 @@ When(/^I submit a course page with a cta without an image and with an external l
   step "I click on the calendar and pricing tab on the create course page"
   step "I enter a course timetable title on the create course page"
   step "I enter a body for the calendar and pricing tab on the create course page"
+  scroll_down_a_little
   @british_council.create_course.add_cta_tab.click
   @british_council.create_course.add_cta.title.set @course.cta.title
   @british_council.create_course.add_cta.url.set @course.cta.url
@@ -271,6 +272,7 @@ When(/^I submit a course page with a timetable$/) do
   step "I click on the calendar and pricing tab on the create course page"
   step "I enter a course timetable title on the create course page"
   step "I enter a body for the calendar and pricing tab on the create course page"
+  scroll_down_a_little
   @british_council.create_course.timetable_one_tab.click
   @british_council.create_course.timetable_heading.set @course.timetable_heading
   @british_council.create_course.teaching_centre_name.set @course.teaching_centre_name

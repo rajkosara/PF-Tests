@@ -160,7 +160,7 @@ Feature: General info
     And the CTA with an internal link is displayed correctly on the general info page
 
   @complete @solas_660 @core @mobile
-  Scenario: CTA with an external link is displayed correctly
+  Scenario: CTA with an external link is displayed correctly on mobile
     Given I am logged in as an admin user
     When I navigate to the create general info page
     And I submit a general info page with a cta with an external link

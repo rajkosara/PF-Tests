@@ -47,6 +47,8 @@ end
 When /^I enter details for address and location$/ do
   @british_council.create_event.date_and_venue_tab.click
   @british_council.create_event.venue.set @event.venue
+  @british_council.create_event.start_date.set @event.start_date
+  @british_council.create_event.end_date.set @event.end_date
   @british_council.create_event.event_time.set @event.event_time
   @british_council.create_event.country.select @event.country
   wait_for_ajax

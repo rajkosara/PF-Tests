@@ -33,12 +33,17 @@ class Model::Page::CreateCourse < SitePrism::Page
   sections :add_level, Model::Section::AddLevel, "table[id*=field-course-levels-values] .draggable"
 
   #cta_tab
-  element :add_cta_tab, "#node_course_form_group_cta a.fieldset-title"
+  elements :tab, "#node_course_form_group_cta a.fieldset-title"
+  
+   def add_cta_tab
+     tab.first
+   end
 
   element :error_message, "#console .error"
   element :save_button, "input[value*='Save']"
   element :counter_message, "#edit-title-field-en-0-value-counter"
   element :document_tab, "#node_course_form_group_document .fieldset-title"
+  element :side_promo, "#edit-field-generic-sidebar-promos-und-0-target-id"
 
   section :add_cta, Model::Section::AddCta, "#node_course_form_group_cta"
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
