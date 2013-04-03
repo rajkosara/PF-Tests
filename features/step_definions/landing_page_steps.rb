@@ -72,7 +72,7 @@ Then /^the teaching centre page and landing page are displayed in the correct or
   @british_council.landing_page.child_summary.text.should == @landing_page.summary
 end
 
-Then(/^the general info page is displayed with an image on the landing page$/) do
+Then(/^the (?:teching centre|general info|course|ielts|events) page is displayed with an image on the landing page$/) do
   @british_council.landing_page.image.size == 1
 end
 

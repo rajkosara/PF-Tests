@@ -101,3 +101,14 @@ When(/^I create an ielts page with cta with an image$/) do
   @british_council.create_ielts.add_cta.supporting_text.native.send_keys @ielts.cta.supporting_text
   step "I submit a ielts page"
 end
+
+Given(/^I create a ielts page with an image$/) do
+  step "I navigate to the create ielts page"
+  @british_council.create_ielts.image_tab.click
+  wait_for_ajax
+  @british_council.create_ielts.image_library.select_checkboxes.first.click
+  wait_for_ajax
+  @british_council.create_ielts.meta_config.publish_tab.click
+  @british_council.create_ielts.meta_config.publish_settings.publish_status.select "Published"
+  step "I submit a ielts page"
+end

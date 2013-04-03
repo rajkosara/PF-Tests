@@ -326,3 +326,19 @@ Then /^I submit a course page with document$/ do
   wait_for_ajax
   step "I click save on the create course page on the create course page"
 end
+
+Given(/^I create a course page with an image$/) do
+  step "I navigate to the create course page"
+  step "the create course page is displayed"
+  step "I enter a about course body on the create course page"
+  step "I enter a course title on the create course page"
+  @british_council.create_course.image_tab.click
+  wait_for_ajax
+  @british_council.create_course.image_library.select_checkboxes.first.click
+  wait_for_ajax
+  step "I click on the calendar and pricing tab on the create course page"
+  step "I enter a course timetable title on the create course page"
+  step "I enter a body for the calendar and pricing tab on the create course page"
+  step "I publish a course"
+  step "I click save on the create course page on the create course page"
+end

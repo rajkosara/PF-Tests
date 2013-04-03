@@ -28,7 +28,7 @@ Feature: Faq
       | manager   |
       | producer  |
 
-  @complete @solas_157 @core
+  @complete @solas_157 @core @failing
   Scenario: Create a published faq page as an admin
     Given I am logged in as an admin user
     When I navigate to the create faq page

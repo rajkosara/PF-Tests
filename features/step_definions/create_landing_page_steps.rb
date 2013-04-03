@@ -107,12 +107,18 @@ When /^I enter a child page into the child listing page management$/ do
   step "I save the landing page"
 end
 
-When(/^I enter the (teching centre|general info) page and landing page as children$/) do |page|
+When(/^I enter the (teching centre|general info|course|ielts|events) page and landing page as children$/) do |page|
   case page
   when 'teching centre'
     @page = @teaching_centre.title
   when 'general info'
     @page = @general_info.title
+  when 'course'
+    @page = @course.title
+  when 'ielts'
+    @page = @ielts.title
+  when 'events'
+    @page = @event.title
   end
   #enter page
   @british_council.create_landing_page.list_management.set @page

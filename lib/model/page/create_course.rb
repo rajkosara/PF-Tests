@@ -35,20 +35,22 @@ class Model::Page::CreateCourse < SitePrism::Page
   #cta_tab
   elements :tab, "#node_course_form_group_cta a.fieldset-title"
   
-   def add_cta_tab
-     tab.first
-   end
+  def add_cta_tab
+    tab.first
+  end
 
   element :error_message, "#console .error"
   element :save_button, "input[value*='Save']"
   element :counter_message, "#edit-title-field-en-0-value-counter"
   element :document_tab, "#node_course_form_group_document .fieldset-title"
   element :side_promo, "#edit-field-generic-sidebar-promos-und-0-target-id"
+  element :image_tab, "#node_course_form_group_summary_image .fieldset-title"
 
   section :add_cta, Model::Section::AddCta, "#node_course_form_group_cta"
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
   section :internal_link_search, Model::Section::InternalLinkSearch, "div#linkit-modal"
   section :document_library, Model::Section::AddDocumentSection, "#node_course_form_group_document"
+  section :image_library, Model::Section::AddImageSection, "#node_course_form_group_summary_image"
 
   sections :teaching_centre, Model::Section::TeachingCentreSelection, "#edit-field-course-teaching-centre-ref-und .form-type-checkbox"
 end

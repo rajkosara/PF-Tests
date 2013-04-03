@@ -24,6 +24,7 @@ class Model::Page::CreateEvent < SitePrism::Page
   element :image_tab, "#node_event_form_group_event_image a.fieldset-title"
   element :add_cta_tab, "#node_event_form_group_event_cta a.fieldset-title"
   element :partner_tab, "#node_event_form_group_partners a.fieldset-title"
+  element :image_tab, "#node_event_form_group_summary_image .fieldset-title"
 
   elements :long_lat, "span.geolocation-lat-item-value"
 
@@ -31,6 +32,7 @@ class Model::Page::CreateEvent < SitePrism::Page
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
   section :image_library, Model::Section::AddImageSection, "#node_event_form_group_event_image"
   section :add_cta, Model::Section::AddCta, "#node_event_form_group_event_cta"
+  section :image_library, Model::Section::AddImageSection, "#node_event_form_group_summary_image"
 
 
   sections :external_link, Model::Section::ExternalLink,"#field-generic-external-link-values .link-field-subrow"

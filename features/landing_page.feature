@@ -123,7 +123,7 @@ Feature: Landing page
     Then the page is displayed on the listing page
 
   @complete @solas_960 @core
-  Scenario: Display summary image on landing page
+  Scenario: Display summary image on landing page with general info
     Given I am logged in as an admin user
     And I create a image in the media library
     And I create a published landing page
@@ -152,3 +152,38 @@ Feature: Landing page
     And I submit a landing page with two promotion
     And the two promotions are displayed on the landing page
 
+  @complete @solas_1143 @core
+  Scenario: Display summary image on landing page with courses
+    Given I am logged in as an admin user
+    And I create a image in the media library
+    And I create a published landing page
+    And I create a course page with an image
+    When I navigate to the created published landing page
+    And I choose to the edit landing page
+    And I enter the course page and landing page as children
+    And I save the landing page
+    Then the course page is displayed with an image on the landing page
+
+  @complete @solas_1143 @core
+  Scenario: Display summary image on landing page with ielts
+    Given I am logged in as an admin user
+    And I create a image in the media library
+    And I create a published landing page
+    And I create a ielts page with an image
+    When I navigate to the created published landing page
+    And I choose to the edit landing page
+    And I enter the ielts page and landing page as children
+    And I save the landing page
+    Then the ielts page is displayed with an image on the landing page
+
+  @complete @solas_1143 @core @failing @solas_1253
+  Scenario: Display summary image on landing page with events
+    Given I am logged in as an admin user
+    And I create a image in the media library
+    And I create a published landing page
+    And I create a events page with an image
+    When I navigate to the created published landing page
+    And I choose to the edit landing page
+    And I enter the events page and landing page as children
+    And I save the landing page
+    Then the events page is displayed with an image on the landing page
