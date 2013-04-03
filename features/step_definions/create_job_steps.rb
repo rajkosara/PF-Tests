@@ -83,11 +83,11 @@ When /^I enter a internal ref for the job page$/ do
 end
 
 When /^I enter a how to apply for the job page$/ do
-  @british_council.create_job.how_to_apply.set @job.how_to_apply
+  @british_council.create_job.how_to_apply.native.send_keys @job.how_to_apply
 end
 
 When /^I enter a role overview for the job page$/ do
-  @british_council.create_job.role_overview.set @job.role_overview
+  @british_council.create_job.role_overview.native.send_keys @job.role_overview
 end
 
 Then /^a "(.*?)" error message is displayed on the create job page$/ do |error_message|

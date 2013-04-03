@@ -79,7 +79,7 @@ module StuffWeWantAvailable
   end
 
   def scroll_down_a_little
-    page.execute_script "window.scrollBy(0,600)"
+    page.execute_script "window.scrollBy(0,700)"
   end
 end
 

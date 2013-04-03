@@ -305,6 +305,7 @@ When(/^I submit a course page with a linked teaching centre$/) do
   @tc = @british_council.create_course.teaching_centre.find do |tc|
     tc.label.text == @teaching_centre.title
   end
+  scroll_down_a_little
   @tc.label.click
   step "I click save on the create course page on the create course page"
 end
