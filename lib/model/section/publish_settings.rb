@@ -1,3 +1,3 @@
 class Model::Section::PublishSettings < SitePrism::Section
-  element :publish_status, ".form-item-status .option"
+  element :publish_status, "#edit-workbench-moderation-state-new"
 end

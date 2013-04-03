@@ -66,7 +66,7 @@ end
 When(/^I create a punlished ielts page$/) do
   step "I navigate to the create ielts page"
   @british_council.create_ielts.meta_config.publish_tab.click
-  @british_council.create_ielts.meta_config.publish_settings.publish_status.click
+  @british_council.create_ielts.meta_config.publish_settings.publish_status.select "Published"
   step "I submit a ielts page"
 end
 
