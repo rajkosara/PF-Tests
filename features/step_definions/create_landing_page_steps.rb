@@ -151,6 +151,7 @@ end
 
 When /^I select to display the landing page with a two column layout without images$/ do
   @british_council.create_landing_page.two_column_checkbox.click
+  step "I publish the landing page"
 end
 
 When /^I enter a custom url filename for a create landing page page$/ do
