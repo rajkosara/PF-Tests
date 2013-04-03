@@ -13,7 +13,7 @@ class Model::Domain::Image
   attr_accessor :jpeg_path
   attr_accessor :tif_path
   attr_accessor :large_path
-  attr_accessor :large
+
 
   def initialize
       @title = "Image Title #{Time.current.strftime("%T")} #{String.random(4)}"

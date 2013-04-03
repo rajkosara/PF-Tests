@@ -1,7 +1,7 @@
 @job
 Feature: Job
 
-  @complete @solas_158 @core @wip
+  @complete @solas_158 @core
   Scenario Outline: Create a job page
     Given I am logged in as an <user_type> user
     When I navigate to the create job page

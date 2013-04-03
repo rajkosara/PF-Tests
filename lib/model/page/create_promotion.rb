@@ -3,6 +3,7 @@ class Model::Page::CreatePromotion < SitePrism::Page
   set_url_matcher /\/en\/node\/add\/promotion/
 
   element :title, "#edit-title-field-en-0-value"
+  element :internal_ref, "#edit-field-promo-internal-ref-und-0-value"
   element :image_tab, "#node_promotion_form_group_promotion_image .fieldset-title"
   element :summary, "#edit-field-promotion-summary-und-0-value"
   element :destination, "#edit-field-promotion-destination-und-0-url"

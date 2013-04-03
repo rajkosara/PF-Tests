@@ -1,5 +1,6 @@
 When /^I add an image to the media library$/ do
   step "I enter a title on the add image page"
+  #@british_council.add_image.internal_ref.set @image.internal_ref
   step "I enter a description on the add image page"
   step "I enter a image path on the add image page"
   step "I click the image upload button on the add image page"
@@ -85,6 +86,7 @@ Then /^an image size error is displayed on the add image page$/ do
 end
 
 When /^I add an image to the media library without a tile$/ do
+  @british_council.add_image.internal_ref.set @image.internal_ref
   step "I enter a description on the add image page"
   step "I enter a image path on the add image page"
   step "I click the image upload button on the add image page"

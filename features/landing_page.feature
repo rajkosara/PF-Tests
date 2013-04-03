@@ -41,21 +41,35 @@ Feature: Landing page
     When I navigate to the create landing page page
     Then the created landing pages menu is displayed in the menu list
 
-  @complete @solas_345 @core
-  Scenario Outline: Editing a landing page body field
+  @complete @solas_345 @core @failing
+  Scenario: Editing a landing page body field as an manager
     Given I am logged in as an admin user
     And I create a published landing page
-    And I log out and log back in as an <user_type> user
+    And I log out and log back in as an manager user
     When I navigate to the created published landing page
     And I choose to the edit landing page
     And I edit the published landing page fields
     Then the landing page is displayed with the edited values
 
-    Examples:
-      | user_type |
-      | manager   |
-      | producer  |
-      | admin     |
+  @complete @solas_345 @core
+  Scenario: Editing a landing page body field as an producer
+    Given I am logged in as an admin user
+    And I create a published landing page
+    And I log out and log back in as an producer user
+    When I navigate to the created published landing page
+    And I choose to the edit landing page
+    And I edit the published landing page fields
+    Then the landing page is displayed with the edited values
+
+  @complete @solas_345 @core
+  Scenario: Editing a landing page body field as aadmin
+    Given I am logged in as an admin user
+    And I create a published landing page
+    And I log out and log back in as an admin user
+    When I navigate to the created published landing page
+    And I choose to the edit landing page
+    And I edit the published landing page fields
+    Then the landing page is displayed with the edited values
 
   @complete @solas_693 @core @smoke
   Scenario: Create landing page with two columns
