@@ -177,7 +177,7 @@ end
 
 Then(/^the created document is displayed on the general info page$/) do
   @british_council.create_general_info.document_library.select_checkboxes.size == 1
-  @british_council.create_general_info.document_library.table_internal_name.pop.text.should == @document.title
+  @british_council.create_general_info.document_library.table_internal_name.first.text.should == @document.title
 end
 
 When(/^I select the first document in the list on the general info page$/) do
