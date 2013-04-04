@@ -157,20 +157,20 @@ stage_env_kr:
   # site name
   country_site: Korea
   #capybara settings
-  default_wait_time: 5
+  default_wait_time: 15
   #urls
   korea_site_root: http://kr.stage.solas.britishcouncil.net/en
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
   admin_username: 'test.admin'
-  admin_password: 'password'
+  admin_password: 'ZBjewW2zVR'
   author_username: 'test.author'
-  author_password: 'password'
+  author_password: 'ZBjewW2zVR'
   manager_username: 'test.manager'
-  manager_password: 'password'
+  manager_password: 'ZBjewW2zVR'
   producer_username: 'test.producer'
-  producer_password: 'password'
+  producer_password: 'ZBjewW2zVR'
 stage_env_jp:
   <<: *execution_defaults
   # site name
