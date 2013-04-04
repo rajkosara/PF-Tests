@@ -132,7 +132,7 @@ end
 
 When /^I publish a teaching centre$/ do
   @british_council.create_teaching_centre.meta_config.publish_tab.click
-  @british_council.create_teaching_centre.meta_config.publish_settings.publish_status.select "Published"
+  @british_council.create_teaching_centre.meta_config.publish_settings.publish_status.click
 end
 
 When /^I create a published teaching centre$/ do

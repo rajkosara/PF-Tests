@@ -70,7 +70,7 @@ end
 
 Given /^I publish the landing page$/ do
   @british_council.create_landing_page.meta_config.publish_tab.click
-  @british_council.create_landing_page.meta_config.publish_settings.publish_status.select "Published"
+  @british_council.create_landing_page.meta_config.publish_settings.publish_status.click
 end
 
 Then /^the created landing pages menu is displayed in the menu list$/ do

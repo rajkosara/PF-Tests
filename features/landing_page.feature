@@ -51,7 +51,7 @@ Feature: Landing page
     And I edit the published landing page fields
     Then the landing page is displayed with the edited values
 
-  @complete @solas_345 @core
+  @complete @solas_345 @core @failing
   Scenario: Editing a landing page body field as an producer
     Given I am logged in as an admin user
     And I create a published landing page

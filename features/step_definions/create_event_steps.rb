@@ -140,7 +140,7 @@ end
 
 Then /^I publish a event page$/ do
   @british_council.create_event.meta_config.publish_tab.click
-  @british_council.create_event.meta_config.publish_settings.publish_status.select "Published"
+  @british_council.create_event.meta_config.publish_settings.publish_status.click
 end
 
 When /^I submit a published event page$/ do
