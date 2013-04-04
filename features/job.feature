@@ -35,21 +35,21 @@ Feature: Job
     And I submit a published job page
     Then the job page is created
 
-  @complete @solas_158 @core
+  @complete @solas_158 @core @problematic
   Scenario: Error message displayed when job title field is not filled in
     Given I am logged in as an author user
     When I navigate to the create job page
     And I submit a job page without a job title
     Then a "Job title field is required" error message is displayed on the create job page
 
-  @complete @solas_158 @core
+  @complete @solas_158 @core @problematic
   Scenario: Error message displayed when job aim field is not filled in
     Given I am logged in as an author user
     When I navigate to the create job page
     And I submit a job page without a job aim
     Then a "Job aim field is required" error message is displayed on the create job page
 
-  @complete @solas_158 @core
+  @complete @solas_158 @core @problematic
   Scenario: Error message displayed when how to apply field is not filled in
     Given I am logged in as an author user
     When I navigate to the create job page

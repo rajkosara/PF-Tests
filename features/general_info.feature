@@ -15,21 +15,21 @@ Feature: General info
       | manager   |
       | producer  |
 
-  @complete @solas_121 @core
+  @complete @solas_121 @core @problematic
   Scenario: Error message displayed when title field is not filled in
     Given I am logged in as an author user
     When I navigate to the create general info page
     And I submit a general info page without a title
     Then a "Title field is required" error message is displayed on the create general info page
 
-  @complete @solas_121 @core
+  @complete @solas_121 @core @problematic
   Scenario: Error message displayed when body field is not filled in
     Given I am logged in as an author user
     When I navigate to the create general info page
     And I submit a general info page without a body
     Then a "Body field is required" error message is displayed on the create general info page
 
-  @complete @solas_121 @core
+  @complete @solas_121 @core @problematic
   Scenario: Error message displayed when body field is not filled in
     Given I am logged in as an author user
     When I navigate to the create general info page
