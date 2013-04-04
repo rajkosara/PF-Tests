@@ -151,7 +151,7 @@ Then(/^the landing page is in the breadcrumbs on the course page$/) do
 end
 
 Then(/^the linked course is displayed on the course page$/) do
-  @british_council.course.course_taught.text.should == "Where is this course taught?"
+  @british_council.course.course_taught.text.should == "Where is this course taught?".upcase
   @british_council.course.teaching_centre.text.should == @teaching_centre.title
   @british_council.course.teaching_centre[:href].should include @teaching_centre.title.downcase.gsub(" ","-").gsub(":","")
 end
