@@ -10,7 +10,7 @@ Feature: Footer
     Then the legal info is displayed on the home page footer
 
   @complete @solas_812 @core
-  Scenario: Add Legal text
+  Scenario: I do social links stuff
     Given I am logged in as an admin user
     When I navigate to the add social media link page
     And I create a social media link

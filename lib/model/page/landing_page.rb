@@ -8,6 +8,7 @@ class Model::Page::LandingPage < SitePrism::Page
   element :two_column, ".bc-boxes-2-ltr .bc-boxes-2"
   element :child_summary, ".bc-listing p"
   element :teaching_centre, ".bc-box h3"
+  element :ielts_cta, ".bc-box div a"
   
   elements :child_pages_title, ".bc-listing h2"
   elements :child_pages_summary, ".bc-box a[href] p"

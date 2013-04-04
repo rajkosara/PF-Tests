@@ -98,3 +98,8 @@ Then(/^the event page is displayed on the listing page$/) do
   Timeout.timeout(30) { sleep(0.1) until @british_council.landing_page.title.visible?}
   @british_council.landing_page.first_child_title.text.should == @event.title
 end
+
+Then(/^the ielts cta link is displayed on the landing page$/) do
+  @british_council.landing_page.ielts_cta.text.should == @ielts.cta.title
+  @british_council.landing_page.ielts_cta[:href].should == @ielts.cta.url
+end

@@ -7,7 +7,7 @@ class Model::Domain::Cta
 
   def initialize
     @title = "CTA title #{Time.current.strftime("%T")} #{String.random(4)}"
-    @url = "www.google.co.uk"
+    @url = "http://www.google.co.uk/"
     @strapline = "CTA Strapline #{Time.current.strftime("%T")} #{String.random(4)}"
     @header = "CTA Header #{Time.current.strftime("%T")} #{String.random(4)}"
     @supporting_text = "CTA Supporting Text #{Time.current.strftime("%T")} #{String.random(4)}"

@@ -57,7 +57,7 @@ Feature: IELTS
     When I create an ielts page with an document
     Then the document is displayed correctly on the ielts page
 
-  @complete @solas_923 @core @failing @solas_1207
+  @complete @solas_923 @core
   Scenario: Add cta to an ielts page
     Given I am logged in as an admin user
     And I create a image in the media library
@@ -71,3 +71,15 @@ Feature: IELTS
     When the korean tab of the lan switcher is selected on the ielts page
     And I click the english tab of the lan switcher
     Then the english version of the page is displayed
+
+  @complete @solas_1149 @core
+  Scenario: Display summary image on landing page with ielts
+    Given I am logged in as an admin user
+    And I create a image in the media library
+    And I create a published landing page
+    When I create an ielts page with cta with an image
+    And I navigate to the created published landing page
+    And I choose to the edit landing page
+    And I enter the ielts page and landing page as children
+    And I save the landing page
+    Then the ielts cta link is displayed on the landing page
