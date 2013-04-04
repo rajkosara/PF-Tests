@@ -1,6 +1,7 @@
 When(/^I submit a contact us page$/) do
   @british_council.create_contact_us.title.set @contact_us.title
   @british_council.create_contact_us.intro_tab.click
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_contact_us.intro.visible?}
   @british_council.create_contact_us.intro.native.send_keys @contact_us.intro
   @british_council.create_contact_us.call_us_tab.click
   @british_council.create_contact_us.call_us_title.set @contact_us.call_us_title
@@ -36,7 +37,7 @@ Then(/^the all the fields are displayed correctly on the contact us page$/) do
   #puts @british_council.contact_us.strapline.text #.should == @contact_us.strapline
   @british_council.contact_us.contact_us_button.text.should == @contact_us.enquiry_button_title
   @british_council.contact_us.contact_us_button[:href].should == @contact_us.enquiry_button_url
-  @british_council.contact_us.teaching_centre_title.first.text.should == @teaching_centre.title
+  @british_council.contact_us.teaching_centre_title.first.text.should == @teaching_centre.title.upcase
 
   @created_teaching_centre = @british_council.contact_us.teaching_centre_details.find  { |thing| thing.address.text.include?  @teaching_centre.address_one }
   @created_teaching_centre.address.text.should include(@teaching_centre.address_one,@teaching_centre.address_two, @teaching_centre.post_code, @teaching_centre.city, @teaching_centre.state)

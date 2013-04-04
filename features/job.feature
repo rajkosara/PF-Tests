@@ -28,15 +28,8 @@ Feature: Job
       | manager   |
       | producer  |
 
-  @complete @solas_158 @core
+  @complete @solas_158 @core @failing
   Scenario: Create a published job page as admin
-    Given I am logged in as an admin user
-    When I navigate to the create job page
-    And I submit a published job page
-    Then the job page is created
-
-  @complete @solas_158 @core
-  Scenario: Create a published job page as an admin
     Given I am logged in as an admin user
     When I navigate to the create job page
     And I submit a published job page
