@@ -32,16 +32,16 @@ end
 
 Capybara.register_driver :selenium_chrome do |app|
   profile = Selenium::WebDriver::Chrome::Profile.new
-  profile["browser.cache.disk.enable"] = false
-  profile["browser.cache.memory.enable"] = false
-  profile["browser.cache.offline.enable"] = false
-  profile["network.http.use-cache"] = false
-  profile["extensions.update.enabled"] = false
-  profile["privacy.clearOnShutdown.cookies"] = true
-  profile["privacy.clearOnShutdown.cache"] = true
-  profile["app.update.enabled"] = false
-  profile["app.update.auto"] = false
-  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+#  profile["browser.cache.disk.enable"] = false
+#  profile["browser.cache.memory.enable"] = false
+#  profile["browser.cache.offline.enable"] = false
+#  profile["network.http.use-cache"] = false
+#  profile["extensions.update.enabled"] = false
+#  profile["privacy.clearOnShutdown.cookies"] = true
+#  profile["privacy.clearOnShutdown.cache"] = true
+#  profile["app.update.enabled"] = false
+#  profile["app.update.auto"] = false
+  Capybara::Selenium::Driver.new(app, :browser => :chrome, :switches => %w[--disable-popup-blocking])
 end
 
 Capybara.register_driver :iphone_chrome do |app|

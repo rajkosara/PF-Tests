@@ -28,3 +28,7 @@ When(/^I choose for the social media link to be displayed on the footer$/) do
   @the_row.checkbox.click
   @british_council.manage_social_media_links.save_button.click
 end
+
+Then(/^the entered legal text is displayed is on the site info page$/) do
+  @british_council.site_info.legal_info.should include @legal_text
+end
