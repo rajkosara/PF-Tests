@@ -193,7 +193,7 @@ When(/^I create a event page and place it under the landing page$/) do
   @british_council.create_event.meta_config.menu_tab.click
   @british_council.create_event.meta_config.menu_settings.enable_menu.click
   @british_council.create_event.meta_config.menu_settings.title.set @course.menu_title
-  @british_council.create_event.meta_config.menu_settings.parent_menu.select @org_landing_page_menu_title[0...27]
+  @british_council.create_event.meta_config.menu_settings.parent_menu.select "-- #{@org_landing_page_menu_title[0...27]}"
   step "I publish a event page"
   step "I save the event page"
 end

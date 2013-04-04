@@ -147,7 +147,7 @@ When /^I create a course page and place it under the landing page$/ do
   @british_council.create_course.meta_config.menu_tab.click
   @british_council.create_course.meta_config.menu_settings.enable_menu.click
   @british_council.create_course.meta_config.menu_settings.title.set @course.menu_title
-  @british_council.create_course.meta_config.menu_settings.parent_menu.select @org_landing_page_menu_title[0...27]
+  @british_council.create_course.meta_config.menu_settings.parent_menu.select "-- #{@org_landing_page_menu_title[0...27]}"
   step "I publish a course"
   step "I click save on the create course page on the create course page"
   step "the course page is created"
