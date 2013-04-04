@@ -74,7 +74,9 @@ Given /^I publish the landing page$/ do
 end
 
 Then /^the created landing pages menu is displayed in the menu list$/ do
-  @british_council.create_landing_page.meta_config.menu_settings.parent_menu_options_text.should include @org_landing_page_menu_title[0...27]
+  @british_council.create_landing_page.meta_config.menu_tab.click
+  @british_council.create_landing_page.meta_config.menu_settings.enable_menu.click
+  @british_council.create_landing_page.meta_config.menu_settings.parent_menu.text.should include "-- #{@org_landing_page_menu_title[0...27]}"
 end
 
 Then /^wait for edit landing page to be displayed$/ do

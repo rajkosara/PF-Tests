@@ -238,7 +238,7 @@ When(/^I create a general info page a place it under the course page$/) do
   @british_council.create_general_info.meta_config.menu_tab.click
   @british_council.create_general_info.meta_config.menu_settings.enable_menu.click
   @british_council.create_general_info.meta_config.menu_settings.title.set @general_info.menu_title
-  @british_council.create_general_info.meta_config.menu_settings.parent_menu.select @course.menu_title[0...27]
+  @british_council.create_general_info.meta_config.menu_settings.parent_menu.select "---- #{@course.menu_title[0...27]}"
   step "I publish a general info"
   step "I save the general info page"
   step "the general info page is created"
