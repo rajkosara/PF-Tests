@@ -20,7 +20,7 @@ Feature: Landing page
       | manager   |
       | producer  |
 
-  @complete @solas_332 @core
+  @complete @solas_332 @core @problematic
   Scenario: Error message displayed when title field is not filled in
     Given I am logged in as an admin user
     When I navigate to the create landing page page
