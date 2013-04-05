@@ -5,7 +5,7 @@ complete_no_failing: -f pretty -t @complete -t ~@failing
 custom: -f pretty <%= ENV["TAGS"] %>
 specific: -f pretty --tags <%= ENV['TAGS'] %>
 jenkins_complete_passing: -q -f pretty -t @complete -t ~@not_implemented -t ~@failing -t ~@problematic -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
-jenkins_complete_failing: -q -f pretty -t @complete -t @problematic -t ~@not_implemented -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+jenkins_complete_failing: -q -f pretty -t @complete -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
 jenkins_smoke: -q -f pretty -t @smoke -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
 smoke: -f pretty --tags @smoke
 feature: -f pretty -t @complete -t ~@failing  -t <%= ENV['TAG'] %>
