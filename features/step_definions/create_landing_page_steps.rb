@@ -98,12 +98,12 @@ end
 
 When /^I enter a child page into the child listing page management$/ do
   #i dont like this, i will at making it better when a time comes
-  @british_council.create_landing_page.list_management.set @org_title
+  @british_council.create_landing_page.list_management.set @landing_page.title
+  wait_for_ajax
   @british_council.create_landing_page.list_management.native.send_keys :arrow_down
-  Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_dropdown.visible?}
   @british_council.create_landing_page.list_management.native.send_keys :arrow_down
   @british_council.create_landing_page.list_management.native.send_keys :enter
-  Timeout.timeout(30) { sleep(0.1) while @british_council.create_landing_page.list_management.text == @org_title}
+  Timeout.timeout(30) { sleep(0.1) while @british_council.create_landing_page.list_management.text == @landing_page.title}
   wait_for_ajax
   step "I save the landing page"
 end
