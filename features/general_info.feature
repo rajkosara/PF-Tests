@@ -117,7 +117,7 @@ Feature: General info
     And search for my created document on the general info page
     Then the created document is displayed on the general info page
 
-  @complete @solas_249 @core
+  @complete @solas_249 @core @problematic
   Scenario: Remove a document from a general info page
     Given I am logged in as an author user
     And I create a document in the media library
