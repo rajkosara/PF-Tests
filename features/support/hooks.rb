@@ -8,9 +8,9 @@ end
 
 Before do
   #Timeout.timeout(30) { sleep(0.5) while Capybara.current_url != "about:blank"}
-  sleep 4
+  sleep 4.5
 end
 
 After do
-  sleep 4
+  sleep 4.5
 end
