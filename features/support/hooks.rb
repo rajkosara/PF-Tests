@@ -7,10 +7,10 @@ Before('@firefox') do
 end
 
 Before do
-  Timeout.timeout(30) { sleep(0.5) while Capybara.current_url != "about:blank"}
-  sleep 3
+  #Timeout.timeout(30) { sleep(0.5) while Capybara.current_url != "about:blank"}
+  sleep 4
 end
 
 After do
-  sleep 5
+  sleep 4
 end
