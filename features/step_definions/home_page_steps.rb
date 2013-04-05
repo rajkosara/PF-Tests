@@ -23,8 +23,7 @@ Then /^the header doesnt displays the language switcher$/ do
 end
 
 Then(/^the legal info is displayed on the home page footer$/) do
-  Timeout.timeout(30) { sleep(0.1) until @british_council.home.footer.legal_text.visible?}
-  @british_council.home.footer.legal_text.text.should include @legal_text
+  @british_council.home.footer.text.should include @legal_text
 end
 
 Then(/^the menu link is displayed on the home page$/) do
