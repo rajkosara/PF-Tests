@@ -15,14 +15,14 @@ Feature: teaching Centre
       | manager   |
       | producer  |
 
-  @complete @solas_368 @core
+  @complete @solas_368 @core @problematic
   Scenario: Error message displayed when title field is not filled in
     Given I am logged in as an author user
     When I navigate to the create teaching centre page
     And I submit a teaching centre page without a title
     Then a "Title field is required" error message is displayed on the create teaching centre page
 
-  @complete @solas_810 @core @problematic
+  @complete @solas_810 @core
   Scenario: Add and order teaching centre page on a landing page
     Given I am logged in as an admin user
     And I create a published landing page
@@ -50,7 +50,7 @@ Feature: teaching Centre
     Then the teaching centre page is created
     And the teaching centre page details are displayed correctly on mobile
 
-  @complete @solas_368 @core @translate @problematic
+  @complete @solas_368 @core @translate
   Scenario: Translate teaching centre
     Given I am logged in as an admin user
     And I create a teaching centre page

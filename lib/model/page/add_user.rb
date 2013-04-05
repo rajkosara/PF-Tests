@@ -7,7 +7,7 @@ class Model::Page::AddUser < SitePrism::Page
   element :password, "#edit-pass-pass1"
   element :confirm_password, "#edit-pass-pass2"
   element :create_new_user_button, "#edit-submit"
-  element :status_message, ".messages"
+  element :status_message, ".status"
   element :error_message, ".messages .element-invisible"
   element :user_link, ".messages em.placeholder"
   element :unahorized_message, "#block-system-main"

@@ -57,6 +57,7 @@ end
 
 Then /^I click the image upload button on the add image page$/ do
   @british_council.add_image.image_upload_button.click
+  wait_for_ajax
 end
 
 Then /^I enter copyright info on the add image page$/ do
@@ -86,7 +87,6 @@ Then /^an image size error is displayed on the add image page$/ do
 end
 
 When /^I add an image to the media library without a tile$/ do
-  @british_council.add_image.internal_ref.set @image.internal_ref
   step "I enter a description on the add image page"
   step "I enter a image path on the add image page"
   step "I click the image upload button on the add image page"

@@ -93,7 +93,7 @@ Feature: General info
     Then the body is displayed on the general info page
     And the title is displayed on the general info page
 
-  @complete @solas_715 @core
+  @complete @solas_715 @core @smoke
   Scenario: Add an image to a general info page
     Given I am logged in as an author user
     And I create a image in the media library
@@ -150,7 +150,7 @@ Feature: General info
     Then the general info page is created
     And the CTA with an external link is displayed correctly on the general info page
 
-  @complete @solas_660 @core
+  @complete @solas_660 @core @smoke
   Scenario: CTA with an internal link is displayed correctly
     Given I am logged in as an admin user
     And I create a published landing page

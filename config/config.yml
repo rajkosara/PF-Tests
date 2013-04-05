@@ -88,13 +88,13 @@ test_env_kr:
   image_location: /sites/default/files
   #user details
   admin_username: 'test.admin'
-  admin_password: 'password'
+  admin_password: 'ZBjewW2zVR'
   author_username: 'test.author'
-  author_password: 'password'
+  author_password: 'ZBjewW2zVR'
   manager_username: 'test.manager'
-  manager_password: 'password'
+  manager_password: 'ZBjewW2zVR'
   producer_username: 'test.producer'
-  producer_password: 'password'
+  producer_password: 'ZBjewW2zVR'
 test_env_jp:
   <<: *execution_defaults
   # site name
