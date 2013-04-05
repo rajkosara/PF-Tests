@@ -27,14 +27,14 @@ Feature: Landing page
     And I submit a landing page without a title
     Then a "Title field is required" error message is displayed on the create landing page page
 
-  @complete @solas_332 @core
+  @complete @solas_332 @core @problematic
   Scenario: Max length of title is enforced
     Given I am logged in as a admin user
     And I navigate to the create landing page page
     When I enter a title with 70 characters for the landing page
     Then a zero characters remaining error message is displayed on the create landing page
 
-  @complete @solas_322 @core @problematic
+  @complete @solas_322 @core
   Scenario: Adding a landing page to a menu
     Given I am logged in as an admin user
     And I create a published landing page
