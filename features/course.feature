@@ -30,7 +30,7 @@ Feature: Course
     Then a "Body field is required" error message is displayed on the create course page
 
   @complete @solas_593 @core @problematic
-  Scenario: Error message displayed when body field is not filled in
+  Scenario: Error message displayed when timetable field is not filled in
     Given I am logged in as an producer user
     When I navigate to the create course page
     And I submit a course page without a calendar and pricing body
@@ -90,7 +90,7 @@ Feature: Course
     Then the course page is created
     And the CTA without an image and with an external link is displayed correctly on the course page
 
-  @complete @solas_848 @core @failing @solas_1207
+  @complete @solas_848 @core
   Scenario: CTA with an image and with an internal link is displayed correctly
     Given I am logged in as an admin user
     And I create a image in the media library
@@ -100,7 +100,7 @@ Feature: Course
     Then the course page is created
     And the CTA with an image and with an internal link is displayed correctly on the course page
 
-  @complete @solas_848 @core @mobile @failing @solas_1023
+  @complete @solas_848 @core @mobile
   Scenario: CTA without image and with an external link is displayed correctly on mobile
     Given I am logged in as an admin user
     When I navigate to the create course page
@@ -142,7 +142,7 @@ Feature: Course
     And the course page is created
     Then the linked course is displayed on the course page
 
-  @complete @solas_926 @core @failing @solas_1208
+  @complete @solas_926 @core
   Scenario: Create a course page with a docucment
     Given I am logged in as an admin user
     And I create a document in the media library

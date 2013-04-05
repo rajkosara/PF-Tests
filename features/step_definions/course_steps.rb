@@ -116,7 +116,7 @@ end
 
 Then(/^the CTA without an image and with an external link is displayed correctly on the course page on mobile$/) do
   @british_council.mobile_course.about_cta.text.should == @course.cta.title
-  @british_council.mobile_course.about_strapline.text.should == @course.cta.strapline.upcase
+  @british_council.mobile_course.about_strapline.text.should == @course.cta.strapline
 
   @british_council.mobile_course.cta_box.last.title_link.text == @course.cta.title
   @british_council.mobile_course.cta_box.last.text.should include @course.cta.header.upcase
@@ -151,7 +151,6 @@ Then(/^the landing page is in the breadcrumbs on the course page$/) do
 end
 
 Then(/^the linked course is displayed on the course page$/) do
-  @british_council.course.course_taught.text.should == "Where is this course taught?".upcase
   @british_council.course.teaching_centre.text.should == @teaching_centre.title
   @british_council.course.teaching_centre[:href].should include @teaching_centre.title.downcase.gsub(" ","-").gsub(":","")
 end

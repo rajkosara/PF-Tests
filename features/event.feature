@@ -1,4 +1,4 @@
-@event @failing @solas_1208
+@event
 Feature: Event
 
   @complete @solas_144 @core @failing @solas_1208
@@ -35,7 +35,7 @@ Feature: Event
     And I submit a published event page
     Then the event page is created
 
-  @complete @solas_144 @core
+  @complete @solas_144 @core @problematic
   Scenario: Error message displayed when title field is not filled in
     Given I am logged in as an author user
     When I navigate to the create event page
@@ -50,7 +50,7 @@ Feature: Event
     And I enter a description for the event page
     Then a zero characters remaining error message is displayed on the create event page
 
-  @complete @solas_144 @core
+  @complete @solas_144 @core @failing
   Scenario: Image is displayed correctly
     Given I am logged in as an admin user
     And I create a image in the media library

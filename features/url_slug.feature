@@ -12,8 +12,6 @@ Feature: URL slug
     Examples:
       | user_type | content_type |
       | admin     | landing page |
-      | author    | faq          |
-      | manager   | event        |
       | producer  | general info |
 
   @complete @solas_133 @core
