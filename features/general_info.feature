@@ -36,7 +36,7 @@ Feature: General info
     And I submit a general info page without a body
     Then a "Body field is required" error message is displayed on the create general info page
 
-  @complete @solas_121 @core
+  @complete @solas_121 @core @problematic
   Scenario: Max length of title is enforced
     Given I am logged in as an author user
     When I navigate to the create general info page
