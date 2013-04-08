@@ -231,8 +231,7 @@ Given(/^I create a landing page and I enter the event page as children$/) do
   step "I enter a body for the landing page"
   @british_council.create_landing_page.list_management.set @event.title
   @british_council.create_landing_page.list_management.native.send_keys :arrow_down
-  Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_dropdown.visible?}
-  @british_council.create_landing_page.list_management.native.send_keys :arrow_down
+  wait_for_ajax
   @british_council.create_landing_page.list_management.native.send_keys :enter
   Timeout.timeout(30) { sleep(0.1) while @british_council.create_landing_page.list_management.text == @event.title}
   wait_for_ajax

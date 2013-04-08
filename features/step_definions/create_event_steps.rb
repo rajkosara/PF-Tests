@@ -31,14 +31,14 @@ end
 
 When(/^I submit a event page with a cta$/) do
   step "the create event page is displayed"
-  step "I enter a title for the event page"
-  step "I enter a summary for the event page"
-  step "I enter a description for the event page"
-  step "I enter details for address and location"
   @british_council.create_event.add_cta_tab.click
   @british_council.create_event.add_cta.title.set @event.cta.title
   @british_council.create_event.add_cta.url.set @event.cta.url
   @british_council.create_event.add_cta.strapline.set @event.cta.strapline
+  step "I enter a title for the event page"
+  step "I enter a summary for the event page"
+  step "I enter a description for the event page"
+  step "I enter details for address and location"
   step "I save the event page"
 end
 
