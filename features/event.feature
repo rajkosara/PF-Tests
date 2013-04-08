@@ -82,9 +82,3 @@ Feature: Event
     And I submit a event page with a parner
     And the partner is displayed correctly on the event page
 
-  @complete @solas_1161 @core
-  Scenario: Add a event to a landing page
-    Given I am logged in as an admin user
-    And I create a published event page
-    When I create a landing page and I enter the event page as children
-    Then the event page is displayed on the listing page
