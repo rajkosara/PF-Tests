@@ -16,6 +16,7 @@ class Model::Page::CreateLandingPage < SitePrism::Page
   element :two_column_checkbox, "label[for*='edit-field-course-list-view-mode-und-landing-col-two-no-img']"
 
   elements :hero_promotion, "input[id*=edit-field-landing-promotion].form-text"
+  elements :sidebar_promotion, "input[id*='edit-field-generic-sidebar-promos'].form-text"
 
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"
 end

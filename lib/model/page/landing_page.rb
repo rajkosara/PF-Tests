@@ -17,6 +17,7 @@ class Model::Page::LandingPage < SitePrism::Page
   section :header, Model::Section::Header, "#bc-header-wrapper"
   
   sections :promotion, Model::Section::CtaWithImage, ".bc-card"
+  sections :sidebar_text_promotions, Model::Section::SidebarTextPromotion, ".bc-promo"
 
   def first_child_title
     child_pages_title.first

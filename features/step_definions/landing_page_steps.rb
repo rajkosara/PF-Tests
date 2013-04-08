@@ -76,22 +76,22 @@ Then(/^the (?:teching centre|general info|course|ielts|events) page is displayed
   @british_council.landing_page.image.size == 1
 end
 
-When(/^the promotion is displayed on the landing page$/) do
+When(/^the image promotion is displayed on the landing page$/) do
   @british_council.landing_page.promotion.last.should have_promo_image
-  @british_council.landing_page.promotion.last.strapline.text.should == @promotion.title.upcase
-  @british_council.landing_page.promotion.last.cta_title.text.should == @promotion.button_text
-  @british_council.landing_page.promotion.last.cta_title[:href].should == @promotion.destination
+  @british_council.landing_page.promotion.last.strapline.text.should == @image_promotion.title.upcase
+  @british_council.landing_page.promotion.last.cta_title.text.should == @image_promotion.button_text
+  @british_council.landing_page.promotion.last.cta_title[:href].should == @image_promotion.destination
 end
 
-When(/^the two promotions are displayed on the landing page$/) do
+When(/^the two image promotions are displayed on the landing page$/) do
   @british_council.landing_page.promotion.first.should have_promo_image
-  @british_council.landing_page.promotion.first.strapline.text.should == @promotion.title
-  @british_council.landing_page.promotion.first.cta_title.text.should == @promotion.button_text
-  @british_council.landing_page.promotion.first.cta_title[:href].should == @promotion.destination
+  @british_council.landing_page.promotion.first.strapline.text.should == @image_promotion.title
+  @british_council.landing_page.promotion.first.cta_title.text.should == @image_promotion.button_text
+  @british_council.landing_page.promotion.first.cta_title[:href].should == @image_promotion.destination
   @british_council.landing_page.promotion.last.should have_promo_image
-  @british_council.landing_page.promotion.last.strapline.text.should == @promotion.title
-  @british_council.landing_page.promotion.last.cta_title.text.should == @promotion.button_text
-  @british_council.landing_page.promotion.last.cta_title[:href].should == @promotion.destination
+  @british_council.landing_page.promotion.last.strapline.text.should == @image_promotion.title
+  @british_council.landing_page.promotion.last.cta_title.text.should == @image_promotion.button_text
+  @british_council.landing_page.promotion.last.cta_title[:href].should == @image_promotion.destination
 end
 
 Then(/^the event page is displayed on the listing page$/) do
@@ -102,4 +102,16 @@ end
 Then(/^the ielts cta link is displayed on the landing page$/) do
   @british_council.landing_page.ielts_cta.text.should == @ielts.cta.title
   @british_council.landing_page.ielts_cta[:href].should == @ielts.cta.url
+end
+
+When(/^the text promotion is displayed on the landing page in the sidebar$/) do
+  @british_council.landing_page.sidebar_text_promotions.last.title.text.should == @text_promotion.title
+  @british_council.landing_page.sidebar_text_promotions.last.summary.text.should == @text_promotion.summary
+  @british_council.landing_page.sidebar_text_promotions.last.destination[:href].should == @text_promotion.destination
+end
+
+When(/^the image promotion is displayed on the landing page in the sidebar$/) do
+  @british_council.landing_page.sidebar_text_promotions.last.should have_image
+  @british_council.landing_page.sidebar_text_promotions.last.title.text.should == @image_promotion.title
+  @british_council.landing_page.sidebar_text_promotions.last.destination[:href].should == @image_promotion.destination
 end

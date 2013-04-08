@@ -135,22 +135,22 @@ Feature: Landing page
     Then the general info page is displayed with an image on the landing page
 
   @complete @solas_383 @core
-  Scenario: Add promotion to a landing page
+  Scenario: Add image promotion to a landing page
     Given I am logged in as an admin user
     And I create a image in the media library
-    And I create a promotion
+    And I create a image promotion
     When I navigate to the create landing page page
-    And I submit a landing page with a promotion
-    And the promotion is displayed on the landing page
+    And I submit a landing page with a image promotion
+    And the image promotion is displayed on the landing page
 
   @complete @solas_383 @core
-  Scenario: Add two promotions to a landing page
+  Scenario: Add two image promotions to a landing page
     Given I am logged in as an admin user
     And I create a image in the media library
-    And I create a promotion
+    And I create a image promotion
     When I navigate to the create landing page page
-    And I submit a landing page with two promotion
-    And the two promotions are displayed on the landing page
+    And I submit a landing page with two image promotion
+    And the two image promotions are displayed on the landing page
 
   @complete @solas_1143 @core
   Scenario: Display summary image on landing page with courses
@@ -187,3 +187,20 @@ Feature: Landing page
     And I enter the events page and landing page as children
     And I save the landing page
     Then the events page is displayed with an image on the landing page
+
+  @complete @solas_932 @core
+  Scenario: Add Text promotion to a landing page on the sidebar
+    Given I am logged in as an admin user
+    And I create a text promotion
+    When I navigate to the create landing page page
+    And I submit a landing page with a text promotion
+    And the text promotion is displayed on the landing page in the sidebar
+
+  @complete @solas_932 @core
+  Scenario: Add image promotion to a landing page on the sidebar
+    Given I am logged in as an admin user
+    And I create a image in the media library
+    And I create a image promotion
+    When I navigate to the create landing page page
+    And I submit a landing page with a image promotion in the sidebar
+    And the image promotion is displayed on the landing page in the sidebar

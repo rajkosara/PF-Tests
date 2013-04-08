@@ -31,8 +31,12 @@ class Model::BritishCouncil
     Model::Page::CreatePartner.new
   end
 
-  def create_promotion
-    Model::Page::CreatePromotion.new
+  def create_image_promotion
+    Model::Page::CreateImagePromotion.new
+  end
+
+  def create_text_promotion
+    Model::Page::CreateTextPromotion.new
   end
 
   def create_event
@@ -111,8 +115,12 @@ class Model::BritishCouncil
     Model::Page::Course.new
   end
 
-  def promotion
-    Model::Page::Promotion.new
+  def image_promotion
+    Model::Page::ImagePromotion.new
+  end
+
+  def text_promotion
+    Model::Page::TextPromotion.new
   end
 
   def ielts

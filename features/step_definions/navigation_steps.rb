@@ -64,9 +64,12 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
     @british_council.add_promo_link.load
   when 'teaching centre listings'
     @british_council.teaching_centre_listing_page.load
-  when 'create promotion'
-    @british_council.create_promotion.load
-    step 'I create a promotion object'
+  when 'create image promotion'
+    @british_council.create_image_promotion.load
+    step 'I create a image promotion object'
+  when 'create text promotion'
+    @british_council.create_text_promotion.load
+    step 'I create a text promotion object'
   when 'add social media link'
     @british_council.add_social_media_link.load
   when 'create contact us'

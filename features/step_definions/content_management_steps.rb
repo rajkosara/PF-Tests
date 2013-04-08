@@ -47,10 +47,14 @@ Given(/^I create a partner object$/) do
   @partner ||= Model::Domain::Partner.new
 end
 
-Given(/^I create a promotion object$/) do
-  @promotion ||= Model::Domain::Promotion.new
+Given(/^I create a image promotion object$/) do
+  @image_promotion ||= Model::Domain::ImagePromotion.new
 end
 
 When(/^I create a contact us object$/) do
    @contact_us ||= Model::Domain::ContactUs.new
+end
+
+Given(/^I create a text promotion object$/) do
+  @text_promotion ||= Model::Domain::ImagePromotion.new
 end

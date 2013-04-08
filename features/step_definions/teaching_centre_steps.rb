@@ -27,10 +27,10 @@ Then(/^the teaching centre page details are displayed correctly on mobile$/) do
   @british_council.mobile_teaching_centre.body.text.should == @teaching_centre.body
   @british_council.mobile_teaching_centre.calendar_tab.text.should == "Calendar"
   @british_council.mobile_teaching_centre.calendar_tab.click
-  @british_council.mobile_teaching_centre.calendar_body.text.should include @teaching_centre.calendar_body
+  @british_council.mobile_teaching_centre.calendar_body.text.should include @teaching_centre.calendar_body.upcase
   @british_council.mobile_teaching_centre.contact_and_location_tab.text.should == "Contact and location"
   @british_council.mobile_teaching_centre.contact_and_location_tab.click
-  @british_council.mobile_teaching_centre.contact_and_location_body.text.should include @teaching_centre.contact_location_body
+  @british_council.mobile_teaching_centre.contact_and_location_body.text.should include @teaching_centre.contact_location_body.upcase
   @british_council.mobile_teaching_centre.facilities_tab.click
   @british_council.mobile_teaching_centre.facilities_body.text.should == @teaching_centre.facilities_body
 end
@@ -109,9 +109,9 @@ end
 Then(/^the teaching is displayed on the teaching centre page$/) do
   @british_council.teaching_centre_listing_page.should be_displayed
   @created_teaching_centre = @british_council.teaching_centre_listing_page.teaching_centre_details.find do |thing|
-    thing.name.text == @teaching_centre.title
+    thing.name.text == @teaching_centre.title.upcase
   end
-  @created_teaching_centre.name.text.should == @teaching_centre.title
+  @created_teaching_centre.name.text.should == @teaching_centre.title.upcase
   @created_teaching_centre.address.text.should include(@teaching_centre.address_one,@teaching_centre.address_two, @teaching_centre.post_code, @teaching_centre.city, @teaching_centre.state)
   @created_teaching_centre.phone_number.text.should == @teaching_centre.telephone_number
   @created_teaching_centre.fax_number.text == @teaching_centre.fax_number
@@ -120,7 +120,6 @@ end
 
 Then(/^the map is displayed on the teaching centre$/) do
   step "the teaching centre page is created"
-  sleep 3
   @british_council.teaching_centre.contact_and_location_tab.click
   @british_council.teaching_centre.should have_map
 end

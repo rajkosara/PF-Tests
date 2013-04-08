@@ -185,10 +185,10 @@ Given /^I translate the landing page$/ do
   step "I save the landing page"
 end
 
-When(/^I submit a landing page with a promotion$/) do
+When(/^I submit a landing page with a image promotion$/) do
   step "the create landing page page is displayed"
   step "I enter a title for the landing page"
-  @british_council.create_landing_page.hero_promotion.first.set @promotion.title
+  @british_council.create_landing_page.hero_promotion.first.set @image_promotion.title
   wait_for_ajax
   @british_council.create_landing_page.hero_promotion.first.native.send_keys :arrow_down
   Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_dropdown.visible?}
@@ -200,17 +200,17 @@ When(/^I submit a landing page with a promotion$/) do
   step "I save the landing page"
 end
 
-When(/^I submit a landing page with two promotion$/) do
+When(/^I submit a landing page with two image promotion$/) do
   step "the create landing page page is displayed"
   step "I enter a title for the landing page"
-  @british_council.create_landing_page.hero_promotion.first.set @promotion.title
+  @british_council.create_landing_page.hero_promotion.first.set @image_promotion.title
   wait_for_ajax
   @british_council.create_landing_page.hero_promotion.first.native.send_keys :arrow_down
   Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_dropdown.visible?}
   @british_council.create_landing_page.hero_promotion.first.native.send_keys :arrow_down
   @british_council.create_landing_page.hero_promotion.first.native.send_keys :enter
   wait_for_ajax
-  @british_council.create_landing_page.hero_promotion[1].set @promotion.title
+  @british_council.create_landing_page.hero_promotion[1].set @image_promotion.title
   wait_for_ajax
   @british_council.create_landing_page.hero_promotion[1].native.send_keys :arrow_down
   Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_dropdown.visible?}
@@ -236,5 +236,35 @@ Given(/^I create a landing page and I enter the event page as children$/) do
   @british_council.create_landing_page.list_management.native.send_keys :enter
   Timeout.timeout(30) { sleep(0.1) while @british_council.create_landing_page.list_management.text == @event.title}
   wait_for_ajax
+  step "I save the landing page"
+end
+
+When(/^I submit a landing page with a text promotion$/) do
+  step "the create landing page page is displayed"
+  step "I enter a title for the landing page"
+  @british_council.create_landing_page.sidebar_promotion.first.set @text_promotion.title
+  wait_for_ajax
+  @british_council.create_landing_page.sidebar_promotion.first.native.send_keys :arrow_down
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_dropdown.visible?}
+  @british_council.create_landing_page.sidebar_promotion.first.native.send_keys :arrow_down
+  @british_council.create_landing_page.sidebar_promotion.first.native.send_keys :enter
+  wait_for_ajax
+  step "I enter a summary for the landing page"
+  step "I enter a body for the landing page"
+  step "I save the landing page"
+end
+
+When(/^I submit a landing page with a image promotion in the sidebar$/) do
+  step "the create landing page page is displayed"
+  step "I enter a title for the landing page"
+  @british_council.create_landing_page.sidebar_promotion.first.set @image_promotion.title
+  wait_for_ajax
+  @british_council.create_landing_page.sidebar_promotion.first.native.send_keys :arrow_down
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_landing_page.list_dropdown.visible?}
+  @british_council.create_landing_page.sidebar_promotion.first.native.send_keys :arrow_down
+  @british_council.create_landing_page.sidebar_promotion.first.native.send_keys :enter
+  wait_for_ajax
+  step "I enter a summary for the landing page"
+  step "I enter a body for the landing page"
   step "I save the landing page"
 end
