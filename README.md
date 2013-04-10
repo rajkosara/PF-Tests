@@ -53,7 +53,7 @@ bundle install
 5. cd to features
 6. open login.feature
 7. Now run rake cuke:specific TAGS=@login
-8. If all of these test pass, you are good to go
+8. If all of these test pass, you are good to go. (If you get an issue like stack level too deep, make sure that you are not using cucumber 1.2.4 and use either 1.2.5 or 1.2.3 you can change this in the Gemfile.lock)
 
 
 

@@ -5,6 +5,8 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
     @british_council.login.load
   when 'home'
     @british_council.home.load
+  when 'create home page'
+    @british_council.create_home_page.load
   when 'create press release' 
     @british_council.create_press_release.load
     step "I create a press release object"

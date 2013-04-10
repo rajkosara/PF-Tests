@@ -36,3 +36,24 @@ Feature: Home Page
   Scenario: The footer is displayed on the home page
     When I navigate to the home page
     Then the footer is displayed on the home page
+
+  @complete @solas_894 @core @korea @japan
+  Scenario: Create home page
+    Given I am logged in as an admin user
+    And I create a image in the media library
+    And I create a image promotion
+    And I navigate to the create home page page
+    When I submit a home page
+    Then the homepage is created
+    And all the fields are displayed correctly on the home page
+
+  @complete @solas_894 @core @korea @japan
+  Scenario: Edit home page
+    Given I am logged in as an admin user
+    And I create a image in the media library
+    And I create a image promotion
+    And I navigate to the create home page page
+    When I submit a home page
+    And the homepage is created
+    And I choose to edit the home page
+    Then the homepage is edited correctly

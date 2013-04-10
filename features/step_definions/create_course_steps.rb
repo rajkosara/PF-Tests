@@ -123,7 +123,6 @@ end
 
 Then /^a "(.*?)" error message is displayed on the create course page$/ do |error_message|
   @british_council.create_course.error_message.text.should include error_message
-  puts page.evaluate_script("jQuery.active")
 end
 
 When /^I create a course page$/ do
