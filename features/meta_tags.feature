@@ -29,3 +29,5 @@ Feature: Meta tags
       | author    |
       | manager   |
       | producer  |
+
+#add test for tags on home page

@@ -3,6 +3,10 @@ class Model::BritishCouncil
     Model::Page::Login.new
   end
 
+  def create_home_page
+    Model::Page::CreateHomePage.new
+  end
+
   def administration
     Model::Page::Administration.new
   end

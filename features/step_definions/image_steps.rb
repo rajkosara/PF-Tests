@@ -4,7 +4,6 @@ When /^I add an image to the media library$/ do
   step "I enter a description on the add image page"
   step "I enter a image path on the add image page"
   step "I click the image upload button on the add image page"
-  wait_for_ajax
   step "I enter copyright info on the add image page"
   #step "I enter a expiration date on the add image page"
   step "I click the save button on the add image page"
