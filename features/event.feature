@@ -42,7 +42,7 @@ Feature: Event
     And I submit a event page without a title
     Then a "Title field is required" error message is displayed on the create event page
 
-  @complete @solas_144 @core
+  @complete @solas_144 @core @problematic
   Scenario: Max length of title is enforced
     Given I am logged in as a producer user
     And I navigate to the create event page

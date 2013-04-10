@@ -34,7 +34,7 @@ Feature: Landing page
     When I enter a title with 70 characters for the landing page
     Then a zero characters remaining error message is displayed on the create landing page
 
-  @complete @solas_322 @core
+  @complete @solas_322 @core @problematic
   Scenario: Adding a landing page to a menu
     Given I am logged in as an admin user
     And I create a published landing page
