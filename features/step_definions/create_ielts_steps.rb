@@ -66,14 +66,14 @@ end
 When(/^I create a punlished ielts page$/) do
   step "I navigate to the create ielts page"
   @british_council.create_ielts.meta_config.publish_tab.click
-  @british_council.create_ielts.meta_config.publish_settings.publish_status.click
+  @british_council.create_ielts.meta_config.publish_settings.publish_status.select "Published"
   step "I submit a ielts page"
 end
 
 When(/^I translate the ielts page$/) do
   @british_council.create_ielts.title.set "#{@ielts.title} TRANSLATED"
   @british_council.create_ielts.meta_config.publish_tab.click
-  @british_council.create_ielts.meta_config.publish_settings.publish_status.click
+  @british_council.create_ielts.meta_config.publish_settings.publish_status.select "Published"
   step "I save the ielts page"
 end
 
@@ -109,6 +109,6 @@ Given(/^I create a ielts page with an image$/) do
   @british_council.create_ielts.image_library.select_checkboxes.first.click
   wait_for_ajax
   @british_council.create_ielts.meta_config.publish_tab.click
-  @british_council.create_ielts.meta_config.publish_settings.publish_status.click
+  @british_council.create_ielts.meta_config.publish_settings.publish_status.select "Published"
   step "I submit a ielts page"
 end

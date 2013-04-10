@@ -155,7 +155,7 @@ end
 
 When /^I publish a course$/ do
   @british_council.create_course.meta_config.publish_tab.click
-  @british_council.create_course.meta_config.publish_settings.publish_status.click
+  @british_council.create_course.meta_config.publish_settings.publish_status.select "Published"
 end
 
 When /^I submit a course page with levels$/ do

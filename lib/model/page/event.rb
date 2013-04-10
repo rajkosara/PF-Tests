@@ -1,7 +1,7 @@
 class Model::Page::Event < SitePrism::Page
   element :status, ".status"
   element :image, ".bc-full-width-img"
-  element :title, "#bc-page-title"
+  element :title, "#bc-page-title h1"
   element :event_date, ".bc-block-date"
   element :description, ".bc-body-content"
   element :address_one, ".bc-location .street-block .thoroughfare"
