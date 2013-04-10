@@ -56,7 +56,7 @@ Feature: Job
     And I submit a job page without a how to apply
     Then a "How to apply field is required" error message is displayed on the create job page
 
-  @complete @solas_158 @core @problematic
+  @complete @solas_158 @core  @problematic
   Scenario: Max length of job title is enforced
     Given I am logged in as a manager user
     And I navigate to the create job page
