@@ -6,4 +6,5 @@ class Model::Section::Header < SitePrism::Section
   
   section :language_switcher, Model::Section::LanguageSwitcher,"ul.language-switcher-locale-url"
   section :main_menu, Model::Section::MainMenu, "#bc-primary-menu"
+  section :search_bar, Model::Section::SearchBar, "#bc-search-inner"
 end

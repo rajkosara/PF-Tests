@@ -186,4 +186,12 @@ class Model::BritishCouncil
   def manage_social_media_links
     Model::Page::ManageSocialMediaLinks.new
   end
+
+  def cron_jobs
+    Model::Page::CronJobs.new
+  end
+
+  def search_results
+    Model::Page::SearchResults.new
+  end
 end

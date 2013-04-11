@@ -8,6 +8,7 @@ local_env_kr:
   default_wait_time: 5
   #urls
   korea_site_root: http://kr.local.solas.britishcouncil.net:8080/en
+  korea_site_root_without_en: http://kr.local.solas.britishcouncil.net:8080
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
@@ -27,6 +28,7 @@ local_env_jp:
   default_wait_time: 5
   #urls
   korea_site_root: http://jp.local.solas.britishcouncil.net:8080/en
+  korea_site_root_without_en: http://jp.local.solas.britishcouncil.net:8080
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
@@ -46,6 +48,7 @@ local_env_gr:
   default_wait_time: 5
   #urls
   korea_site_root: http://gr.local.solas.britishcouncil.net:8080/en
+  korea_site_root_without_en: http://gr.local.solas.britishcouncil.net:8080
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
@@ -65,6 +68,7 @@ local_env_training:
   default_wait_time: 5
   #urls
   korea_site_root: http://training.local.solas.britishcouncil.net:8080/en
+  korea_site_root_without_en: http://training.local.solas.britishcouncil.net:8080
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
@@ -84,6 +88,7 @@ test_env_kr:
   default_wait_time: 15
   #urls
   korea_site_root: http://kr.test.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://kr.test.solas.britishcouncil.net
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
@@ -103,6 +108,7 @@ test_env_jp:
   default_wait_time: 15
   #urls
   korea_site_root: http://jp.test.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://jp.test.solas.britishcouncil.net
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
@@ -122,6 +128,7 @@ test_env_training:
   default_wait_time: 15
   #urls
   korea_site_root: http://training.test.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://training.test.solas.britishcouncil.net
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
@@ -141,6 +148,7 @@ test_env_greece:
   default_wait_time: 15
   #urls
   korea_site_root: http://gr.test.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://gr.test.solas.britishcouncil.net
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
@@ -160,6 +168,7 @@ stage_env_kr:
   default_wait_time: 15
   #urls
   korea_site_root: http://kr.stage.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://kr.stage.solas.britishcouncil.net
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
@@ -179,6 +188,7 @@ stage_env_jp:
   default_wait_time: 15
   #urls
   korea_site_root: http://jp.stage.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://jp.stage.solas.britishcouncil.net
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
@@ -198,6 +208,7 @@ stage_env_training:
   default_wait_time: 15
   #urls
   korea_site_root: http://training.stage.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://training.stage.solas.britishcouncil.net
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
@@ -216,7 +227,8 @@ stage_env_greece:
   #capybara settings
   default_wait_time: 15
   #urls
-  korea_site_root: http://training.stage.solas.britishcouncil.net/en
+  korea_site_root: http://gr.stage.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://gr.stage.solas.britishcouncil.net
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
@@ -236,6 +248,7 @@ live_env_kr:
   default_wait_time: 15
   #urls
   korea_site_root: http://kr.live.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://kr.live.solas.britishcouncil.net
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
@@ -255,6 +268,7 @@ live_env_jp:
   default_wait_time: 15
   #urls
   korea_site_root: http://jp.live.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://jp.live.solas.britishcouncil.net
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
@@ -274,6 +288,7 @@ live_env_training:
   default_wait_time: 15
   #urls
   korea_site_root: http://training.live.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://training.live.solas.britishcouncil.net
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
@@ -293,6 +308,7 @@ live_env_greece:
   default_wait_time: 15
   #urls
   korea_site_root: http://gr.live.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://gr.live.solas.britishcouncil.net
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details

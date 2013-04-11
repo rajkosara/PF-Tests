@@ -11,7 +11,6 @@ module Capybara
         end
         temp_locator
       end
-
       def locator
         @selector.locator
       end

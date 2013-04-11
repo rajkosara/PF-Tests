@@ -33,3 +33,7 @@ end
 Then(/^the entered legal text is displayed is on the site info page$/) do
   @british_council.site_info.legal_info.should include @legal_text
 end
+
+When(/^I index the content$/) do
+  @british_council.cron_jobs.load
+end
