@@ -51,6 +51,6 @@ When(/^I submit a home page$/) do
     end
   end
   @british_council.create_home_page.meta_config.publish_tab.click
-  @british_council.create_home_page.meta_config.publish_settings.publish_status.select "Published"
+  @british_council.create_home_page.meta_config.publish_settings.publish_status.click
   @british_council.create_home_page.save_button.click
 end

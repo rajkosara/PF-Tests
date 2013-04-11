@@ -68,7 +68,7 @@ end
 
 Then /^I publish a faq page$/ do
   @british_council.create_faq.meta_config.publish_tab.click
-  @british_council.create_faq.meta_config.publish_settings.publish_status.select "Published"
+  @british_council.create_faq.meta_config.publish_settings.publish_status.click
 end
 
 When /^I submit a published faq page$/ do

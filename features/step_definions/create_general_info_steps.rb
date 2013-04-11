@@ -246,7 +246,7 @@ end
 
 When /^I publish a general info$/ do
   @british_council.create_general_info.meta_config.publish_tab.click
-  @british_council.create_general_info.meta_config.publish_settings.publish_status.select "Published"
+  @british_council.create_general_info.meta_config.publish_settings.publish_status.click
 end
 
 Given(/^I create a general info page with an image$/) do
