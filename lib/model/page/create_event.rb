@@ -2,7 +2,7 @@ class Model::Page::CreateEvent < SitePrism::Page
   set_url "#{Helpers::Config['korea_site_root']}/node/add/event"
   set_url_matcher /\/node\/add\/event/
 
-  element :title, "#edit-title-field-en-0-value"
+  element :title, "input[id*='edit-title-field']"
   element :summary, "#edit-body-und-0-summary"
   element :event_description, "iframe#edit-body-und-0-value_ifr"
   element :city, "[id*=edit-field-event-address-und-0-locality]"

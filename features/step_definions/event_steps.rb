@@ -29,3 +29,19 @@ When(/^the partner is displayed correctly on the event page$/) do
   @british_council.event.partner_header.text.should == @partner.header
   @british_council.event.should have_partner_image
 end
+When(/^I choose to the translate an event page$/) do
+  @british_council.event.translate_button.click
+end
+
+Then(/^the event page is translated$/) do
+  @british_council.event.title.text.should == "#{@event.title} TRANSLATED"
+end
+
+Then(/^the date format is (yyyymmdd|ddmmyyyy) on the event page$/) do |format|
+  case format
+  when "yyyymmdd"
+    @british_council.event.event_date.text.should match /\d{4}\D*\s\d{2}\D*\s\d{2}\D*/
+  when 'ddmmyyyy'
+    @british_council.event.event_date.text.should match /\d{2}\D*\s\d{2}\D*\s\d{4}\D*/
+  end 
+end

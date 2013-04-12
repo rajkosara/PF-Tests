@@ -223,3 +223,9 @@ Given(/^I create a events page with an image$/) do
   step "I publish a event page"
   step "I save the event page"
 end
+
+Given(/^I translate the event page$/) do
+  @british_council.create_event.title.set "#{@event.title} TRANSLATED"
+  step "I publish a event page"
+  step "I save the event page"
+end

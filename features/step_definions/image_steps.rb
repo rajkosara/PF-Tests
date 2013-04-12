@@ -57,6 +57,7 @@ end
 Then /^I click the image upload button on the add image page$/ do
   @british_council.add_image.image_upload_button.click
   wait_for_ajax
+  #Timeout.timeout(30) {sleep(0.1) while @british_council.add_image.throbber.visible? }
 end
 
 Then /^I enter copyright info on the add image page$/ do

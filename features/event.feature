@@ -82,3 +82,22 @@ Feature: Event
     And I submit a event page with a parner
     And the partner is displayed correctly on the event page
 
+  @complete @solas_816 @japan @korea
+  Scenario: Event fields are displayed correctly for yyyymmdd
+    Given I am logged in as an admin user
+    When I create a published event page
+    When I choose to the translate an event page
+    And I click add translation on the translate page
+    And I translate the event page
+    Then the event page is translated
+    And the date format is yyyymmdd on the event page
+
+  @complete @solas_816 @greece
+  Scenario: Event fields are displayed correctly for 
+    Given I am logged in as an admin user
+    When I create a published event page
+    When I choose to the translate an event page
+    And I click add translation on the translate page
+    And I translate the event page
+    Then the event page is translated
+    And the date format is ddmmyyyy on the event page

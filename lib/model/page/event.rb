@@ -12,6 +12,7 @@ class Model::Page::Event < SitePrism::Page
   element :map, ".bc-location div[id*='geolocation-googlemaps']"
   element :partner_header, ".bc-logos h2"
   element :partner_image, ".bc-logos img"
+  element :translate_button, ".tabs a[href*='translate']"
 
 
   section :cta_box, Model::Section::CtaBox, ".bc-hlight-box"
