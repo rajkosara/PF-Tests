@@ -196,13 +196,13 @@ test_env_gr:
   image_location: /sites/default/files
   #user details
   admin_username: 'test.admin'
-  admin_password: 'password'
+  admin_password: 'ZBjewW2zVR'
   author_username: 'test.author'
-  author_password: 'password'
+  author_password: 'ZBjewW2zVR'
   manager_username: 'test.manager'
-  manager_password: 'password'
+  manager_password: 'ZBjewW2zVR'
   producer_username: 'test.producer'
-  producer_password: 'password'
+  producer_password: 'ZBjewW2zVR'
 stage_env_gr:
   <<: *execution_defaults
   # site name
@@ -216,13 +216,13 @@ stage_env_gr:
   image_location: /sites/default/files
   #user details
   admin_username: 'test.admin'
-  admin_password: 'Password_1'
+  admin_password: 'ZBjewW2zVR'
   author_username: 'test.author'
-  author_password: 'Password_1'
+  author_password: 'ZBjewW2zVR'
   manager_username: 'test.manager'
-  manager_password: 'Password_1'
+  manager_password: 'ZBjewW2zVR'
   producer_username: 'test.producer'
-  producer_password: 'Password_1'
+  producer_password: 'ZBjewW2zVR'
 live_env_gr:
   <<: *execution_defaults
   # site name
