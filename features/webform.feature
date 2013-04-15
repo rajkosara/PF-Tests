@@ -8,7 +8,7 @@ Feature: Contact us
     And I submit a webform
     Then the webform is created
 
-  @complete @solas_1054 @core @wip
+  @complete @solas_1054 @core
   Scenario: Create a form and add text component to it
     Given I am logged in as an admin user
     When I navigate to the create webform page
