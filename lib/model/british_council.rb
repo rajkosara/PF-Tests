@@ -202,4 +202,8 @@ class Model::BritishCouncil
   def search_results
     Model::Page::SearchResults.new
   end
+
+  def webform
+    Model::Page::Webform.new
+  end
 end
