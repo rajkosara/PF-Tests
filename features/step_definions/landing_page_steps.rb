@@ -115,3 +115,7 @@ When(/^the image promotion is displayed on the landing page in the sidebar$/) do
   @british_council.landing_page.sidebar_text_promotions.last.title.text.should == @image_promotion.title
   @british_council.landing_page.sidebar_text_promotions.last.destination[:href].should == @image_promotion.destination
 end
+
+Then(/^the contact us block should be displayed on the landing page$/) do
+  @british_council.landing_page.contact_us_block.should be_visible
+end

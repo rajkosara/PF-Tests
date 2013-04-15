@@ -10,6 +10,7 @@ Given(/^I create a image promotion$/) do
   @british_council.create_image_promotion.destination.set @image_promotion.destination
   @british_council.create_image_promotion.button_text.set @image_promotion.button_text
   @british_council.create_image_promotion.save_button.click
+  scroll_to_end_of_page
   @british_council.image_promotion.status.text.should include "#{@image_promotion.title} has been created."
 end
 

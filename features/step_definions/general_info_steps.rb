@@ -96,3 +96,7 @@ Then(/^the course is displayed and the landing pag is not$/) do
   @british_council.general_info.secondary_navigation_menu.parent.text.should == @course.menu_title
   @british_council.general_info.secondary_navigation_menu.children.first.text.should == @general_info.menu_title
 end
+
+Then(/^the contact us block should be displayed on the general info page$/) do
+  puts @british_council.general_info.contact_us_block.should be_visible
+end

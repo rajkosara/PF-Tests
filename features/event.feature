@@ -28,7 +28,7 @@ Feature: Event
       | manager   |
       | producer  |
 
-  @complete @solas_144 @core
+  @complete @solas_144 @core @smoke
   Scenario: Create a published event page as an admin
     Given I am logged in as an admin user
     When I navigate to the create event page

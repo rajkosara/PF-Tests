@@ -174,3 +174,11 @@ Feature: General info
     When I navigate to the create general info page
     Then the menu settings are displayed on the general info page
     And I can choose main menu and footer in the menu section on the creat general info page
+
+  @complete @solas_1138 @core
+  Scenario: Contact us block is displayed
+    Given I am logged in as an author user
+    When I navigate to the create general info page
+    And I submit a general info page
+    Then the general info page is created
+    And the contact us block should be displayed on the general info page

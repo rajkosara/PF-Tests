@@ -9,6 +9,7 @@ class Model::Page::LandingPage < SitePrism::Page
   element :child_summary, ".bc-listing p"
   element :teaching_centre, ".bc-box h3"
   element :ielts_cta, ".bc-box div a"
+  element :contact_us_block, "#bc-page-title aside"
   
   elements :child_pages_title, ".bc-listing h2"
   elements :child_pages_summary, ".bc-box a[href] p"

@@ -211,3 +211,11 @@ Feature: Landing page
     And I create a published event page
     When I create a landing page and I enter the event page as children
     Then the event page is displayed on the listing page
+
+  @complete @solas_1183 @core
+  Scenario: Contact us block is displayed
+    Given I am logged in as an admin user
+    When I navigate to the create landing page page
+    And I submit a landing page
+    Then the landing page is created
+    And the contact us block should be displayed on the landing page

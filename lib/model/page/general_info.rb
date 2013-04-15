@@ -1,5 +1,5 @@
 class Model::Page::GeneralInfo < SitePrism::Page
-  element :title, "#bc-page-title"
+  element :title, "#bc-page-title h1"
   element :body, ".bc-body-content"
   element :status, ".status"
   element :description_meta_tag, "meta[name='description'][content]"
@@ -10,6 +10,7 @@ class Model::Page::GeneralInfo < SitePrism::Page
   element :show_hide_title, ".bc-show-hide-title"
   element :show_hide_body, ".bc-show-hide-content"
   element :breadcrumbs, "#bc-breadcrumb"
+  element :contact_us_block, "#bc-page-title aside"
 
   elements :links, ".bc-lk-list-16 a"
 

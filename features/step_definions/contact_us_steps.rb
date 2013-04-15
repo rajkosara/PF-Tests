@@ -45,3 +45,7 @@ Then(/^the all the fields are displayed correctly on the contact us page$/) do
   @created_teaching_centre.fax_number.text == @teaching_centre.fax_number
   @created_teaching_centre.email.text == @teaching_centre.email_address
 end
+
+Then(/^the contact us block should not be displayed on the contact us page$/) do
+  @british_council.contact_us.contact_us_block.should_not be_visible
+end
