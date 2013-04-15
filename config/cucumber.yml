@@ -1,11 +1,26 @@
+#misc test runs
 wip: -f pretty -t @wip
 complete: -f pretty -t @complete -t ~@not_implemented
 failing: -f pretty -t @complete -t @failing
 complete_no_failing: -f pretty -t @complete -t ~@failing
 custom: -f pretty <%= ENV["TAGS"] %>
 specific: -f pretty --tags <%= ENV['TAGS'] %>
-jenkins_complete_passing: -q -f pretty -t @complete -t ~@not_implemented -t ~@failing -t ~@problematic -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
-jenkins_complete_failing: -q -f pretty -t @complete -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
-jenkins_smoke: -q -f pretty -t @smoke -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
 smoke: -f pretty --tags @smoke
 feature: -f pretty -t @complete -t ~@failing  -t <%= ENV['TAG'] %>
+
+#these are the complete passing test for each country and core
+jenkins_complete_passing: -q -f pretty -t @complete -t ~@not_implemented -t ~@failing -t ~@problematic -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+jenkins_complete_passing_core: -q -f pretty -t @complete -t @core -t ~@not_implemented -t ~@failing -t ~@problematic -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+jenkins_complete_passing_greece: -q -f pretty -t @complete -t @greece -t ~@not_implemented -t ~@failing -t ~@problematic -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+jenkins_complete_passing_korea: -q -f pretty -t @complete -t @korea -t ~@not_implemented -t ~@failing -t ~@problematic -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+jenkins_complete_passing_japan: -q -f pretty -t @complete -t @korea -t ~@not_implemented -t ~@failing -t ~@problematic -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+
+# these are the complete failing tests for each country and core
+jenkins_complete_failing: -q -f pretty -t @complete -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+jenkins_complete_failing_core: -q -f pretty -t @complete -t @core -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+jenkins_complete_failing_greece: -q -f pretty -t @complete -t @greece -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+jenkins_complete_failing_korea: -q -f pretty -t @complete -t @korea -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+jenkins_complete_failing_japan: -q -f pretty -t @complete -t @japan -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+
+#this is the smoke test run
+jenkins_smoke: -q -f pretty -t @smoke -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
