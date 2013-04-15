@@ -1,7 +1,7 @@
 @footer
 Feature: Footer
 
-  @complete @solas_761 @core
+  @complete @solas_761 @core @wip
   Scenario: Add Legal text
     Given I am logged in as an admin user
     And I navigate to the site information page

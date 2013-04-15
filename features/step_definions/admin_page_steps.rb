@@ -3,10 +3,11 @@ Then /^the admin page should be displayed$/ do
 end
 
 When(/^I enter some legal text on the site info page$/) do
-  @legal_text = "  a"
+  @legal_text = "some text #{Time.current.strftime("%T")} #{String.random(4)}"
   @british_council.site_info.contact_us.native.send_keys @legal_text
   @british_council.site_info.legal_info.native.send_keys @legal_text
   @british_council.site_info.save_button.click
+  @british_council.site_info.status.text.should include "The configuration options have been saved."
 end
 
 When(/^I create a social media link$/) do

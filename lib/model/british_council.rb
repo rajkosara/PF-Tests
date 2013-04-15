@@ -23,6 +23,14 @@ class Model::BritishCouncil
     Model::Page::CreateGeneralInfo.new
   end
 
+  def create_webform
+    Model::Page::CreateWebform.new
+  end
+
+  def add_webform_component
+    Model::Page::AddWebformComponent.new
+  end
+
   def create_job
     Model::Page::CreateJob.new
   end

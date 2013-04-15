@@ -5,4 +5,5 @@ class Model::Page::SiteInfo < SitePrism::Page
   element :legal_info, "iframe#edit-legal-info-value_ifr"
   element :contact_us, "iframe#edit-contact-us-value_ifr"
   element :save_button, "#edit-submit"
+  element :status, ".status"
 end
