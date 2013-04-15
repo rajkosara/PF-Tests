@@ -8,7 +8,9 @@ When /^I enter the (admin|author|manager|producer) user password$/ do |user_type
 end
 
 When /^I click on login$/ do
+  scroll_down_a_little
   @british_council.login.login_button.click
+  ask("stuff")
 end
 
 Then /^the admin header is displayed at the top of the page$/ do
