@@ -45,6 +45,8 @@ class Model::Page::CreateCourse < SitePrism::Page
   element :document_tab, "#node_course_form_group_document .fieldset-title"
   element :side_promo, "#edit-field-generic-sidebar-promos-und-0-target-id"
   element :image_tab, "#node_course_form_group_summary_image .fieldset-title"
+  element :teaching_centre_taught, "input[id^='edit-field-course-teaching-centre-ref'][type=text]"
+  element :dropdown, ".reference-autocomplete"
 
   section :add_cta, Model::Section::AddCta, "#node_course_form_group_cta"
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"

@@ -302,12 +302,16 @@ When(/^I submit a course page with a linked teaching centre$/) do
   step "I enter a body for the calendar and pricing tab on the create course page"
   scroll_to_start_of_page
   @british_council.create_course.about_course_tab.click
-  @tc = @british_council.create_course.teaching_centre.find do |tc|
-    tc.label.text == @teaching_centre.title
-  end
-  scroll_down_a_little
-  @tc.label.click
+  @british_council.create_course.teaching_centre_taught.set @teaching_centre.title
+  wait_for_ajax
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_course.dropdown.visible?}
+  @british_council.create_course.teaching_centre_taught.native.send_keys :arrow_down
+  @british_council.create_course.dropdown.click
+  wait_for_ajax
+  step "I enter a course summary on the create course page"
+  step "I publish a course"
   step "I click save on the create course page on the create course page"
+  sleep 10
 end
 
 Then /^I submit a course page with document$/ do
