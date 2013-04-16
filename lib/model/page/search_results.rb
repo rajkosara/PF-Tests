@@ -5,5 +5,5 @@ class Model::Page::SearchResults < SitePrism::Page
   element :no_results, ".bc-help h2"
 
   elements :title, ".bc-box h2"
-  elements :body, "p"
+  elements :body, ".bc-box p"
 end

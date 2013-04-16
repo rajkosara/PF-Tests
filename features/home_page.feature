@@ -57,3 +57,13 @@ Feature: Home Page
     And the homepage is created
     And I choose to edit the home page
     Then the homepage is edited correctly
+
+  @complete @solas_1145 @greece
+  Scenario: Home page displays facebook wiget on greece
+    When I navigate to the home page
+    Then the facebook wiget is displayed on the homepage
+
+  @complete @solas_1145 @korea @japan
+  Scenario: Home page displays facebook wiget on korea
+    When I navigate to the home page
+    Then the facebook wiget is not displayed on the homepage

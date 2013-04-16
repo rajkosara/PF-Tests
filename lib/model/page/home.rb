@@ -7,6 +7,7 @@ class Model::Page::Home < SitePrism::Page
   element :body_column_two_body, ".bc-boxes-2-ltr .bc-col2 p"
   element :third_column_heading, "#bc-content h2:nth-child(3)"
   element :edit_button, ".tabs a[href*='edit']"
+  element :facebook_wiget, "#bc-facebook"
 
   elements :body_links, ".bc-boxes-2-ltr ul[class^='bc-lk-list'] li a"
 

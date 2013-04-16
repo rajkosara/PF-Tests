@@ -89,3 +89,12 @@ end
 Then(/^the homepage is edited correctly$/) do
   @british_council.home.third_column_heading.text.should == "the 3rd col heading :) New and edited"
 end
+
+Then(/^the facebook wiget is displayed on the homepage$/) do
+  @british_council.home.should have_facebook_wiget
+  @british_council.home.facebook_wiget.text.should == "Facebook"
+end
+
+Then(/^the facebook wiget is not displayed on the homepage$/) do
+  @british_council.home.should_not have_facebook_wiget
+end
