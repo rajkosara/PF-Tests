@@ -207,3 +207,14 @@ When(/^I submit a teaching centre page with a map$/) do
   wait_for_ajax
   step "I submit a teaching centre page"
 end
+
+When /^I create two published teaching centre$/ do
+  step "I navigate to the create teaching centre page"
+  step "I publish a teaching centre"
+  step "I submit a teaching centre page"
+  @teaching_centre_one = @teaching_centre
+  step "I navigate to the create teaching centre page"
+  step "I publish a teaching centre"
+  step "I submit a teaching centre page"
+  @teaching_centre_two = @teaching_centre
+end

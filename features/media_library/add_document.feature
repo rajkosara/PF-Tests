@@ -15,7 +15,7 @@ Feature: Add document to the media library
       | manager   |
       | producer  |
 
-  @complete @solas_252 @core @failing
+  @complete @solas_252 @core
   Scenario Outline: Add different types of document
     Given I am logged in as an admin user
     And I navigate to the add document page
@@ -43,7 +43,7 @@ Feature: Add document to the media library
     When I add an invaild sized document to the media library
     Then an document size error is displayed on the add document page
 
-  @complete @solas_252 @core @failing
+  @complete @solas_252 @core
   Scenario: Add document without a title
     Given I am logged in as an author user
     And I navigate to the add document page

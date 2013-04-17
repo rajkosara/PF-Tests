@@ -15,6 +15,10 @@ class Model::BritishCouncil
     Model::Page::CreateFaq.new
   end
 
+  def create_press_release
+    Model::Page::CreatePressRelease.new
+  end
+
   def create_course
     Model::Page::CreateCourse.new
   end
@@ -85,6 +89,10 @@ class Model::BritishCouncil
 
   def faq
     Model::Page::Faq.new
+  end
+
+  def press_release
+    Model::Page::PressRelease.new
   end
 
   def general_info

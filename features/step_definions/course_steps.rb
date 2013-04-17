@@ -155,6 +155,13 @@ Then(/^the linked course is displayed on the course page$/) do
   @british_council.course.teaching_centre[:href].should include @teaching_centre.title.downcase.gsub(" ","-").gsub(":","")
 end
 
+Then(/^the two linked courses is displayed on the course page$/) do
+  @british_council.course.teaching_centre.first.text.should == @teaching_centre_one.title
+  @british_council.course.teaching_centre.first[:href].should include @teaching_centre_one.title.downcase.gsub(" ","-").gsub(":","")
+  @british_council.course.teaching_centre[1].text.should == @teaching_centre_two.title
+  @british_council.course.teaching_centre[1][:href].should include @teaching_centre_two.title.downcase.gsub(" ","-").gsub(":","")
+end
+
 Then(/^the document is displayed on the course page$/) do
   step "the course page is created"
   @british_council.course.document_name.text.should == @document.document_name

@@ -77,6 +77,9 @@ This will list all the tags that are used
 ------
 rake cuke:specific TAGS="[tag]"
 
+#this will run all the greece ONLY tests against greece
+rake cuke:specific TAGS=@greece CONFIG=local_env_gr
+
 This will run all the tests that have been given a particular tag. e.g rake cuke:specific TAGS=@login or rake cuke:specific TAGS=@general_info
 
 

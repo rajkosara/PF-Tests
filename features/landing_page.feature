@@ -176,7 +176,7 @@ Feature: Landing page
     And I save the landing page
     Then the ielts page is displayed with an image on the landing page
 
-  @complete @solas_1143 @core @failing @solas_1253
+  @complete @solas_1143 @core
   Scenario: Display summary image on landing page with events
     Given I am logged in as an admin user
     And I create a image in the media library

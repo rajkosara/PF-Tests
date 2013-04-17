@@ -302,16 +302,45 @@ When(/^I submit a course page with a linked teaching centre$/) do
   step "I enter a body for the calendar and pricing tab on the create course page"
   scroll_to_start_of_page
   @british_council.create_course.about_course_tab.click
-  @british_council.create_course.teaching_centre_taught.set @teaching_centre.title
+  @british_council.create_course.teaching_centre_taught.first.set @teaching_centre.title
   wait_for_ajax
   Timeout.timeout(30) { sleep(0.1) until @british_council.create_course.dropdown.visible?}
-  @british_council.create_course.teaching_centre_taught.native.send_keys :arrow_down
+  @british_council.create_course.teaching_centre_taught.first.native.send_keys :arrow_down
   @british_council.create_course.dropdown.click
   wait_for_ajax
   step "I enter a course summary on the create course page"
   step "I publish a course"
   step "I click save on the create course page on the create course page"
-  sleep 10
+end
+
+When(/^I submit a course page with two linked teaching centres$/) do
+  step "I navigate to the create course page"
+  step "the create course page is displayed"
+  step "I enter a about course body on the create course page"
+  step "I enter a course title on the create course page"
+  step "I click on the calendar and pricing tab on the create course page"
+  step "I enter a course timetable title on the create course page"
+  step "I enter a body for the calendar and pricing tab on the create course page"
+  scroll_to_start_of_page
+  @british_council.create_course.about_course_tab.click
+  @british_council.create_course.teaching_centre_taught.first.set @teaching_centre_one.title
+  wait_for_ajax
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_course.dropdown.visible?}
+  @british_council.create_course.teaching_centre_taught.first.native.send_keys :arrow_down
+  @british_council.create_course.dropdown.click
+  wait_for_ajax
+  #scroll_down_a_little
+  @british_council.create_course.add_teaching_centre.click
+  wait_for_ajax
+  @british_council.create_course.teaching_centre_taught[1].set @teaching_centre_two.title
+  wait_for_ajax
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_course.dropdown.visible?}
+  @british_council.create_course.teaching_centre_taught[1].native.send_keys :arrow_down
+  @british_council.create_course.dropdown.click
+  wait_for_ajax
+  step "I enter a course summary on the create course page"
+  step "I publish a course"
+  step "I click save on the create course page on the create course page"
 end
 
 Then /^I submit a course page with document$/ do

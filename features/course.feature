@@ -169,3 +169,12 @@ Feature: Course
     And I logout and navigate back to the course page
     When I navigate to general info page using the secondary navigation menu on the course page
     Then the course is displayed and the landing pag is not
+    
+  @complete @solas_1128 @core
+  Scenario: Create a course page with a two linked teaching centre
+    Given I am logged in as an admin user
+    And I create two published teaching centre
+    When I navigate to the create course page
+    And I submit a course page with two linked teaching centres
+    And the course page is created
+    Then the two linked courses is displayed on the course page

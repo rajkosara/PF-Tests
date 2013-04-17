@@ -1,7 +1,7 @@
 @event
 Feature: Event
 
-  @complete @solas_144 @core @failing @solas_1208
+  @complete @solas_144 @core
   Scenario Outline: Create an event page
     Given I am logged in as an <user_type> user
     When I navigate to the create event page
@@ -16,7 +16,7 @@ Feature: Event
       | producer  |
 
   @complete @solas_144 @core @failing
-  Scenario Outline: Create a published  event page
+  Scenario Outline: Create a published event page
     Given I am logged in as an <user_type> user
     When I navigate to the create event page
     And I submit a published event page

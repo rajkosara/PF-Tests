@@ -17,8 +17,9 @@ class Model::Page::Course < SitePrism::Page
   element :cta_image, ".bc-full-width-img"
   element :breadcrumbs, "#bc-breadcrumb"
   element :course_taught, "section h3"
-  element :teaching_centre, ".bc-tab-content ul[class*='bc-lk-list'] li a"
   element :document_name, ".bc-file a"
+
+  elements :teaching_centre, "ul[class*='bc-lk-list'] li a"
 
   section :level, Model::Section::Level, "#bc-tabs-bc-course-5 .bc-tab-content .bc-show-hide"
   section :secondary_navigation_menu, Model::Section::SecondaryNavigationMenu, ".bc-sub-nav"

@@ -24,7 +24,7 @@ When /^I create a course object$/ do
 end
 
 When /^create a teaching centre object$/ do
-  @teaching_centre ||= Model::Domain::TeachingCentre.new
+  @teaching_centre = Model::Domain::TeachingCentre.new
 end
 
 When /^I create a image object$/ do
@@ -57,4 +57,8 @@ end
 
 Given(/^I create a text promotion object$/) do
   @text_promotion ||= Model::Domain::ImagePromotion.new
+end
+
+When(/^I create a press release object$/) do
+   @press_release ||= Model::Domain::PressRelease.new
 end
