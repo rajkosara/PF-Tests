@@ -151,8 +151,8 @@ Then(/^the landing page is in the breadcrumbs on the course page$/) do
 end
 
 Then(/^the linked course is displayed on the course page$/) do
-  @british_council.course.teaching_centre.text.should == @teaching_centre.title
-  @british_council.course.teaching_centre[:href].should include @teaching_centre.title.downcase.gsub(" ","-").gsub(":","")
+  @british_council.course.teaching_centre.first.text.should == @teaching_centre.title
+  @british_council.course.teaching_centre.first[:href].should include @teaching_centre.title.downcase.gsub(" ","-").gsub(":","")
 end
 
 Then(/^the two linked courses is displayed on the course page$/) do
