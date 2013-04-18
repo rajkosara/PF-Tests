@@ -9,6 +9,7 @@ class Model::Page::CreatePressRelease < SitePrism::Page
   element :notes_to_editor, "iframe#edit-field-pr-editor-notes-und-0-value_ifr"
   element :about_the_british_council, "iframe#edit-field-pr-about-bc-und-0-value_ifr"
   element :save_button, "[value='Save']"
+  element :error_message, ".error"
 
   elements :internal_links, "input[id^='edit-field-generic-internal-link'][type=text]"
   elements :promo, "input[id^='edit-field-generic-sidebar-promos'][type=text]"

@@ -15,9 +15,20 @@ Feature: Press release
       | manager   |
       | producer  |
 
+  @complete @solas_1228 @core
   Scenario: Create a press release without a title
+    Given I am logged in as an author user
+    When I navigate to the create press release page
+    And I submit a press release page without a title
+    Then a "Title field is required" error message is displayed on the create press release page
 
+  @complete @solas_1228 @core
   Scenario: Create a press release with a document
+    Given I am logged in as an author user
+    And I create a document in the media library
+    When I navigate to the create press release page
+    And I submit a press release page with a document
+    Then the document is displayed on the press release page
 
   Scenario: Create a press release and all fields are displayed correctly
 
