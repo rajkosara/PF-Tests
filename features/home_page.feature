@@ -37,7 +37,7 @@ Feature: Home Page
     When I navigate to the home page
     Then the footer is displayed on the home page
 
-  @complete @solas_894 @core @korea @japan
+  @complete @solas_894 @korea @japan
   Scenario: Create home page
     Given I am logged in as an admin user
     And I create a image in the media library
@@ -47,7 +47,7 @@ Feature: Home Page
     Then the homepage is created
     And all the fields are displayed correctly on the home page
 
-  @complete @solas_894 @core @korea @japan
+  @complete @solas_894 @korea @japan
   Scenario: Edit home page
     Given I am logged in as an admin user
     And I create a image in the media library
