@@ -7,10 +7,13 @@ Before('@firefox') do
 end
 
 Before do
-  Capybara.reset_session!
-  sleep 3
+  #page.execute_script "window.open();"
+  Capybara.reset!#_session!
+  sleep 1
 end
 
 After do
-  sleep 3
+  page.driver.browser.quit #.execute_script "window.close();"
+  Capybara.send(:session_pool).delete_if { |key, value| key =~ /selenium/i }
+  sleep 1
 end
