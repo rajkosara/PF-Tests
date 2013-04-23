@@ -14,6 +14,35 @@ require './ext/string'
 require './ext/time'
 require './ext/capybara'
 
+
+#Added - Nick Morgalla - to support headless mode
+require 'headless'
+
+headless = Headless.new
+headless.start
+
+#Note - if parallel mode is used, this code will need to be removed
+at_exit do
+  headless.destroy
+end
+
+#Video capture for headless mode
+
+Before do
+  headless.video.start_capture
+end
+
+After do |scenario|
+  if scenario.failed?
+    headless.video.stop_and_save("/usr/temp/movies/#{scenario.name.split.join("_")}.mov")
+  else
+    headless.video.stop_and_discard
+  end
+end
+
+#End of Headless code
+
+
 #Set the timezone to be London time
 Time.zone = 'Europe/London'
 
@@ -82,7 +111,6 @@ module StuffWeWantAvailable
     page.execute_script "window.scrollBy(0,700)"
   end
 end
-
 
 World(Capybara)
 World(StuffWeWantAvailable)
