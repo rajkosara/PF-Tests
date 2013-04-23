@@ -28,7 +28,6 @@ Capybara.configure do |config|
   config.default_selector = :css
   config.default_wait_time = 10
   config.ignore_hidden_elements = false
-  #config.action_dispatch.show_exceptions = true
 end
 
 Capybara.register_driver :selenium_chrome do |app|

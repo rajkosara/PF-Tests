@@ -22,7 +22,7 @@ When(/^I enter a title for a press release$/) do
 end
 
 When(/^I enter a publish date for a press release$/) do
-  @british_council.create_press_release.publish_date.set @press_release.publish_date
+  @british_council.create_press_release.publish_date.set @press_release.publish_date.strftime("%d %b %Y")
 end
 
 When(/^I enter a summary for a press release$/) do

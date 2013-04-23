@@ -30,7 +30,12 @@ Feature: Press release
     And I submit a press release page with a document
     Then the document is displayed on the press release page
 
-  Scenario: Create a press release and all fields are displayed correctly
+  @complete @solas_1228 @core
+  Scenario: Create a press release and all required fields are displayed correctly
+    Given I am logged in as an author user
+    When I navigate to the create press release page
+    And I submit a press release page
+    Then the required fileds are displayed on the press release page
 
   Scenario: Create a press release with an internal link
 

@@ -93,7 +93,7 @@ Feature: Event
     And the date format is yyyymmdd on the event page
 
   @complete @solas_816 @greece
-  Scenario: Event fields are displayed correctly for 
+  Scenario: Event fields are displayed correctly for ddmmyyyy
     Given I am logged in as an admin user
     When I create a published event page
     When I choose to the translate an event page
