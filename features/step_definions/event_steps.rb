@@ -42,6 +42,6 @@ Then(/^the date format is (yyyymmdd|ddmmyyyy) on the event page$/) do |format|
   when "yyyymmdd"
     @british_council.event.event_date.text.should match /\d{4}\D*\s\d{2}\D*\s\d{2}\D*/
   when 'ddmmyyyy'
-    @british_council.event.event_date.text.should match /\d{2}\D*\s\d{2}\D*\s\d{4}\D*/
+    @british_council.event.event_date.text.should match /\d{2}\s\D*\d{4}/
   end 
 end
