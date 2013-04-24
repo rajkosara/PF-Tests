@@ -62,3 +62,17 @@ When(/^I submit a press release page with a document$/) do
   wait_for_ajax
   step "I save a press release"
 end
+
+When(/^I submit a press release page with an internal link$/) do
+  step "I enter a title for a press release"
+  step "I enter a publish date for a press release"
+  step "I enter a summary for a press release"
+  step "I enter a body for a press release"
+  step "I enter a notes to editor for a press release"
+  step "I enter a about the british council for a press release"
+  @british_council.create_press_release.internal_links.first.set @course.title
+  wait_for_ajax
+  @british_council.create_press_release.internal_links.first.native.send_keys :arrow_down
+  @british_council.create_press_release.internal_links.first.native.send_keys :enter
+  step "I save a press release"
+end
