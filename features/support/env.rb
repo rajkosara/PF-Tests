@@ -16,29 +16,29 @@ require './ext/capybara'
 
 
 #Added - Nick Morgalla - to support headless mode
-require 'headless'
+#require 'headless'
 
-headless = Headless.new
-headless.start
+#headless = Headless.new
+#headless.start
 
 #Note - if parallel mode is used, this code will need to be removed
-at_exit do
-  headless.destroy
-end
+#at_exit do
+#  headless.destroy
+#end
 
 #Video capture for headless mode
 
-Before do
-  headless.video.start_capture
-end
+#Before do
+#  headless.video.start_capture
+#end
 
-After do |scenario|
-  if scenario.failed?
-    headless.video.stop_and_save("/usr/temp/movies/#{scenario.name.split.join("_")}.mov")
-  else
-    headless.video.stop_and_discard
-  end
-end
+#After do |scenario|
+#  if scenario.failed?
+#    headless.video.stop_and_save("/usr/temp/movies/#{scenario.name.split.join("_")}.mov")
+#  else
+#    headless.video.stop_and_discard
+#  end
+#end
 
 #End of Headless code
 
