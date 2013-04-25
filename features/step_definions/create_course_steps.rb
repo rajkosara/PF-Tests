@@ -204,7 +204,6 @@ When(/^I submit a course page with two levels$/) do
   #add another one and then fill in details
   @british_council.create_course.add_level.last.levels_title.set "#{@course.levels_title} second one"
   @british_council.create_course.add_level.last.levels_description.native.send_keys "#{@course.levels_description} second one"
-  sleep 5
   step "I click save on the create course page on the create course page"
 end
 
@@ -356,7 +355,7 @@ Then /^I submit a course page with document$/ do
   step "I enter a course timetable title on the create course page"
   step "I enter a body for the calendar and pricing tab on the create course page"
   @british_council.create_course.about_course_tab.click
-  Timeout.timeout(30){sleep(0.1) until @british_council.create_course.document_tab.visible?}
+  Timeout.timeout(30) {sleep(0.1) until @british_council.create_course.document_tab.visible?}
   @british_council.create_course.document_tab.click
   wait_for_ajax
   @british_council.create_course.document_library.select_checkboxes.first.click

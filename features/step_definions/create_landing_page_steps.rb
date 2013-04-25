@@ -92,7 +92,6 @@ end
 
 When /^I edit the published landing page fields$/ do
   @british_council.create_landing_page.body.native.send_keys "edited"
-  step "I publish the landing page"
   step "I save the landing page"
 end
 

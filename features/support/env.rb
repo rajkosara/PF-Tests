@@ -31,7 +31,7 @@ require 'headless'
 #Before do
 #  headless.video.start_capture
 #end
-
+#
 #After do |scenario|
 #  if scenario.failed?
 #    headless.video.stop_and_save("/usr/temp/movies/#{scenario.name.split.join("_")}.mov")

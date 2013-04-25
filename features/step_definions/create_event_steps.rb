@@ -124,7 +124,6 @@ Then /^a "(.*?)" error message is displayed on the create event page$/ do |error
   @british_council.create_event.error_message.text.should include error_message
   wait_for_ajax
   step "the create event page is displayed"
-  #sleep 3
 end
 
 When /^I enter a title with 70 characters for the event page$/ do

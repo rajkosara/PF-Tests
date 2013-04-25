@@ -19,7 +19,7 @@ Feature: Search
     And I search for the pretend page
     Then the pretend page is not displayed in the search results
 
-  @complte @solas_177 @core
+  @complete @solas_177 @core
   Scenario: Search for image and its not returned
     Given I am logged in as an admin user
     And I create a image in the media library

@@ -37,7 +37,7 @@ Feature: user
       | manager   |
       | producer  |
 
-  @compete @solas_206 @core
+  @complete @solas_206 @core
   Scenario: Find a user
     Given I am logged in as an admin user
     And I navigate to the add user page

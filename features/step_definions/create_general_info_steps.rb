@@ -105,15 +105,12 @@ When /^I submit a general info page with an internal link$/ do
 end
 
 When /^I enter an internal link for the general info page$/ do
-  @british_council.create_general_info.internal_link.set @general_info_title
+  @british_council.create_general_info.internal_link.set @course.title
   #this code should work....
- 
-  @british_council.create_general_info.internal_link.native.send_keys :enter
-  @british_council.create_general_info.internal_link.native.send_keys :arrow_down
-  Timeout.timeout(30) { sleep(0.1) until @british_council.create_general_info.internal_link_dropdown.visible?}
+  wait_for_ajax
   @british_council.create_general_info.internal_link.native.send_keys :arrow_down
   @british_council.create_general_info.internal_link.native.send_keys :enter
-  Timeout.timeout(30) { sleep(0.1) while   @british_council.create_general_info.internal_link.text == @org_title}
+  wait_for_ajax
 end
 
 Then /^a "(.*?)" error message is displayed on the create general info page$/ do |error_message|

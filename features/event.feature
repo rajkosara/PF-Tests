@@ -50,7 +50,7 @@ Feature: Event
     And I enter a description for the event page
     Then a zero characters remaining error message is displayed on the create event page
 
-  @complete @solas_144 @core @failing
+  @complete @solas_144 @core
   Scenario: Image is displayed correctly
     Given I am logged in as an admin user
     And I create a image in the media library
@@ -59,7 +59,7 @@ Feature: Event
     Then the event page is created
     And the image is displayed correctly on the event page
 
-  @complete @solas_144 @core @problematic
+  @complete @solas_144 @core
   Scenario: CTA is displayed correctly
     Given I am logged in as an admin user
     When I navigate to the create event page

@@ -23,7 +23,7 @@ class Model::Page::GeneralInfo < SitePrism::Page
   end
 
   def internal_link
-    evaluate_script(%Q{ jQuery("#{links.first.css_locator}").first()})
+    evaluate_script(%Q{ jQuery("#{links.first.css_locator}")})
   end
 
   def external_link

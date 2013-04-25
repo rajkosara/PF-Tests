@@ -51,10 +51,10 @@ Feature: General info
     And I submit a general info page with an external link
     Then the external link is displayed on the general info page
 
-  @complete @failing @solas_121 @core
+  @complete @solas_121 @core
   Scenario: Submit general info with internal link
-    Given I am logged in as an author user
-    And I create a general info page
+    Given I am logged in as an admin user
+    And I create a published course
     When I navigate to the create general info page
     And I submit a general info page with an internal link
     Then the internal link is displayed on the general info page

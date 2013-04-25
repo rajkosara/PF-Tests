@@ -8,7 +8,7 @@ Then /^the external link is displayed on the general info page$/ do
 end
 
 Then /^the internal link is displayed on the general info page$/ do
-  @british_council.general_info.internal_link.text.should == @general_info_title
+  @british_council.general_info.links.first.text.should == @course.title
 end
 
 Then /^the filename of the general info page will not include the stop words$/ do
