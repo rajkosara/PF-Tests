@@ -81,6 +81,9 @@ When /^I enter a course title on the create course page$/ do
 end
 
 When /^I enter a about course body on the create course page$/ do
+  #puts @british_council.create_course.about_course_body
+  #puts page.evaluate_script("jQuery.active")
+  Timeout.timeout(30) { sleep(0.1) until @british_council.create_course.about_course_body.visible?}
   @british_council.create_course.about_course_body.native.send_keys @course.about_course_body
 end
 
@@ -346,6 +349,7 @@ end
 Then /^I submit a course page with document$/ do
   step "I navigate to the create course page"
   step "the create course page is displayed"
+  step "I enter a course summary on the create course page"
   step "I enter a about course body on the create course page"
   step "I enter a course title on the create course page"
   step "I click on the calendar and pricing tab on the create course page"
