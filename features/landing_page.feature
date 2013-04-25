@@ -20,21 +20,21 @@ Feature: Landing page
       | manager   |
       | producer  |
 
-  @complete @solas_332 @core @problematic
+  @complete @solas_332 @core
   Scenario: Error message displayed when title field is not filled in
     Given I am logged in as an admin user
     When I navigate to the create landing page page
     And I submit a landing page without a title
     Then a "Title field is required" error message is displayed on the create landing page page
 
-  @complete @solas_332 @core @problematic
+  @complete @solas_332 @core
   Scenario: Max length of title is enforced
     Given I am logged in as a admin user
     And I navigate to the create landing page page
     When I enter a title with 70 characters for the landing page
     Then a zero characters remaining error message is displayed on the create landing page
 
-  @complete @solas_322 @core @problematic
+  @complete @solas_322 @core
   Scenario: Adding a landing page to a menu
     Given I am logged in as an admin user
     And I create a published landing page
@@ -83,7 +83,7 @@ Feature: Landing page
     And I save the landing page
     Then two columns are displayed on the landing page
 
-  @complete @solas_403 @core @problematic
+  @complete @solas_403 @core
   Scenario: Add and order pages on a landing page
     Given I am logged in as an admin user
     And I create a published landing page
@@ -94,7 +94,7 @@ Feature: Landing page
     And I save the landing page
     Then the general info page and landing page are displayed in the correct order
 
-  @complete @solas_620 @core @translate @problematic
+  @complete @solas_620 @core @translate
   Scenario: Translate main menu item appears in the menu
     Given I am logged in as an admin user
     And I create a published landing page

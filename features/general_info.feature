@@ -15,28 +15,28 @@ Feature: General info
       | manager   |
       | producer  |
 
-  @complete @solas_121 @core @problematic
+  @complete @solas_121 @core
   Scenario: Error message displayed when title field is not filled in
     Given I am logged in as an author user
     When I navigate to the create general info page
     And I submit a general info page without a title
     Then a "Title field is required" error message is displayed on the create general info page
 
-  @complete @solas_121 @core @problematic
+  @complete @solas_121 @core
   Scenario: Error message displayed when body field is not filled in
     Given I am logged in as an author user
     When I navigate to the create general info page
     And I submit a general info page without a body
     Then a "Body field is required" error message is displayed on the create general info page
 
-  @complete @solas_121 @core @problematic
+  @complete @solas_121 @core
   Scenario: Error message displayed when body field is not filled in
     Given I am logged in as an author user
     When I navigate to the create general info page
     And I submit a general info page without a body
     Then a "Body field is required" error message is displayed on the create general info page
 
-  @complete @solas_121 @core @problematic
+  @complete @solas_121 @core
   Scenario: Max length of title is enforced
     Given I am logged in as an author user
     When I navigate to the create general info page
@@ -117,7 +117,7 @@ Feature: General info
     And search for my created document on the general info page
     Then the created document is displayed on the general info page
 
-  @complete @solas_249 @core @problematic
+  @complete @solas_249 @core
   Scenario: Remove a document from a general info page
     Given I am logged in as an author user
     And I create a document in the media library

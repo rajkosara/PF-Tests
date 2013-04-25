@@ -16,7 +16,7 @@ require './ext/capybara'
 
 
 #Added - Nick Morgalla - to support headless mode
-#require 'headless'
+require 'headless'
 
 #headless = Headless.new
 #headless.start

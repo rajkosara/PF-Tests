@@ -14,3 +14,21 @@ Then(/^the required fileds are displayed on the press release page$/) do
   @british_council.press_release.notes_to_editor.text.should == @press_release.notes_to_editor
   @british_council.press_release.about_the_british_council.text.should == @press_release.about_the_british_council
 end
+
+Then(/^the internal link is displayed on the press release page$/) do
+  step "the press release page is created"
+  @british_council.press_release.internal_link.text.should == @course.title
+end
+
+Then(/^the external link is displayed on the press release page$/) do
+  step "the press release page is created"
+  @british_council.press_release.external_link.text.should == @press_release.external_link_title
+  @british_council.press_release.external_link[:href].should == @press_release.external_link_link
+end
+
+Then(/^the promo is displayed on the press release page$/) do
+  step "the press release page is created"
+  @british_council.press_release.sidebar_text_promotions.last.title.text.should == @text_promotion.title
+  @british_council.press_release.sidebar_text_promotions.last.summary.text.should == @text_promotion.summary
+  @british_council.press_release.sidebar_text_promotions.last.destination[:href].should == @text_promotion.destination
+end

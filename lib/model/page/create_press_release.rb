@@ -10,9 +10,10 @@ class Model::Page::CreatePressRelease < SitePrism::Page
   element :about_the_british_council, "iframe#edit-field-pr-about-bc-und-0-value_ifr"
   element :save_button, "[value='Save']"
   element :error_message, ".error"
+  element :sidebar_promotion_tab, "#node_press_release_form_group_promos .fieldset-title"
 
   elements :internal_links, "input[id^='edit-field-generic-internal-link'][type=text]"
-  elements :promo, "input[id^='edit-field-generic-sidebar-promos'][type=text]"
+  elements :sidebar_promotion, "input[id*='edit-field-generic-sidebar-promos'].form-text"
 
   section :document_library, Model::Section::AddDocumentSection, "#node_press_release_form_group_document"
   section :meta_config, Model::Section::MetaConfig, ".vertical-tabs"

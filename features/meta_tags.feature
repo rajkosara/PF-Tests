@@ -30,4 +30,3 @@ Feature: Meta tags
       | manager   |
       | producer  |
 
-#add test for tags on home page

@@ -345,3 +345,63 @@ local_env_eg:
   manager_password: 'password'
   producer_username: 'test.producer'
   producer_password: 'password'
+test_env_eg:
+  <<: *execution_defaults
+  # site name
+  country_site: Egypt
+  #capybara settings
+  default_wait_time: 15
+  #urls
+  korea_site_root: http://eg.test.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://eg.test.solas.britishcouncil.net
+  thumbnail_image_location: /sites/default/files/styles/thumbnail/public
+  image_location: /sites/default/files
+  #user details
+  admin_username: 'test.admin'
+  admin_password: 'ZBjewW2zVR'
+  author_username: 'test.author'
+  author_password: 'ZBjewW2zVR'
+  manager_username: 'test.manager'
+  manager_password: 'ZBjewW2zVR'
+  producer_username: 'test.producer'
+  producer_password: 'ZBjewW2zVR'
+stage_env_eg:
+  <<: *execution_defaults
+  # site name
+  country_site: Egypt
+  #capybara settings
+  default_wait_time: 15
+  #urls
+  korea_site_root: http://training.stage.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://training.stage.solas.britishcouncil.net
+  thumbnail_image_location: /sites/default/files/styles/thumbnail/public
+  image_location: /sites/default/files
+  #user details
+  admin_username: 'test.admin'
+  admin_password: 'ZBjewW2zVR'
+  author_username: 'test.author'
+  author_password: 'ZBjewW2zVR'
+  manager_username: 'test.manager'
+  manager_password: 'ZBjewW2zVR'
+  producer_username: 'test.producer'
+  producer_password: 'ZBjewW2zVR'
+live_env_eg:
+  <<: *execution_defaults
+  # site name
+  country_site: Egypt
+  #capybara settings
+  default_wait_time: 15
+  #urls
+  korea_site_root: http://training.live.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://training.live.solas.britishcouncil.net
+  thumbnail_image_location: /sites/default/files/styles/thumbnail/public
+  image_location: /sites/default/files
+  #user details
+  admin_username: 'test.admin'
+  admin_password: 'Password_1'
+  author_username: 'test.author'
+  author_password: 'Password_1'
+  manager_username: 'test.manager'
+  manager_password: 'Password_1'
+  producer_username: 'test.producer'
+  producer_password: 'Password_1'

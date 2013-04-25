@@ -35,7 +35,7 @@ Feature: IELTS
     And I edit the ielts title on the create ielts page
     And the edited ielts title is displayed on the ielts page
 
-  @complete @solas_226 @core @translate @problematic
+  @complete @solas_226 @core @translate
   Scenario: Translate a ielts page
     Given I am logged in as an admin user
     And I create an ielts page

@@ -12,7 +12,7 @@ Feature: URL slug
     Examples:
       | user_type | content_type |
       | admin     | landing page |
-      #| producer  | general info |
+      | producer  | general info |
 
   @complete @solas_133 @core
   Scenario: Enter a custom url filename

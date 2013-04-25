@@ -37,7 +37,7 @@ Feature: Press release
     And I submit a press release page
     Then the required fileds are displayed on the press release page
 
-  @solas_1228 @core
+  @complete @solas_1228 @core
   Scenario: Create a press release with an internal link
     Given I am logged in as an admin user
     And I create a published course
@@ -45,12 +45,17 @@ Feature: Press release
     And I submit a press release page with an internal link
     Then the internal link is displayed on the press release page
 
+  @complete @solas_1228 @core
   Scenario: Create a press release with an external link
+    Given I am logged in as an producer user
+    When I navigate to the create press release page
+    And I submit a press release page with an external link
+    Then the external link is displayed on the press release page
 
+  @complete @solas_1228 @core
   Scenario: Create a press release with a promo (should be able to do)
-
-  Scenario: Create a press release in a menu (shouldt be able to do)
-
-  Scenario: Create a press release and add to a landing page
-
-  Scenario: Create a press release and tranlate
+    Given I am logged in as an producer user
+    And I create a text promotion
+    When I navigate to the create press release page
+    And I submit a press release page with an promo
+    Then the promo is displayed on the press release page

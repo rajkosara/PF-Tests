@@ -15,7 +15,7 @@ Feature: teaching Centre
       | manager   |
       | producer  |
 
-  @complete @solas_368 @core @problematic
+  @complete @solas_368 @core
   Scenario: Error message displayed when title field is not filled in
     Given I am logged in as an author user
     When I navigate to the create teaching centre page
