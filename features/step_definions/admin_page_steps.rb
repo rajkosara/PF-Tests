@@ -38,3 +38,26 @@ end
 When(/^I index the content$/) do
   @british_council.cron_jobs.load
 end
+
+Then(/^the (default|Korean|Arabic|Japanese|Greek) language is set correctly$/) do |lang|
+  if lang == "default"
+  @language
+  case Helpers::Config['country_site']
+  when 'Egypt'
+    @language = "Arabic"
+  when 'Japan'
+    @language = "Japanese"
+  when 'Korea'
+    @language = "Korean"
+  when 'Greece'
+    @language = "Greek"
+  end
+  @british_council.regional_language.default_language.text.should == @language
+  else
+    @british_council.regional_language.default_language.text.should == lang
+  end
+end
+
+Then(/^the (Korea|Egypt|Japan|Greece) country is set correctly$/) do |country|
+  @british_council.regional_settings.default_country.text.should == country
+end

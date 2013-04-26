@@ -77,6 +77,10 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
   when 'create contact us'
     @british_council.create_contact_us.load
     step 'I create a contact us object'
+  when 'regional language'
+    @british_council.regional_language.load
+  when 'regional settings'
+    @british_council.regional_settings.load
   when 'create webform'
     @british_council.create_webform.load
   else raise "Haven't mapped the '#{page_name}' page"

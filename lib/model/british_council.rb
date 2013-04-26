@@ -91,6 +91,10 @@ class Model::BritishCouncil
     Model::Page::Faq.new
   end
 
+  def regional_language
+    Model::Page::RegionalLanguage.new
+  end
+
   def press_release
     Model::Page::PressRelease.new
   end
@@ -157,6 +161,10 @@ class Model::BritishCouncil
 
   def document
     Model::Page::Document.new
+  end
+
+  def regional_settings
+    Model::Page::RegionalSettings.new
   end
   
   def home
