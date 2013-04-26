@@ -37,6 +37,7 @@ end
 Then(/^the two level are displayed on the course page$/) do
   step "the levels tab is displayed on the course page"
   @british_council.course.levels_tab.click
+  @british_council.course.level.title.first.click
   @british_council.course.level.title.first.text.should == @course.levels_title
   @british_council.course.level.description.first.text.should == @course.levels_description
   @british_council.course.level.title.last.click
@@ -50,6 +51,7 @@ end
 
 Then /^the course details are displayed correctly on mobile$/ do
   @british_council.mobile_course.title.text.should include @course.title
+  @british_council.mobile_course.about_course.click
   @british_council.mobile_course.about_course_body.text.should include @course.about_course_body
   @british_council.mobile_course.tab_two_title.click
   @british_council.mobile_course.tab_two_title.text.should include @course.tab_two_title
@@ -115,6 +117,7 @@ Then(/^the CTA with an image and with an internal link is displayed correctly on
 end
 
 Then(/^the CTA without an image and with an external link is displayed correctly on the course page on mobile$/) do
+  @british_council.mobile_course.about_course.click
   @british_council.mobile_course.about_cta.text.should == @course.cta.title
   @british_council.mobile_course.about_strapline.text.should == @course.cta.strapline
 
@@ -143,7 +146,9 @@ end
 Then(/^the timetable is displayed on the course page$/) do
   @british_council.course.timetable_tab.click
   @british_council.course.course_timetable_heading.text.should == @course.timetable_heading
-  @british_council.course.course_timetable.text.should include(@course.teaching_centre_name, "HEADER ONE", "Row one item three")
+  @british_council.course.course_timetable_heading.click
+  @british_council.course.course_timetable.first.click
+  @british_council.course.course_timetable.first.text.should include(@course.teaching_centre_name, "HEADER ONE", "Row one item three")
 end
 
 Then(/^the landing page is in the breadcrumbs on the course page$/) do

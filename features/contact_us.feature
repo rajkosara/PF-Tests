@@ -10,7 +10,7 @@ Feature: Contact us
     Then the contact us page is created
     And the all the fields are displayed correctly on the contact us page
 
-  @complete @solas_1138 @core @failing @solas_1349
+  @complete @solas_1138 @core @failing @solas_13497
   Scenario: Contact us block is displayed
     Given I am logged in as an admin user
     And I create a published teaching centre page

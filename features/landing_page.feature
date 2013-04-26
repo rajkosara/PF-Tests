@@ -41,7 +41,7 @@ Feature: Landing page
     When I navigate to the create landing page page
     Then the created landing pages menu is displayed in the menu list
 
-  @complete @solas_345 @core @failing
+  @complete @solas_345 @core
   Scenario: Editing a landing page body field as an manager
     Given I am logged in as an admin user
     And I create a published landing page

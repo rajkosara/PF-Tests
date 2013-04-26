@@ -1,6 +1,7 @@
 class Model::Page::MobileTeachingCentre < SitePrism::Page
   element :status, ".status"
   element :title, "#bc-page-title h1"
+  element :about, '#bc-tabs--1 .bc-tab-title'
   element :address, ".bc-teaching-centre-contact-details address"
   element :phone_number, ".bc-phone-number"
   element :fax_number, ".bc-fax"

@@ -58,6 +58,7 @@ Then(/^the document is not displayed on the general info page$/) do
 end
 
 Then(/^the show hide is displayed on the general info page$/) do
+  @british_council.general_info.show_hide_title.click
   @british_council.general_info.show_hide_title.text.should == @general_info.show_hide_title
   @british_council.general_info.show_hide_body.text.should == @general_info.show_hide_body
 end

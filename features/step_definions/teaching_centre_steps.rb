@@ -24,6 +24,7 @@ Then(/^the teaching centre page details are displayed correctly on mobile$/) do
   @british_council.mobile_teaching_centre.phone_number.text.should == @teaching_centre.telephone_number
   @british_council.mobile_teaching_centre.fax_number.text.should == @teaching_centre.fax_number
   @british_council.mobile_teaching_centre.email_address.text.should == @teaching_centre.email_address
+  @british_council.mobile_teaching_centre.about.click
   @british_council.mobile_teaching_centre.body.text.should == @teaching_centre.body
   @british_council.mobile_teaching_centre.calendar_tab.text.should == "Calendar"
   @british_council.mobile_teaching_centre.calendar_tab.click
