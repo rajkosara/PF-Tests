@@ -7,6 +7,10 @@ class Model::BritishCouncil
     Model::Page::CreateHomePageEndeavour.new
   end
 
+  def create_home_page_conqueror
+    Model::Page::CreateHomePageConqueror.new
+  end
+
   def administration
     Model::Page::Administration.new
   end

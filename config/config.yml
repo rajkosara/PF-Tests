@@ -393,7 +393,7 @@ live_env_eg:
   default_wait_time: 15
   #urls
   korea_site_root: http://eg.live.solas.britishcouncil.net/en
-  korea_site_root_without_en: http://training.live.solas.britishcouncil.net
+  korea_site_root_without_en: http://eg.live.solas.britishcouncil.net
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details

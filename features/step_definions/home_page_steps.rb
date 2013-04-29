@@ -23,8 +23,6 @@ Then /^the header doesnt displays the language switcher$/ do
 end
 
 Then(/^the legal info is displayed on the home page footer$/) do
-  #puts @british_council.home.footer
-  #puts @british_council.home.footer.legal_text
   @british_council.home.footer.legal_text.text.should include @legal_text
 end
 
@@ -68,9 +66,12 @@ Then(/^all the fields are displayed correctly on the home page$/) do
     box.href[:href].should == @image_promotion.destination
     box.should have_image
   end
-  @british_council.home.third_column_heading.text.should == "the 3rd col heading :)"
   @british_council.home.promo_box_with_links.each do |box|
-    box.title.text.should == @image_promotion.title.upcase
+    if Helpers::Config['country_site'] == ("Korea" || "Japan")
+      box.title.text.should include @image_promotion.title.upcase
+    else
+      box.title.text.should include @image_promotion.title
+    end
     box.href[:href].should == "http://www.google.co.uk/"
     box.should have_image
     box.links.each do |link|
@@ -80,13 +81,13 @@ Then(/^all the fields are displayed correctly on the home page$/) do
   end
 end
 
-When(/^I choose to edit the home page$/) do
+When(/^I choose to edit the endeavour home page$/) do
   @british_council.home.edit_button.click
   @british_council.create_home_page_endeavour.three_column_heading.set "the 3rd col heading :) New and edited"
   @british_council.create_home_page_endeavour.save_button.click
 end
 
-Then(/^the homepage is edited correctly$/) do
+Then(/^the endeavour homepage is edited correctly$/) do
   @british_council.home.third_column_heading.text.should == "the 3rd col heading :) New and edited"
 end
 

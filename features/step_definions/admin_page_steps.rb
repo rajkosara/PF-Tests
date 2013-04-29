@@ -51,6 +51,8 @@ Then(/^the (default|Korean|Arabic|Japanese|Greek) language is set correctly$/) d
     @language = "Korean"
   when 'Greece'
     @language = "Greek"
+  when 'Training'
+    @language = "Local"
   end
   @british_council.regional_language.default_language.text.should == @language
   else

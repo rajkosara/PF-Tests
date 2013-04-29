@@ -38,12 +38,22 @@ Feature: Home Page
     Then the footer is displayed on the home page
 
   @complete @solas_894 @korea @japan
-  Scenario: Create home page
+  Scenario: Create endeavour home page
     Given I am logged in as an admin user
     And I create a image in the media library
     And I create a image promotion
-    And I navigate to the create home page page
-    When I submit a home page
+    And I navigate to the create endeavour home page page
+    When I submit a endeavour home page
+    Then the homepage is created
+    And all the fields are displayed correctly on the home page
+
+  @complete @solas_894 @greece
+  Scenario: Create conqueror home page
+    Given I am logged in as an admin user
+    And I create a image in the media library
+    And I create a image promotion
+    And I navigate to the create conqueror home page page
+    When I submit a conqueror home page
     Then the homepage is created
     And all the fields are displayed correctly on the home page
 
@@ -52,11 +62,11 @@ Feature: Home Page
     Given I am logged in as an admin user
     And I create a image in the media library
     And I create a image promotion
-    And I navigate to the create home page page
-    When I submit a home page
+    And I navigate to the create endeavour home page page
+    When I submit a endeavour home page
     And the homepage is created
-    And I choose to edit the home page
-    Then the homepage is edited correctly
+    And I choose to edit the endeavour home page
+    Then the endeavour homepage is edited correctly
 
   @complete @solas_1145 @greece
   Scenario: Home page displays facebook wiget on greece
