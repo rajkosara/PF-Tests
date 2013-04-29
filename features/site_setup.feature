@@ -7,25 +7,25 @@ Feature: Site setup
     When I navigate to the regional language page
     Then the default language is set correctly
 
-  @complete @solas_1247 @core @korea
+  @complete @solas_1247 @korea
   Scenario: Current language is Korean
     Given I am logged in as an admin user
     When I navigate to the regional language page
     Then the Korean language is set correctly
 
-  @complete @solas_1247 @core @greece
+  @complete @solas_1247 @greece
   Scenario: Current language is greek
     Given I am logged in as an admin user
     When I navigate to the regional language page
     Then the Greek language is set correctly
 
-  @complete @solas_1247 @core @japan
+  @complete @solas_1247 @japan
   Scenario: Current language is japanese
     Given I am logged in as an admin user
     When I navigate to the regional language page
     Then the Japanese language is set correctly
 
-  @complete @solas_1247 @core @egypt
+  @complete @solas_1247 @egypt
   Scenario: Current language is Arabic
     Given I am logged in as an admin user
     When I navigate to the regional language page

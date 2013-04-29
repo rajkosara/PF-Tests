@@ -1,4 +1,4 @@
-class Model::Page::CreateHomePage < SitePrism::Page
+class Model::Page::CreateHomePageEndeavour < SitePrism::Page
   set_url "#{Helpers::Config['korea_site_root']}/node/add/homepage-endeavour"
   set_url_matcher /\/en\/node\/add\/homepage-endeavour/
 

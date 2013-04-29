@@ -82,8 +82,8 @@ end
 
 When(/^I choose to edit the home page$/) do
   @british_council.home.edit_button.click
-  @british_council.create_home_page.three_column_heading.set "the 3rd col heading :) New and edited"
-  @british_council.create_home_page.save_button.click
+  @british_council.create_home_page_endeavour.three_column_heading.set "the 3rd col heading :) New and edited"
+  @british_council.create_home_page_endeavour.save_button.click
 end
 
 Then(/^the homepage is edited correctly$/) do

@@ -3,8 +3,8 @@ class Model::BritishCouncil
     Model::Page::Login.new
   end
 
-  def create_home_page
-    Model::Page::CreateHomePage.new
+  def create_home_page_endeavour
+    Model::Page::CreateHomePageEndeavour.new
   end
 
   def administration
