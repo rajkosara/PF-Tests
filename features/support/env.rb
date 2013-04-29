@@ -34,7 +34,7 @@ require 'headless'
 #
 #After do |scenario|
 #  if scenario.failed?
-#    headless.video.stop_and_save("/usr/temp/movies/#{scenario.name.split.join("_")}.mov")
+#    headless.video.stop_and_save("/home/auto-test/movies/#{scenario.name.split.join("_")}.mov")
 #  else
 #    headless.video.stop_and_discard
 #  end

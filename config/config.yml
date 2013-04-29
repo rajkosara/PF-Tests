@@ -324,7 +324,6 @@ live_env_training:
   manager_password: 'Password_1'
   producer_username: 'test.producer'
   producer_password: 'Password_1'
-#korea config
 local_env_eg:
   <<: *execution_defaults
   # site name
@@ -394,6 +393,166 @@ live_env_eg:
   #urls
   korea_site_root: http://eg.live.solas.britishcouncil.net/en
   korea_site_root_without_en: http://eg.live.solas.britishcouncil.net
+  thumbnail_image_location: /sites/default/files/styles/thumbnail/public
+  image_location: /sites/default/files
+  #user details
+  admin_username: 'test.admin'
+  admin_password: 'Password_1'
+  author_username: 'test.author'
+  author_password: 'Password_1'
+  manager_username: 'test.manager'
+  manager_password: 'Password_1'
+  producer_username: 'test.producer'
+  producer_password: 'Password_1'
+local_env_pl:
+  <<: *execution_defaults
+  # site name
+  country_site: Poland
+  #capybara settings
+  default_wait_time: 5
+  #urls
+  korea_site_root: http://pl.local.solas.britishcouncil.net:8080/en
+  korea_site_root_without_en: http://pl.local.solas.britishcouncil.net:8080
+  thumbnail_image_location: /sites/default/files/styles/thumbnail/public
+  image_location: /sites/default/files
+  #user details
+  admin_username: 'test.admin'
+  admin_password: 'password'
+  author_username: 'test.author'
+  author_password: 'password'
+  manager_username: 'test.manager'
+  manager_password: 'password'
+  producer_username: 'test.producer'
+  producer_password: 'password'
+test_env_pl:
+  <<: *execution_defaults
+  # site name
+  country_site: Poland
+  #capybara settings
+  default_wait_time: 15
+  #urls
+  korea_site_root: http://pl.test.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://pl.test.solas.britishcouncil.net
+  thumbnail_image_location: /sites/default/files/styles/thumbnail/public
+  image_location: /sites/default/files
+  #user details
+  admin_username: 'test.admin'
+  admin_password: 'ZBjewW2zVR'
+  author_username: 'test.author'
+  author_password: 'ZBjewW2zVR'
+  manager_username: 'test.manager'
+  manager_password: 'ZBjewW2zVR'
+  producer_username: 'test.producer'
+  producer_password: 'ZBjewW2zVR'
+stage_env_pl:
+  <<: *execution_defaults
+  # site name
+  country_site: Poland
+  #capybara settings
+  default_wait_time: 15
+  #urls
+  korea_site_root: http://pl.stage.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://pl.stage.solas.britishcouncil.net
+  thumbnail_image_location: /sites/default/files/styles/thumbnail/public
+  image_location: /sites/default/files
+  #user details
+  admin_username: 'test.admin'
+  admin_password: 'ZBjewW2zVR'
+  author_username: 'test.author'
+  author_password: 'ZBjewW2zVR'
+  manager_username: 'test.manager'
+  manager_password: 'ZBjewW2zVR'
+  producer_username: 'test.producer'
+  producer_password: 'ZBjewW2zVR'
+live_env_pl:
+  <<: *execution_defaults
+  # site name
+  country_site: Poland
+  #capybara settings
+  default_wait_time: 15
+  #urls
+  korea_site_root: http://pl.live.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://pl.live.solas.britishcouncil.net
+  thumbnail_image_location: /sites/default/files/styles/thumbnail/public
+  image_location: /sites/default/files
+  #user details
+  admin_username: 'test.admin'
+  admin_password: 'Password_1'
+  author_username: 'test.author'
+  author_password: 'Password_1'
+  manager_username: 'test.manager'
+  manager_password: 'Password_1'
+  producer_username: 'test.producer'
+  producer_password: 'Password_1'
+local_env_th:
+  <<: *execution_defaults
+  # site name
+  country_site: Thailand
+  #capybara settings
+  default_wait_time: 5
+  #urls
+  korea_site_root: http://th.local.solas.britishcouncil.net:8080/en
+  korea_site_root_without_en: http://th.local.solas.britishcouncil.net:8080
+  thumbnail_image_location: /sites/default/files/styles/thumbnail/public
+  image_location: /sites/default/files
+  #user details
+  admin_username: 'test.admin'
+  admin_password: 'password'
+  author_username: 'test.author'
+  author_password: 'password'
+  manager_username: 'test.manager'
+  manager_password: 'password'
+  producer_username: 'test.producer'
+  producer_password: 'password'
+test_env_th:
+  <<: *execution_defaults
+  # site name
+  country_site: Thailand
+  #capybara settings
+  default_wait_time: 15
+  #urls
+  korea_site_root: http://th.test.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://th.test.solas.britishcouncil.net
+  thumbnail_image_location: /sites/default/files/styles/thumbnail/public
+  image_location: /sites/default/files
+  #user details
+  admin_username: 'test.admin'
+  admin_password: 'ZBjewW2zVR'
+  author_username: 'test.author'
+  author_password: 'ZBjewW2zVR'
+  manager_username: 'test.manager'
+  manager_password: 'ZBjewW2zVR'
+  producer_username: 'test.producer'
+  producer_password: 'ZBjewW2zVR'
+stage_env_th:
+  <<: *execution_defaults
+  # site name
+  country_site: Thailand
+  #capybara settings
+  default_wait_time: 15
+  #urls
+  korea_site_root: http://th.stage.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://th.stage.solas.britishcouncil.net
+  thumbnail_image_location: /sites/default/files/styles/thumbnail/public
+  image_location: /sites/default/files
+  #user details
+  admin_username: 'test.admin'
+  admin_password: 'ZBjewW2zVR'
+  author_username: 'test.author'
+  author_password: 'ZBjewW2zVR'
+  manager_username: 'test.manager'
+  manager_password: 'ZBjewW2zVR'
+  producer_username: 'test.producer'
+  producer_password: 'ZBjewW2zVR'
+live_env_th:
+  <<: *execution_defaults
+  # site name
+  country_site: Thailand
+  #capybara settings
+  default_wait_time: 15
+  #urls
+  korea_site_root: http://th.live.solas.britishcouncil.net/en
+  korea_site_root_without_en: http://pl.live.solas.britishcouncil.net
   thumbnail_image_location: /sites/default/files/styles/thumbnail/public
   image_location: /sites/default/files
   #user details
