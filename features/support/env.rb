@@ -18,27 +18,29 @@ require './ext/capybara'
 #Added - Nick Morgalla - to support headless mode
 require 'headless'
 
-#headless = Headless.new
-#headless.start
-#
-#Note - if parallel mode is used, this code will need to be removed
-#at_exit do
-#  headless.destroy
-#end
+if ENV['$HOME'] == "/home/auto-test"
+  headless = Headless.new
+  headless.start
+  #
+  #Note - if parallel mode is used, this code will need to be removed
+  at_exit do
+    headless.destroy
+  end
 
-#Video capture for headless mode
+  #Video capture for headless mode
 
-#Before do
-#  headless.video.start_capture
-#end
-#
-#After do |scenario|
-#  if scenario.failed?
-#    headless.video.stop_and_save("/home/auto-test/movies/#{scenario.name.split.join("_")}.mov")
-#  else
-#    headless.video.stop_and_discard
-#  end
-#end
+  Before do
+    headless.video.start_capture
+  end
+  #
+  After do |scenario|
+    if scenario.failed?
+      headless.video.stop_and_save("/home/auto-test/movies/#{scenario.name.split.join("_")}.mov")
+    else
+      headless.video.stop_and_discard
+    end
+  end
+end
 
 #End of Headless code
 
