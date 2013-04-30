@@ -39,7 +39,7 @@ When(/^I index the content$/) do
   @british_council.cron_jobs.load
 end
 
-Then(/^the (default|Korean|Arabic|Japanese|Greek) language is set correctly$/) do |lang|
+Then(/^the (default|Korean|Arabic|Japanese|Greek|Poland|Thailand) language is set correctly$/) do |lang|
   if lang == "default"
   @language
   case Helpers::Config['country_site']
@@ -53,6 +53,10 @@ Then(/^the (default|Korean|Arabic|Japanese|Greek) language is set correctly$/) d
     @language = "Greek"
   when 'Training'
     @language = "Local"
+  when 'Poland'
+    @language = "Polish"
+  when 'Thailand'
+    @language = "Thai"
   end
   @british_council.regional_language.default_language.text.should == @language
   else
