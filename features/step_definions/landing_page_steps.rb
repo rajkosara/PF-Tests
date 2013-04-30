@@ -68,7 +68,7 @@ end
 Then /^the teaching centre page and landing page are displayed in the correct order$/ do
   Timeout.timeout(30) { sleep(0.1) until @british_council.landing_page.title.visible?}
   @british_council.landing_page.first_child_title.text.should ==   @landing_page.title
-  @british_council.landing_page.teaching_centre.text.should ==  @teaching_centre.title.upcase
+  @british_council.landing_page.teaching_centre.text.should ==  @teaching_centre.title
   @british_council.landing_page.child_summary.text.should == @landing_page.summary
 end
 
@@ -78,7 +78,7 @@ end
 
 When(/^the image promotion is displayed on the landing page$/) do
   @british_council.landing_page.promotion.last.should have_promo_image
-  @british_council.landing_page.promotion.last.strapline.text.should == @image_promotion.title.upcase
+  @british_council.landing_page.promotion.last.strapline.text.should == @image_promotion.title
   @british_council.landing_page.promotion.last.cta_title.text.should == @image_promotion.button_text
   @british_council.landing_page.promotion.last.cta_title[:href].should == @image_promotion.destination
 end

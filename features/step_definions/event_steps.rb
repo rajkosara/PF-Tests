@@ -15,7 +15,7 @@ end
 Then(/^the event fields and displayed correctly$/) do
   step "the event page is created"
   @british_council.event.title.text.should == @event.title
-  @british_council.event.event_date.text.should include @event.venue.upcase
+  @british_council.event.event_date.text.should include @event.venue
   @british_council.event.description.text.should include @event.event_description
   @british_council.event.address_one.text.should == @event.address_one
   @british_council.event.address_two.text.should == @event.address_two

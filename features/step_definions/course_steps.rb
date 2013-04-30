@@ -65,10 +65,10 @@ end
 
 Then(/^the CTA without an image and with an external link is displayed correctly on the course page$/) do
   @british_council.course.about_cta.text.should == @course.cta.title
-  @british_council.course.about_strapline.text.should == @course.cta.strapline.upcase
+  @british_council.course.about_strapline.text.should == @course.cta.strapline
 
   @british_council.course.cta_box.last.title_link.text == @course.cta.title
-  @british_council.course.cta_box.last.text.should include @course.cta.header.upcase
+  @british_council.course.cta_box.last.header.text.should include @course.cta.header
   @british_council.course.cta_box.last.supporting_text.text == @course.cta.supporting_text
 
   @number_of_ctas = @british_council.course.cta_box.collect do |thing|
@@ -91,10 +91,10 @@ end
 
 Then(/^the CTA with an image and with an internal link is displayed correctly on the course page$/) do
   @british_council.course.about_cta.text.should == @course.cta.title
-  @british_council.course.about_strapline.text.should == @course.cta.strapline.upcase
+  @british_council.course.about_strapline.text.should == @course.cta.strapline
 
   @british_council.course.cta_box.last.title_link.text == @course.cta.title
-  @british_council.course.cta_box.last.text.should include @course.cta.header.upcase
+  @british_council.course.cta_box.last.header.text.should include @course.cta.header
   @british_council.course.cta_box.last.supporting_text.text == @course.cta.supporting_text
 
   @number_of_ctas = @british_council.course.cta_box.collect do |thing|
@@ -122,7 +122,7 @@ Then(/^the CTA without an image and with an external link is displayed correctly
   @british_council.mobile_course.about_strapline.text.should == @course.cta.strapline
 
   @british_council.mobile_course.cta_box.last.title_link.text == @course.cta.title
-  @british_council.mobile_course.cta_box.last.text.should include @course.cta.header.upcase
+  @british_council.mobile_course.cta_box.last.header.text.should include @course.cta.header
   @british_council.mobile_course.cta_box.last.supporting_text.text == @course.cta.supporting_text
 
   @number_of_ctas = @british_council.mobile_course.cta_box.collect do |thing|
@@ -148,7 +148,7 @@ Then(/^the timetable is displayed on the course page$/) do
   @british_council.course.course_timetable_heading.text.should == @course.timetable_heading
   @british_council.course.course_timetable_heading.click
   @british_council.course.course_timetable.first.click
-  @british_council.course.course_timetable.first.text.should include(@course.teaching_centre_name, "HEADER ONE", "Row one item three")
+  @british_council.course.course_timetable.first.text.should include(@course.teaching_centre_name)
 end
 
 Then(/^the landing page is in the breadcrumbs on the course page$/) do

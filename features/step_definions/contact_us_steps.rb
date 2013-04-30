@@ -37,7 +37,7 @@ Then(/^the all the fields are displayed correctly on the contact us page$/) do
   #puts @british_council.contact_us.strapline.text #.should == @contact_us.strapline
   @british_council.contact_us.contact_us_button.text.should == @contact_us.enquiry_button_title
   @british_council.contact_us.contact_us_button[:href].should == @contact_us.enquiry_button_url
-  @british_council.contact_us.teaching_centre_title.first.text.should == @teaching_centre.title.upcase
+  @british_council.contact_us.teaching_centre_title.first.text.should == @teaching_centre.title
 
   @created_teaching_centre = @british_council.contact_us.teaching_centre_details.find  { |thing| thing.address.text.include?  @teaching_centre.address_one }
   @created_teaching_centre.address.text.should include(@teaching_centre.address_one,@teaching_centre.address_two, @teaching_centre.post_code, @teaching_centre.city, @teaching_centre.state)

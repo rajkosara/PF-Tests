@@ -12,7 +12,7 @@ Then(/^the teaching centre page details are displayed correctly$/) do
   @british_council.teaching_centre.body.text.should == @teaching_centre.body
   @british_council.teaching_centre.calendar_tab.text.should == "Calendar"
   @british_council.teaching_centre.calendar_tab.click
-  @british_council.teaching_centre.calendar_body.text.should include @teaching_centre.calendar_body.upcase
+  @british_council.teaching_centre.calendar_body.text.should include @teaching_centre.calendar_body
   @british_council.teaching_centre.facilities_tab.click
   @british_council.teaching_centre.facilities_body.text.should include @teaching_centre.facilities_body
 end
@@ -28,10 +28,10 @@ Then(/^the teaching centre page details are displayed correctly on mobile$/) do
   @british_council.mobile_teaching_centre.body.text.should == @teaching_centre.body
   @british_council.mobile_teaching_centre.calendar_tab.text.should == "Calendar"
   @british_council.mobile_teaching_centre.calendar_tab.click
-  @british_council.mobile_teaching_centre.calendar_body.text.should include @teaching_centre.calendar_body.upcase
+  @british_council.mobile_teaching_centre.calendar_body.text.should include @teaching_centre.calendar_body
   @british_council.mobile_teaching_centre.contact_and_location_tab.text.should == "Contact and location"
   @british_council.mobile_teaching_centre.contact_and_location_tab.click
-  @british_council.mobile_teaching_centre.contact_and_location_body.text.should include @teaching_centre.contact_location_body.upcase
+  @british_council.mobile_teaching_centre.contact_and_location_body.text.should include @teaching_centre.contact_location_body
   @british_council.mobile_teaching_centre.facilities_tab.click
   @british_council.mobile_teaching_centre.facilities_body.text.should == @teaching_centre.facilities_body
 end
@@ -56,17 +56,17 @@ end
 
 Then(/^the opening hours are displayed on the teaching centre page$/) do
   @british_council.teaching_centre.contact_and_location_tab.click
-  @british_council.teaching_centre.contact_and_location_body.telephone_enquiries.text.should include("REGULAR OPENING HOURS", "10:00-17:00")
-  @british_council.teaching_centre.contact_and_location_body.visitor_opening_hours.text.should include("Non-teaching weeks".upcase, "08:30-20:30")
+  @british_council.teaching_centre.contact_and_location_body.telephone_enquiries.text.should include("10:00-17:00")
+  @british_council.teaching_centre.contact_and_location_body.visitor_opening_hours.text.should include("Non-teaching weeks", "08:30-20:30")
   @british_council.teaching_centre.contact_and_location_body.text.should include "22 Jan (Sun) - 24 Jan (Tue) Lunar New Year"
-  @british_council.teaching_centre.contact_and_location_body.text.should include "Telephone enquiries opening hours".upcase
-  @british_council.teaching_centre.contact_and_location_body.text.should include "Visitor opening hours".upcase
+  @british_council.teaching_centre.contact_and_location_body.text.should include "Telephone enquiries opening hours"
+  @british_council.teaching_centre.contact_and_location_body.text.should include "Visitor opening hours"
 end
 
 Then(/^the course timetable and terms times are displayed$/) do
   @british_council.teaching_centre.calendar_tab.click
-  @british_council.teaching_centre.calendar_body.text.should include("Course timetable".upcase)
-  @british_council.teaching_centre.calendar_body.text.should include("Course dates".upcase, "Price".upcase, "Term dates".upcase)
+  @british_council.teaching_centre.calendar_body.text.should include("Course timetable")
+  @british_council.teaching_centre.calendar_body.text.should include("Course dates", "Price", "Term dates")
 end
 
 Then(/^the image is displayed on the about tab on the teaching centre page$/) do
@@ -80,8 +80,8 @@ end
 
 Then(/^the associated course is displayed on the teaching centre$/) do
   @british_council.teaching_centre.course.listing_title.text.should == "English courses we offer at this centre that are very boring, but not as boring as other courses that other companies offer"
-  @british_council.teaching_centre.course.first_course_title.text.should == "This is for the big people".upcase
-  @british_council.teaching_centre.course.second_course_title.text.should  == "This is for the small people and only the small people".upcase
+  @british_council.teaching_centre.course.first_course_title.text.should == "This is for the big people"
+  @british_council.teaching_centre.course.second_course_title.text.should  == "This is for the small people and only the small people"
   @british_council.teaching_centre.course.courses.each do |course_titles|
     course_titles.text.should == @course.title
   end
@@ -110,9 +110,9 @@ end
 Then(/^the teaching is displayed on the teaching centre page$/) do
   @british_council.teaching_centre_listing_page.should be_displayed
   @created_teaching_centre = @british_council.teaching_centre_listing_page.teaching_centre_details.find do |thing|
-    thing.name.text == @teaching_centre.title.upcase
+    thing.name.text == @teaching_centre.title
   end
-  @created_teaching_centre.name.text.should == @teaching_centre.title.upcase
+  @created_teaching_centre.name.text.should == @teaching_centre.title
   @created_teaching_centre.address.text.should include(@teaching_centre.address_one,@teaching_centre.address_two, @teaching_centre.post_code, @teaching_centre.city, @teaching_centre.state)
   @created_teaching_centre.phone_number.text.should == @teaching_centre.telephone_number
   @created_teaching_centre.fax_number.text == @teaching_centre.fax_number

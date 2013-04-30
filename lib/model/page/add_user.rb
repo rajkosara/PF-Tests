@@ -9,7 +9,7 @@ class Model::Page::AddUser < SitePrism::Page
   element :create_new_user_button, "#edit-submit"
   element :status_message, ".status"
   element :error_message, ".messages .element-invisible"
-  element :user_link, ".messages em.placeholder"
+  element :user_link, ".status em.placeholder"
   element :unahorized_message, "#block-system-main"
   
   elements :user_status, "#edit-status .form-type-radio label"

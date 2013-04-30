@@ -469,7 +469,7 @@ live_env_pl:
   # site name
   country_site: Poland
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 30
   #urls
   korea_site_root: http://pl.live.solas.britishcouncil.net/en
   korea_site_root_without_en: http://pl.live.solas.britishcouncil.net
@@ -549,7 +549,7 @@ live_env_th:
   # site name
   country_site: Thailand
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 30
   #urls
   korea_site_root: http://th.live.solas.britishcouncil.net/en
   korea_site_root_without_en: http://pl.live.solas.britishcouncil.net

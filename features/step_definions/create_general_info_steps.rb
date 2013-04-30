@@ -270,5 +270,5 @@ Then(/^the meta tags menu is displayed on the general info page$/) do
     thing.text.include? "Meta tags"
   end
   @meta.click
-  @british_council.create_general_info.meta_config.meta_tags.should have_title
+  @british_council.create_general_info.meta_config.meta_tags.has_title?
 end

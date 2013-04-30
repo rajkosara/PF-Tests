@@ -46,25 +46,25 @@ Then(/^the cta is displayed correctly on the ielts page$/) do
 
   #first tab
   @british_council.ielts.cta_with_image.first.cta_title.text.should == @ielts.cta.title  
-  @british_council.ielts.cta_with_image.first.strapline.text.should include @ielts.cta.strapline.upcase
+  @british_council.ielts.cta_with_image.first.strapline.text.should include @ielts.cta.strapline
 
   #second tab
   @british_council.ielts.tab_two_title.click
   @british_council.ielts.cta_with_image[1].cta_title.text.should == @ielts.cta.title
-  @british_council.ielts.cta_with_image[1].strapline.text.should include @ielts.cta.strapline.upcase
+  @british_council.ielts.cta_with_image[1].strapline.text.should include @ielts.cta.strapline
 
   #third tab
   @british_council.ielts.tab_three_title.click
   @british_council.ielts.cta_with_image[2].cta_title.text.should == @ielts.cta.title
-  @british_council.ielts.cta_with_image[2].strapline.text.should include @ielts.cta.strapline.upcase
+  @british_council.ielts.cta_with_image[2].strapline.text.should include @ielts.cta.strapline
 
   #fourth tab
   @british_council.ielts.tab_four_title.click
   @british_council.ielts.cta_with_image[3].cta_title.text.should == @ielts.cta.title
-  @british_council.ielts.cta_with_image[3].strapline.text.should include @ielts.cta.strapline.upcase
+  @british_council.ielts.cta_with_image[3].strapline.text.should include @ielts.cta.strapline
 
   @british_council.ielts.cta_box.title_link.text == @ielts.cta.title
-  @british_council.ielts.cta_box.text.should include @ielts.cta.header.upcase
+  @british_council.ielts.cta_box.header.text.should include @ielts.cta.header
   @british_council.ielts.cta_box.supporting_text.text == @ielts.cta.supporting_text
   
   @british_council.ielts.cta_box.title_link[:href] == @ielts.cta.url

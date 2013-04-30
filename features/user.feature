@@ -57,7 +57,6 @@ Feature: user
       | manager   |
       | producer  |
 
-
   @complete @solas_208 @core
   Scenario: Block a user
     Given I am logged in as an admin user
