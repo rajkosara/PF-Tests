@@ -15,6 +15,10 @@ jenkins_complete_passing_greece: -q -f pretty -t @complete -t @greece -t ~@not_i
 jenkins_complete_passing_korea: -q -f pretty -t @complete -t @korea -t ~@not_implemented -t ~@failing -t ~@problematic -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
 jenkins_complete_passing_japan: -q -f pretty -t @complete -t @japan -t ~@not_implemented -t ~@failing -t ~@problematic -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
 jenkins_complete_passing_egypt: -q -f pretty -t @complete -t @egypt -t ~@not_implemented -t ~@failing -t ~@problematic -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+jenkins_complete_passing_poland: -q -f pretty -t @complete -t @poland -t ~@not_implemented -t ~@failing -t ~@problematic -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+jenkins_complete_passing_thailand: -q -f pretty -t @complete -t @thailand -t ~@not_implemented -t ~@failing -t ~@problematic -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+
+
 
 # these are the complete failing tests for each country and core
 jenkins_complete_failing: -q -f pretty -t @complete -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
@@ -23,6 +27,10 @@ jenkins_complete_failing_greece: -q -f pretty -t @complete -t @greece -t @failin
 jenkins_complete_failing_korea: -q -f pretty -t @complete -t @korea -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
 jenkins_complete_failing_japan: -q -f pretty -t @complete -t @japan -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
 jenkins_complete_failing_egypt: -q -f pretty -t @complete -t @egypt -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+jenkins_complete_failing_poland: -q -f pretty -t @complete -t @poland -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+jenkins_complete_failing_thailand: -q -f pretty -t @complete -t @thialand -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+
+
 
 #this is the smoke test run
 jenkins_smoke: -q -f pretty -t @smoke -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
