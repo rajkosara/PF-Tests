@@ -29,17 +29,17 @@ if ENV['$HOME'] == "/home/auto-test"
 
   #Video capture for headless mode
 
-  Before do
-    headless.video.start_capture
-  end
+  #Before do
+  #  headless.video.start_capture
+  #end
   #
-  After do |scenario|
-    if scenario.failed?
-      headless.video.stop_and_save("/home/auto-test/movies/#{scenario.name.split.join("_")}.mov")
-    else
-      headless.video.stop_and_discard
-    end
-  end
+  #After do |scenario|
+  #  if scenario.failed?
+  #    headless.video.stop_and_save("/home/auto-test/movies/#{scenario.name.split.join("_")}.mov")
+  #  else
+  #    headless.video.stop_and_discard
+  #  end
+  #end
 end
 
 #End of Headless code
