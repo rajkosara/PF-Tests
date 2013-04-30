@@ -28,7 +28,7 @@ Feature: add image to the media library
       | jpg        | author    |
       | jpeg       | manager   |
 
-  @complete @solas_259 @core
+  @complete @solas_259 @core @smoke_live
   Scenario: Add invalid image type
     Given I am logged in as an author user
     And I navigate to the add image page
@@ -42,7 +42,7 @@ Feature: add image to the media library
     When I add an invaild sized image to the media library
     Then an image size error is displayed on the add image page
 
-  @complete @solas_259 @core
+  @complete @solas_259 @core @smoke_live
   Scenario: Add image without a title
     Given I am logged in as an author user
     And I navigate to the add image page

@@ -39,32 +39,36 @@ When(/^I index the content$/) do
   @british_council.cron_jobs.load
 end
 
-Then(/^the (default|Korean|Arabic|Japanese|Greek|Poland|Thailand) language is set correctly$/) do |lang|
-  if lang == "default"
-  @language
-  case Helpers::Config['country_site']
-  when 'Egypt'
-    @language = "Arabic"
-  when 'Japan'
-    @language = "Japanese"
-  when 'Korea'
-    @language = "Korean"
-  when 'Greece'
-    @language = "Greek"
-  when 'Training'
-    @language = "Local"
-  when 'Poland'
-    @language = "Polish"
-  when 'Thailand'
-    @language = "Thai"
-  end
-  @british_council.regional_language.default_language.text.should == @language
-  else
-    puts "You need to add the language!!!!"
-    #@british_council.regional_language.default_language.text.should == lang
+Then(/^the (default|Korean|Arabic|Japanese|Greek|Polish|Thai) language is set correctly$/) do |lang|
+  case lang
+  when "default"
+    @language
+    case Helpers::Config['country_site']
+    when 'Egypt'
+      @language = "Arabic"
+    when 'Japan'
+      @language = "Japanese"
+    when 'Korea'
+      @language = "Korean"
+    when 'Greece'
+      @language = "Greek"
+    when 'Training'
+      @language = "Local"
+    when 'Poland'
+      @language = "Polish"
+    when 'Thailand'
+      @language = "Thai"
+    end
+    @british_council.regional_language.default_language.text.should == @language
+  when 'nil'
+    @british_council.regional_language.default_language.text.should == lang
   end
 end
 
-Then(/^the (Korea|Egypt|Japan|Greece) country is set correctly$/) do |country|
+Then(/^the (Korea|Egypt|Japan|Greece|Poland|Thailand|default) country is set correctly$/) do |country|
+  if country == "default"
+    @british_council.regional_settings.default_country.text.should == Helpers::Config['country_site']
+  else
   @british_council.regional_settings.default_country.text.should == country
+  end
 end

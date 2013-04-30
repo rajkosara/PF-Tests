@@ -22,7 +22,7 @@ Feature: Course
     And I submit a course page without a course title
     Then a "Title field is required" error message is displayed on the create course page
 
-  @complete @solas_593 @core
+  @complete @solas_593 @core @smoke_live
   Scenario: Error message displayed when body field is not filled in
     Given I am logged in as an manager user
     When I navigate to the create course page

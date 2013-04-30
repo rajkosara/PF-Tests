@@ -1,7 +1,7 @@
 @login
 Feature: Login
 
-  @complete @solas_204 @core @smoke
+  @complete @solas_204 @core @smoke @smoke_live
   Scenario Outline: User logs in successfully
     Given I navigate to the login page
     When I enter the <user_type> user username
@@ -25,7 +25,7 @@ Feature: Login
     And I click on login
     Then the unrecognized username or password error message is displayed
 
-  @complete @solas_204 @core @smoke
+  @complete @solas_204 @core @smoke @smoke_live
   Scenario: User logs in with invalid password unsuccessfully
     Given I navigate to the login page
     When I enter the admin user username

@@ -7,6 +7,7 @@ custom: -f pretty <%= ENV["TAGS"] %>
 specific: -f pretty --tags <%= ENV['TAGS'] %>
 smoke: -f pretty --tags @smoke
 feature: -f pretty -t @complete -t ~@failing  -t <%= ENV['TAG'] %>
+smoke_live: -f pretty --tags @smoke_live
 
 #these are the complete passing test for each country and core
 jenkins_complete_passing: -q -f pretty -t @complete -t ~@not_implemented -t ~@failing -t ~@problematic -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
@@ -18,8 +19,6 @@ jenkins_complete_passing_egypt: -q -f pretty -t @complete -t @egypt -t ~@not_imp
 jenkins_complete_passing_poland: -q -f pretty -t @complete -t @poland -t ~@not_implemented -t ~@failing -t ~@problematic -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
 jenkins_complete_passing_thailand: -q -f pretty -t @complete -t @thailand -t ~@not_implemented -t ~@failing -t ~@problematic -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
 
-
-
 # these are the complete failing tests for each country and core
 jenkins_complete_failing: -q -f pretty -t @complete -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
 jenkins_complete_failing_core: -q -f pretty -t @complete -t @core -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
@@ -30,7 +29,6 @@ jenkins_complete_failing_egypt: -q -f pretty -t @complete -t @egypt -t @failing 
 jenkins_complete_failing_poland: -q -f pretty -t @complete -t @poland -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
 jenkins_complete_failing_thailand: -q -f pretty -t @complete -t @thialand -t @failing -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
 
-
-
 #this is the smoke test run
 jenkins_smoke: -q -f pretty -t @smoke -f junit -o <%= ENV['JUNIT_OUTPUT'] %>
+jenkins_smoke_live: -q -f pretty -t @smoke_live -f junit -o <%= ENV['JUNIT_OUTPUT'] %>

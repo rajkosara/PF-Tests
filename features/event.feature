@@ -35,7 +35,7 @@ Feature: Event
     And I submit a published event page
     Then the event page is created
 
-  @complete @solas_144 @core
+  @complete @solas_144 @core @smoke_live
   Scenario: Error message displayed when title field is not filled in
     Given I am logged in as an author user
     When I navigate to the create event page

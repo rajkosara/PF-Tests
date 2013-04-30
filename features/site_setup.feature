@@ -1,7 +1,7 @@
 @site_setup
 Feature: Site setup
 
-  @complete @solas_1247 @core @smoke
+  @complete @solas_1247 @core @smoke @smoke_live
   Scenario: Current language is correct
     Given I am logged in as an admin user
     When I navigate to the regional language page
@@ -31,6 +31,12 @@ Feature: Site setup
     When I navigate to the regional language page
     Then the Arabic language is set correctly
 
+  @complete @solas_1247 @poland
+  Scenario: Current language is Polish
+    Given I am logged in as an admin user
+    When I navigate to the regional language page
+    Then the Polish language is set correctly
+
   @complete @solas_1247 @greece @failing
   Scenario: Current country is Greece
     Given I am logged in as an admin user
@@ -54,3 +60,21 @@ Feature: Site setup
     Given I am logged in as an admin user
     When I navigate to the regional settings page
     Then the Korea country is set correctly
+
+  @complete @solas_1247 @poland
+  Scenario: Current country is Egypt
+    Given I am logged in as an admin user
+    When I navigate to the regional settings page
+    Then the Poland country is set correctly
+
+  @complete @solas_1247 @thailand
+  Scenario: Current country is Egypt
+    Given I am logged in as an admin user
+    When I navigate to the regional settings page
+    Then the Thailand country is set correctly
+
+  @complete @solas_1247 @core @failing @smoke_live
+  Scenario: Current country is set to the corret default
+    Given I am logged in as an admin user
+    When I navigate to the regional settings page
+    Then the default country is set correctly
