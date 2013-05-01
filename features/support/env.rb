@@ -18,8 +18,9 @@ require './ext/capybara'
 #Added - Nick Morgalla - to support headless mode
 require 'headless'
 
-if ENV['$HOME'] == "/home/auto-test"
-  headless = Headless.new
+if ENV['AUTOMATION_HOME'] != nil
+puts "im headless"
+headless = Headless.new
   headless.start
   #
   #Note - if parallel mode is used, this code will need to be removed
@@ -40,9 +41,9 @@ if ENV['$HOME'] == "/home/auto-test"
   #    headless.video.stop_and_discard
   #  end
   #end
+else
+puts "not headless"
 end
-
-#End of Headless code
 
 
 #Set the timezone to be London time
