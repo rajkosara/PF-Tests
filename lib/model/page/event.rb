@@ -10,10 +10,8 @@ class Model::Page::Event < SitePrism::Page
   element :postcode, ".bc-location .addressfield-container-inline .postal-code"
   element :country, ".bc-location .country"
   element :map, ".bc-location div[id*='geolocation-googlemaps']"
-  element :partner_header, ".bc-logos h2"
-  element :partner_image, ".bc-logos img"
   element :translate_button, ".tabs a[href*='translate']"
 
-
+  section :partner, Model::Section::Partner, ".bc-logos"
   section :cta_box, Model::Section::CtaBox, ".bc-hlight-box"
 end

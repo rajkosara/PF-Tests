@@ -26,9 +26,11 @@ end
 
 When(/^the partner is displayed correctly on the event page$/) do
   step "the event page is created"
-  @british_council.event.partner_header.text.should == @partner.header
-  @british_council.event.should have_partner_image
+  @british_council.event.partner.header.text.should == @partner.header
+  @british_council.event.partner.should have_image
+  @british_council.event.partner.href[:href].should == @partner.link
 end
+
 When(/^I choose to the translate an event page$/) do
   @british_council.event.translate_button.click
 end

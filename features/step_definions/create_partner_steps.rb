@@ -5,6 +5,7 @@ Given(/^I create a partner$/) do
   @british_council.create_partner.summary.native.send_keys @partner.summary
   @british_council.create_partner.image_library.select_checkboxes.first.click
   wait_for_ajax
+  @british_council.create_partner.partner_url.set @partner.link
   @british_council.create_partner.save_button.click
   @british_council.partner.status.text.should include "Partner #{@partner.title} has been created."
 end
