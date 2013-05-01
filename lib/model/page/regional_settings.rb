@@ -3,7 +3,7 @@ class Model::Page::RegionalSettings < SitePrism::Page
   set_url_matcher /\/admin\/config\/regional\/settings/
 
   element :country, "#edit-site-default-country"
-  element :default_time_zone
+  element :timezone, "#edit-date-default-timezone [selected]"
 
   def default_country
     country.find("option[selected]")

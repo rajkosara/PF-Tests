@@ -72,3 +72,7 @@ Then(/^the (Korea|Egypt|Japan|Greece|Poland|Thailand|default) country is set cor
   @british_council.regional_settings.default_country.text.should == country
   end
 end
+
+Then(/^the correct timezone is displayed for (poland)$/) do |country|
+  @british_council.regional_settings.timezone.text.should include("+0200", "Warsaw")
+end

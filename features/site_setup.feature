@@ -62,13 +62,13 @@ Feature: Site setup
     Then the Korea country is set correctly
 
   @complete @solas_1247 @poland
-  Scenario: Current country is Egypt
+  Scenario: Current country is Poland
     Given I am logged in as an admin user
     When I navigate to the regional settings page
     Then the Poland country is set correctly
 
   @complete @solas_1247 @thailand
-  Scenario: Current country is Egypt
+  Scenario: Current country is Thailand
     Given I am logged in as an admin user
     When I navigate to the regional settings page
     Then the Thailand country is set correctly
@@ -78,3 +78,9 @@ Feature: Site setup
     Given I am logged in as an admin user
     When I navigate to the regional settings page
     Then the default country is set correctly
+
+  @complete @solas_1293 @poland
+  Scenario: Current timezone is correct for Poland
+    Given I am logged in as an admin user
+    When I navigate to the regional settings page
+    Then the correct timezone is displayed for poland
