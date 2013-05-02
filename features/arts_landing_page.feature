@@ -20,10 +20,17 @@ Feature: Arts Landing page
     When I navigate to the create arts landing page page
     Then the not authorized to access this arts landing page error is displayed
 
-  @solas_927 @core
+  @complete @solas_927 @core
   Scenario: Create an Arts landing page with the all fields filled out
     Given I am logged in as an admin user
-    When I navigate to the create arts landing page page
-    And I submit an arts landing page with all filled out
+    When I create a arts landing page with all fields filled in
     Then the arts landing page is created
     And the fields are displayed correctly on the arts landing page
+
+  Scenario: Create an Arts landing page and add to menu
+
+  Scenario: Create an Arts landing page and translate
+
+  Scenario: Edit Arts landing page
+
+  Scenario: Black Arts landing page
