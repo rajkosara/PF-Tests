@@ -6,7 +6,7 @@ local_env_kr:
   # site name
   country_site: Korea
   #capybara settings
-  default_wait_time: 5
+  default_wait_time: 8
   #urls
   korea_site_root: http://kr.local.solas.britishcouncil.net:8080/en
   korea_site_root_without_en: http://kr.local.solas.britishcouncil.net:8080
@@ -87,7 +87,7 @@ local_env_jp:
   # site name
   country_site: Japan
   #capybara settings
-  default_wait_time: 5
+  default_wait_time: 8
   #urls
   korea_site_root: http://jp.local.solas.britishcouncil.net:8080/en
   korea_site_root_without_en: http://jp.local.solas.britishcouncil.net:8080
@@ -168,7 +168,7 @@ local_env_gr:
   # site name
   country_site: Greece
   #capybara settings
-  default_wait_time: 5
+  default_wait_time: 8
   #urls
   korea_site_root: http://gr.local.solas.britishcouncil.net:8080/en
   korea_site_root_without_en: http://gr.local.solas.britishcouncil.net:8080
@@ -249,7 +249,7 @@ local_env_training:
   # site name
   country_site: Training
   #capybara settings
-  default_wait_time: 5
+  default_wait_time: 8
   #urls
   korea_site_root: http://training.local.solas.britishcouncil.net:8080/en
   korea_site_root_without_en: http://training.local.solas.britishcouncil.net:8080
@@ -329,7 +329,7 @@ local_env_eg:
   # site name
   country_site: Egypt
   #capybara settings
-  default_wait_time: 5
+  default_wait_time: 8
   #urls
   korea_site_root: http://eg.local.solas.britishcouncil.net:8080/en
   korea_site_root_without_en: http://eg.local.solas.britishcouncil.net:8080
@@ -409,7 +409,7 @@ local_env_pl:
   # site name
   country_site: Poland
   #capybara settings
-  default_wait_time: 5
+  default_wait_time: 8
   #urls
   korea_site_root: http://pl.local.solas.britishcouncil.net:8080/en
   korea_site_root_without_en: http://pl.local.solas.britishcouncil.net:8080
@@ -489,7 +489,7 @@ local_env_th:
   # site name
   country_site: Thailand
   #capybara settings
-  default_wait_time: 5
+  default_wait_time: 8
   #urls
   korea_site_root: http://th.local.solas.britishcouncil.net:8080/en
   korea_site_root_without_en: http://th.local.solas.britishcouncil.net:8080

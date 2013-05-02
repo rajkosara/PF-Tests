@@ -83,7 +83,7 @@ end
 When /^I enter a about course body on the create course page$/ do
   #puts @british_council.create_course.about_course_body
   #puts page.evaluate_script("jQuery.active")
-  Timeout.timeout(30) { sleep(0.1) until @british_council.create_course.about_course_body.visible?}
+  #¤Timeout.timeout(30) { sleep(0.1) until @british_council.create_course.about_course_body.visible?}
   @british_council.create_course.about_course_body.native.send_keys @course.about_course_body
 end
 
@@ -327,7 +327,7 @@ When(/^I submit a course page with two linked teaching centres$/) do
   @british_council.create_course.about_course_tab.click
   @british_council.create_course.teaching_centre_taught.first.set @teaching_centre_one.title
   wait_for_ajax
-  Timeout.timeout(30) { sleep(0.1) until @british_council.create_course.dropdown.visible?}
+  #Timeout.timeout(30) { sleep(0.1) until @british_council.create_course.dropdown.visible?}
   @british_council.create_course.teaching_centre_taught.first.native.send_keys :arrow_down
   @british_council.create_course.dropdown.click
   wait_for_ajax

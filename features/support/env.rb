@@ -19,7 +19,7 @@ require './ext/capybara'
 require 'headless'
 
 if ENV['AUTOMATION_HOME'] != nil
-puts "im headless"
+puts "I am Headless"
 headless = Headless.new
   headless.start
   #
