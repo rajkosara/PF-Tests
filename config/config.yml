@@ -26,7 +26,7 @@ test_env_kr:
   # site name
   country_site: Korea
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://kr.test.solas.britishcouncil.net/en
   korea_site_root_without_en: http://kr.test.solas.britishcouncil.net
@@ -46,7 +46,7 @@ stage_env_kr:
   # site name
   country_site: Korea
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://kr.stage.solas.britishcouncil.net/en
   korea_site_root_without_en: http://kr.stage.solas.britishcouncil.net
@@ -66,7 +66,7 @@ live_env_kr:
   # site name
   country_site: Korea
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://kr.live.solas.britishcouncil.net/en
   korea_site_root_without_en: http://kr.live.solas.britishcouncil.net
@@ -107,7 +107,7 @@ test_env_jp:
   # site name
   country_site: Japan
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://jp.test.solas.britishcouncil.net/en
   korea_site_root_without_en: http://jp.test.solas.britishcouncil.net
@@ -127,7 +127,7 @@ stage_env_jp:
   # site name
   country_site: Japan
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://jp.stage.solas.britishcouncil.net/en
   korea_site_root_without_en: http://jp.stage.solas.britishcouncil.net
@@ -147,7 +147,7 @@ live_env_jp:
   # site name
   country_site: Japan
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://jp.live.solas.britishcouncil.net/en
   korea_site_root_without_en: http://jp.live.solas.britishcouncil.net
@@ -188,7 +188,7 @@ test_env_gr:
   # site name
   country_site: Greece
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://gr.test.solas.britishcouncil.net/en
   korea_site_root_without_en: http://gr.test.solas.britishcouncil.net
@@ -206,9 +206,9 @@ test_env_gr:
 stage_env_gr:
   <<: *execution_defaults
   # site name
-  country_site: Training
+  country_site: Greece
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://gr.stage.solas.britishcouncil.net/en
   korea_site_root_without_en: http://gr.stage.solas.britishcouncil.net
@@ -228,7 +228,7 @@ live_env_gr:
   # site name
   country_site: Greece
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://gr.live.solas.britishcouncil.net/en
   korea_site_root_without_en: http://gr.live.solas.britishcouncil.net
@@ -269,7 +269,7 @@ test_env_training:
   # site name
   country_site: Training
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://training.test.solas.britishcouncil.net/en
   korea_site_root_without_en: http://training.test.solas.britishcouncil.net
@@ -289,7 +289,7 @@ stage_env_training:
   # site name
   country_site: Training
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://training.stage.solas.britishcouncil.net/en
   korea_site_root_without_en: http://training.stage.solas.britishcouncil.net
@@ -309,7 +309,7 @@ live_env_training:
   # site name
   country_site: Training
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://training.live.solas.britishcouncil.net/en
   korea_site_root_without_en: http://training.live.solas.britishcouncil.net
@@ -349,7 +349,7 @@ test_env_eg:
   # site name
   country_site: Egypt
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://eg.test.solas.britishcouncil.net/en
   korea_site_root_without_en: http://eg.test.solas.britishcouncil.net
@@ -369,7 +369,7 @@ stage_env_eg:
   # site name
   country_site: Egypt
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://eg.stage.solas.britishcouncil.net/en
   korea_site_root_without_en: http://training.stage.solas.britishcouncil.net
@@ -389,7 +389,7 @@ live_env_eg:
   # site name
   country_site: Egypt
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://eg.live.solas.britishcouncil.net/en
   korea_site_root_without_en: http://eg.live.solas.britishcouncil.net
@@ -429,7 +429,7 @@ test_env_pl:
   # site name
   country_site: Poland
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://pl.test.solas.britishcouncil.net/en
   korea_site_root_without_en: http://pl.test.solas.britishcouncil.net
@@ -449,7 +449,7 @@ stage_env_pl:
   # site name
   country_site: Poland
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://pl.stage.solas.britishcouncil.net/en
   korea_site_root_without_en: http://pl.stage.solas.britishcouncil.net
@@ -509,7 +509,7 @@ test_env_th:
   # site name
   country_site: Thailand
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://th.test.solas.britishcouncil.net/en
   korea_site_root_without_en: http://th.test.solas.britishcouncil.net
@@ -529,7 +529,7 @@ stage_env_th:
   # site name
   country_site: Thailand
   #capybara settings
-  default_wait_time: 15
+  default_wait_time: 9
   #urls
   korea_site_root: http://th.stage.solas.britishcouncil.net/en
   korea_site_root_without_en: http://th.stage.solas.britishcouncil.net

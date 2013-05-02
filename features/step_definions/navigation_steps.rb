@@ -85,6 +85,9 @@ Given /^I navigate to (?:an|a|the) (.*) page$/ do |page_name|
     @british_council.regional_settings.load
   when 'create webform'
     @british_council.create_webform.load
+  when 'create arts landing page'
+    @british_council.create_arts_landing_page.load
+    step "I create a landing page object"
   else raise "Haven't mapped the '#{page_name}' page"
   end
 end

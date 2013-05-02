@@ -19,6 +19,10 @@ class Model::BritishCouncil
     Model::Page::CreateFaq.new
   end
 
+  def create_arts_landing_page
+    Model::Page::CreateArtsLandingPage.new
+  end
+
   def create_press_release
     Model::Page::CreatePressRelease.new
   end
@@ -109,6 +113,10 @@ class Model::BritishCouncil
 
   def teaching_centre_listing_page
     Model::Page::TeachingCentreListingPage.new
+  end
+
+  def arts_landing_page
+    Model::Page::ArtsLandingPage.new
   end
 
   def job
