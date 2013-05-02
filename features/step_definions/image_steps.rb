@@ -22,6 +22,9 @@ end
 
 Then /^the image is added to the media library$/ do
   @british_council.image.status.text.should include "Media image #{@image.title} has been created."
+  @british_council.image.image.each do |img|
+    img.visible?
+  end
 end
 
 When /^I add an (png|jpg|jpeg) image to the media library$/ do |image_format|

@@ -14,6 +14,8 @@ end
 
 Then(/^the video is added to the media library$/) do
   @british_council.video.status.text.should include "Media video #{@video.title} has been created."
+  @british_council.video.should have_player
+  @british_council.video.player[:src].should include @video.video_url[31..41]
 end
 
 When(/^I add an (youtube|vimeo|viddler) video to the media library$/) do |video_type|
@@ -62,4 +64,10 @@ end
 
 Then(/^the video has been deleted$/) do
   @british_council.home.status.text.should include "Media video #{@video.title} has been deleted."
+end
+
+Given(/^I create a video in the media library$/) do
+  step "I navigate to the add video page"
+  step "I add an video to the media library"
+  step "the video is added to the media library"
 end

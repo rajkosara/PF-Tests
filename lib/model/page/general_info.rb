@@ -11,6 +11,7 @@ class Model::Page::GeneralInfo < SitePrism::Page
   element :show_hide_body, ".bc-show-hide-content"
   element :breadcrumbs, "#bc-breadcrumb"
   element :contact_us_block, "#bc-page-title aside"
+  element :video_player, ".oembed-content iframe"
 
   elements :links, ".bc-lk-list-16 a"
 

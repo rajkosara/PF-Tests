@@ -182,3 +182,11 @@ Feature: General info
     And I submit a general info page
     Then the general info page is created
     And the contact us block should be displayed on the general info page
+
+  @complete @solas_1144 @core
+  Scenario: Add an video to a general info page
+    Given I am logged in as an author user
+    And I create a video in the media library
+    When I navigate to the create general info page
+    And I submit a general info page with an video
+    Then the video is displayed on the general info page

@@ -100,5 +100,10 @@ Then(/^the course is displayed and the landing pag is not$/) do
 end
 
 Then(/^the contact us block should be displayed on the general info page$/) do
-  puts @british_council.general_info.contact_us_block.should be_visible
+  @british_council.general_info.contact_us_block.should be_visible
+end
+
+Then(/^the video is displayed on the general info page$/) do
+  @british_council.general_info.should have_video_player
+  @british_council.general_info.video_player[:src].should include @video.video_url[31..41]
 end
