@@ -27,10 +27,21 @@ Feature: Arts Landing page
     Then the arts landing page is created
     And the fields are displayed correctly on the arts landing page
 
+  @complete @solas_927 @core
   Scenario: Create an Arts landing page and add to menu
+    Given I am logged in as an admin user
+    When I create a published arts landing page with a menu link
+    Then the the arts landing page is displayed on the main menu
 
-  Scenario: Create an Arts landing page and translate
-
+  @complete @solas_927 @core
   Scenario: Edit Arts landing page
+    Given I am logged in as an admin user
+    When I create a published arts landing page with a menu link
+    And I choose to edit the arts landing page
+    Then the arts landing page has been edited correctly
 
+  @complete @solas_927 @core @wip
   Scenario: Black Arts landing page
+    Given I am logged in as an admin user
+    When I create a published arts landing page with a menu link
+    Then the arts landing page is black

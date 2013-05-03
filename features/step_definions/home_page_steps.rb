@@ -93,7 +93,7 @@ end
 
 Then(/^the facebook wiget is displayed on the homepage$/) do
   @british_council.home.should have_facebook_wiget
-  @british_council.home.facebook_wiget.text.should == "Facebook"
+  @british_council.home.facebook_wiget.text.should include "Facebook"
 end
 
 Then(/^the facebook wiget is not displayed on the homepage$/) do
