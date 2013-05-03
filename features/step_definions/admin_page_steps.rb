@@ -69,10 +69,18 @@ Then(/^the (Korea|Egypt|Japan|Greece|Poland|Thailand|default) country is set cor
   if country == "default"
     @british_council.regional_settings.default_country.text.should == Helpers::Config['country_site']
   else
-  @british_council.regional_settings.default_country.text.should == country
+    @british_council.regional_settings.default_country.text.should == country
   end
 end
 
-Then(/^the correct timezone is displayed for (poland)$/) do |country|
-  @british_council.regional_settings.timezone.text.should include("+0200", "Warsaw")
+Then(/^the correct timezone is displayed for (poland|thailand|egypt)$/) do |country|
+  case country
+  when 'poland'
+    @british_council.regional_settings.timezone.text.should include("+0200", "Warsaw")
+  when 'thailand'
+    @british_council.regional_settings.timezone.text.should include("+0700", "Bangkok")
+  when 'egypt'
+    @british_council.regional_settings.timezone.text.should include("+0200", "Cairo")
+  else raise "Haven't mapped '#{country}'"
+  end
 end

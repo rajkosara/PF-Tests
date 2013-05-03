@@ -84,3 +84,15 @@ Feature: Site setup
     Given I am logged in as an admin user
     When I navigate to the regional settings page
     Then the correct timezone is displayed for poland
+
+  @complete @solas_1293 @thailand
+  Scenario: Current timezone is correct for thailand
+    Given I am logged in as an admin user
+    When I navigate to the regional settings page
+    Then the correct timezone is displayed for thailand
+
+  @complete @solas_1293 @egypt
+  Scenario: Current timezone is correct for egypt
+    Given I am logged in as an admin user
+    When I navigate to the regional settings page
+    Then the correct timezone is displayed for egypt
