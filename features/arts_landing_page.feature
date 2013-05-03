@@ -40,7 +40,7 @@ Feature: Arts Landing page
     And I choose to edit the arts landing page
     Then the arts landing page has been edited correctly
 
-  @complete @solas_927 @core @wip
+  @complete @solas_1376 @core
   Scenario: Black Arts landing page
     Given I am logged in as an admin user
     When I create a published arts landing page with a menu link
