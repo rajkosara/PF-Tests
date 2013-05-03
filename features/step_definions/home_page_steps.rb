@@ -68,7 +68,7 @@ Then(/^all the fields are displayed correctly on the home page$/) do
   end
   @british_council.home.promo_box_with_links.each do |box|
     if Helpers::Config['country_site'] == ("Korea" || "Japan")
-      box.title.text.should include @image_promotion.title.upcase
+      box.title.text.should include @image_promotion.title
     else
       box.title.text.should include @image_promotion.title
     end

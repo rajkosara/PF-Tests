@@ -15,7 +15,7 @@ When(/^I submit a endeavour home page$/) do
   @british_council.create_home_page_endeavour.carousel_promotion_item.first.native.send_keys :arrow_down
   @british_council.create_home_page_endeavour.carousel_promotion_item.first.native.send_keys :enter
   wait_for_ajax
-  step "I fill out the body fields on the home page"
+  step "I fill out the body fields on the endeavour home page"
 
   @british_council.create_home_page_endeavour.image_promotion_item.each do |thing|
     thing.set @image_promotion.title
@@ -59,7 +59,7 @@ When(/^I submit a conqueror home page$/) do
     thing.native.send_keys :enter
     wait_for_ajax
   end
-  step "I fill out the body fields on the home page"
+  step "I fill out the body fields on the conqueror home page"
 
   @british_council.create_home_page_conqueror.column_tab.each do |thing|
     thing.click
@@ -93,7 +93,7 @@ When(/^I submit a conqueror home page$/) do
   @british_council.create_home_page_endeavour.save_button.click
 end
 
-Then(/^I fill out the body fields on the home page$/) do
+Then(/^I fill out the body fields on the conqueror home page$/) do
   @british_council.create_home_page_conqueror.body_content_title.set "This is the home page title"
   @british_council.create_home_page_conqueror.body_column_one_tab.click
   @british_council.create_home_page_conqueror.body_column_one_summary.set "this is the body col summary text"
@@ -106,4 +106,19 @@ Then(/^I fill out the body fields on the home page$/) do
   @british_council.create_home_page_conqueror.body_column_two_body.native.send_keys "body col body the second one, text..."
   @british_council.create_home_page_conqueror.body_column_two_link_title.set "This is the col two link"
   @british_council.create_home_page_conqueror.body_column_two_link_url.set "www.chicken.co.uk"
+end
+
+Then(/^I fill out the body fields on the endeavour home page$/) do
+  @british_council.create_home_page_endeavour.body_content_title.set "This is the home page title"
+  @british_council.create_home_page_endeavour.body_column_one_tab.click
+  @british_council.create_home_page_endeavour.body_column_one_summary.set "this is the body col summary text"
+  @british_council.create_home_page_endeavour.body_column_one_body.native.send_keys "body col body text.... but why body twice"
+  @british_council.create_home_page_endeavour.body_column_one_link_title.first.set "This is the first link title"
+  @british_council.create_home_page_endeavour.body_column_one_link_url.first.set "www.google.co.uk"
+  @british_council.create_home_page_endeavour.body_column_one_link_title.last.set "This is the second link title"
+  @british_council.create_home_page_endeavour.body_column_one_link_url.last.set "http://www.example.com"
+  @british_council.create_home_page_endeavour.body_column_two_tab.click
+  @british_council.create_home_page_endeavour.body_column_two_body.native.send_keys "body col body the second one, text..."
+  @british_council.create_home_page_endeavour.body_column_two_link_title.set "This is the col two link"
+  @british_council.create_home_page_endeavour.body_column_two_link_url.set "www.chicken.co.uk"
 end
