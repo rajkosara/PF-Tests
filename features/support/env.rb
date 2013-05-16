@@ -42,7 +42,7 @@ headless = Headless.new
   #  end
   #end
 else
-puts "not headless"
+#puts "not headless"
 end
 
 
