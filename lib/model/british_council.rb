@@ -4,6 +4,10 @@ class Model::BritishCouncil
   end
 
   def find_exam
-    Model::Page::FindExamPage.new
+    Model::Page::FindExam.new
+  end
+
+  def home_page
+    Model::Page::HomePage.new
   end
 end

@@ -1,7 +1,7 @@
-@login
+@PF @login
 Feature: Login
 
-  @wip @core @smoke @smoke_live  
+  @complete @core @smoke @smoke_live
   Scenario: User logs in successfully
     Given I navigate to the login page
     When I enter the admin user username
@@ -26,7 +26,7 @@ Feature: Login
     And I click on login
     Then the Authentication error message is displayed
 
-  @wip @core @smoke
+  @complete @core @smoke
   Scenario: User logs out
     Given I am logged in as an admin user
     When I log out
