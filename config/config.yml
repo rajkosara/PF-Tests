@@ -1,6 +1,7 @@
 defaults: &execution_defaults
   default_config: test_env_pf
-#korea config
+
+#PF config
 test_env_pf:
   <<: *execution_defaults
   # site name

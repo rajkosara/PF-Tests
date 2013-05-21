@@ -10,4 +10,8 @@ class Model::BritishCouncil
   def home_page
     Model::Page::HomePage.new
   end
+
+  def create_course
+    Model::Page::CreateCourse.new
+  end
 end

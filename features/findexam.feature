@@ -2,7 +2,7 @@
 
 Feature: FindExam
 
-    @wip @PF48 @smoke @core
+    @complete @PF48 @smoke @core
     Scenario: Find Exam by location
         Given I am logged in as an admin user
         When I Select a country

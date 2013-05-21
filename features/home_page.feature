@@ -1,79 +1,41 @@
-@home_page
+@PF @home_page
 Feature: Home Page
 
-  @complete @solas_416 @core
-  Scenario: Home page logo displayed
-    When I navigate to the home page
-    Then the british council logo is displayed on the home page
-
-  @complete @solas_416 @core
-  Scenario: Home page displays the country correctly
-    When I navigate to the home page
-    Then the country is displayed on the home page
-
-  @complete @solas_416 @core
-  Scenario: Home page displays the language switcher on desktop
-    When I navigate to the home page
-    Then the header displays the language switcher
-
-  @complete @solas_416 @core
-  Scenario: Home page displays the language switcher on desktop
-    When I navigate to the home page
-    Then the header displays the language switcher
-
-  @solas_416 @core @mobile
-  Scenario: Home page displays the language switcher on mobile
-    Given I navigate to the home page
-    And I am using a mobile device
-    Then the header doesnt displays the language switcher
-
-  @complete @solas_416 @core
-  Scenario: The header is displayed on the home page
-    When I navigate to the home page
-    Then the header is displayed on the home page
-
-  @complete @solas_416 @core
-  Scenario: The footer is displayed on the home page
-    When I navigate to the home page
-    Then the footer is displayed on the home page
-
-  @complete @solas_894 @korea @japan
-  Scenario: Create endeavour home page
+Background:
     Given I am logged in as an admin user
-    And I create a image in the media library
-    And I create a image promotion
-    And I navigate to the create endeavour home page page
-    When I submit a endeavour home page
-    Then the homepage is created
-    And all the fields are displayed correctly on the home page
+    When I Select a country
+    And When I Click Ok
 
-  @complete @solas_894 @greece
-  Scenario: Create conqueror home page
-    Given I am logged in as an admin user
-    And I create a image in the media library
-    And I create a image promotion
-    And I navigate to the create conqueror home page page
-    When I submit a conqueror home page
-    Then the homepage is created
-    And all the fields are displayed correctly on the home page
+    @complete @core @smoke
+    Scenario: Home page displays the username and Welcome message
+        Then the Page header displays the admin username
+        And the Home Page displays the Welcome message with admin username
 
-  @complete @solas_894 @korea @japan
-  Scenario: Edit home page
-    Given I am logged in as an admin user
-    And I create a image in the media library
-    And I create a image promotion
-    And I navigate to the create endeavour home page page
-    When I submit a endeavour home page
-    And the homepage is created
-    And I choose to edit the endeavour home page
-    Then the endeavour homepage is edited correctly
+    @complete  @core @smoke
+    Scenario: Home page displays all the urls
+        Then the home page shows all urls
 
-  @complete @solas_1145 @greece
-  Scenario: Home page displays facebook wiget on greece
-    When I navigate to the home page
-    Then the facebook wiget is displayed on the homepage
+    @complete @Core
+    Scenario: Create Course url takes to Create Course Page
+        When I click on Create a New Course link
+        Then Create course page should be displayed
 
-  @complete @solas_1145 @korea @japan
-  Scenario: Home page displays facebook wiget on korea
-    When I navigate to the home page
-    Then the facebook wiget is not displayed on the homepage
+    @complete @Core
+    Scenario: Change existing Course url takes to Change Course Page
+        When I click on Change existing Course link
+        Then Change course page should be displayed
+
+    @complete @Core
+    Scenario: Find a Course url takes to Find Course Page
+        When I click on Find a Course link
+        Then Find course page should be displayed
+
+    @complete @Core
+    Scenario: Find an Exam url takes to Find Exam Page
+        When I click on Find an Exam link
+        Then Find exam page should be displayed
+
+    @complete @Core
+    Scenario: Add-Edit IPF user url takes to Find User Page
+        When I click on Add/Edit IPF user link
+        Then Find user page should be displayed
