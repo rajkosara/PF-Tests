@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 =======
 PF-Tests
 ========
@@ -10,4 +8,3 @@ Product Finder Test Automation :
 
 More details will be updated soon....
 
->>>>>>> 0ff7b49e11cdafe788df485a6ad683ac27a995d6
