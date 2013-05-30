@@ -2,17 +2,25 @@
 
 Feature: FindExam
 
-    @complete @PF48 @smoke @core
-    Scenario: Find Exam by location
-        Given I am logged in as an admin user
-        When I Select a country
-        And When I Click Ok
-        And When I Click on Find an Exam
+    @complete @PF48 @core @Bug
+    Scenario:Locations should be available on Find Exam
+        Given I am logged in as an ExamAdmin user
+        When Iam on the Find Exam Page
         Then Find an Exam Page should display locations
         And I log out
 
-        #Examples:
-        #|country_name|country_id|
-        #|Germany     |34        |
-        #|Greece      |36        |
-        
+    @complete @core
+    Scenario: From Date Should not be greater than To Date
+        Given I am logged in as an ExamAdmin user
+        And Iam on the Find Exam Page
+        When I select From Date greater than To Date
+        Then Date Error message should be displayed
+
+    @complete @PF_35
+    Scenario: Search Exams by Country
+        Given I am logged in as an ExamAdmin user
+        And Iam on the Find Exam Page
+        When I select a Location
+        And I Search for Exam Product
+        Then The results should be from the selected location
+

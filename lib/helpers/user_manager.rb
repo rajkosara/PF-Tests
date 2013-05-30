@@ -6,13 +6,6 @@ class Helpers::UserManager
     user
   end
 
-  def self.get_author_user
-    user = Model::Domain::User.new
-    user.username = user.set_username Helpers::Config["author_username"]
-    user.password = user.set_password Helpers::Config["author_password"]
-    user
-  end
-
   def self.get_manager_user
     user = Model::Domain::User.new
     user.username = user.set_username Helpers::Config["manager_username"]
@@ -20,10 +13,17 @@ class Helpers::UserManager
     user
   end
 
-  def self.get_producer_user
+  def self.get_examadmin_user
     user = Model::Domain::User.new
-    user.username = user.set_username Helpers::Config["producer_username"]
-    user.password = user.set_password Helpers::Config["producer_password"]
+    user.username = user.set_username Helpers::Config["ExamAdmin_username"]
+    user.password = user.set_password Helpers::Config["ExamAdmin_password"]
+    user
+  end
+
+  def self.get_courseadmin_user
+    user = Model::Domain::User.new
+    user.username = user.set_username Helpers::Config["CourseAdmin_username"]
+    user.password = user.set_password Helpers::Config["CourseAdmin_password"]
     user
   end
 

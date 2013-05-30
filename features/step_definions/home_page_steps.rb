@@ -62,3 +62,9 @@ end
 Then(/^Go to Main Menu$/) do
   @british_council.home_page.backto_homepage.click()
 end
+
+Given(/^Iam on the Home Page$/) do
+  #step "I am logged in as an admin user"
+  step "I Select a country"
+  step "When I Click Ok"
+end

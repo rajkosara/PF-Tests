@@ -15,4 +15,10 @@ test_env_pf:
   #user details
   admin_username: 'rajkosara'
   admin_password: 'Bhargav123'
+  ExamAdmin_username: 'rajkosara'
+  ExamAdmin_password: 'Bhargav123'
+  CourseAdmin_username: 'rajkosara'
+  CourseAdmin_password: 'Bhargav123'
+  manager_username: 'rajkosara'
+  manager_password: 'Bhargav123'
   

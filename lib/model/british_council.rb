@@ -14,4 +14,17 @@ class Model::BritishCouncil
   def create_course
     Model::Page::CreateCourse.new
   end
+  
+  def find_user
+    Model::Page::FindUser.new
+  end
+
+  def select_country
+    Model::Page::SelectCountry.new
+  end
+
+  def exam
+    Model::Page::Exam.new
+  end
+
 end
