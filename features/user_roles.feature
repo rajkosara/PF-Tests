@@ -14,14 +14,14 @@ Feature: User_Roles
         When Iam on the Home Page
         Then Only Find Exam URL should be shown
 
-    @complete @smoke @PF_33
+    @wip @smoke @PF_33
     Scenario: Sys Admin Should see All URLs on Home Page
         Given I am logged in as an admin user
         When Iam on the Home Page
         Then All URLs should be shown
 
-    @wip @smoke @PF_33
+    @complete @smoke @PF_33
     Scenario: Manager Should only see Users URL on Home Page
-        Given I am logged in as an admin user
+        Given I am logged in as an manager user
         When Iam on the Home Page
-        Then All URLs should be shown
+        Then Only Add User URL should be show
