@@ -1,10 +1,10 @@
 Then /^the home page shows all urls$/ do
   @british_council.home_page.should have_changecountry
   @british_council.home_page.should have_backto_homepage
-  @british_council.home_page.should have_createcourse
+  @british_council.home_page.should_not have_createcourse
   @british_council.home_page.should have_find_examurl
   @british_council.home_page.should have_AddEditUser
-  @british_council.home_page.should have_find_courseurl
+  @british_council.home_page.should_not have_find_courseurl
 end
 
 

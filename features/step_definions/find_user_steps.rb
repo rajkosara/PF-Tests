@@ -82,7 +82,6 @@ end
 
 And (/^I Click on Edit Record$/) do
   @british_council.find_user.edit_record.first.click
-  sleep 3
 end
 
 Then(/^Page title should be "(.*?)"$/) do |page_title|

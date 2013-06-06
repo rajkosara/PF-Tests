@@ -14,7 +14,7 @@ test_env_pf:
   #image_location: /sites/default/files
   #user details
   admin_username: 'rajkosara'
-  admin_password: 'Bhargav123'
+  admin_password: 'Bhargav1'
   ExamAdmin_username: 'adutest2'
   ExamAdmin_password: 'Passw0rd'
   CourseAdmin_username: 'Adutest1'

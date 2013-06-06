@@ -6,13 +6,13 @@ Feature: User_Roles
     Scenario: Sys Admin Should see All URLs on Home Page
         Given I am logged in as an admin user
         When Iam on the Home Page
-        Then All URLs should be shown
+        Then the home page shows all urls
 
-    @complete @smoke @PF_33
-    Scenario: Course Admin Should only see Course URLs on Home Page
-        Given I am logged in as an CourseAdmin user
-        When Iam on the Home Page
-        Then Only Course URLs should be shown
+#    @complete @smoke @PF_33
+#    Scenario: Course Admin Should only see Course URLs on Home Page
+#        Given I am logged in as an CourseAdmin user
+#        When Iam on the Home Page
+#        Then Only Course URLs should be shown
 
     @complete @smoke @PF_33
     Scenario: Exam Admin Should only see Exam URL on Home Page

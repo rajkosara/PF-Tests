@@ -4,6 +4,9 @@ Given(/^I am  on the add user page$/) do
   step "I click on Find User button"
   scroll_to_end_of_page
   step "I Click on Add Record"
+  @user_firstname = @british_council.add_user.first_name.value
+  @user_lastname = @british_council.add_user.last_name.value
+  @user_name=@british_council.add_user.user_name.value
 end
 
 When /^the add user page is displayed$/ do
@@ -25,12 +28,12 @@ When /^I Save a new (course administrator|exam administrator|manager) user$/ do 
   scroll_to_end_of_page
   @british_council.add_user.btn_next.click
   step "I select the #{user_role} checkbox"
-  sleep 5
   step "I Click Create Button"
 end
 
 Then /^the user has been successfully created$/ do
-#  @british_council.add_user.confirm_msg.text.should include "The user has been added successfully"
+  wait_for_ajax
+  @british_council.add_user.confirm_msg.text.should include "The user has been added successfully for #{@user_name}"
 end
 
 Then /^I select the (course administrator|exam administrator|manager) checkbox$/ do |check_role|
@@ -74,4 +77,14 @@ Then(/^Edit Record option should be (Available|Not Available)$/) do |status|
     @british_council.find_user.should_not have_edit_record
   end
   
+end
+
+And /^the user should appear under Edit List$/ do
+  @british_council.home_page.backto_homepage.click
+  step "I click on Add/Edit IPF user link"
+  step "I Enter firstname as #{@user_firstname}"
+  step "I Enter lastname as #{@user_lastname}"
+  step "I click on Find User button"
+  scroll_to_end_of_page
+  step "Edit Record option should be Available"
 end
