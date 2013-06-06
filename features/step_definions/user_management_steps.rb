@@ -1,4 +1,4 @@
-Given /^I am a (admin|ExamAdmin|CourseAdmin) user$/ do |user_type|
+Given /^I am a (admin|ExamAdmin|CourseAdmin|manager) user$/ do |user_type|
   case user_type
   when "admin"
     @user = Helpers::UserManager.get_admin_user

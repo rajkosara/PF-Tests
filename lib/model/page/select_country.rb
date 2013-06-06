@@ -1,12 +1,12 @@
 class Model::Page::SelectCountry < SitePrism::Page
   set_url "#{Helpers::Config['pf_site_root']}/Account/UserCountries"
 
-  element :country, 'input[value="7"]'
+  element :country, 'input[name="SelectedCountryId"]'
   element :okbutton, 'td input[value="OK""]'
 
 
   def country_click
-    evaluate_script(%Q{ jQuery("input#7").click()})
+    evaluate_script(%Q{ jQuery("input[name='SelectedCountryId']").first().click()})
   end
 
   def ok_click

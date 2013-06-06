@@ -27,4 +27,7 @@ class Model::BritishCouncil
     Model::Page::Exam.new
   end
 
+  def add_user
+    Model::Page::AddUser.new
+  end
 end

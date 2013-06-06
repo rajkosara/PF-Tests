@@ -15,10 +15,10 @@ test_env_pf:
   #user details
   admin_username: 'rajkosara'
   admin_password: 'Bhargav123'
-  ExamAdmin_username: 'rajkosara'
-  ExamAdmin_password: 'Bhargav123'
-  CourseAdmin_username: 'rajkosara'
-  CourseAdmin_password: 'Bhargav123'
-  manager_username: 'rajkosara'
-  manager_password: 'Bhargav123'
+  ExamAdmin_username: 'adutest2'
+  ExamAdmin_password: 'Passw0rd'
+  CourseAdmin_username: 'Adutest1'
+  CourseAdmin_password: 'Passw0rd'
+  manager_username: 'adutest3'
+  manager_password: 'Passw0rd'
   

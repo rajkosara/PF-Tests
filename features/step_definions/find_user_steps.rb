@@ -7,11 +7,22 @@ When(/^I Enter username$/) do
   @british_council.find_user.user_name.set "raj"
 end
 
+When /^I Enter username as (.*)$/ do |str_user|
+  @british_council.find_user.user_name.set str_user
+end
+
 When(/^I Enter username,firstname,lastname$/) do
   @british_council.find_user.user_name.set "abcde"
-  @british_council.find_user.first_name.set "raj"
-  @british_council.find_user.last_name.set "ko"
+  step "I Enter firstname as raj"
+  step "I Enter lastname as ko"
+end
 
+When /^I Enter firstname as (.*)$/ do |str_fname|
+  @british_council.find_user.first_name.set str_fname
+end
+
+When /^I Enter lastname as (.*)$/ do |str_lname|
+  @british_council.find_user.last_name.set str_lname
 end
 
 When(/^I Enter Invalid username,firstname,lastname$/) do
@@ -27,7 +38,11 @@ When(/^I click on Find User button$/) do
 end
 
 Then(/^Search results should display$/) do
-  puts "Pending"
+  if @british_council.find_user.records_count.text.should include("Showing")
+    puts @british_council.find_user.records_count.text
+  else
+    puts "No Records"
+  end
 end
 
 Then(/^Search results should not display$/) do
@@ -47,6 +62,7 @@ end
 When(/^I Perform Search$/) do
   step "I Enter username"
   step "I click on Find User button"
+  scroll_to_end_of_page
   step "Search results should display"
 end
 
@@ -56,12 +72,12 @@ When(/^I Perform Empty Search$/) do
 end
 
 Then(/^Page should not be disabled/) do
-    step "I click on Clear button"
+    @british_council.find_user.error_label.text.should include "Search criteria cannot be null"
+#    step "I click on Clear button"
 end
 
 And (/^I Click on Add Record$/) do
   @british_council.find_user.add_record.first.click
-  sleep 3
 end
 
 And (/^I Click on Edit Record$/) do
@@ -69,10 +85,6 @@ And (/^I Click on Edit Record$/) do
   sleep 3
 end
 
-Then(/^Page title should be Create User Account$/) do
-  @british_council.find_user.title.should include "Create User Account"
-end
-
-Then(/^Page title should be Edit User Details$/) do
-  @british_council.find_user.title.should include "Edit User Details"
+Then(/^Page title should be "(.*?)"$/) do |page_title|
+  @british_council.find_user.title.should include page_title
 end
