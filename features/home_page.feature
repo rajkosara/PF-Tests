@@ -16,20 +16,20 @@ Background:
         Then the home page shows all urls
 
 
-#    @complete @Core
-#    Scenario: Create Course url takes to Create Course Page
-#        When I click on Create a New Course link
-#        Then Create course page should be displayed
+    @not_implemented @Core
+    Scenario: Create Course url takes to Create Course Page
+        When I click on Create a New Course link
+        Then Create course page should be displayed
 
-#    @complete @Core
-#    Scenario: Change existing Course url takes to Change Course Page
-#        When I click on Change existing Course link
-#        Then Change course page should be displayed
+    @not_implemented @Core
+    Scenario: Change existing Course url takes to Change Course Page
+        When I click on Change existing Course link
+        Then Change course page should be displayed
 
-#    @complete @Core
-#    Scenario: Find a Course url takes to Find Course Page
-#        When I click on Find a Course link
-#        Then Find course page should be displayed
+    @not_implemented @Core
+    Scenario: Find a Course url takes to Find Course Page
+        When I click on Find a Course link
+        Then Find course page should be displayed
 
 
     @complete @Core
