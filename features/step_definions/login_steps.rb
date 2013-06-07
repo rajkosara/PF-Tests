@@ -13,9 +13,7 @@ When /^I click on login$/ do
 end
 
 Then /^the Page header displays the (admin|ExamAdmin|CourseAdmin|manager) username$/ do |user_type|
-  #@british_council.login.login_header.username.text.should include Helpers::Config["#{user_type}_username"]
   @british_council.login.user_header.text.should include Helpers::Config["#{user_type}_username"]
-  #@british_council.login.login_header.username[:href].should include "#{Helpers::Config["#{user_type}_username"].gsub(".", "")}"
 end
 
 Given /^I am log in as (?:an|a|the) (admin|ExamAdmin|CourseAdmin|manager) user$/ do |user_type|

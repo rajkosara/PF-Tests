@@ -32,7 +32,7 @@ Background:
         And I Click on Edit Record
         Then Page title should be "Edit User Details"
 
-    @Pending @core @Bug
+    @complete @core @Bug
     Scenario: Empty Search should not disable page
         When I Perform Empty Search
         Then Page should not be disabled
