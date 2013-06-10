@@ -5,7 +5,7 @@ class Model::Page::Login < SitePrism::Page
   element :username, '#UserName'
   element :password, '#Password'
   element :login_button, '#body input[value="Log in"]'
-  element :error_message, ".field-validation-error"
+  elements :error_message, ".field-validation-error"
 
   element :user_header, '#bc-user-zone'
   element :logout, "#logoutForm"

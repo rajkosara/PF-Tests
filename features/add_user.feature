@@ -51,7 +51,7 @@ Feature: user
     When I Click on Create button without selecting user roles
     Then "Select atleast one role." message should appear
 
-  @wip @core
+  @complete @core
   Scenario: Should not allow to create user without selecting a country
     Given I am logged in as an admin user
     And I am  on the add user page

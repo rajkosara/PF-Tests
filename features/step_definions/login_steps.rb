@@ -51,5 +51,16 @@ end
 
 
 Then /^the Authentication error message is displayed$/ do
-  @british_council.login.error_message.text.should include "Authentication did not succeed. Check user name and password."
+  @british_council.login.error_message.first.text.should include "Authentication did not succeed. Check user name and password."
+end
+
+Then /^Header should not display Back to HomePage URL$/ do
+  @british_council.home_page.should_not have_backto_homepage
+  sleep 1
+end
+
+Then /^Mandatory Fields Error message should be displayed$/ do
+  @british_council.login.error_message.first.text.should include "The User name field is required."
+  @british_council.login.error_message.last.text.should include "The Password field is required."
+  sleep 3
 end

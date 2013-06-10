@@ -31,3 +31,14 @@ Feature: Login
     Given I am logged in as an admin user
     When I log out
     Then the admin user is logged out
+
+  @complete @core @smoke  @PF_209
+  Scenario: Back to HomePage url should not be visible before country selection
+    When I am logged in as an admin user
+    Then Header should not display Back to HomePage URL
+
+  @wip @core @smoke
+  Scenario: Mandatory Fields Error messages displayed for empty login
+    Given I navigate to the login page
+    When I click on login
+    Then Mandatory Fields Error message should be displayed
