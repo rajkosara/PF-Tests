@@ -13,18 +13,10 @@ When /^the add user page is displayed$/ do
   @british_council.add_user.should be_displayed
 end
 
-When /^I select the (Site Administrator|Content Author|Content Manager|Content Producer) checkbox$/ do |user_role|
-  @user_role = @british_council.add_user.roles.find do |role|
-    role.text.to_s.include? user_role
-  end
-  @user_role.click
-end
-
 When /^I Save a new (course administrator|exam administrator|manager) user$/ do |user_role|
-  #Timeout.timeout(30) { sleep(0.1) until @british_council.add_user.user_region.visible?}
-  @british_council.add_user.user_region.select "United Kingdom"
+  step "I select Region as United Kingdom"
   wait_for_ajax
-  @british_council.add_user.country_england.click
+  step "I select country as England"
   scroll_to_end_of_page
   @british_council.add_user.btn_next.click
   step "I select the #{user_role} checkbox"
@@ -55,7 +47,7 @@ Then /^I Click Create Button$/ do
   @british_council.add_user.btn_create.click
 end
 
-When /^I Search for (System Administrator|Exam Administrator|Course Administrator) Record$/ do |role|
+When /^I Search for (System Administrator|Exam Administrator|Course Administrator|Manager) Record$/ do |role|
     case role
     when "System Administrator"
       step "I Enter username as rajkosara"
@@ -63,6 +55,8 @@ When /^I Search for (System Administrator|Exam Administrator|Course Administrato
       step "I Enter username as adutest2"
     when "Course Administrator"
       step "I Enter username as adutest1"
+    when "Manager"
+      step "I Enter username as adutest3"
     end
       step "I click on Find User button"
       scroll_to_end_of_page
@@ -87,4 +81,63 @@ And /^the user should appear under Edit List$/ do
   step "I click on Find User button"
   scroll_to_end_of_page
   step "Edit Record option should be Available"
+end
+
+And /^I Click on Amend Details button/ do
+  @british_council.add_user.btn_amend.click
+  wait_for_ajax
+end
+
+Then /^(Exam Administrator|Course Administrator|Manager) user role is ticked by default$/ do |role|
+  #scroll_to_end_of_page
+#  @british_council.add_user.user_roles_checkboxes.each do |checkbox|
+#    checkbox.should_not be_checked
+#  end
+#  sleep 3
+
+  case role
+    when "Exam Administrator"
+      @british_council.add_user.exam_admin_checkbox.should be_checked
+    when "Course Administrator"
+      @british_council.add_user.course_admin_checkbox.should be_checked
+    when "Manager"
+      @british_council.add_user.manager_checkbox.should be_checked
+  end
+end
+
+When /^I select Region as United Kingdom$/ do
+    @british_council.add_user.user_region.select "United Kingdom"
+end
+
+And /^I select country as England$/ do
+  @british_council.add_user.country_england.click
+end
+
+And /^I Click on Next button$/ do
+  @british_council.add_user.btn_next.click
+end
+
+When /^I Click on Create button without selecting user roles$/ do
+  step "I select Region as United Kingdom"
+  wait_for_ajax
+  step "I select country as England"
+  scroll_to_end_of_page
+  step "I Click on Next button"
+  step "I Click Create Button"
+end
+
+Then(/^"(.*?)" message should appear$/) do |alert_msg|
+  @british_council.add_user.role_err_msg.text.should include alert_msg
+end
+
+When /^I Click on next button without selecting country$/ do
+  step "I select Region as United Kingdom"
+  wait_for_ajax
+  scroll_to_end_of_page
+  step "I Click on Next button"
+end
+
+Then /^I Should remain on the same page$/ do
+  @british_council.add_user.should have_user_region
+  #Step "Page title should be #{Create User Account}"
 end

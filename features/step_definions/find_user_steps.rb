@@ -73,7 +73,7 @@ end
 
 Then(/^Page should not be disabled/) do
     @british_council.find_user.error_label.text.should include "Search criteria cannot be null"
-#    step "I click on Clear button"
+    step "I click on Clear button"
 end
 
 And (/^I Click on Add Record$/) do
