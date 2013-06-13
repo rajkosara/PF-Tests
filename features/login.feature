@@ -37,7 +37,7 @@ Feature: Login
     When I am logged in as an admin user
     Then Header should not display Back to HomePage URL
 
-  @wip @core @smoke
+  @complete @core @smoke
   Scenario: Mandatory Fields Error messages displayed for empty login
     Given I navigate to the login page
     When I click on login
